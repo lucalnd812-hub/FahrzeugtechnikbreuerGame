@@ -1,0 +1,19 @@
+{
+  "audience": "public",
+  "source_commit": "e23113d70bc09040b2a1256e814d302b3a7e3c2b",
+  "deployment": {
+    "id": "appgdep_6ace9c97c9308191baa079e77350ba42",
+    "project_id": "appgprj_6ace9ba9f830819187b90c7ea0213f11",
+    "title": "Breuer Grand Prix",
+    "version_id": "appgprj_6ace9ba9f830819187b90c7ea0213f11~appgver_bbf034b825808191966c0ec8857217a9",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://breuer-grand-prix-32.luca-lnd.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ace9ba9f830819187b90c7ea0213f11",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-13T21:03:36.177594+00:00"
+  }
+}

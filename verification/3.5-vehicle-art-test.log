@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> breuer-grand-prix@3.5.0 test:art
+> node tests/vehicle-rasterizer.mjs
+
+PASS native CPU vehicle finish: THREE camera-space matcap basis, smooth rounded-normal reflections, identical single-pass lift/coat with dark-trim mask, opt-in NeutralToneMapping/exposure, cached sRGB bilinear atlas sampling, texture transforms/wrap/flipY and alpha-tested detail geometry.

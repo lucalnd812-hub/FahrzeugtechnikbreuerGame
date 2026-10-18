@@ -1,0 +1,134 @@
+{
+  "release": "3.6.0",
+  "recordedAt": "2026-10-16T09:47:23.033Z",
+  "rootUrl": "https://breuer-grand-prix-final.vercel.app/",
+  "iframeUrl": "https://breuer-grand-prix-final.vercel.app/wix-test.html",
+  "rootMenuOpened": true,
+  "leaderboardLoaded": true,
+  "leaderboardStatus": "1 Fahrer in dieser Wertung",
+  "existingRecordStillPresent": true,
+  "liveRaceStarted": true,
+  "briefingConfirmed": true,
+  "gps": {
+    "buttons": [
+      {
+        "h": 48,
+        "id": "pause",
+        "name": "Rennen pausieren",
+        "visible": true,
+        "w": 61.515625,
+        "x": 770.484375,
+        "y": 9
+      },
+      {
+        "h": 288,
+        "id": "minimap-toggle",
+        "name": "Streckenkarte verkleinern",
+        "visible": true,
+        "w": 527,
+        "x": 21,
+        "y": 18
+      },
+      {
+        "h": 44,
+        "id": "minimap-close",
+        "name": "Große Streckenkarte schließen",
+        "visible": true,
+        "w": 44,
+        "x": 640,
+        "y": 59.859375
+      },
+      {
+        "h": 57,
+        "id": "touch-item",
+        "name": "Gesammeltes Item einsetzen",
+        "visible": true,
+        "w": 143,
+        "x": 401,
+        "y": 320
+      },
+      {
+        "h": 57,
+        "id": "",
+        "name": "Bremsen",
+        "visible": true,
+        "w": 91,
+        "x": 300,
+        "y": 320
+      },
+      {
+        "h": 390,
+        "id": "",
+        "name": "Linke Bildschirmhälfte halten: nach links lenken",
+        "visible": true,
+        "w": 422,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "h": 390,
+        "id": "",
+        "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+        "visible": true,
+        "w": 422,
+        "x": 422,
+        "y": 0
+      }
+    ],
+    "controls": [
+      {
+        "h": 48,
+        "id": "pause",
+        "visible": true,
+        "w": 61.515625,
+        "x": 770.484375,
+        "y": 9
+      },
+      {
+        "h": 57,
+        "id": "brake",
+        "visible": true,
+        "w": 91,
+        "x": 300,
+        "y": 320
+      },
+      {
+        "h": 57,
+        "id": "touch-item",
+        "visible": true,
+        "w": 143,
+        "x": 401,
+        "y": 320
+      }
+    ],
+    "expanded": "true",
+    "h": 390,
+    "label": "production-844x390-gps-expanded",
+    "map": {
+      "h": 305,
+      "visible": true,
+      "w": 680,
+      "x": 13,
+      "y": 9
+    },
+    "mapControlOverlaps": [],
+    "outside": [],
+    "plot": {
+      "h": 211.625,
+      "visible": true,
+      "w": 409.5,
+      "x": 79.75,
+      "y": 50.453125
+    },
+    "scroll": [
+      844,
+      390
+    ],
+    "step": "race",
+    "w": 844
+  },
+  "screenshot": "breuer-36-final-20261016.jpg",
+  "renderer": "2D compatibility; no cloud graphics acceleration",
+  "physicalTouch": false,
+  "physicalGPUFPS": null
+}

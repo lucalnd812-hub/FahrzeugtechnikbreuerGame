@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> breuer-grand-prix@3.6.0 build:vercel
+> node scripts/build-vercel.mjs
+
+Breuer GP: 1079135 bytes JavaScript, 343670 bytes HTML.

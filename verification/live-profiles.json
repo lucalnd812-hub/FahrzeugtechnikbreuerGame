@@ -1,0 +1,24 @@
+{
+  "target": "https://breuer-grand-prix-final.vercel.app",
+  "testedAt": "2026-10-15T11:18:57.675Z",
+  "passed": true,
+  "checks": [
+    "Live release 3.3 and database health",
+    "One explicitly named unranked QA profile created",
+    "Normalized duplicate rejected by production database",
+    "Profile persisted and authenticated in a separate HTTP request",
+    "Live rankings query succeeds and exposes no private token"
+  ],
+  "qaProfile": {
+    "name": "Release QA 1510",
+    "unranked": true
+  },
+  "createdLeaderboardRecords": 0,
+  "duplicateMessage": "Dieser Fahrername ist bereits vergeben. Bitte wähle einen anderen Namen.",
+  "health": {
+    "ok": true,
+    "release": "3.3.0",
+    "multiplayer": true,
+    "leaderboards": true
+  }
+}

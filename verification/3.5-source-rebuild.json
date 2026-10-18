@@ -1,0 +1,9 @@
+{
+  "release": "3.5.0",
+  "sourceZipExtracted": true,
+  "buildExitCode": 0,
+  "publicFilesMatched": 135,
+  "publicBytes": 7205472,
+  "dependencies": "Existing node_modules used only in QA extraction; excluded from archive.",
+  "meaning": "All archived production sources and media reproduce the published build byte for byte."
+}

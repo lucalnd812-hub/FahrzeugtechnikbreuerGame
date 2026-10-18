@@ -1,0 +1,1 @@
+Release 3.5: technische Prüfnachweise unter verification/3.5-* und verification/release-3.5.json. Releasebericht: docs/release-3.5.md. Originalgrafiken, Prompts und Job-IDs stehen im separaten Art-Masterpaket. Browserbilder und personenbezogene Fahrerpässe sind nicht Bestandteil dieses Quellcodepakets.

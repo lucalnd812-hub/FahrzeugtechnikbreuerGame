@@ -1,0 +1,113 @@
+{
+  "note": "Identical authored-map-only 45 real Three camera/frustum samples; race cars omitted to isolate environment edits. CPU visible mesh/triangle estimates, no GPU calls/FPS. All production budget thresholds unchanged.",
+  "peaks": [
+    {
+      "track": "lammersdorf",
+      "quality": 0,
+      "before": {
+        "meshes": 233,
+        "triangles": 169590
+      },
+      "after": {
+        "meshes": 230,
+        "triangles": 170670
+      }
+    },
+    {
+      "track": "lammersdorf",
+      "quality": 1,
+      "before": {
+        "meshes": 269,
+        "triangles": 222716
+      },
+      "after": {
+        "meshes": 266,
+        "triangles": 216564
+      }
+    },
+    {
+      "track": "lammersdorf",
+      "quality": 2,
+      "before": {
+        "meshes": 313,
+        "triangles": 272802
+      },
+      "after": {
+        "meshes": 310,
+        "triangles": 263780
+      }
+    },
+    {
+      "track": "bahnhof",
+      "quality": 0,
+      "before": {
+        "meshes": 144,
+        "triangles": 102530
+      },
+      "after": {
+        "meshes": 139,
+        "triangles": 92475
+      }
+    },
+    {
+      "track": "bahnhof",
+      "quality": 1,
+      "before": {
+        "meshes": 181,
+        "triangles": 146579
+      },
+      "after": {
+        "meshes": 178,
+        "triangles": 127685
+      }
+    },
+    {
+      "track": "bahnhof",
+      "quality": 2,
+      "before": {
+        "meshes": 255,
+        "triangles": 187133
+      },
+      "after": {
+        "meshes": 250,
+        "triangles": 166319
+      }
+    },
+    {
+      "track": "kraemer",
+      "quality": 0,
+      "before": {
+        "meshes": 211,
+        "triangles": 125534
+      },
+      "after": {
+        "meshes": 209,
+        "triangles": 122656
+      }
+    },
+    {
+      "track": "kraemer",
+      "quality": 1,
+      "before": {
+        "meshes": 262,
+        "triangles": 198850
+      },
+      "after": {
+        "meshes": 260,
+        "triangles": 185594
+      }
+    },
+    {
+      "track": "kraemer",
+      "quality": 2,
+      "before": {
+        "meshes": 307,
+        "triangles": 230882
+      },
+      "after": {
+        "meshes": 304,
+        "triangles": 223054
+      }
+    }
+  ]
+}

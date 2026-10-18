@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "nativeTreeInstances": 1197,
+  "cachedGardens": 452,
+  "nearbyCrowns": 116,
+  "logicalDraws": 352,
+  "recordedOperations": 1765,
+  "limits": "RecordingContext checks finite paths, source coordinates and bounded cached drawing; not real browser frame-time measurements."
+}

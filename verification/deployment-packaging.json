@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "originalFilesVerified": 173,
+  "restoredBinaries": 107,
+  "mismatches": [],
+  "nativeUploadFiles": 36,
+  "archiveParts": 14,
+  "maxNativeBase64Characters": 193336,
+  "build": "npm run build:vercel passed; bundle995865 bytes, HTML266889 bytes"
+}

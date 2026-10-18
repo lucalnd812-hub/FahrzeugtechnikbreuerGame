@@ -1,0 +1,79 @@
+{
+  "release": "3.5.0",
+  "deployment": {
+    "release": "3.5.0",
+    "id": "dpl_6dx6zz4XEu8ryyBuC57temAHqJFG",
+    "url": "breuer-grand-prix-final-o26d4c2m0-luca-s-projects6.vercel.app",
+    "alias": [
+      "breuer-grand-prix-final.vercel.app",
+      "breuer-grand-prix-final-luca-s-projects6.vercel.app"
+    ],
+    "target": "production",
+    "readyState": "READY",
+    "projectId": "prj_ed4SbzEGOGAws5Lm2luQ24Awwgwr",
+    "browserVerifiedUrl": "https://breuer-grand-prix-final.vercel.app/"
+  },
+  "tests": {
+    "programs": 39,
+    "passMessages": 102,
+    "exitCode": 0,
+    "artTest": "passed",
+    "testSourceFilesUnchanged": 267
+  },
+  "productionHTTP": {
+    "recordedAt": "2026-10-15T15:12:19.846Z",
+    "base": "https://breuer-grand-prix-final.vercel.app",
+    "files": 135,
+    "bytes": 7205472,
+    "health": {
+      "status": 200,
+      "body": {
+        "ok": true,
+        "release": "3.5.0",
+        "multiplayer": true,
+        "leaderboards": true
+      }
+    },
+    "errors": []
+  },
+  "browser": {
+    "layoutChecks": 26,
+    "preparationStepsAcrossSixViewports": true,
+    "minimumMeasuredTargetCSSPixels": 44,
+    "flows": {
+      "duplicateNameRejected": true,
+      "leaderboardLoaded": true,
+      "startBriefing": true,
+      "raceTimerAdvanced": true,
+      "pause": true,
+      "resume": true,
+      "returnToGarage": true
+    },
+    "productionMenuOpened": true,
+    "physicalTouchTest": false,
+    "webglFPSMeasured": false
+  },
+  "art": {
+    "successfulHiggsfieldJobs": 15,
+    "creditsSpent": 56.25,
+    "confirmedBalanceAfterJobs": 121.25,
+    "newRuntimeAssetBytes": 2536830,
+    "vehicleFrames": 80,
+    "vehicleFrameBytes": 1305024,
+    "vehicleArtHash": "41fc56f05862f8c4"
+  },
+  "limits": [
+    "Cloud browser uses compatibility renderer; physical mobile multitouch, Safari selection behavior and real GPU FPS are not measured.",
+    "Geometry budgets and instrumented scheduling checks are not device FPS measurements.",
+    "This pass does not include a new Street View scan; stylized building details remain artistic approximations."
+  ],
+  "sourcePackageVerification": {
+    "release": "3.5.0",
+    "sourceZipExtracted": true,
+    "buildExitCode": 0,
+    "publicFilesMatched": 135,
+    "publicBytes": 7205472,
+    "dependencies": "Existing node_modules used only in QA extraction; excluded from archive.",
+    "meaning": "All archived production sources and media reproduce the published build byte for byte."
+  }
+}

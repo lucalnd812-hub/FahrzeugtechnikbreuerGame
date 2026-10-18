@@ -1,0 +1,40 @@
+{
+  "version": "3.1.0",
+  "renderer": "actual 2D compatibility; WebGL unavailable",
+  "sizes": [
+    [
+      568,
+      260
+    ],
+    [
+      568,
+      320
+    ],
+    [
+      667,
+      375
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1310,
+      768
+    ]
+  ],
+  "steps": "Auto/Strecke/Rennen",
+  "buttonsInViewport": true,
+  "compactSettingsFieldsRetested": true,
+  "liveFlow": [
+    "Porsche selection",
+    "lights",
+    "rotate",
+    "Bahnhof selection",
+    "start",
+    "briefing",
+    "race HUD",
+    "pause"
+  ],
+  "physicalGPUFPS": null
+}

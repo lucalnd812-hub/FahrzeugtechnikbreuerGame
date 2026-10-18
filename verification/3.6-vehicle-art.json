@@ -1,0 +1,88 @@
+{
+  "artHash": "9b343cdfade29fe7",
+  "geometryHash": "ad4dbb722ab6397a",
+  "sourceModelHash": "ad4dbb722ab6397a3b2874ab8682967d129a055b297f011805f3eb936e364813",
+  "rendererHash": "df179582c11e4febc2ce8b7e999a357788db4f4a92f0f5fcebe75a01c69cd2b7",
+  "textures": {
+    "matcap": {
+      "path": "assets/nextlevel/car-finish.webp",
+      "sha256": "f5ca4778c44499456f56ae5a98617d836618ed9356acb920f894e9df48d6ac94",
+      "bytes": 13624
+    },
+    "details": {
+      "path": "assets/nextlevel/car-details.webp",
+      "sha256": "56c373ffc4b3f34c9d648fc8b93c8fc6e355baff2434c05c64c66f363ce33095",
+      "bytes": 123870
+    }
+  },
+  "frames": 80,
+  "cars": [
+    {
+      "id": "kadett",
+      "frames": 16,
+      "bytes": 265378
+    },
+    {
+      "id": "e30",
+      "frames": 16,
+      "bytes": 265018
+    },
+    {
+      "id": "m1",
+      "frames": 16,
+      "bytes": 283644
+    },
+    {
+      "id": "m2",
+      "frames": 16,
+      "bytes": 224496
+    },
+    {
+      "id": "gt3rs",
+      "frames": 16,
+      "bytes": 272640
+    }
+  ],
+  "frameBytes": 1311176,
+  "manifestBytes": 65087,
+  "totalBytes": 1376263,
+  "renderParameters": {
+    "width": 640,
+    "height": 400,
+    "framesPerCar": 16,
+    "samples": 3,
+    "quality": 2,
+    "camera": {
+      "projection": "orthographic",
+      "motion": "fixed-camera-rotating-model",
+      "front": "+Z",
+      "yawRadiansPerFrame": 0.39269908169872414,
+      "yawOffsetDegrees": 0,
+      "elevationDegrees": 18,
+      "targetHeight": 0.66,
+      "orthographicWidth": 6.26,
+      "pixelsPerMetre": 102.23642172523962,
+      "groundAnchor": [
+        320,
+        264.173526
+      ],
+      "frameZero": "front"
+    },
+    "colorManagement": {
+      "toneMapping": "NeutralToneMapping",
+      "exposure": 1.05,
+      "output": "SRGBColorSpace"
+    }
+  },
+  "comparisonWithOriginal": {
+    "originalArtHash": "41fc56f05862f8c4",
+    "all80GeometryCameraFramingAndWheelContactRecordsIdentical": true
+  },
+  "checks": {
+    "node tests/vehicle-art.mjs": "PASS",
+    "npm run test:art": "PASS",
+    "sourceRendererAndMatcapUnchanged": true,
+    "allFrameHashesAndDimensionsVerified": true
+  },
+  "qaContactSheet": "/workspace/scratch/6a130584ef11/qa/3.6/vehicles/contact-sheet.png"
+}

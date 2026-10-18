@@ -1,0 +1,25 @@
+{
+  "release": "3.6.0",
+  "recordedAt": "2026-10-16T09:41:59.681372+00:00",
+  "reason": "Browser screenshot exposed course-name compression beside the close button. Reserve a separate 44px close row and keep the course name full column width.",
+  "changedInputs": [
+    "src/mobile-racing.css"
+  ],
+  "changedPublicFiles": [
+    "index.html"
+  ],
+  "tests": {
+    "program": "tests/minimap.mjs",
+    "passMessages": 3,
+    "exitCode": 0,
+    "log": "minimap-css-followup-tests.log"
+  },
+  "build": {
+    "exitCode": 0,
+    "log": "minimap-css-followup-build.log",
+    "publicFiles": 136,
+    "publicBytes": 7183532
+  },
+  "fullSuite": "proof-manifest.json: 40 programs/105 PASS before this isolated CSS correction; no functional source or assets changed.",
+  "browserFinal": "Recorded separately in browser-layout-check.json"
+}

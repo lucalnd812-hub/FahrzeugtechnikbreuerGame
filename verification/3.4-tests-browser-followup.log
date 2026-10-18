@@ -1,0 +1,6 @@
+PASS Fixed garage flow: Auto → Strecke → Rennen, a separate Start/Online dock, selections retained, three settings pages, keyboard tabs/Escape, More menu, focus/announcements, independent preview, no scrolling and fixed Links/Rechts without analog UI.
+Functional DOM checks; viewport visibility must be verified from actual browser rectangles/screenshots at 568×320, 667×375, 844×390 and 1366×768.
+PASS garage carousel: actual five-car/three-course markup, wrapping, engine-owned selection clicks, keyboard focus, profile/ranking hooks and cleanup.
+PASS standalone garage vehicle preview: 400 fixed-scale/ground-pivot projections, real five-car library, no global renderer dependency, capped DPR, bounded async rotation, retained images, thumbnail/HTML fallback, finite errors and late recovery, hidden-step pause, reduced motion, responsive redraw and full disposal.
+PASS Actual controller: lazy garage, car selection/rotation/audio/options/dialogs, failed-load retry, touch gas, map/tour, pause, stationary offroad reset, rendered-pose camera, all courses with two and five real laps, ghosts, solo rules, persistent three-course Cup, demo without records, gold-medal preservation, benchmark flow and immutable delayed online finish
+Controller DOM and renderer are mocked; these checks make no browser/device FPS claim.

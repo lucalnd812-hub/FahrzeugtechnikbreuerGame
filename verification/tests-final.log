@@ -1,0 +1,118 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> breuer-grand-prix@3.2.0 test
+> node tests/tracks.mjs && node tests/simulation-clock.mjs && node tests/chase-camera.mjs && node tests/race-config.mjs && node tests/race-modes.mjs && node tests/pickups.mjs && node tests/touch-controls.mjs && node tests/start-briefing.mjs && node tests/driving-dynamics.mjs && node tests/handling-regression.mjs && node tests/scenery-identity.mjs && node tests/village-polish.mjs && node tests/entry-screen.mjs && node tests/refinement.mjs && node --expose-gc tests/performance-production.mjs && node tests/course-races.mjs && node tests/finish-regression.mjs && node tests/road-surfaces.mjs && node tests/canvas-renderer.mjs && node tests/race-visibility.mjs && node tests/vehicle-models.mjs && node tests/vehicle-art.mjs && node tests/showroom-framing.mjs && node tests/racing-audio.mjs && node tests/garage-flow.mjs && node tests/interactions.mjs && node tests/network-clock.mjs && node tests/postgres.mjs && node tests/realtime.mjs
+
+PASS Track catalog, route closure/lengths, corridor filtering, shared cache, isolated maps, failed-request retry, revision guard, abort and terrain interpolation
+PASS Fixed simulation at 30/60/10 Hz, retained slow-frame debt, invalid timing, reset and angle-safe pose interpolation
+PASS Shared rendered-pose camera anchor; equal 30/60/120 Hz motion, angle wrapping, smooth view switch, respawn and stationary stability
+PASS Shared race normalization, exact lap/difficulty options, zero opponents, solo modes, assistance and isolated record categories
+PASS Category-scoped records, quota fallback, bounded ghosts and replay, FPS-independent lap/sectors, persistent three-race Cup, medals and measured-frame report calculations
+PASS 10 real boosted car movements across a crate between physics samples, all five vehicles at 60 Hz and a 50 ms step
+PASS Rules, finished/remote ownership, full inventory, cooldown, one claimant, exact respawn, gadget use and reset-path rejection
+PASS lammersdorf: 8 actual driven pickups and activations before finishing the selected course
+PASS bahnhof: 11 actual driven pickups and activations before finishing the selected course
+PASS kraemer: 11 actual driven pickups and activations before finishing the selected course
+PASS Whole-screen binary steering, cross-half slides, four fingers, independent pointer cancellation, blocked HUD actions, briefing/pause gates, keyboard/focus cleanup and physical-phone orientation
+PASS Per-race steering briefings, pointer/key gates, focus trap/restoration, single start callback, online reminder timing, replacement/teardown cancellation and independent pause gates
+PASS All five identities, responsive progressive binary steering, usable racing-speed turn radius, braking/front loading, charged/recoverable drift, countersteering, clean resets and distinct car personalities
+PASS lammersdorf: all five cars complete 2/3/5 actual laps in Classic and Action at the highest AI difficulty
+PASS bahnhof: all five cars complete 2/3/5 actual laps in Classic and Action at the highest AI difficulty
+PASS kraemer: all five cars complete 2/3/5 actual laps in Classic and Action at the highest AI difficulty
+PASS 90 independently driven AI races, 1012257 actual fixed steps, maximum centreline distance 4.29 m; 3157 ms CPU test time. This is a physics measurement, not a browser/GPU FPS claim.
+PASS All five cars: immediate finger release, one exit boost, settled on-road exits, prompt countersteering and no inherited opposite drift
+PASS 30 actual two-lap races with binary phone steering and fixed auto gas; 195801 physics steps, 132 drift boosts, no auto resets
+PASS Deterministic local styles, eight different windows/four doors in one atlas, measured roof vertices unchanged, all gardens off every race/ordinary road, bounded culled batches and late-texture ownership.
+{"track":"lammersdorf","styles":9,"identities":202,"windows":2730,"doors":211,"shutters":1154,"gardens":452,"solarRoofs":30,"meshes":257,"triangles":153147,"unchangedRoofVertices":3981}
+{"track":"bahnhof","styles":9,"identities":257,"windows":3774,"doors":282,"shutters":1808,"gardens":589,"solarRoofs":36,"meshes":338,"triangles":207749,"unchangedRoofVertices":5364}
+{"track":"kraemer","styles":9,"identities":261,"windows":4052,"doors":300,"shutters":2016,"gardens":602,"solarRoofs":42,"meshes":307,"triangles":218161,"unchangedRoofVertices":5832}
+PASS Measured silhouettes with bevel illumination, road/sidewalk normals continuous across every shared vertex, actual sloped forecourt rays and independent texture ownership across track changes.
+[{"track":"lammersdorf","continuousShadingVertices":59397,"terrainCourtRays":4},{"track":"bahnhof","continuousShadingVertices":84465,"terrainCourtRays":4},{"track":"kraemer","continuousShadingVertices":72729,"terrainCourtRays":4}]
+PASS entry screen: real markup, five cars, finite loading/readiness, keyboard modality, autoplay denial/failure, Reduced Motion, visibility, orientation and late media completion.
+PASS Spatial lookup matches an exhaustive search on the road, junctions and distant points
+PASS Exactly two seconds offroad and stationary; movement cancels, road idling never resets, no progress is awarded
+PASS All five cars enter a drift through strong steering, charge and release a boost; a short tap does not drift
+PASS Eight real obstacles slow a collision, respect shields and are avoided by every AI car over two laps
+PASS Rails, posts, signs and kerbs clear the entire road; open workshop contains two lifts and distance detail
+PASS Sustained slow frames reduce quality, recovery restores it, tab-sized stalls are ignored
+PASS Ten real world switches, six cars each, all three quality profiles, stable resources after 30 quality transitions, exact-once disposal of active/inactive objects.
+lammersdorf Q0: 73681–185678 visible triangles; 94–268 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+lammersdorf Q1: 87937–246085 visible triangles; 104–375 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+lammersdorf Q2: 91081–296377 visible triangles; 107–418 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+bahnhof Q0: 86841–102968 visible triangles; 129–144 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+bahnhof Q1: 108288–158929 visible triangles; 152–251 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+bahnhof Q2: 111904–218068 visible triangles; 159–366 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+kraemer Q0: 62625–141850 visible triangles; 82–210 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+kraemer Q1: 75097–206388 visible triangles; 93–296 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+kraemer Q2: 80615–224899 visible triangles; 99–321 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+Explicit-GC Node heap over post-warmup switches: 32.3–36.8 MB; not a GPU memory measurement.
+PASS Wheel animation, low-car budget, shared environment ownership and adaptive quality hysteresis. Real device FPS remains a separate browser check.
+PASS lammersdorf classic: six finishers, 53.17–64.62 s, 30/60 Hz identical, 0 obstacle hits
+PASS lammersdorf action: six finishers, 56.60–64.17 s, 30/60 Hz identical, 1 obstacle hits
+PASS lammersdorf: real pickups/items/oil (20/18/36) and six five-lap finishers on the slow difficulty
+PASS bahnhof classic: six finishers, 69.07–73.92 s, 30/60 Hz identical, 0 obstacle hits
+PASS bahnhof action: six finishers, 67.08–76.62 s, 30/60 Hz identical, 0 obstacle hits
+PASS bahnhof: real pickups/items/oil (32/31/33) and six five-lap finishers on the slow difficulty
+PASS kraemer classic: six finishers, 71.03–82.55 s, 30/60 Hz identical, 0 obstacle hits
+PASS kraemer action: six finishers, 79.77–85.28 s, 30/60 Hz identical, 1 obstacle hits
+PASS kraemer: real pickups/items/oil (29/28/33) and six five-lap finishers on the slow difficulty
+PASS Fixed-step overload retains and repays all active simulation time. No renderer FPS claim.
+lammersdorf sharp bend left: largest continuous centreline projection step 9.123 m; exactly two physical laps.
+lammersdorf sharp bend right: largest continuous centreline projection step 4.825 m; exactly two physical laps.
+PASS lammersdorf: every car finishes 2/3/5 laps on lateral analogue lines; both outer-verge approaches finish after exactly two real circuits.
+bahnhof sharp bend left: largest continuous centreline projection step 5.259 m; exactly two physical laps.
+bahnhof sharp bend right: largest continuous centreline projection step 13.886 m; exactly two physical laps.
+PASS bahnhof: every car finishes 2/3/5 laps on lateral analogue lines; both outer-verge approaches finish after exactly two real circuits.
+kraemer sharp bend left: largest continuous centreline projection step 23.598 m; exactly two physical laps.
+kraemer sharp bend right: largest continuous centreline projection step 6.077 m; exactly two physical laps.
+PASS kraemer: every car finishes 2/3/5 laps on lateral analogue lines; both outer-verge approaches finish after exactly two real circuits.
+PASS lammersdorf: moving and stationary recovery preserve real lap distance, delayed gates recover, finish freezes once, and reverse/teleport shortcuts cannot finish.
+PASS bahnhof: moving and stationary recovery preserve real lap distance, delayed gates recover, finish freezes once, and reverse/teleport shortcuts cannot finish.
+PASS kraemer: moving and stationary recovery preserve real lap distance, delayed gates recover, finish freezes once, and reverse/teleport shortcuts cannot finish.
+PASS A deterministic 0.30 m physical collision confirms a 17.041 m real-corner projection switch without fabricated progress, checkpoints or finish.
+PASS 30 additional real driver races with collisions after the physics step; 1 trusted small impulses switch the centreline by more than 15 m without losing course progress.
+PASS Remote collision preserves server-owned progress, gates and accepted phase.
+PASS A physically driven final-line collision finishes on the next step while braking, without an additional metre or lap.
+PASS: 81 individual race cases (36 explicit former grass-edge failures), 30 collision-race finishers and a stationary final-line collision; all three tracks and 5 cars, 2/3/5 laps, analogue lateral trajectories, action obstacles, manual/two-second recovery and ordered-gate/shortcut regressions; 335840 actual 10 Hz packets accepted by the shared server validator, largest packet progress delta 23.846 m. Actual production physics; no fabricated finishing progress and no rendering/FPS claim.
+PASS 774 real road rays across all 3 courses; 12395 terrain-clipped oil triangle rays from 78 splashes, including start pads, slopes and roundabout apron. No duplicate coplanar asphalt; decals remain 1 cm above the actual local surface with depth testing enabled.
+{"cpuBudgets":[{"track":"lammersdorf","worldBuildMs":1439,"heightLookups20000Ms":26,"oilItems":26},{"track":"bahnhof","worldBuildMs":1446.7,"heightLookups20000Ms":21.6,"oilItems":26},{"track":"kraemer","worldBuildMs":1343.1,"heightLookups20000Ms":24,"oilItems":26}],"note":"CPU geometry/lookup costs, not measured browser GPU FPS."}
+PASS lammersdorf: exact route vertices, sourced footprints, viewport/scissor/DPR, spatial culling, player focus, real hazards/items/oil and immutable race data.
+PASS bahnhof: exact route vertices, sourced footprints, viewport/scissor/DPR, spatial culling, player focus, real hazards/items/oil and immutable race data.
+PASS kraemer: exact route vertices, sourced footprints, viewport/scissor/DPR, spatial culling, player focus, real hazards/items/oil and immutable race data.
+PASS All five loaded original-model views, angle selection, proportions, first-frame preload and asynchronous garage invalidation.
+PASS Real Canvas compatibility rendering flow; logical Canvas counters are not WebGL performance measurements.
+PASS: 216 real racing-car poses, 36 ghosts, 36 animated crates and 36 late oil meshes keep current world matrices across all three courses and quality changes; car bodies intersect the camera frustum and raycast at their requested positions. CPU geometry regression, not a GPU/FPS measurement.
+kadett Q0: 2346 triangles / 6 draws
+kadett Q1: 6816 triangles / 15 draws
+kadett Q2: 6816 triangles / 15 draws
+e30 Q0: 2608 triangles / 6 draws
+e30 Q1: 7626 triangles / 15 draws
+e30 Q2: 7626 triangles / 15 draws
+m1 Q0: 2338 triangles / 6 draws
+m1 Q1: 8140 triangles / 15 draws
+m1 Q2: 8140 triangles / 15 draws
+m2 Q0: 3498 triangles / 6 draws
+m2 Q1: 10100 triangles / 15 draws
+m2 Q2: 10100 triangles / 15 draws
+gt3rs Q0: 3072 triangles / 6 draws
+gt3rs Q1: 9453 triangles / 15 draws
+gt3rs Q2: 9453 triangles / 15 draws
+PASS: five cel-shaded vehicles, independent body lean/wheel contacts, real M2/GT3 RS details, LOD budgets and single disposal of all shared resources.
+Vehicle art: wrap, asynchronous loading, deduplication, retry, fallback and drawing PASS
+Vehicle art: 80 current transparent frames, dimensions and file integrity PASS (1343386 bytes)
+PASS all five showroom models: fixed elevation, full fit and viewport occupation at 5 aspect ratios ×16 rotations
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: engine-e30 avoids a hard MP3 decoder seam
+    at file:///workspace/scratch/6a130584ef11/breuer-grand-prix-vercel/tests/racing-audio.mjs:122:22 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

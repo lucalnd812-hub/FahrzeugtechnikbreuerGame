@@ -1,0 +1,692 @@
+{
+  "status": "native-mesh-texture-capture-complete",
+  "recordedAt": "2026-10-16T09:18:47.017Z",
+  "renderer": "QA-only copy of scripts/render-vehicles.mjs through rasterize, with existing paintTile/fract map-shader UV equivalence, native vertex alpha/instance colour, real NAPI-decoded source and crop pixels, alphaTest, bilinear sampling and 2x supersampling. No synthesized replacement geometry or image-generation scene.",
+  "limitations": [
+    "Independent approximate outdoor lighting; no Three WebGL fog/shadowmap/environment composition or exact WebGL mip/derivative sampling.",
+    "No browser/WebGL/GLSL compile or real-device FPS claim.",
+    "Native texture pixels are read from the current loaded map bindings; full atlas and per-slot crops are both included."
+  ],
+  "geometryUnchangedDuringImageLoad": {
+    "sha256": "97661a621b324b96ba16312a144e203d22e2d8d3f22d8c2811e466ad87787fad",
+    "meshes": 939,
+    "vertices": 1151192,
+    "triangles": 840218
+  },
+  "sourceProof": [
+    {
+      "file": "src/canvas-renderer.js",
+      "expected35": "c591da158264c8c436c7aab0860c8c99aeeb5c80d8a3112e07cbcec5813dd7dc",
+      "current": "c591da158264c8c436c7aab0860c8c99aeeb5c80d8a3112e07cbcec5813dd7dc"
+    },
+    {
+      "file": "src/driving-dynamics.js",
+      "expected35": "d013a6053615287828d495a8d9eccfef91e820bd5d3cdb070f98f27d7138b711",
+      "current": "d013a6053615287828d495a8d9eccfef91e820bd5d3cdb070f98f27d7138b711"
+    },
+    {
+      "file": "src/landmarks.js",
+      "expected35": "a26e14585e939c24254d4a61744436db8a1c11d543f5368626a2fd1d82d0f778",
+      "current": "a26e14585e939c24254d4a61744436db8a1c11d543f5368626a2fd1d82d0f778"
+    },
+    {
+      "file": "src/road-surface.js",
+      "expected35": "080a1d4d52d2437a67a14bb18b40dcfaad8eeff5752eb8096bf31d5175e8850a",
+      "current": "080a1d4d52d2437a67a14bb18b40dcfaad8eeff5752eb8096bf31d5175e8850a"
+    },
+    {
+      "file": "src/scenery.js",
+      "expected35": "b1879a8b29591414172900be8b3d9d79630a79e76e63731c1e1907cc2ada5c8e",
+      "current": "b1879a8b29591414172900be8b3d9d79630a79e76e63731c1e1907cc2ada5c8e"
+    },
+    {
+      "file": "src/tracks/bahnhof.json",
+      "expected35": "8e90737a232c1637f9529fc67452a06ffe5137d40ad5cc66dc0fde0827f3bd18",
+      "current": "8e90737a232c1637f9529fc67452a06ffe5137d40ad5cc66dc0fde0827f3bd18"
+    },
+    {
+      "file": "src/tracks/base.json",
+      "expected35": "c80da914e5bd7e69b48a9882c426943ff0cbbc7c216e87727b177dc2ec93f21d",
+      "current": "c80da914e5bd7e69b48a9882c426943ff0cbbc7c216e87727b177dc2ec93f21d"
+    },
+    {
+      "file": "src/tracks/kraemer.json",
+      "expected35": "58e3405496f316de1ade7139478d36f94dee7263617d796c9d44f9fd8af3cc5d",
+      "current": "58e3405496f316de1ade7139478d36f94dee7263617d796c9d44f9fd8af3cc5d"
+    },
+    {
+      "file": "src/tracks/lammersdorf.json",
+      "expected35": "6683d16b3365792e05dda5bc0d8ca457e18ac57f0345535751d1e84f725feeb7",
+      "current": "6683d16b3365792e05dda5bc0d8ca457e18ac57f0345535751d1e84f725feeb7"
+    },
+    {
+      "file": "src/village-identity.js",
+      "expected35": "83d0fb1d2395714df8b4007646a2b685c1fa7d2036016e7a31c7d61507c1657f",
+      "current": "83d0fb1d2395714df8b4007646a2b685c1fa7d2036016e7a31c7d61507c1657f"
+    },
+    {
+      "file": "src/village-textures.js",
+      "expected35": "c7227da7a8a1c73c90193174802164eeb18dd5d04470095ee481373186c27f90",
+      "current": "c7227da7a8a1c73c90193174802164eeb18dd5d04470095ee481373186c27f90"
+    },
+    {
+      "file": "src/world.js",
+      "expected35": "3f2da83291b1af99db7f32bb1400f2b35b6573773e231790ed2237cf7821c2de",
+      "current": "3f2da83291b1af99db7f32bb1400f2b35b6573773e231790ed2237cf7821c2de"
+    }
+  ],
+  "artProof": [
+    {
+      "name": "village-facades",
+      "file": "assets/nextlevel/village-facades.webp",
+      "bytes": 185092,
+      "sha256": "2b24d8653dbc55f900a57c2192753edee0bfa8d923feab60175f97abc89038c8",
+      "expected": "2b24d8653dbc55f900a57c2192753edee0bfa8d923feab60175f97abc89038c8"
+    },
+    {
+      "name": "artisan-roofs",
+      "file": "assets/nextlevel/artisan-roofs.webp",
+      "bytes": 130936,
+      "sha256": "bd38930dc7d481a506912286676f13b68d8be617f4bda7db361431779573b841",
+      "expected": "bd38930dc7d481a506912286676f13b68d8be617f4bda7db361431779573b841"
+    },
+    {
+      "name": "village-ground",
+      "file": "assets/nextlevel/village-ground.webp",
+      "bytes": 185892,
+      "sha256": "bf842ba17443cb41424763acd850f6c1ddd2b5176356cde5d32df389139d45c0",
+      "expected": "bf842ba17443cb41424763acd850f6c1ddd2b5176356cde5d32df389139d45c0"
+    },
+    {
+      "name": "artisan-windows",
+      "file": "assets/nextlevel/artisan-windows.webp",
+      "bytes": 113382,
+      "sha256": "3791208246ef88ead2f002141bf00e07795f13e58333a30673824625afc173b3",
+      "expected": "3791208246ef88ead2f002141bf00e07795f13e58333a30673824625afc173b3"
+    },
+    {
+      "name": "artisan-workshop",
+      "file": "assets/nextlevel/artisan-workshop.webp",
+      "bytes": 166276,
+      "sha256": "4e7f32e5f05d8e1db9f4031ce0c4f2e78374836caba452206835d9179051955f",
+      "expected": "4e7f32e5f05d8e1db9f4031ce0c4f2e78374836caba452206835d9179051955f"
+    },
+    {
+      "name": "artisan-roadside",
+      "file": "assets/nextlevel/artisan-roadside.webp",
+      "bytes": 214880,
+      "sha256": "c95869398c954535f9adce0c5352f9123a77c6729cd3faef240fec542a516d48",
+      "expected": "c95869398c954535f9adce0c5352f9123a77c6729cd3faef240fec542a516d48"
+    },
+    {
+      "name": "artisan-foliage",
+      "file": "assets/nextlevel/artisan-foliage.webp",
+      "bytes": 410096,
+      "sha256": "4914219efb1a69fb504a4ec74eada46bd15ac022d76e9754de3318e6d4c57f53",
+      "expected": "4914219efb1a69fb504a4ec74eada46bd15ac022d76e9754de3318e6d4c57f53"
+    }
+  ],
+  "bindings": [
+    {
+      "name": "village:surface:grass",
+      "source": "village-ground:0",
+      "width": 512,
+      "height": 512,
+      "rgbaSha256": "66918bcf0292fbf15f401e2e0290ee4f770c168380286a0dd3161d5f81138479",
+      "pixelSample": [
+        69,
+        117,
+        33,
+        255
+      ],
+      "tile": 0
+    },
+    {
+      "name": "village:surface:gravel",
+      "source": "village-ground:2",
+      "width": 512,
+      "height": 512,
+      "rgbaSha256": "55d68e42db930dfc749c38168e3de6ff503cfeb13453a2a8c4bb67852c4c0885",
+      "pixelSample": [
+        215,
+        175,
+        127,
+        255
+      ],
+      "tile": 2
+    },
+    {
+      "name": "village:surface:grass",
+      "source": "village-ground:0",
+      "width": 512,
+      "height": 512,
+      "rgbaSha256": "66918bcf0292fbf15f401e2e0290ee4f770c168380286a0dd3161d5f81138479",
+      "pixelSample": [
+        69,
+        117,
+        33,
+        255
+      ],
+      "tile": 0
+    },
+    {
+      "name": "village:surface:stone",
+      "source": "village-facades:4",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "7a7af8062f8bfcdb2c2636d98c50dedced284f9e2f225c1f5b99cec7ea41001f",
+      "pixelSample": [
+        177,
+        156,
+        129,
+        255
+      ],
+      "tile": 4
+    },
+    {
+      "name": "village:surface:asphalt",
+      "source": "village-ground:3",
+      "width": 512,
+      "height": 512,
+      "rgbaSha256": "dc093480a37d3e94769a950b9aba5c4de04c5662900b1f09087e2cc61f7afbf7",
+      "pixelSample": [
+        121,
+        101,
+        85,
+        255
+      ],
+      "tile": 3
+    },
+    {
+      "name": "village:surface:paving",
+      "source": "village-ground:1",
+      "width": 512,
+      "height": 512,
+      "rgbaSha256": "a15801a6df3247dc20a5c6f61a7075f053dbf997ba462cc4a94428d91187ea5e",
+      "pixelSample": [
+        124,
+        119,
+        82,
+        255
+      ],
+      "tile": 1
+    },
+    {
+      "name": "village:facade-materials",
+      "source": "village-facades",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "032bacd30a8fe03c63307c95d9a852dd81fed0d9fa307b64f086ea340e94be5d",
+      "pixelSample": [
+        131,
+        87,
+        77,
+        255
+      ],
+      "tile": null
+    },
+    {
+      "name": "artisan:roof-atlas",
+      "source": "artisan-roofs",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "2afbaaed9555f0629ab13e3b35f434beef212bb02ef8a1994a4da2c3aad22e4e",
+      "pixelSample": [
+        95,
+        108,
+        126,
+        255
+      ],
+      "tile": null
+    },
+    {
+      "name": "village:surface:slate",
+      "source": "artisan-roofs:0",
+      "width": 512,
+      "height": 512,
+      "rgbaSha256": "7170a13d84488b9bf816c97263492d1f3567dc42b2326b4fc2769055f7dffe34",
+      "pixelSample": [
+        47,
+        56,
+        69,
+        255
+      ],
+      "tile": 0
+    },
+    {
+      "name": "village:surface:plaster",
+      "source": "village-facades:0",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "da43391fa76a2944b0bcf3b3965e431afdaf0cefacbc531fec71136a0d1316ad",
+      "pixelSample": [
+        234,
+        219,
+        188,
+        255
+      ],
+      "tile": 0
+    },
+    {
+      "name": "village:surface:redBrick",
+      "source": "village-facades:7",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "829b4834326ccd0088e548ef98c1d47488b05de990b40cc1c39497aa1461ff32",
+      "pixelSample": [
+        111,
+        62,
+        40,
+        255
+      ],
+      "tile": 7
+    },
+    {
+      "name": "village:surface:brick",
+      "source": "village-facades:6",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "d42c3ff5fdf62625e125535b9762179f6d8433d8ba7bc0e861fa221f36cece8b",
+      "pixelSample": [
+        227,
+        197,
+        146,
+        255
+      ],
+      "tile": 6
+    },
+    {
+      "name": "artisan:windows",
+      "source": "artisan-windows",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "5b049d4b697894a9ddcd7073a3590284d5be9364b1a18f1544b8e9e6ff597b2a",
+      "pixelSample": [
+        131,
+        102,
+        84,
+        255
+      ],
+      "tile": null
+    },
+    {
+      "name": "",
+      "source": "artisan-workshop:5",
+      "width": 67,
+      "height": 148,
+      "rgbaSha256": "57ab7f3c0b5e3ca946370675faf6257cc0d9888d8c0b803ae5f639fd83d7dfb2",
+      "pixelSample": [
+        200,
+        35,
+        28,
+        255
+      ],
+      "tile": 5
+    },
+    {
+      "name": "village:detail-atlas",
+      "source": "artisan-workshop",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "e1f0e3cf3327ac55c9b2571342fd78eb7576be4f39ff8948d08670e64d03a294",
+      "pixelSample": [
+        120,
+        152,
+        180,
+        255
+      ],
+      "tile": null
+    },
+    {
+      "name": "village:surface:plaster",
+      "source": "artisan-windows:13",
+      "width": 184,
+      "height": 123,
+      "rgbaSha256": "d0cf163963cc47798e2dd45762e5e3d10c5446b60b7780c880243c12868c9dc7",
+      "pixelSample": [
+        86,
+        129,
+        172,
+        255
+      ],
+      "tile": 13
+    },
+    {
+      "name": "",
+      "source": "artisan-workshop:7",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "20b36d538cb15963cbadb8c8f6962775a3815e9e75f6b082c51e1edb8cc7ffce",
+      "pixelSample": [
+        64,
+        58,
+        53,
+        255
+      ],
+      "tile": 7
+    },
+    {
+      "name": "",
+      "source": "artisan-workshop:4",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "27faa5b47497a08c4bb2fb91eb826438119a55c763ca5a84d26d27a7ae8b550f",
+      "pixelSample": [
+        106,
+        149,
+        182,
+        255
+      ],
+      "tile": 4
+    },
+    {
+      "name": "",
+      "source": "artisan-workshop:6",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "ed29889b0572b5b65aba9aa234bf3935a2b76d8099ad667a3dfec206b8fa56d7",
+      "pixelSample": [
+        37,
+        34,
+        35,
+        255
+      ],
+      "tile": 6
+    },
+    {
+      "name": "",
+      "source": "artisan-windows:0",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "dc3df8761cb2d03f5e5b405ce258c70ebdb614fb94c938500b99c4f9f22abdf3",
+      "pixelSample": [
+        141,
+        104,
+        64,
+        255
+      ],
+      "tile": 0
+    },
+    {
+      "name": "village:facade-materials",
+      "source": "artisan-roadside",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "38430314c9efa822c35901400bb1549633bf39bb95f5069b83e762d0f7dac723",
+      "pixelSample": [
+        165,
+        109,
+        61,
+        255
+      ],
+      "tile": null
+    },
+    {
+      "name": "artisan:foliage",
+      "source": "artisan-foliage",
+      "width": 1024,
+      "height": 1024,
+      "rgbaSha256": "fd282235f07fad79759dbcb1fe62c1780378c78c3980ce8fa8e542a143ca66ec",
+      "pixelSample": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "tile": null
+    },
+    {
+      "name": "village:surface:plaster",
+      "source": "village-facades:11",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "33efff92952d4c29678c56425cdeaed80312e0c2df9a877ad32efed1902ae63e",
+      "pixelSample": [
+        149,
+        159,
+        128,
+        255
+      ],
+      "tile": 11
+    },
+    {
+      "name": "",
+      "source": "artisan-windows:6",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "2e791840929d3d6324bc9686c4abd4af09b3035e0df80956629344b17133511a",
+      "pixelSample": [
+        119,
+        93,
+        58,
+        255
+      ],
+      "tile": 6
+    },
+    {
+      "name": "",
+      "source": "artisan-windows:12",
+      "width": 256,
+      "height": 256,
+      "rgbaSha256": "4dceefc2a732671ab336e515e350c545e5285849824adf86afa3bff92bbb9c5f",
+      "pixelSample": [
+        117,
+        94,
+        66,
+        255
+      ],
+      "tile": 12
+    },
+    {
+      "name": "village:surface:slate",
+      "source": "artisan-roofs:2",
+      "width": 512,
+      "height": 512,
+      "rgbaSha256": "8af9012a1a3ab3e281cc111a7f0f25e1dae1952378ac66fee78cbe026ec1a328",
+      "pixelSample": [
+        83,
+        91,
+        102,
+        255
+      ],
+      "tile": 2
+    },
+    {
+      "name": "village:surface:leaf",
+      "source": "artisan-foliage:0",
+      "width": 128,
+      "height": 128,
+      "rgbaSha256": "d84125c750de8d77116bfd0e583fb69f0b4c2c3296b17358d6cb75430bee5897",
+      "pixelSample": [
+        80,
+        125,
+        37,
+        252
+      ],
+      "tile": 0
+    },
+    {
+      "name": "village:surface:leaf",
+      "source": "artisan-foliage:14",
+      "width": 138,
+      "height": 154,
+      "rgbaSha256": "ab396cb3da84ed44f2481ec9f0d278100f80d618757dfb1e586faf1e1275182f",
+      "pixelSample": [
+        29,
+        95,
+        96,
+        252
+      ],
+      "tile": 14
+    }
+  ],
+  "views": [
+    {
+      "id": "breuer-courtyard",
+      "label": "Breuer offene Werkstatt – tatsächliche native Innenhofgeometrie",
+      "png": "breuer-courtyard.png",
+      "sha256": "c831e4194f4addf4e102efe1839dcfe5048f4f6616f606785ca4305b36b23c00",
+      "width": 960,
+      "height": 600,
+      "eye": [
+        -0.9739817670359727,
+        1.8473141176470582,
+        1.1067099515693517
+      ],
+      "target": [
+        -2.762777143920035,
+        1.3473141176470582,
+        -8.046443117162658
+      ],
+      "quality": 2,
+      "triangles": 78488,
+      "visiblePixels": 2181884,
+      "textureTriangleSources": {
+        "artisan-workshop:7": 15,
+        "scenery:all": 2611,
+        "artisan-windows:13": 49,
+        "village-ground:0": 3105,
+        "artisan-workshop:5": 87,
+        "artisan-workshop": 18,
+        "village-facades:6": 9,
+        "artisan-workshop:4": 2,
+        "artisan-workshop:6": 6,
+        "artisan-roofs:0": 65,
+        "village-ground:1": 2315,
+        "village-facades:4": 508,
+        "village-ground:3": 2636,
+        "artisan-foliage:14": 655,
+        "facades:-1,-1": 106,
+        "village-facades": 19037,
+        "artisan-roofs": 838,
+        "(plain/sign)": 3623,
+        "artisan-windows": 910,
+        "artisan-foliage:0": 6998,
+        "village-gardens:0,-1": 64,
+        "facades:0,-1": 66,
+        "village-ground:2": 3194,
+        "scenery:-2,-1": 1865,
+        "artisan-windows:6": 202,
+        "village-facades:0": 75,
+        "artisan-windows:12": 33,
+        "facades:-2,-1": 325,
+        "village-facades:11": 46,
+        "artisan-roofs:2": 35,
+        "facades:-2,-2": 4718,
+        "course:markings:all": 132,
+        "scenery:-2,-2": 2517,
+        "facades:-1,-2": 1218,
+        "village-gardens:-1,-2": 354,
+        "scenery:-1,-2": 2878,
+        "village-gardens:-2,-2": 1170,
+        "scenery:0,-2": 3313,
+        "scenery:1,-2": 238,
+        "artisan-foliage": 978,
+        "scenery:0,-3": 794,
+        "facades:0,-2": 374,
+        "facades:-1,-3": 3142,
+        "facades:1,-2": 134,
+        "facades:0,-3": 1983,
+        "scenery:-1,-3": 1009,
+        "scenery:-2,-3": 432,
+        "facades:-2,-3": 3118,
+        "facades:-3,-2": 488
+      }
+    },
+    {
+      "id": "bakery-bread",
+      "label": "Bäckerei – vorhandene Backwaren-Auslage an der Café-Terrasse",
+      "png": "bakery-bread.png",
+      "sha256": "685df38478d6b9fbff082d9e8f26c40b5a6c8ec3d381c6e4d742de4ac9da9c75",
+      "width": 960,
+      "height": 600,
+      "eye": [
+        210.67456760343254,
+        -0.5889708333333328,
+        -94.74537753164532
+      ],
+      "target": [
+        213.01635983546564,
+        -1.1389708333333328,
+        -91.8529721067456
+      ],
+      "quality": 2,
+      "triangles": 8195,
+      "visiblePixels": 2228989,
+      "textureTriangleSources": {
+        "scenery:all": 124,
+        "artisan-foliage": 453,
+        "artisan-windows:13": 36,
+        "artisan-workshop": 2,
+        "village-facades:4": 9,
+        "village-ground:3": 73,
+        "village-ground:0": 334,
+        "artisan-roofs:0": 14,
+        "artisan-windows:0": 4,
+        "artisan-foliage:14": 911,
+        "(plain/sign)": 722,
+        "artisan-foliage:0": 5513
+      }
+    },
+    {
+      "id": "kirchstrasse-school",
+      "label": "Kirchstraße – historisches Schulhaus bei der Kirche, vorhandene Haus-/Dachmeshes",
+      "png": "kirchstrasse-school.png",
+      "sha256": "4a5a1159ac05215684a3f79badd76e34c76740d38fd0b8fb212ea6e905de70d8",
+      "width": 960,
+      "height": 600,
+      "eye": [
+        25,
+        6.183999999999999,
+        -3
+      ],
+      "target": [
+        65,
+        2.507,
+        -37
+      ],
+      "quality": 2,
+      "triangles": 60199,
+      "visiblePixels": 1439540,
+      "textureTriangleSources": {
+        "village-ground:0": 5160,
+        "scenery:0,-1": 1684,
+        "village-ground:1": 3183,
+        "village-ground:3": 3793,
+        "(plain/sign)": 3013,
+        "facades:0,-1": 516,
+        "facades:0,0": 18,
+        "village-facades": 7797,
+        "artisan-windows": 627,
+        "course:markings:all": 97,
+        "artisan-roofs": 352,
+        "village-facades:4": 550,
+        "village-gardens:0,-1": 631,
+        "artisan-foliage:14": 450,
+        "scenery:all": 1709,
+        "artisan-windows:13": 42,
+        "artisan-roofs:0": 88,
+        "artisan-foliage:0": 3756,
+        "facades:1,-1": 2898,
+        "scenery:1,-1": 2905,
+        "village-ground:2": 3256,
+        "village-gardens:1,-1": 1180,
+        "facades:1,0": 22,
+        "village-facades:0": 37,
+        "artisan-windows:6": 48,
+        "artisan-windows:12": 33,
+        "artisan-foliage": 968,
+        "facades:1,-2": 994,
+        "village-gardens:1,-2": 1724,
+        "scenery:1,-2": 7234,
+        "scenery:0,-2": 2193,
+        "roundabout:surfaces:1,-2": 406,
+        "facades:0,-2": 378,
+        "scenery:0,-3": 103,
+        "facades:0,-3": 838,
+        "roundabout:surfaces:2,-2": 82,
+        "facades:2,-2": 1434
+      }
+    }
+  ]
+}

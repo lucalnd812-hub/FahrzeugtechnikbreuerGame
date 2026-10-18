@@ -1,0 +1,3013 @@
+{
+  "release": "3.6.0",
+  "recordedAt": "2026-10-16T09:43:36.460Z",
+  "candidate": "https://breuer-grand-prix-final-bhl36l535-luca-s-projects6.vercel.app/wix-test.html",
+  "checks": [
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Opel Kadett C in Gelb auswählen",
+          "visible": true,
+          "w": 284,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 204
+        }
+      ],
+      "controls": [],
+      "expanded": "false",
+      "h": 260,
+      "label": "568x260-car",
+      "map": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "car",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 44,
+          "x": 503,
+          "y": 65
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "track-choice-prev",
+          "name": "Vorherige Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 232,
+          "x": 64,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "track-choice-next",
+          "name": "Nächste Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 304,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 204
+        }
+      ],
+      "controls": [],
+      "expanded": "false",
+      "h": 260,
+      "label": "568x260-track",
+      "map": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "track",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 238.546875,
+          "x": 12,
+          "y": 147.765625
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 380,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 452,
+          "y": 204
+        }
+      ],
+      "controls": [],
+      "expanded": "false",
+      "h": 260,
+      "label": "568x260-race",
+      "map": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "race",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 116,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte vergrößern",
+          "visible": true,
+          "w": 154,
+          "x": 13,
+          "y": 68
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 284,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 284,
+          "x": 284,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        }
+      ],
+      "expanded": "false",
+      "h": 260,
+      "label": "568x260-gps-compact",
+      "map": {
+        "h": 116,
+        "visible": true,
+        "w": 154,
+        "x": 13,
+        "y": 68
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 84.359375,
+        "visible": true,
+        "w": 118.546875,
+        "x": 30.71875,
+        "y": 81.53125
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "race",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 160,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 330,
+          "x": 20,
+          "y": 17
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 435,
+          "y": 44
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 284,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 284,
+          "x": 284,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        }
+      ],
+      "expanded": "true",
+      "h": 260,
+      "label": "568x260-gps-expanded",
+      "map": {
+        "h": 175,
+        "visible": true,
+        "w": 473,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 116.90625,
+        "visible": true,
+        "w": 255.828125,
+        "x": 57.078125,
+        "y": 35.375
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "race",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 116,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte vergrößern",
+          "visible": true,
+          "w": 154,
+          "x": 13,
+          "y": 68
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 284,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 284,
+          "x": 284,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        }
+      ],
+      "expanded": "false",
+      "h": 260,
+      "label": "568x260-escape-closed",
+      "map": {
+        "h": 116,
+        "visible": true,
+        "w": 154,
+        "x": 13,
+        "y": 68
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 84.359375,
+        "visible": true,
+        "w": 118.546875,
+        "x": 30.71875,
+        "y": 81.53125
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "race",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 593.484375,
+          "y": 9
+        },
+        {
+          "h": 166,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte vergrößern",
+          "visible": true,
+          "w": 176,
+          "x": 13,
+          "y": 133
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 143,
+          "x": 312.5,
+          "y": 305
+        },
+        {
+          "h": 57,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 91,
+          "x": 211.5,
+          "y": 305
+        },
+        {
+          "h": 375,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 333.5,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 375,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 333.5,
+          "x": 333.5,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 593.484375,
+          "y": 9
+        },
+        {
+          "h": 57,
+          "id": "brake",
+          "visible": true,
+          "w": 91,
+          "x": 211.5,
+          "y": 305
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "visible": true,
+          "w": 143,
+          "x": 312.5,
+          "y": 305
+        }
+      ],
+      "expanded": "false",
+      "h": 375,
+      "label": "667x375-gps-compact",
+      "map": {
+        "h": 166,
+        "visible": true,
+        "w": 176,
+        "x": 13,
+        "y": 133
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 121.359375,
+        "visible": true,
+        "w": 135.71875,
+        "x": 33.125,
+        "y": 152.03125
+      },
+      "scroll": [
+        667,
+        375
+      ],
+      "step": "race",
+      "w": 667
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 593.484375,
+          "y": 9
+        },
+        {
+          "h": 273,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 419,
+          "x": 21,
+          "y": 18
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 532,
+          "y": 63.859375
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 143,
+          "x": 312.5,
+          "y": 305
+        },
+        {
+          "h": 57,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 91,
+          "x": 211.5,
+          "y": 305
+        },
+        {
+          "h": 375,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 333.5,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 375,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 333.5,
+          "x": 333.5,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 593.484375,
+          "y": 9
+        },
+        {
+          "h": 57,
+          "id": "brake",
+          "visible": true,
+          "w": 91,
+          "x": 211.5,
+          "y": 305
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "visible": true,
+          "w": 143,
+          "x": 312.5,
+          "y": 305
+        }
+      ],
+      "expanded": "true",
+      "h": 375,
+      "label": "667x375-gps-expanded",
+      "map": {
+        "h": 290,
+        "visible": true,
+        "w": 572,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 200.53125,
+        "visible": true,
+        "w": 325.25,
+        "x": 67.859375,
+        "y": 48.796875
+      },
+      "scroll": [
+        667,
+        375
+      ],
+      "step": "race",
+      "w": 667
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 166,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte vergrößern",
+          "visible": true,
+          "w": 176,
+          "x": 13,
+          "y": 148
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 422,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 422,
+          "x": 422,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 57,
+          "id": "brake",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        }
+      ],
+      "expanded": "false",
+      "h": 390,
+      "label": "844x390-gps-compact",
+      "map": {
+        "h": 166,
+        "visible": true,
+        "w": 176,
+        "x": 13,
+        "y": 148
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 121.359375,
+        "visible": true,
+        "w": 135.71875,
+        "x": 33.125,
+        "y": 167.03125
+      },
+      "scroll": [
+        844,
+        390
+      ],
+      "step": "race",
+      "w": 844
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 288,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 527,
+          "x": 21,
+          "y": 18
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 640,
+          "y": 71.359375
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 422,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 422,
+          "x": 422,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 57,
+          "id": "brake",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        }
+      ],
+      "expanded": "true",
+      "h": 390,
+      "label": "844x390-gps-expanded",
+      "map": {
+        "h": 305,
+        "visible": true,
+        "w": 680,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 211.625,
+        "visible": true,
+        "w": 409.5,
+        "x": 79.75,
+        "y": 50.453125
+      },
+      "scroll": [
+        844,
+        390
+      ],
+      "step": "race",
+      "w": 844
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 166,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte vergrößern",
+          "visible": true,
+          "w": 176,
+          "x": 13,
+          "y": 148
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 422,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 422,
+          "x": 422,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 57,
+          "id": "brake",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        }
+      ],
+      "expanded": "false",
+      "h": 390,
+      "label": "844x390-pause-resumed",
+      "map": {
+        "h": 166,
+        "visible": true,
+        "w": 176,
+        "x": 13,
+        "y": 148
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 121.359375,
+        "visible": true,
+        "w": 135.71875,
+        "x": 33.125,
+        "y": 167.03125
+      },
+      "scroll": [
+        844,
+        390
+      ],
+      "step": "race",
+      "w": 844
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 950.484375,
+          "y": 9
+        },
+        {
+          "h": 116,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte vergrößern",
+          "visible": true,
+          "w": 154,
+          "x": 13,
+          "y": 159
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 494,
+          "y": 286
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 401,
+          "y": 286
+        },
+        {
+          "h": 351,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 512,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 351,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 512,
+          "x": 512,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 950.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 401,
+          "y": 286
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 494,
+          "y": 286
+        }
+      ],
+      "expanded": "false",
+      "h": 351,
+      "label": "1024x351-gps-compact",
+      "map": {
+        "h": 116,
+        "visible": true,
+        "w": 154,
+        "x": 13,
+        "y": 159
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 84.359375,
+        "visible": true,
+        "w": 118.546875,
+        "x": 30.71875,
+        "y": 172.53125
+      },
+      "scroll": [
+        1024,
+        351
+      ],
+      "step": "race",
+      "w": 1024
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 950.484375,
+          "y": 9
+        },
+        {
+          "h": 251,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 537,
+          "x": 20,
+          "y": 17
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 642,
+          "y": 80.3125
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 494,
+          "y": 286
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 401,
+          "y": 286
+        },
+        {
+          "h": 351,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 512,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 351,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 512,
+          "x": 512,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 950.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 401,
+          "y": 286
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 494,
+          "y": 286
+        }
+      ],
+      "expanded": "true",
+      "h": 351,
+      "label": "1024x351-gps-expanded",
+      "map": {
+        "h": 266,
+        "visible": true,
+        "w": 680,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 184.25,
+        "visible": true,
+        "w": 417.296875,
+        "x": 79.84375,
+        "y": 45.375
+      },
+      "scroll": [
+        1024,
+        351
+      ],
+      "step": "race",
+      "w": 1024
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Opel Kadett C in Gelb auswählen",
+          "visible": true,
+          "w": 284,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 204
+        }
+      ],
+      "controls": [],
+      "expanded": "false",
+      "h": 260,
+      "label": "final-568x260-car",
+      "map": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "car",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 44,
+          "x": 503,
+          "y": 65
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "track-choice-prev",
+          "name": "Vorherige Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 232,
+          "x": 64,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "track-choice-next",
+          "name": "Nächste Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 304,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 204
+        }
+      ],
+      "controls": [],
+      "expanded": "false",
+      "h": 260,
+      "label": "final-568x260-track",
+      "map": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "track",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 238.546875,
+          "x": 12,
+          "y": 147.765625
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 380,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 452,
+          "y": 204
+        }
+      ],
+      "controls": [],
+      "expanded": "false",
+      "h": 260,
+      "label": "final-568x260-race-step",
+      "map": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "race",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 160,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 330,
+          "x": 20,
+          "y": 17
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 435,
+          "y": 22
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 284,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 284,
+          "x": 284,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        }
+      ],
+      "expanded": "true",
+      "h": 260,
+      "label": "final-568x260-gps-expanded",
+      "map": {
+        "h": 175,
+        "visible": true,
+        "w": 473,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 116.90625,
+        "visible": true,
+        "w": 255.828125,
+        "x": 57.078125,
+        "y": 35.375
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "race",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 160,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 330,
+          "x": 20,
+          "y": 17
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 435,
+          "y": 22
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 284,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 260,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 284,
+          "x": 284,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 494.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 173,
+          "y": 195
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 266,
+          "y": 195
+        }
+      ],
+      "expanded": "true",
+      "h": 260,
+      "label": "final-568x260-gps-expanded",
+      "map": {
+        "h": 175,
+        "visible": true,
+        "w": 473,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 116.90625,
+        "visible": true,
+        "w": 255.828125,
+        "x": 57.078125,
+        "y": 35.375
+      },
+      "scroll": [
+        568,
+        260
+      ],
+      "step": "race",
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 593.484375,
+          "y": 9
+        },
+        {
+          "h": 273,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 419,
+          "x": 21,
+          "y": 18
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 532,
+          "y": 52.359375
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 143,
+          "x": 312.5,
+          "y": 305
+        },
+        {
+          "h": 57,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 91,
+          "x": 211.5,
+          "y": 305
+        },
+        {
+          "h": 375,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 333.5,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 375,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 333.5,
+          "x": 333.5,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 593.484375,
+          "y": 9
+        },
+        {
+          "h": 57,
+          "id": "brake",
+          "visible": true,
+          "w": 91,
+          "x": 211.5,
+          "y": 305
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "visible": true,
+          "w": 143,
+          "x": 312.5,
+          "y": 305
+        }
+      ],
+      "expanded": "true",
+      "h": 375,
+      "label": "final-667x375-gps-expanded",
+      "map": {
+        "h": 290,
+        "visible": true,
+        "w": 572,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 200.53125,
+        "visible": true,
+        "w": 325.25,
+        "x": 67.859375,
+        "y": 48.796875
+      },
+      "scroll": [
+        667,
+        375
+      ],
+      "step": "race",
+      "w": 667
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 288,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 527,
+          "x": 21,
+          "y": 18
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 640,
+          "y": 59.859375
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 422,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 390,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 422,
+          "x": 422,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 770.484375,
+          "y": 9
+        },
+        {
+          "h": 57,
+          "id": "brake",
+          "visible": true,
+          "w": 91,
+          "x": 300,
+          "y": 320
+        },
+        {
+          "h": 57,
+          "id": "touch-item",
+          "visible": true,
+          "w": 143,
+          "x": 401,
+          "y": 320
+        }
+      ],
+      "expanded": "true",
+      "h": 390,
+      "label": "final-844x390-gps-expanded",
+      "map": {
+        "h": 305,
+        "visible": true,
+        "w": 680,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 211.625,
+        "visible": true,
+        "w": 409.5,
+        "x": 79.75,
+        "y": 50.453125
+      },
+      "scroll": [
+        844,
+        390
+      ],
+      "step": "race",
+      "w": 844
+    },
+    {
+      "buttons": [
+        {
+          "h": 48,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 61.515625,
+          "x": 950.484375,
+          "y": 9
+        },
+        {
+          "h": 251,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 537,
+          "x": 20,
+          "y": 17
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 642,
+          "y": 58.3125
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "name": "Gesammeltes Item einsetzen",
+          "visible": true,
+          "w": 129,
+          "x": 494,
+          "y": 286
+        },
+        {
+          "h": 52,
+          "id": "",
+          "name": "Bremsen",
+          "visible": true,
+          "w": 83,
+          "x": 401,
+          "y": 286
+        },
+        {
+          "h": 351,
+          "id": "",
+          "name": "Linke Bildschirmhälfte halten: nach links lenken",
+          "visible": true,
+          "w": 512,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 351,
+          "id": "",
+          "name": "Rechte Bildschirmhälfte halten: nach rechts lenken",
+          "visible": true,
+          "w": 512,
+          "x": 512,
+          "y": 0
+        }
+      ],
+      "controls": [
+        {
+          "h": 48,
+          "id": "pause",
+          "visible": true,
+          "w": 61.515625,
+          "x": 950.484375,
+          "y": 9
+        },
+        {
+          "h": 52,
+          "id": "brake",
+          "visible": true,
+          "w": 83,
+          "x": 401,
+          "y": 286
+        },
+        {
+          "h": 52,
+          "id": "touch-item",
+          "visible": true,
+          "w": 129,
+          "x": 494,
+          "y": 286
+        }
+      ],
+      "expanded": "true",
+      "h": 351,
+      "label": "final-1024x351-gps-expanded",
+      "map": {
+        "h": 266,
+        "visible": true,
+        "w": 680,
+        "x": 13,
+        "y": 9
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 184.25,
+        "visible": true,
+        "w": 417.296875,
+        "x": 79.84375,
+        "y": 45.375
+      },
+      "scroll": [
+        1024,
+        351
+      ],
+      "step": "race",
+      "w": 1024
+    },
+    {
+      "buttons": [
+        {
+          "h": 38,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 62.03125,
+          "x": 999.875,
+          "y": 20
+        },
+        {
+          "h": 38,
+          "id": "camera-switch",
+          "name": "Kamera",
+          "visible": true,
+          "w": 70.03125,
+          "x": 1067.90625,
+          "y": 20
+        },
+        {
+          "h": 38,
+          "id": "",
+          "name": "Spielton umschalten",
+          "visible": true,
+          "w": 70.03125,
+          "x": 1143.9375,
+          "y": 20
+        },
+        {
+          "h": 38,
+          "id": "",
+          "name": "Vollbild",
+          "visible": true,
+          "w": 66.03125,
+          "x": 1219.96875,
+          "y": 20
+        },
+        {
+          "h": 487,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte verkleinern",
+          "visible": true,
+          "w": 472,
+          "x": 35,
+          "y": 115
+        },
+        {
+          "h": 44,
+          "id": "minimap-close",
+          "name": "Große Streckenkarte schließen",
+          "visible": true,
+          "w": 44,
+          "x": 627,
+          "y": 245.453125
+        },
+        {
+          "h": 52,
+          "id": "use-item",
+          "name": "KEIN ITEM",
+          "visible": true,
+          "w": 153,
+          "x": 578.5,
+          "y": 625
+        }
+      ],
+      "controls": [
+        {
+          "h": 38,
+          "id": "pause",
+          "visible": true,
+          "w": 62.03125,
+          "x": 999.875,
+          "y": 20
+        },
+        {
+          "h": 52,
+          "id": "use-item",
+          "visible": true,
+          "w": 153,
+          "x": 578.5,
+          "y": 625
+        }
+      ],
+      "expanded": "true",
+      "h": 768,
+      "label": "final-1366x768-gps-expanded",
+      "map": {
+        "h": 510,
+        "visible": true,
+        "w": 660,
+        "x": 24,
+        "y": 103
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 358.890625,
+        "visible": true,
+        "w": 366.59375,
+        "x": 87.6875,
+        "y": 169.34375
+      },
+      "scroll": [
+        1310,
+        768
+      ],
+      "step": "race",
+      "w": 1310
+    },
+    {
+      "buttons": [
+        {
+          "h": 38,
+          "id": "pause",
+          "name": "Rennen pausieren",
+          "visible": true,
+          "w": 62.03125,
+          "x": 999.875,
+          "y": 20
+        },
+        {
+          "h": 38,
+          "id": "camera-switch",
+          "name": "Kamera",
+          "visible": true,
+          "w": 70.03125,
+          "x": 1067.90625,
+          "y": 20
+        },
+        {
+          "h": 38,
+          "id": "",
+          "name": "Spielton umschalten",
+          "visible": true,
+          "w": 70.03125,
+          "x": 1143.9375,
+          "y": 20
+        },
+        {
+          "h": 38,
+          "id": "",
+          "name": "Vollbild",
+          "visible": true,
+          "w": 66.03125,
+          "x": 1219.96875,
+          "y": 20
+        },
+        {
+          "h": 254,
+          "id": "minimap-toggle",
+          "name": "Streckenkarte vergrößern",
+          "visible": true,
+          "w": 280,
+          "x": 24,
+          "y": 472
+        },
+        {
+          "h": 52,
+          "id": "use-item",
+          "name": "KEIN ITEM",
+          "visible": true,
+          "w": 153,
+          "x": 578.5,
+          "y": 625
+        }
+      ],
+      "controls": [
+        {
+          "h": 38,
+          "id": "pause",
+          "visible": true,
+          "w": 62.03125,
+          "x": 999.875,
+          "y": 20
+        },
+        {
+          "h": 52,
+          "id": "use-item",
+          "visible": true,
+          "w": 153,
+          "x": 578.5,
+          "y": 625
+        }
+      ],
+      "expanded": "false",
+      "h": 768,
+      "label": "final-desktop-escape-compact",
+      "map": {
+        "h": 254,
+        "visible": true,
+        "w": 280,
+        "x": 24,
+        "y": 472
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 186.46875,
+        "visible": true,
+        "w": 216.828125,
+        "x": 55.578125,
+        "y": 500.71875
+      },
+      "scroll": [
+        1310,
+        768
+      ],
+      "step": "race",
+      "w": 1310
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 83.671875,
+          "x": 1133.640625,
+          "y": 9.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 66.6875,
+          "x": 1223.3125,
+          "y": 9.5
+        },
+        {
+          "h": 46,
+          "id": "previous-car",
+          "name": "Vorheriges Auto",
+          "visible": true,
+          "w": 44,
+          "x": 572.34375,
+          "y": 596
+        },
+        {
+          "h": 46,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 158.203125,
+          "x": 624.34375,
+          "y": 596
+        },
+        {
+          "h": 46,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 158.203125,
+          "x": 790.546875,
+          "y": 596
+        },
+        {
+          "h": 46,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 213.59375,
+          "x": 956.75,
+          "y": 596
+        },
+        {
+          "h": 46,
+          "id": "next-car",
+          "name": "Nächstes Auto",
+          "visible": true,
+          "w": 44,
+          "x": 1178.34375,
+          "y": 596
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 141.21875,
+          "x": 26,
+          "y": 86
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 141.234375,
+          "x": 171.21875,
+          "y": 86
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 141.234375,
+          "x": 316.453125,
+          "y": 86
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "Auto ändern",
+          "visible": true,
+          "w": 51.484375,
+          "x": 406.203125,
+          "y": 312.875
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "Strecke ändern",
+          "visible": true,
+          "w": 51.484375,
+          "x": 406.203125,
+          "y": 390.921875
+        },
+        {
+          "h": 51,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 431.6875,
+          "x": 26,
+          "y": 564.234375
+        },
+        {
+          "h": 52,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 26,
+          "y": 670.484375
+        },
+        {
+          "h": 52,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 184.84375,
+          "x": 79,
+          "y": 670.484375
+        },
+        {
+          "h": 52,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 184.84375,
+          "x": 272.84375,
+          "y": 670.484375
+        }
+      ],
+      "controls": [],
+      "expanded": "false",
+      "h": 768,
+      "label": "final-back-to-garage",
+      "map": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "mapControlOverlaps": [],
+      "outside": [],
+      "plot": {
+        "h": 0,
+        "visible": false,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "scroll": [
+        1310,
+        768
+      ],
+      "step": "race",
+      "w": 1310
+    }
+  ],
+  "titleCloseChecks": [
+    {
+      "close": {
+        "h": 44,
+        "w": 44,
+        "x": 435,
+        "y": 22
+      },
+      "overlap": false,
+      "size": "568x260",
+      "title": {
+        "h": 33.59375,
+        "w": 122,
+        "x": 357,
+        "y": 81.390625
+      }
+    },
+    {
+      "close": {
+        "h": 44,
+        "w": 44,
+        "x": 532,
+        "y": 52.359375
+      },
+      "overlap": false,
+      "size": "667x375",
+      "title": {
+        "h": 42,
+        "w": 127,
+        "x": 449,
+        "y": 115.953125
+      }
+    },
+    {
+      "close": {
+        "h": 44,
+        "w": 44,
+        "x": 640,
+        "y": 59.859375
+      },
+      "overlap": false,
+      "size": "844x390",
+      "title": {
+        "h": 42,
+        "w": 127,
+        "x": 557,
+        "y": 123.453125
+      }
+    },
+    {
+      "close": {
+        "h": 44,
+        "w": 44,
+        "x": 642,
+        "y": 58.3125
+      },
+      "overlap": false,
+      "size": "1024x351",
+      "title": {
+        "h": 33.59375,
+        "w": 122,
+        "x": 564,
+        "y": 117.703125
+      }
+    },
+    {
+      "close": {
+        "h": 44,
+        "w": 44,
+        "x": 627,
+        "y": 245.453125
+      },
+      "overlap": false,
+      "size": "1366x768",
+      "title": {
+        "h": 48.28125,
+        "w": 150,
+        "x": 521,
+        "y": 311.25
+      }
+    }
+  ],
+  "flows": [
+    "three setup steps at 568x260",
+    "start briefing and actual race",
+    "compact and expanded actual route GPS",
+    "Escape close",
+    "close button",
+    "pause while expanded collapses GPS",
+    "resume",
+    "return to garage"
+  ],
+  "physicalTouch": false,
+  "physicalGPUFPS": null,
+  "note": "Cloud Chrome, iframe sizes. The requested 1366-wide test is constrained by the outer preview; actual dimensions are in each measurement. One start click timed out at transport level but DOM confirmed the running race; it was not repeated."
+}

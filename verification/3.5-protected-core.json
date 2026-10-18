@@ -1,0 +1,36 @@
+{
+  "baseline": "3.4.0",
+  "release": "3.5.0",
+  "checks": [
+    {
+      "file": "src/tracks/base.json",
+      "same": true,
+      "sha256": "c80da914e5bd7e69b48a9882c426943ff0cbbc7c216e87727b177dc2ec93f21d"
+    },
+    {
+      "file": "src/tracks/lammersdorf.json",
+      "same": true,
+      "sha256": "6683d16b3365792e05dda5bc0d8ca457e18ac57f0345535751d1e84f725feeb7"
+    },
+    {
+      "file": "src/tracks/bahnhof.json",
+      "same": true,
+      "sha256": "8e90737a232c1637f9529fc67452a06ffe5137d40ad5cc66dc0fde0827f3bd18"
+    },
+    {
+      "file": "src/tracks/kraemer.json",
+      "same": true,
+      "sha256": "58e3405496f316de1ade7139478d36f94dee7263617d796c9d44f9fd8af3cc5d"
+    },
+    {
+      "file": "src/road-surface.js",
+      "same": true,
+      "sha256": "080a1d4d52d2437a67a14bb18b40dcfaad8eeff5752eb8096bf31d5175e8850a"
+    },
+    {
+      "file": "src/driving-dynamics.js",
+      "same": true,
+      "sha256": "d013a6053615287828d495a8d9eccfef91e820bd5d3cdb070f98f27d7138b711"
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "version": "3.6.0",
+  "recordedAt": "2026-10-16T09:32:41.718Z",
+  "status": "passed",
+  "project": "/workspace/scratch/6a130584ef11/breuer-grand-prix-vercel",
+  "inventory": {
+    "programs": 40,
+    "files": [
+      "tests/tracks.mjs",
+      "tests/simulation-clock.mjs",
+      "tests/chase-camera.mjs",
+      "tests/race-config.mjs",
+      "tests/race-modes.mjs",
+      "tests/pickups.mjs",
+      "tests/touch-controls.mjs",
+      "tests/interaction-guard.mjs",
+      "tests/start-briefing.mjs",
+      "tests/driving-dynamics.mjs",
+      "tests/handling-regression.mjs",
+      "tests/scenery-identity.mjs",
+      "tests/village-polish.mjs",
+      "tests/entry-screen.mjs",
+      "tests/refinement.mjs",
+      "tests/performance-production.mjs",
+      "tests/course-races.mjs",
+      "tests/finish-regression.mjs",
+      "tests/road-surfaces.mjs",
+      "tests/canvas-renderer.mjs",
+      "tests/race-visibility.mjs",
+      "tests/vehicle-models.mjs",
+      "tests/vehicle-art.mjs",
+      "tests/showroom-framing.mjs",
+      "tests/racing-audio.mjs",
+      "tests/garage-flow.mjs",
+      "tests/interactions.mjs",
+      "tests/network-clock.mjs",
+      "tests/postgres.mjs",
+      "tests/realtime.mjs",
+      "tests/medal-targets.mjs",
+      "tests/garage-carousel.mjs",
+      "tests/garage-course-preview.mjs",
+      "tests/garage-vehicle-preview.mjs",
+      "tests/leaderboards.mjs",
+      "tests/online-records.mjs",
+      "tests/3.3-profile-leaderboards.mjs",
+      "tests/render-cadence.mjs",
+      "tests/artisan-world.mjs",
+      "tests/minimap.mjs"
+    ],
+    "artPrograms": [
+      "tests/vehicle-rasterizer.mjs"
+    ],
+    "missing": [],
+    "packageSha256": "5e5ea064f4a1a4d196a53df9b5ebc49a7ddf9bda8c25c2dfe2d8d39729845859"
+  },
+  "tests": {
+    "exitCode": 0,
+    "signal": null,
+    "startedAt": "2026-10-16T09:27:28.239Z",
+    "finishedAt": "2026-10-16T09:32:37.497Z",
+    "durationSeconds": 309.3,
+    "log": "tests-final.log",
+    "programs": 40,
+    "passMessages": 105
+  },
+  "build": {
+    "exitCode": 0,
+    "signal": null,
+    "startedAt": "2026-10-16T09:32:37.664Z",
+    "finishedAt": "2026-10-16T09:32:39.269Z",
+    "durationSeconds": 1.6,
+    "log": "build-final.log",
+    "javascript": [
+      {
+        "file": "game-f5f06705781d.js",
+        "bytes": 1079135,
+        "sha256": "f5f06705781d44c019a3353121af70b7daae8fbbb53be50d5ce87bb0889ef5d3",
+        "sha1": "84f73d6c926606c45f0ec12cd65d4ed7fc013f56"
+      }
+    ],
+    "html": {
+      "file": "index.html",
+      "bytes": 343852,
+      "sha256": "5622d5582631023fa20550c1f83380a10d86418d4e132a0ee84dddef1c45ca45",
+      "sha1": "6fe32391b579a2c5bcb6053edc36e119e13d8fdc"
+    },
+    "publicFiles": 136,
+    "publicBytes": 7183537,
+    "assetFiles": 129,
+    "assetBytes": 5162791,
+    "groups": {
+      "audio": 23,
+      "game-f5f06705781d.js": 1,
+      "index.html": 1,
+      "nextlevel": 25,
+      "tracks": 4,
+      "vehicles": 81,
+      "wix-test.html": 1
+    },
+    "originalFilesCompared": 134,
+    "originalMismatches": [],
+    "unexpectedUncomparedFiles": [],
+    "baseline35": {
+      "publicFiles": 135,
+      "publicBytes": 7205472,
+      "deltaBytes": -21935
+    },
+    "note": "All copied public files are compared with original bytes; transformed HTML/JS are independently hashed."
+  },
+  "source": {
+    "originalManifest": "source-hashes-original.json",
+    "afterManifest": "source-hashes-after.json",
+    "files": 286,
+    "changed": []
+  },
+  "images": {
+    "exitCode": 0,
+    "signal": null,
+    "startedAt": "2026-10-16T09:32:39.576Z",
+    "finishedAt": "2026-10-16T09:32:41.550Z",
+    "durationSeconds": 2,
+    "log": "image-validation.log"
+  },
+  "baseline": {
+    "baselineVersion": "3.5.0",
+    "changedSource": [
+      "api/health.js",
+      "package-lock.json",
+      "package.json",
+      "scripts/build-vercel.mjs",
+      "scripts/publish-live.mjs",
+      "src/game.html",
+      "src/game.js",
+      "src/minimap.js",
+      "src/mobile-racing.css",
+      "tests/interactions.mjs",
+      "tests/minimap.mjs"
+    ],
+    "authorizedSource": [
+      "api/health.js",
+      "package-lock.json",
+      "package.json",
+      "scripts/build-vercel.mjs",
+      "scripts/publish-live.mjs",
+      "src/game.html",
+      "src/game.js",
+      "src/minimap.js",
+      "src/mobile-racing.css",
+      "tests/interactions.mjs",
+      "tests/minimap.mjs"
+    ],
+    "unexpectedSource": [],
+    "changedAssets": [
+      "assets/ASSET-NOTES.md",
+      "assets/nextlevel/artisan-foliage.webp",
+      "assets/nextlevel/artisan-medals.webp",
+      "assets/nextlevel/artisan-panels.webp",
+      "assets/nextlevel/artisan-roadside.webp",
+      "assets/nextlevel/artisan-roofs.webp",
+      "assets/nextlevel/artisan-windows.webp",
+      "assets/nextlevel/artisan-workshop.webp",
+      "assets/nextlevel/car-details.webp",
+      "assets/nextlevel/minimap-frame.webp",
+      "assets/nextlevel/village-facades.webp",
+      "assets/nextlevel/village-ground.webp",
+      "assets/vehicles/e30/00.webp",
+      "assets/vehicles/e30/01.webp",
+      "assets/vehicles/e30/02.webp",
+      "assets/vehicles/e30/03.webp",
+      "assets/vehicles/e30/04.webp",
+      "assets/vehicles/e30/05.webp",
+      "assets/vehicles/e30/06.webp",
+      "assets/vehicles/e30/07.webp",
+      "assets/vehicles/e30/08.webp",
+      "assets/vehicles/e30/09.webp",
+      "assets/vehicles/e30/10.webp",
+      "assets/vehicles/e30/11.webp",
+      "assets/vehicles/e30/12.webp",
+      "assets/vehicles/e30/13.webp",
+      "assets/vehicles/e30/14.webp",
+      "assets/vehicles/e30/15.webp",
+      "assets/vehicles/gt3rs/00.webp",
+      "assets/vehicles/gt3rs/01.webp",
+      "assets/vehicles/gt3rs/02.webp",
+      "assets/vehicles/gt3rs/03.webp",
+      "assets/vehicles/gt3rs/04.webp",
+      "assets/vehicles/gt3rs/05.webp",
+      "assets/vehicles/gt3rs/06.webp",
+      "assets/vehicles/gt3rs/07.webp",
+      "assets/vehicles/gt3rs/08.webp",
+      "assets/vehicles/gt3rs/09.webp",
+      "assets/vehicles/gt3rs/10.webp",
+      "assets/vehicles/gt3rs/11.webp",
+      "assets/vehicles/gt3rs/12.webp",
+      "assets/vehicles/gt3rs/13.webp",
+      "assets/vehicles/gt3rs/14.webp",
+      "assets/vehicles/gt3rs/15.webp",
+      "assets/vehicles/kadett/00.webp",
+      "assets/vehicles/kadett/01.webp",
+      "assets/vehicles/kadett/02.webp",
+      "assets/vehicles/kadett/03.webp",
+      "assets/vehicles/kadett/04.webp",
+      "assets/vehicles/kadett/05.webp",
+      "assets/vehicles/kadett/06.webp",
+      "assets/vehicles/kadett/07.webp",
+      "assets/vehicles/kadett/08.webp",
+      "assets/vehicles/kadett/09.webp",
+      "assets/vehicles/kadett/10.webp",
+      "assets/vehicles/kadett/11.webp",
+      "assets/vehicles/kadett/12.webp",
+      "assets/vehicles/kadett/13.webp",
+      "assets/vehicles/kadett/14.webp",
+      "assets/vehicles/kadett/15.webp",
+      "assets/vehicles/m1/00.webp",
+      "assets/vehicles/m1/01.webp",
+      "assets/vehicles/m1/02.webp",
+      "assets/vehicles/m1/03.webp",
+      "assets/vehicles/m1/04.webp",
+      "assets/vehicles/m1/05.webp",
+      "assets/vehicles/m1/06.webp",
+      "assets/vehicles/m1/07.webp",
+      "assets/vehicles/m1/08.webp",
+      "assets/vehicles/m1/09.webp",
+      "assets/vehicles/m1/10.webp",
+      "assets/vehicles/m1/11.webp",
+      "assets/vehicles/m1/12.webp",
+      "assets/vehicles/m1/13.webp",
+      "assets/vehicles/m1/14.webp",
+      "assets/vehicles/m1/15.webp",
+      "assets/vehicles/m2/00.webp",
+      "assets/vehicles/m2/01.webp",
+      "assets/vehicles/m2/02.webp",
+      "assets/vehicles/m2/03.webp",
+      "assets/vehicles/m2/04.webp",
+      "assets/vehicles/m2/05.webp",
+      "assets/vehicles/m2/06.webp",
+      "assets/vehicles/m2/07.webp",
+      "assets/vehicles/m2/08.webp",
+      "assets/vehicles/m2/09.webp",
+      "assets/vehicles/m2/10.webp",
+      "assets/vehicles/m2/11.webp",
+      "assets/vehicles/m2/12.webp",
+      "assets/vehicles/m2/13.webp",
+      "assets/vehicles/m2/14.webp",
+      "assets/vehicles/m2/15.webp",
+      "assets/vehicles/manifest.json"
+    ],
+    "unexpectedAssets": [],
+    "note": "The MiniMap integration, its test fixture/styles and version/build metadata are authorized. Remaining gameplay/geometry/track/API sources must retain their baseline bytes. File-level authorization does not replace Root review of the scoped MiniMap diff."
+  },
+  "transport": {
+    "recordedAt": "2026-10-16T09:27:28.231Z",
+    "assets": 131,
+    "parts": 36,
+    "assetMismatches": [],
+    "partMismatches": [],
+    "note": "Checked without importing the mutating restore helper; a stale archive fails before any test or build."
+  },
+  "browser": {
+    "appTestByThisAgent": false,
+    "cuaActions": 0,
+    "physicalBrowserGPUFPS": null,
+    "note": "Root owns the separate concrete MiniMap browser check. Node DOM/renderer mocks and CPU raster images do not establish physical phone or WebGL FPS."
+  },
+  "proofs": [
+    {
+      "file": "run-final.mjs",
+      "bytes": 13393,
+      "sha256": "e8896281bd5b9fdd602df9eba08fe0bbd347cb5c833b56170900019a881b0850",
+      "sha1": "6b6754e4dc9b5dbac2f7b70c9772a8edbc994ba5"
+    },
+    {
+      "file": "verify-images.py",
+      "bytes": 6673,
+      "sha256": "0dcf77faebaa10d6375c48ab37b44189e7c1b29a89fdb9adbb798b3564aeb216",
+      "sha1": "c42d2cadac4a5da00aaa4fa1808b060a2641722e"
+    },
+    {
+      "file": "tests-final.log",
+      "bytes": 22533,
+      "sha256": "ca53e9047c6313f0499356f2355c59d581b872185966a9d53279cf8e84d6d85c",
+      "sha1": "86366ba7132b43a3bee24044253d5e7052fd5cb6"
+    },
+    {
+      "file": "build-final.log",
+      "bytes": 228,
+      "sha256": "0bc0c5d6d66e9529e67d3a306c69b31a818075492ff39b776d40a351b8b39a81",
+      "sha1": "511695829db265e00762267fdde9a8f079691b2e"
+    },
+    {
+      "file": "image-validation.log",
+      "bytes": 181,
+      "sha256": "2ba2fdd5845b0622bfa54c303dc816e284fef449fe64f704a246e65fa81be038",
+      "sha1": "b7e0d27b2c2fd657c5cf0a81c896367d47abd5df"
+    },
+    {
+      "file": "image-validation.json",
+      "bytes": 40593,
+      "sha256": "4e76aaa6e4b4d930df1f15d6363817875e1105a2089d995446d9dbb67970804b",
+      "sha1": "97da369b672c5ee58789c49c8a19981ceaafb19c"
+    },
+    {
+      "file": "source-hashes-original.json",
+      "bytes": 62830,
+      "sha256": "576dd2e7e6736f59a314bdc6d2a3da1f6c89f6bb560ed8aad021e73d255e43d0",
+      "sha1": "004cd19df71e0764bd74613b9012c7f8250df547"
+    },
+    {
+      "file": "source-hashes-after.json",
+      "bytes": 62830,
+      "sha256": "d33b5ff695b6e397fd490e3b809b12cb9d68f49a43c9895d519f173cadde5b75",
+      "sha1": "c54ef90ba7ecc6e5e8253b5a2456daa0d07268b5"
+    },
+    {
+      "file": "baseline-final-comparison.json",
+      "bytes": 4382,
+      "sha256": "7a8018945ebe968fdc82c45de5e398e41fa189de6033a31c2364366b643af93f",
+      "sha1": "1903997b9f1622eddf17c36d3d68f515c5df4488"
+    },
+    {
+      "file": "transport-preflight.json",
+      "bytes": 244,
+      "sha256": "598f30df0dee7798ba8d419980dd4516117e1119dd77ff3cdcdd4f80bbe05eaa",
+      "sha1": "7579898dc5d72d5b88518a10a309d8902c0aa4b3"
+    },
+    {
+      "file": "build-files-final.json",
+      "bytes": 40154,
+      "sha256": "92e9c40f340d4b583e60c9857a08d2d950a0ed0920b574abe503ab2c1eb48fea",
+      "sha1": "ee0618048613649bb58d050c7f7673fe220e35f2"
+    },
+    {
+      "file": "targeted-budget-summary.json",
+      "bytes": 2260,
+      "sha256": "8cd5e3f230cde559c1d555be908a0919e5b6c1b8ec089532d84196ae43a35975",
+      "sha1": "2d4198e4ea302c4457642cb632553aeff6476682"
+    },
+    {
+      "file": "baseline-source-hashes.json",
+      "bytes": 24519,
+      "sha256": "c957e7b01ed4ed3c69c8df3b91bdcb634ce6829f9202baaf0c4ccd0377b34eab",
+      "sha1": "96673fc3b29ec97d85ac5f0434d1b0d6f3f8ff94"
+    },
+    {
+      "file": "baseline-asset-hashes.json",
+      "bytes": 29855,
+      "sha256": "589dc0a2868fb17e7bcb8e075d55140138fe183fb81e5d585c79888ecd18fbfd",
+      "sha1": "de04ce4d10cdb9be867ef250de7646040c3eedbb"
+    },
+    {
+      "file": "baseline-vehicle-contract.json",
+      "bytes": 772,
+      "sha256": "f9a7236c92467d4f1daabc9f96175566eee5905c44aaf1b5ae7e91a950fb3125",
+      "sha1": "4d4d683abb5000b4592f9cc599e32dfc34ed1105"
+    },
+    {
+      "file": "runtime-art-inventory.json",
+      "bytes": 8762,
+      "sha256": "4a341624a3a58f87793b215e9c6b102f20b3d8da716429ed9779bf85bae288a8",
+      "sha1": "75d545c2d90a1b650fcc2eba9bd2f61a8c07398d"
+    }
+  ]
+}

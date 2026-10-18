@@ -1,0 +1,144 @@
+{
+  "balanceBefore": 177.5,
+  "balanceAfter": 121.25,
+  "actualSpend": 56.25,
+  "budgetMinimum": 50,
+  "budgetMaximum": 60,
+  "jobs": [
+    {
+      "index": 0,
+      "job_id": "87f1341d-23c1-4d96-887a-61b8ce9fd6cb",
+      "status": "completed",
+      "name": "village-facades",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 1,
+      "job_id": "0909967c-e9fa-4c69-9b19-898e0e42d58f",
+      "status": "completed",
+      "name": "artisan-roofs",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 2,
+      "job_id": "3f26108b-e544-43eb-affc-5a9637f112ef",
+      "status": "completed",
+      "name": "village-ground",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 3,
+      "job_id": "006451c4-4378-4e73-af22-862e180b0b11",
+      "status": "completed",
+      "name": "artisan-foliage",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 4,
+      "job_id": "a952c731-1008-4ab6-8e81-348e7a8cff32",
+      "status": "completed",
+      "name": "artisan-windows",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 5,
+      "job_id": "85fef767-d0c9-45af-a213-95d6b41843c0",
+      "status": "completed",
+      "name": "artisan-workshop",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 6,
+      "job_id": "319d7bd0-750a-48fe-8e45-619000b77e4c",
+      "status": "completed",
+      "name": "artisan-roadside",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 7,
+      "job_id": "24010e74-159d-44d7-ad37-fe0af9054896",
+      "status": "completed",
+      "name": "artisan-sky",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 8,
+      "job_id": "4bc9c582-b79c-43e6-94cf-07049cbcfc6c",
+      "status": "completed",
+      "name": "car-finish",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 9,
+      "job_id": "32fe878e-a77e-4bc0-a1f1-59581ba2e984",
+      "status": "completed",
+      "name": "car-details",
+      "quotedCredits": 4.25,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 10,
+      "job_id": "cba46c52-5f3f-407e-84cc-ef2102dcc877",
+      "status": "completed",
+      "name": "artisan-items",
+      "quotedCredits": 2.75,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 11,
+      "job_id": "a466d8c2-b568-43a8-82b8-9fc96bde11fe",
+      "status": "completed",
+      "name": "artisan-medals",
+      "quotedCredits": 2.75,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 12,
+      "job_id": "7720658c-63d2-4ea5-9323-79f4114cacad",
+      "status": "completed",
+      "name": "artisan-panels",
+      "quotedCredits": 2.75,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 13,
+      "job_id": "8e0697b3-5d1c-45d6-9ce4-f5dfec29ea79",
+      "status": "completed",
+      "name": "artisan-courses",
+      "quotedCredits": 2.75,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    },
+    {
+      "index": 14,
+      "job_id": "0d2f9c96-c884-4757-b554-079653e7c894",
+      "status": "completed",
+      "name": "artisan-mechanic",
+      "quotedCredits": 2.75,
+      "type": "image",
+      "model": "gpt_image_2_5"
+    }
+  ]
+}

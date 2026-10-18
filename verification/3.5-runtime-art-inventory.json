@@ -1,0 +1,112 @@
+{
+  "actualCredits": 56.25,
+  "balanceAfter": 121.25,
+  "assets": [
+    {
+      "index": 0,
+      "name": "village-facades",
+      "file": "assets/nextlevel/village-facades.webp",
+      "bytes": 213774,
+      "sha256": "26c18911f189ef2a84a1b772cf5359f9e1257036c55c05a6daf6a4133f8c54b8"
+    },
+    {
+      "index": 1,
+      "name": "artisan-roofs",
+      "file": "assets/nextlevel/artisan-roofs.webp",
+      "bytes": 134544,
+      "sha256": "3e6e290de8d0a4af34e815ae7cbf18b920fb5c4ceb616c5918e838d054615a73"
+    },
+    {
+      "index": 2,
+      "name": "village-ground",
+      "file": "assets/nextlevel/village-ground.webp",
+      "bytes": 166748,
+      "sha256": "e42e69845b07216b43e79fd3d9f1c1565b402c7d6a779d680a59a9d76385cb0d"
+    },
+    {
+      "index": 3,
+      "name": "artisan-foliage",
+      "file": "assets/nextlevel/artisan-foliage.webp",
+      "bytes": 356958,
+      "sha256": "7207d1ecb70998d6959b1bea0ff1afc9a152616f1232c0c7814e24973dba461c"
+    },
+    {
+      "index": 4,
+      "name": "artisan-windows",
+      "file": "assets/nextlevel/artisan-windows.webp",
+      "bytes": 126278,
+      "sha256": "bf6420bc33a39dcba2db830667ab55a13447bef67c2e621b2c30c9720f65da91"
+    },
+    {
+      "index": 5,
+      "name": "artisan-workshop",
+      "file": "assets/nextlevel/artisan-workshop.webp",
+      "bytes": 190894,
+      "sha256": "aee161a3c5b0cf05521598ec695972c88414cb4731e7c89f5f2032a5cd193588"
+    },
+    {
+      "index": 6,
+      "name": "artisan-roadside",
+      "file": "assets/nextlevel/artisan-roadside.webp",
+      "bytes": 241212,
+      "sha256": "52ac5498c049c15a49529eda5ee0d0e5b7e91d4cfd823502bcb4b5249c45e846"
+    },
+    {
+      "index": 7,
+      "name": "artisan-sky",
+      "file": "assets/nextlevel/artisan-sky.webp",
+      "bytes": 66390,
+      "sha256": "df65edec73ff5374630d6903617f2461663f61f2c86874c278ca4065691a6118"
+    },
+    {
+      "index": 8,
+      "name": "car-finish",
+      "file": "assets/nextlevel/car-finish.webp",
+      "bytes": 13624,
+      "sha256": "f5ca4778c44499456f56ae5a98617d836618ed9356acb920f894e9df48d6ac94"
+    },
+    {
+      "index": 9,
+      "name": "car-details",
+      "file": "assets/nextlevel/car-details.webp",
+      "bytes": 145112,
+      "sha256": "50c8e227eabaa18ce5f380e2ee8aee40329a9324f38e125ca4e71b76a47c3344"
+    },
+    {
+      "index": 10,
+      "name": "artisan-items",
+      "file": "assets/nextlevel/artisan-items.webp",
+      "bytes": 167200,
+      "sha256": "f93ee767a1b18de77e54f57d2ff2094aee972ae15e0a3aba25a91c48c51945ea"
+    },
+    {
+      "index": 11,
+      "name": "artisan-medals",
+      "file": "assets/nextlevel/artisan-medals.webp",
+      "bytes": 198058,
+      "sha256": "f0fd4f6784e3c7906a7031b4626a9218bd7b7bfd745586bb52168f192b81cc86"
+    },
+    {
+      "index": 12,
+      "name": "artisan-panels",
+      "file": "assets/nextlevel/artisan-panels.webp",
+      "bytes": 49696,
+      "sha256": "3c4d64919c489c85151953ecb30f2bd2818049d27361e8628d00a1732f760001"
+    },
+    {
+      "index": 13,
+      "name": "artisan-courses",
+      "file": "assets/nextlevel/artisan-courses.webp",
+      "bytes": 370322,
+      "sha256": "55057a9deb09c62fe872eecfdc1d6d90feaca61b00d37075bc91754c1cb7963c"
+    },
+    {
+      "index": 14,
+      "name": "artisan-mechanic",
+      "file": "assets/nextlevel/artisan-mechanic.webp",
+      "bytes": 96020,
+      "sha256": "cb471088161be5bea44c47da2cc54f4e647f6fb2636bae76f9cc58a20f53dd00"
+    }
+  ],
+  "totalBytes": 2536830
+}

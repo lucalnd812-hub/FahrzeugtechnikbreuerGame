@@ -1,0 +1,3235 @@
+{
+  "release": "3.5.0",
+  "checks": [
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Opel Kadett C in Gelb auswählen",
+          "visible": true,
+          "w": 284,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 204
+        }
+      ],
+      "h": 260,
+      "label": "568x260 car",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Porsche GT3 RS in Blau auswählen",
+          "visible": true,
+          "w": 284,
+          "x": 64,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 204
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Auto",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 44,
+          "x": 503,
+          "y": 65
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "track-choice-prev",
+          "name": "Vorherige Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 232,
+          "x": 64,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "track-choice-next",
+          "name": "Nächste Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 304,
+          "y": 211
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 204
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Strecke",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 238.546875,
+          "x": 12,
+          "y": 147.765625
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 380,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 452,
+          "y": 204
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Rennen",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 267
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Porsche GT3 RS in Blau auswählen",
+          "visible": true,
+          "w": 284,
+          "x": 64,
+          "y": 267
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 267
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 260
+        }
+      ],
+      "h": 320,
+      "label": "568x320 Auto",
+      "outside": [],
+      "scroll": [
+        568,
+        320
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 44,
+          "x": 499,
+          "y": 73
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "track-choice-prev",
+          "name": "Vorherige Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 267
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 232,
+          "x": 64,
+          "y": 267
+        },
+        {
+          "h": 48,
+          "id": "track-choice-next",
+          "name": "Nächste Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 304,
+          "y": 267
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 356,
+          "y": 260
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 148,
+          "x": 408,
+          "y": 260
+        }
+      ],
+      "h": 320,
+      "label": "568x320 Strecke",
+      "outside": [],
+      "scroll": [
+        568,
+        320
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 238.546875,
+          "x": 12,
+          "y": 175.484375
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 260
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 380,
+          "x": 64,
+          "y": 260
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 452,
+          "y": 260
+        }
+      ],
+      "h": 320,
+      "label": "568x320 Rennen",
+      "outside": [],
+      "scroll": [
+        568,
+        320
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 559,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 611,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 507,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 559,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 611,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 143.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 143.671875,
+          "x": 251.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 143.671875,
+          "x": 403.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 322
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Porsche GT3 RS in Blau auswählen",
+          "visible": true,
+          "w": 316,
+          "x": 64,
+          "y": 322
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 388,
+          "y": 322
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 507,
+          "y": 315
+        }
+      ],
+      "h": 375,
+      "label": "667x375 Auto",
+      "outside": [],
+      "scroll": [
+        667,
+        375
+      ],
+      "w": 667
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 559,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 611,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 44,
+          "x": 598,
+          "y": 73
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 143.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 143.671875,
+          "x": 251.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 143.671875,
+          "x": 403.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "track-choice-prev",
+          "name": "Vorherige Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 322
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 316,
+          "x": 64,
+          "y": 322
+        },
+        {
+          "h": 48,
+          "id": "track-choice-next",
+          "name": "Nächste Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 388,
+          "y": 322
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 455,
+          "y": 315
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 148,
+          "x": 507,
+          "y": 315
+        }
+      ],
+      "h": 375,
+      "label": "667x375 Strecke",
+      "outside": [],
+      "scroll": [
+        667,
+        375
+      ],
+      "w": 667
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 559,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 611,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 507,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 559,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 611,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 143.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 143.671875,
+          "x": 251.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 143.671875,
+          "x": 403.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 280.125,
+          "x": 12,
+          "y": 202.984375
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 315
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 479,
+          "x": 64,
+          "y": 315
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 551,
+          "y": 315
+        }
+      ],
+      "h": 375,
+      "label": "667x375 Rennen",
+      "outside": [],
+      "scroll": [
+        667,
+        375
+      ],
+      "w": 667
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 736,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 788,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 684,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 736,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 788,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 202.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 202.671875,
+          "x": 310.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 202.671875,
+          "x": 521.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 337
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Porsche GT3 RS in Blau auswählen",
+          "visible": true,
+          "w": 316,
+          "x": 64,
+          "y": 337
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 388,
+          "y": 337
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 684,
+          "y": 330
+        }
+      ],
+      "h": 390,
+      "label": "844x390 Auto",
+      "outside": [],
+      "scroll": [
+        844,
+        390
+      ],
+      "w": 844
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 736,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 788,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 44,
+          "x": 775,
+          "y": 73
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 202.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 202.671875,
+          "x": 310.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 202.671875,
+          "x": 521.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "track-choice-prev",
+          "name": "Vorherige Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 337
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 316,
+          "x": 64,
+          "y": 337
+        },
+        {
+          "h": 48,
+          "id": "track-choice-next",
+          "name": "Nächste Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 388,
+          "y": 337
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 632,
+          "y": 330
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 148,
+          "x": 684,
+          "y": 330
+        }
+      ],
+      "h": 390,
+      "label": "844x390 Strecke",
+      "outside": [],
+      "scroll": [
+        844,
+        390
+      ],
+      "w": 844
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 736,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 788,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 684,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 736,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 788,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 202.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 202.671875,
+          "x": 310.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 202.671875,
+          "x": 521.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 300,
+          "x": 12,
+          "y": 210.484375
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 330
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 656,
+          "x": 64,
+          "y": 330
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 728,
+          "y": 330
+        }
+      ],
+      "h": 390,
+      "label": "844x390 Rennen",
+      "outside": [],
+      "scroll": [
+        844,
+        390
+      ],
+      "w": 844
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 916,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 968,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 864,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 916,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 968,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 262.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 262.671875,
+          "x": 370.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 262.65625,
+          "x": 641.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "car-choice-prev",
+          "name": "Vorheriges Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 298
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Porsche GT3 RS in Blau auswählen",
+          "visible": true,
+          "w": 316,
+          "x": 64,
+          "y": 298
+        },
+        {
+          "h": 48,
+          "id": "car-choice-next",
+          "name": "Nächstes Auto auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 388,
+          "y": 298
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 148,
+          "x": 864,
+          "y": 291
+        }
+      ],
+      "h": 351,
+      "label": "1024x351 Auto",
+      "outside": [],
+      "scroll": [
+        1024,
+        351
+      ],
+      "w": 1024
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 916,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 968,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 44,
+          "x": 955,
+          "y": 73
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 262.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 262.671875,
+          "x": 370.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 262.65625,
+          "x": 641.328125,
+          "y": 2
+        },
+        {
+          "h": 48,
+          "id": "track-choice-prev",
+          "name": "Vorherige Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 298
+        },
+        {
+          "h": 48,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 316,
+          "x": 64,
+          "y": 298
+        },
+        {
+          "h": 48,
+          "id": "track-choice-next",
+          "name": "Nächste Strecke auswählen",
+          "visible": true,
+          "w": 44,
+          "x": 388,
+          "y": 298
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 812,
+          "y": 291
+        },
+        {
+          "h": 48,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 148,
+          "x": 864,
+          "y": 291
+        }
+      ],
+      "h": 351,
+      "label": "1024x351 Strecke",
+      "outside": [],
+      "scroll": [
+        1024,
+        351
+      ],
+      "w": 1024
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 916,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 968,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 864,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 916,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 968,
+          "y": 60
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 262.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 262.671875,
+          "x": 370.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 262.65625,
+          "x": 641.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 300,
+          "x": 12,
+          "y": 190.984375
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 291
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 836,
+          "x": 64,
+          "y": 291
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 908,
+          "y": 291
+        }
+      ],
+      "h": 351,
+      "label": "1024x351 Rennen",
+      "outside": [],
+      "scroll": [
+        1024,
+        351
+      ],
+      "w": 1024
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 83.671875,
+          "x": 1133.640625,
+          "y": 9.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 66.6875,
+          "x": 1223.3125,
+          "y": 9.5
+        },
+        {
+          "h": 46,
+          "id": "previous-car",
+          "name": "Vorheriges Auto",
+          "visible": true,
+          "w": 44,
+          "x": 572.34375,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 158.203125,
+          "x": 624.34375,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 158.203125,
+          "x": 790.546875,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 213.59375,
+          "x": 956.75,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "next-car",
+          "name": "Nächstes Auto",
+          "visible": true,
+          "w": 44,
+          "x": 1178.34375,
+          "y": 483
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 141.21875,
+          "x": 26,
+          "y": 79
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 141.234375,
+          "x": 171.21875,
+          "y": 79
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 141.234375,
+          "x": 316.453125,
+          "y": 79
+        },
+        {
+          "h": 103,
+          "id": "",
+          "name": "Opel Kadett C in Gelb auswählen",
+          "visible": true,
+          "w": 210.84375,
+          "x": 26,
+          "y": 263.453125
+        },
+        {
+          "h": 103,
+          "id": "",
+          "name": "AC Schnitzer BMW E30 M3 auswählen",
+          "visible": true,
+          "w": 210.84375,
+          "x": 246.84375,
+          "y": 263.453125
+        },
+        {
+          "h": 103,
+          "id": "",
+          "name": "BMW M1 Procar auswählen",
+          "visible": true,
+          "w": 210.84375,
+          "x": 26,
+          "y": 376.453125
+        },
+        {
+          "h": 103,
+          "id": "",
+          "name": "BMW M2 Competition in Grau auswählen",
+          "visible": true,
+          "w": 210.84375,
+          "x": 246.84375,
+          "y": 376.453125
+        },
+        {
+          "h": 76,
+          "id": "",
+          "name": "Porsche GT3 RS in Blau auswählen",
+          "visible": true,
+          "w": 431.6875,
+          "x": 26,
+          "y": 489.453125
+        },
+        {
+          "h": 52,
+          "id": "garage-next",
+          "name": "Weiter zur Strecke",
+          "visible": true,
+          "w": 431.6875,
+          "x": 26,
+          "y": 562
+        }
+      ],
+      "h": 655,
+      "label": "desktop Auto",
+      "outside": [],
+      "scroll": [
+        1310,
+        655
+      ],
+      "w": 1310
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 83.671875,
+          "x": 1133.640625,
+          "y": 9.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 66.6875,
+          "x": 1223.3125,
+          "y": 9.5
+        },
+        {
+          "h": 48,
+          "id": "garage-course-map",
+          "name": "Strecke genauer ansehen ↗",
+          "visible": true,
+          "w": 713.3125,
+          "x": 540.6875,
+          "y": 557
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 141.21875,
+          "x": 26,
+          "y": 79
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 141.234375,
+          "x": 171.21875,
+          "y": 79
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 141.234375,
+          "x": 316.453125,
+          "y": 79
+        },
+        {
+          "h": 95,
+          "id": "",
+          "name": "Lammersdorf GP auswählen",
+          "visible": true,
+          "w": 431.6875,
+          "x": 26,
+          "y": 249.65625
+        },
+        {
+          "h": 95,
+          "id": "",
+          "name": "Bahnhof-Runde auswählen",
+          "visible": true,
+          "w": 431.6875,
+          "x": 26,
+          "y": 355.65625
+        },
+        {
+          "h": 95,
+          "id": "",
+          "name": "Krämer-Kurs auswählen",
+          "visible": true,
+          "w": 431.6875,
+          "x": 26,
+          "y": 461.65625
+        },
+        {
+          "h": 52,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 26,
+          "y": 562
+        },
+        {
+          "h": 52,
+          "id": "garage-next",
+          "name": "Weiter zum Rennen",
+          "visible": true,
+          "w": 378.6875,
+          "x": 79,
+          "y": 562
+        }
+      ],
+      "h": 655,
+      "label": "desktop Strecke",
+      "outside": [],
+      "scroll": [
+        1310,
+        655
+      ],
+      "w": 1310
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 83.671875,
+          "x": 1133.640625,
+          "y": 9.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 66.6875,
+          "x": 1223.3125,
+          "y": 9.5
+        },
+        {
+          "h": 46,
+          "id": "previous-car",
+          "name": "Vorheriges Auto",
+          "visible": true,
+          "w": 44,
+          "x": 572.34375,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 158.203125,
+          "x": 624.34375,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 158.203125,
+          "x": 790.546875,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 213.59375,
+          "x": 956.75,
+          "y": 483
+        },
+        {
+          "h": 46,
+          "id": "next-car",
+          "name": "Nächstes Auto",
+          "visible": true,
+          "w": 44,
+          "x": 1178.34375,
+          "y": 483
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 141.21875,
+          "x": 26,
+          "y": 79
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 141.234375,
+          "x": 171.21875,
+          "y": 79
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 141.234375,
+          "x": 316.453125,
+          "y": 79
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "Auto ändern",
+          "visible": true,
+          "w": 51.484375,
+          "x": 406.203125,
+          "y": 255.625
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "Strecke ändern",
+          "visible": true,
+          "w": 51.484375,
+          "x": 406.203125,
+          "y": 333.671875
+        },
+        {
+          "h": 50.015625,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 431.6875,
+          "x": 26,
+          "y": 506.984375
+        },
+        {
+          "h": 52,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 26,
+          "y": 562
+        },
+        {
+          "h": 52,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 184.84375,
+          "x": 79,
+          "y": 562
+        },
+        {
+          "h": 52,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 184.84375,
+          "x": 272.84375,
+          "y": 562
+        }
+      ],
+      "h": 655,
+      "label": "desktop Rennen",
+      "outside": [],
+      "scroll": [
+        1310,
+        655
+      ],
+      "w": 1310
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-close",
+          "name": "Einstellungen schließen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-race",
+          "name": "Rennen",
+          "visible": true,
+          "w": 160,
+          "x": 12,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-driving",
+          "name": "Fahrstil",
+          "visible": true,
+          "w": 160,
+          "x": 178,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-graphics",
+          "name": "Grafik",
+          "visible": true,
+          "w": 160,
+          "x": 344,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-done",
+          "name": "Zurück zum Rennen",
+          "visible": true,
+          "w": 544,
+          "x": 12,
+          "y": 208
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Einstellungen Rennen",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-close",
+          "name": "Einstellungen schließen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-race",
+          "name": "Rennen",
+          "visible": true,
+          "w": 160,
+          "x": 12,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-driving",
+          "name": "Fahrstil",
+          "visible": true,
+          "w": 160,
+          "x": 178,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-graphics",
+          "name": "Grafik",
+          "visible": true,
+          "w": 160,
+          "x": 344,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-done",
+          "name": "Zurück zum Rennen",
+          "visible": true,
+          "w": 544,
+          "x": 12,
+          "y": 208
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Einstellungen Fahrstil",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-close",
+          "name": "Einstellungen schließen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-race",
+          "name": "Rennen",
+          "visible": true,
+          "w": 160,
+          "x": 12,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-driving",
+          "name": "Fahrstil",
+          "visible": true,
+          "w": 160,
+          "x": 178,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-tab-graphics",
+          "name": "Grafik",
+          "visible": true,
+          "w": 160,
+          "x": 344,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "settings-done",
+          "name": "Zurück zum Rennen",
+          "visible": true,
+          "w": 544,
+          "x": 12,
+          "y": 208
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Einstellungen Grafik",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 238.546875,
+          "x": 12,
+          "y": 140.765625
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 380,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 452,
+          "y": 204
+        },
+        {
+          "h": 44,
+          "id": "close-dialog",
+          "name": "Dialog schließen",
+          "visible": true,
+          "w": 66.46875,
+          "x": 478.53125,
+          "y": 19
+        },
+        {
+          "h": 44,
+          "id": "profile-open-pass",
+          "name": "Ich habe einen Fahrerpass",
+          "visible": true,
+          "w": 188.1875,
+          "x": 23,
+          "y": 123.5
+        },
+        {
+          "h": 44,
+          "id": "profile-done",
+          "name": "Später",
+          "visible": true,
+          "w": 257,
+          "x": 23,
+          "y": 197
+        },
+        {
+          "h": 44,
+          "id": "driver-name-save",
+          "name": "Name sichern",
+          "visible": true,
+          "w": 257,
+          "x": 288,
+          "y": 197
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Profil mit Doppelname",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "1Auto",
+          "visible": true,
+          "w": 110.65625,
+          "x": 100,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "2Strecke",
+          "visible": true,
+          "w": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "",
+          "name": "3Rennen",
+          "visible": true,
+          "w": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        },
+        {
+          "h": 44,
+          "id": "open-settings",
+          "name": "Einstellungen›",
+          "visible": true,
+          "w": 238.546875,
+          "x": 12,
+          "y": 140.765625
+        },
+        {
+          "h": 48,
+          "id": "garage-back",
+          "name": "Zum vorherigen Schritt",
+          "visible": true,
+          "w": 44,
+          "x": 12,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "start-solo",
+          "name": "Rennen starten",
+          "visible": true,
+          "w": 380,
+          "x": 64,
+          "y": 204
+        },
+        {
+          "h": 48,
+          "id": "open-online",
+          "name": "Mit Freunden",
+          "visible": true,
+          "w": 104,
+          "x": 452,
+          "y": 204
+        },
+        {
+          "h": 44,
+          "id": "close-dialog",
+          "name": "Dialog schließen",
+          "visible": true,
+          "w": 66.46875,
+          "x": 478.53125,
+          "y": 19
+        },
+        {
+          "h": 44,
+          "id": "profile-open-pass",
+          "name": "Ich habe einen Fahrerpass",
+          "visible": true,
+          "w": 188.1875,
+          "x": 23,
+          "y": 123.5
+        },
+        {
+          "h": 44,
+          "id": "profile-done",
+          "name": "Später",
+          "visible": true,
+          "w": 257,
+          "x": 23,
+          "y": 197
+        },
+        {
+          "h": 44,
+          "id": "driver-name-save",
+          "name": "Name sichern",
+          "visible": true,
+          "w": 257,
+          "x": 288,
+          "y": 197
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Profil mit bestätigtem Doppelnamefehler",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "extras-close",
+          "name": "Zusatzmenü schließen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "open-leaderboard",
+          "name": "Bestenliste",
+          "visible": true,
+          "w": 130,
+          "x": 12,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "show-track",
+          "name": "Der Rundkurs",
+          "visible": true,
+          "w": 130,
+          "x": 150,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "start-tour",
+          "name": "Dorf erkunden ↗",
+          "visible": true,
+          "w": 130,
+          "x": 288,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "demo-button",
+          "name": "Max fährt vor ↗",
+          "visible": true,
+          "w": 130,
+          "x": 426,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "show-help",
+          "name": "So fährst du",
+          "visible": true,
+          "w": 130,
+          "x": 12,
+          "y": 160
+        },
+        {
+          "h": 44,
+          "id": "benchmark-button",
+          "name": "Leistung prüfen",
+          "visible": true,
+          "w": 130,
+          "x": 150,
+          "y": 160
+        },
+        {
+          "h": 44,
+          "id": "menu-sound",
+          "name": "Spielton umschalten",
+          "visible": true,
+          "w": 130,
+          "x": 288,
+          "y": 160
+        },
+        {
+          "h": 44,
+          "id": "menu-fullscreen",
+          "name": "Vollbild umschalten",
+          "visible": true,
+          "w": 130,
+          "x": 426,
+          "y": 160
+        }
+      ],
+      "h": 260,
+      "label": "568x260 Mehr",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    },
+    {
+      "buttons": [
+        {
+          "h": 44,
+          "id": "open-profile",
+          "name": "Fahrername für die Bestenliste wählen",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "garage-extras",
+          "name": "Mehr öffnen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 1.5
+        },
+        {
+          "h": 44,
+          "id": "rotate-car",
+          "name": "Auto drehen",
+          "visible": true,
+          "w": 44,
+          "x": 408,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "preview-lights",
+          "name": "Scheinwerfer in der Vorschau umschalten",
+          "visible": true,
+          "w": 44,
+          "x": 460,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "rev-car",
+          "name": "Motor anhören",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "extras-close",
+          "name": "Zusatzmenü schließen",
+          "visible": true,
+          "w": 44,
+          "x": 512,
+          "y": 56
+        },
+        {
+          "h": 44,
+          "id": "open-leaderboard",
+          "name": "Bestenliste",
+          "visible": true,
+          "w": 130,
+          "x": 12,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "show-track",
+          "name": "Der Rundkurs",
+          "visible": true,
+          "w": 130,
+          "x": 150,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "start-tour",
+          "name": "Dorf erkunden ↗",
+          "visible": true,
+          "w": 130,
+          "x": 288,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "demo-button",
+          "name": "Max fährt vor ↗",
+          "visible": true,
+          "w": 130,
+          "x": 426,
+          "y": 108
+        },
+        {
+          "h": 44,
+          "id": "show-help",
+          "name": "So fährst du",
+          "visible": true,
+          "w": 130,
+          "x": 12,
+          "y": 160
+        },
+        {
+          "h": 44,
+          "id": "benchmark-button",
+          "name": "Leistung prüfen",
+          "visible": true,
+          "w": 130,
+          "x": 150,
+          "y": 160
+        },
+        {
+          "h": 44,
+          "id": "menu-sound",
+          "name": "Spielton umschalten",
+          "visible": true,
+          "w": 130,
+          "x": 288,
+          "y": 160
+        },
+        {
+          "h": 44,
+          "id": "menu-fullscreen",
+          "name": "Vollbild umschalten",
+          "visible": true,
+          "w": 130,
+          "x": 426,
+          "y": 160
+        },
+        {
+          "h": 44,
+          "id": "close-dialog",
+          "name": "Dialog schließen",
+          "visible": true,
+          "w": 66.46875,
+          "x": 478.53125,
+          "y": 19
+        },
+        {
+          "h": 44,
+          "id": "leaderboard-profile",
+          "name": "Mein Fahrer",
+          "visible": true,
+          "w": 257,
+          "x": 23,
+          "y": 197
+        },
+        {
+          "h": 44,
+          "id": "leaderboard-refresh",
+          "name": "Aktualisieren",
+          "visible": true,
+          "w": 257,
+          "x": 288,
+          "y": 197
+        }
+      ],
+      "h": 260,
+      "label": "568x260-leaderboard-loaded",
+      "outside": [],
+      "scroll": [
+        568,
+        260
+      ],
+      "w": 568
+    }
+  ],
+  "physicalTouchTest": false,
+  "webglFPSMeasured": false,
+  "flows": {
+    "duplicateNameRejected": true,
+    "leaderboardLoaded": true,
+    "startBriefing": true,
+    "raceTimerAdvanced": true,
+    "pause": true,
+    "resume": true,
+    "returnToGarage": true
+  }
+}

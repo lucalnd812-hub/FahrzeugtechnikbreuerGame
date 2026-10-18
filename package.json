@@ -1,0 +1,23 @@
+{
+  "name": "breuer-grand-prix",
+  "version": "3.6.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build:vercel": "node scripts/build-vercel.mjs",
+    "test": "node tests/tracks.mjs && node tests/simulation-clock.mjs && node tests/chase-camera.mjs && node tests/race-config.mjs && node tests/race-modes.mjs && node tests/pickups.mjs && node tests/touch-controls.mjs && node tests/interaction-guard.mjs && node tests/start-briefing.mjs && node tests/driving-dynamics.mjs && node tests/handling-regression.mjs && node tests/scenery-identity.mjs && node tests/village-polish.mjs && node tests/entry-screen.mjs && node tests/refinement.mjs && node --expose-gc tests/performance-production.mjs && node tests/course-races.mjs && node tests/finish-regression.mjs && node tests/road-surfaces.mjs && node tests/canvas-renderer.mjs && node tests/race-visibility.mjs && node tests/vehicle-models.mjs && node tests/vehicle-art.mjs && node tests/showroom-framing.mjs && node tests/racing-audio.mjs && node tests/garage-flow.mjs && node tests/interactions.mjs && node tests/network-clock.mjs && node tests/postgres.mjs && node tests/realtime.mjs && node tests/medal-targets.mjs && node tests/garage-carousel.mjs && node tests/garage-course-preview.mjs && node tests/garage-vehicle-preview.mjs && node tests/leaderboards.mjs && node tests/online-records.mjs && node tests/3.3-profile-leaderboards.mjs && node tests/render-cadence.mjs && node tests/artisan-world.mjs && node tests/minimap.mjs",
+    "test:art": "node tests/vehicle-rasterizer.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "esbuild": "^0.25.10",
+    "three": "^0.180.0",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8"
+  }
+}

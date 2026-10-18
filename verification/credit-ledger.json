@@ -1,0 +1,34 @@
+{
+  "initialBalance": 531,
+  "ceilingThisPass": 30,
+  "newJobs": [
+    {
+      "asset": "menu-reference",
+      "jobId": "49ae5b64-28d8-497c-929e-94d98aa03b47",
+      "quotedCredits": 0.25,
+      "status": "completed"
+    },
+    {
+      "asset": "garage-background",
+      "jobId": "6b37abbe-0007-453e-a589-981f800a1708",
+      "quotedCredits": 0.25,
+      "status": "completed"
+    },
+    {
+      "asset": "road-material",
+      "jobId": "e380a433-c656-4cc7-85ee-28f6356ddaba",
+      "quotedCredits": 0.25,
+      "status": "completed"
+    },
+    {
+      "asset": "mobile-reference",
+      "jobId": "ee2416dd-009b-464e-a39e-43a36241b8ad",
+      "quotedCredits": 0.25,
+      "status": "completed"
+    }
+  ],
+  "quotedSpend": 1,
+  "confirmedSpend": 1,
+  "lastBalance": 530,
+  "totalFromOriginal600": 70
+}

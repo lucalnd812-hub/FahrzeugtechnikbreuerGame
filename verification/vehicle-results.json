@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "date": "2026-10-13T07:24:59.162Z",
+  "modelVersion": "breuer-fleet-4",
+  "modelHash": "4b12cf20ccdc6ecb",
+  "artHash": "bf517545c2d6879a",
+  "drawsAndTriangles": [
+    {
+      "id": "kadett",
+      "levels": [
+        {
+          "quality": 0,
+          "triangles": 2346,
+          "draws": 6
+        },
+        {
+          "quality": 1,
+          "triangles": 6816,
+          "draws": 15
+        },
+        {
+          "quality": 2,
+          "triangles": 6816,
+          "draws": 15
+        }
+      ]
+    },
+    {
+      "id": "e30",
+      "levels": [
+        {
+          "quality": 0,
+          "triangles": 2608,
+          "draws": 6
+        },
+        {
+          "quality": 1,
+          "triangles": 7626,
+          "draws": 15
+        },
+        {
+          "quality": 2,
+          "triangles": 7626,
+          "draws": 15
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "levels": [
+        {
+          "quality": 0,
+          "triangles": 2338,
+          "draws": 6
+        },
+        {
+          "quality": 1,
+          "triangles": 8140,
+          "draws": 15
+        },
+        {
+          "quality": 2,
+          "triangles": 8140,
+          "draws": 15
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "levels": [
+        {
+          "quality": 0,
+          "triangles": 3498,
+          "draws": 6
+        },
+        {
+          "quality": 1,
+          "triangles": 10100,
+          "draws": 15
+        },
+        {
+          "quality": 2,
+          "triangles": 10100,
+          "draws": 15
+        }
+      ]
+    },
+    {
+      "id": "gt3rs",
+      "levels": [
+        {
+          "quality": 0,
+          "triangles": 3072,
+          "draws": 6
+        },
+        {
+          "quality": 1,
+          "triangles": 9453,
+          "draws": 15
+        },
+        {
+          "quality": 2,
+          "triangles": 9453,
+          "draws": 15
+        }
+      ]
+    }
+  ],
+  "art": {
+    "frames": 80,
+    "width": 640,
+    "height": 400,
+    "bytes": 1497452,
+    "manifest": "qa/polish/vehicle-art/manifest.json",
+    "contactSheet": "qa/polish/vehicle-fleet.png",
+    "allFrameChecks": true
+  },
+  "changes": [
+    "Body shoulders and doors now form shared continuous normal surfaces at both LODs",
+    "Tiny rolled bumper/wing edges preserve individual silhouettes",
+    "Classic low-detail tyres use12 smooth radial segments instead8",
+    "Glazing uses native blue pigment wash and slightly crowned glass",
+    "Soft32-sample local toon gradient instead4 hard bands; no PBR targets, extra lights or draw passes",
+    "Independent setVehicleLights(car,enabled) works on native high material and low merged vertices"
+  ],
+  "tests": [
+    "node tests/vehicle-models.mjs PASS: actual M2/GT3 RS raycast features, open wheel arches, dimensions, allLOD bounds",
+    "Sprung-body lean stays independent of all wheel contacts and contact-shadow matrices",
+    "Per-instance light enable/disable exact restoration, lowLOD visibility and no cross-car leak",
+    "Shared geometry/material/gradient resources are disposed once",
+    "80actual-model alphaWebP files match current model and renderer hashes"
+  ],
+  "creditCost": 0,
+  "limitations": [
+    "Offline renders validate authored native meshes; physical WebGL hardware FPS belongs to root end-to-end test",
+    "Classic E30/M1 straight period styling is intentionally preserved rather than universally rounding every feature"
+  ]
+}

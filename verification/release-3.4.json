@@ -1,0 +1,930 @@
+{
+  "version": "3.4.0",
+  "recordedAt": "2026-10-15T12:42:34.363870+00:00",
+  "url": "https://breuer-grand-prix-final.vercel.app/",
+  "projectId": "prj_ed4SbzEGOGAws5Lm2luQ24Awwgwr",
+  "deploymentId": "dpl_6wUrPdQyQxqcnLTj64dnokyLCAoT",
+  "candidateDeploymentId": "dpl_3KnkCJ76VeAYHxrNdUnxqGEVWZ2C",
+  "productionState": "READY",
+  "fullSuite": {
+    "programs": 37,
+    "passMessages": 100,
+    "testExitCode": 0,
+    "sourceFilesUnchangedDuringRun": 247
+  },
+  "browserFollowup": {
+    "reason": "Browser-observed vehicle undersizing and half-pixel short-header clipping",
+    "changed": [
+      "src/garage-polish.css",
+      "src/garage-vehicle-preview.js",
+      "tests/garage-vehicle-preview.mjs"
+    ],
+    "tests": [
+      "tests/garage-flow.mjs",
+      "tests/garage-carousel.mjs",
+      "tests/garage-vehicle-preview.mjs",
+      "tests/interactions.mjs"
+    ],
+    "build": "passed",
+    "fullSuite": "37 programs passed before these narrowly scoped browser follow-ups"
+  },
+  "health": {
+    "ok": true,
+    "release": "3.4.0",
+    "multiplayer": true,
+    "leaderboards": true
+  },
+  "productionHttp": {
+    "url": "https://breuer-grand-prix-final.vercel.app",
+    "checkedAt": "2026-10-15T12:38:40.657Z",
+    "status": "passed",
+    "files": [
+      {
+        "file": "index.html",
+        "status": 200,
+        "bytes": 316024,
+        "sha256": "db3b814ef604cb06bc15538f599b0f00dcae9846cbb8696a6412f137fc29f310",
+        "exact": true
+      },
+      {
+        "file": "audio/boost.mp3",
+        "status": 200,
+        "bytes": 6940,
+        "sha256": "e32676b03049dbd26849972e8b92ab11bf5afe085424971c4cf3215ec296eb3b",
+        "exact": true
+      },
+      {
+        "file": "audio/engine-e30.mp3",
+        "status": 200,
+        "bytes": 48109,
+        "sha256": "60e3cc568a131e58a297855339c281d02c5f65b3a2289c52ef4ac5f8df173213",
+        "exact": true
+      },
+      {
+        "file": "audio/engine-gt3rs.mp3",
+        "status": 200,
+        "bytes": 48109,
+        "sha256": "848d4f55ae97fc624b5148742f88b0b303d4d20871ae1c1555550455a5cab657",
+        "exact": true
+      },
+      {
+        "file": "audio/engine-kadett.mp3",
+        "status": 200,
+        "bytes": 48109,
+        "sha256": "8eda1e58653d013be8e1c3c3901d10105a53d109a9d10929a10a62cc9d23594e",
+        "exact": true
+      },
+      {
+        "file": "audio/engine-m1.mp3",
+        "status": 200,
+        "bytes": 48109,
+        "sha256": "a46a665843ccc27cedf395318105977483f32d6ea16eddbef7ae42db31bf021b",
+        "exact": true
+      },
+      {
+        "file": "audio/engine-m2.mp3",
+        "status": 200,
+        "bytes": 48109,
+        "sha256": "5fb336f775925c19d03d1f63b7f50d85084202212eb513c2d7b68ce29dc236e4",
+        "exact": true
+      },
+      {
+        "file": "audio/finish.mp3",
+        "status": 200,
+        "bytes": 17389,
+        "sha256": "002273c496b02d5864fe9c43d285164c0bf1a7c1c9f630ed722df0c413f27840",
+        "exact": true
+      },
+      {
+        "file": "audio/go.mp3",
+        "status": 200,
+        "bytes": 7567,
+        "sha256": "f75b2edf82071eaf3f472b83b9acb4e8974aa10bc3a13c9f753b326447dfe257",
+        "exact": true
+      },
+      {
+        "file": "audio/impact.mp3",
+        "status": 200,
+        "bytes": 2760,
+        "sha256": "d6388b701f9b7bd67007ec65b69483a1c184de5d4a2cf9f9eb61c06211450c82",
+        "exact": true
+      },
+      {
+        "file": "audio/lap.mp3",
+        "status": 200,
+        "bytes": 9239,
+        "sha256": "55dcfecc90f8f5b86707c46f6c987d30086803cb0a29dc5fadef6138c2233a5f",
+        "exact": true
+      },
+      {
+        "file": "audio/manifest.json",
+        "status": 200,
+        "bytes": 11166,
+        "sha256": "be0324809892f837557648f02cc2f41de20a77cc14495e20703bd23a7ea9ce0e",
+        "exact": true
+      },
+      {
+        "file": "audio/oil-hit.mp3",
+        "status": 200,
+        "bytes": 10075,
+        "sha256": "fe3c13fc5e37ec0e20d97021b25d97ddc7c11f6fbe3bf9afd4998b7baeb3c0b1",
+        "exact": true
+      },
+      {
+        "file": "audio/oil.mp3",
+        "status": 200,
+        "bytes": 3596,
+        "sha256": "052f7295a4398d452c1006cc32dc0ab8c8f7d0e86bb44da4b1b9b6ac46d0f827",
+        "exact": true
+      },
+      {
+        "file": "audio/drift.mp3",
+        "status": 200,
+        "bytes": 32017,
+        "sha256": "14290887ec52a832df6bb086b5fa20da9dafdb1129cc42e012f699fa0b627bf6",
+        "exact": true
+      },
+      {
+        "file": "audio/pickup.mp3",
+        "status": 200,
+        "bytes": 5895,
+        "sha256": "47cab898f3ef06cb09138b5d7a0098c59ae4c25652ef206a28ce21b69495b9af",
+        "exact": true
+      },
+      {
+        "file": "audio/crowd.mp3",
+        "status": 200,
+        "bytes": 48109,
+        "sha256": "78a55279b1b60b62e3bb0646d2e2be4313f4a61f25b649a038844902902e100b",
+        "exact": true
+      },
+      {
+        "file": "audio/countdown.mp3",
+        "status": 200,
+        "bytes": 3178,
+        "sha256": "a45e77b09bc7b94cdd0546490adc873c57319abb3b1b6d14abf8cecb1df9c5ec",
+        "exact": true
+      },
+      {
+        "file": "audio/reset.mp3",
+        "status": 200,
+        "bytes": 8612,
+        "sha256": "482b739dc2b776746e4e97293dcc37a732460de34078a52378940ead666eada0",
+        "exact": true
+      },
+      {
+        "file": "audio/shield.mp3",
+        "status": 200,
+        "bytes": 9239,
+        "sha256": "5008f6b9317d2afbd3bdece74df06178710dccfa09fe72281880b2b3b0ccc30d",
+        "exact": true
+      },
+      {
+        "file": "audio/ui-back.mp3",
+        "status": 200,
+        "bytes": 1297,
+        "sha256": "bd4045e84504f6f2de756edead5f39d5755fb991eb5f1c25cce5804407ac55c8",
+        "exact": true
+      },
+      {
+        "file": "audio/ui-select.mp3",
+        "status": 200,
+        "bytes": 5686,
+        "sha256": "8a9af7fe3010af237a4d8c6e8d50abc6777b61c475d60a9f5d6c94ba621bdce9",
+        "exact": true
+      },
+      {
+        "file": "audio/ui-click.mp3",
+        "status": 200,
+        "bytes": 2760,
+        "sha256": "d959a52251039f897109f591150ac230c206e2ecc438aef8fed18d58d70beac0",
+        "exact": true
+      },
+      {
+        "file": "audio/wind.mp3",
+        "status": 200,
+        "bytes": 39959,
+        "sha256": "b7dd4630eea453cd6e3ca4f22be9e0918a04c30a87f46ef8500533242c144e25",
+        "exact": true
+      },
+      {
+        "file": "game-8a3c4b6baa52.js",
+        "status": 200,
+        "bytes": 1056135,
+        "sha256": "8a3c4b6baa524e3e7aecd04a5afa38a57b2a4629807e74e8985a14407a799fd8",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/arcade-hero.webp",
+        "status": 200,
+        "bytes": 194550,
+        "sha256": "f7c47bc0600114b10ed27ec554deb10aac9d81652ce16398fe201d80a8841bcb",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/arcade-intro.mp4",
+        "status": 200,
+        "bytes": 272533,
+        "sha256": "f172a71f0488e6926466fdd08a46f3a4cde348583bab725d241fd141fd7a9f89",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/brick.webp",
+        "status": 200,
+        "bytes": 23576,
+        "sha256": "ea0ae8424bfd69f2f8b9ec9c04d76a3ad9fe17077d9ecd1bf10b5456d0f2bf70",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/garage-painted.webp",
+        "status": 200,
+        "bytes": 203518,
+        "sha256": "283ff64a713c5f0df28a7a7deb820905270900094623c7932989a43834e435bb",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/plaster.webp",
+        "status": 200,
+        "bytes": 4594,
+        "sha256": "4e1f53117b071d005f3dd0f934c3eeeace1e18e7fd5fa7789d181289c5efd1d9",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/slate.webp",
+        "status": 200,
+        "bytes": 17070,
+        "sha256": "87bba4b4329cc9e31ff24d68ccc9f08c145892d1f73c6301acd5f9d20e4b51e0",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/road-painted.webp",
+        "status": 200,
+        "bytes": 1556,
+        "sha256": "778449fc59f1ae36571dbd0c790e61acd74387910ac9c1570c827649156881bd",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/stone.webp",
+        "status": 200,
+        "bytes": 23614,
+        "sha256": "fcdb81d9a901180421fd24f465826c262fb243ace823effcd5aaa10531a4e5a2",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/village-details.webp",
+        "status": 200,
+        "bytes": 84342,
+        "sha256": "ede27a8ee908c55edeec94a28b0207b6f1ffc3a242e2a8b6b4ff065d4451e10b",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/village-facades.webp",
+        "status": 200,
+        "bytes": 312366,
+        "sha256": "5294c228692b7abf27d913d3713f0a1c9afdb8a6d4bb7d2a318dc7fe0dad06bf",
+        "exact": true
+      },
+      {
+        "file": "nextlevel/village-ground.webp",
+        "status": 200,
+        "bytes": 412282,
+        "sha256": "e02e88eb73e739367513d2c43ef5dddfa7a06037fcd307ee303f85f79824e6fb",
+        "exact": true
+      },
+      {
+        "file": "tracks/bahnhof.json",
+        "status": 200,
+        "bytes": 33320,
+        "sha256": "8e90737a232c1637f9529fc67452a06ffe5137d40ad5cc66dc0fde0827f3bd18",
+        "exact": true
+      },
+      {
+        "file": "tracks/base.json",
+        "status": 200,
+        "bytes": 506219,
+        "sha256": "c80da914e5bd7e69b48a9882c426943ff0cbbc7c216e87727b177dc2ec93f21d",
+        "exact": true
+      },
+      {
+        "file": "tracks/kraemer.json",
+        "status": 200,
+        "bytes": 29473,
+        "sha256": "58e3405496f316de1ade7139478d36f94dee7263617d796c9d44f9fd8af3cc5d",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/00.webp",
+        "status": 200,
+        "bytes": 8894,
+        "sha256": "c15ccb0e8dbbd312845fd4678784de64bbe6e4cacfabe09ae3b2d954151a7b9a",
+        "exact": true
+      },
+      {
+        "file": "tracks/lammersdorf.json",
+        "status": 200,
+        "bytes": 23520,
+        "sha256": "6683d16b3365792e05dda5bc0d8ca457e18ac57f0345535751d1e84f725feeb7",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/01.webp",
+        "status": 200,
+        "bytes": 17972,
+        "sha256": "da7ec7d033f68ac0e64e0cdcc4839297131a7fae806c7f1e86531473f4a506a4",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/02.webp",
+        "status": 200,
+        "bytes": 20940,
+        "sha256": "c67ff528598f94653b84fb6b859dda5ac70b5002c15b78cbfed5c7651807b344",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/03.webp",
+        "status": 200,
+        "bytes": 19970,
+        "sha256": "8ab309b1fc93c78a11f434728f94a7a6be61d3d53e5755240f0173ec8f43d36e",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/04.webp",
+        "status": 200,
+        "bytes": 15128,
+        "sha256": "d4395062dc0bb15390c694337093da1fb94c46e28bbde6220db49c14fbb3fcc3",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/05.webp",
+        "status": 200,
+        "bytes": 21396,
+        "sha256": "d5eb313d71a7a9e31b8761dc0f93bb34ead28f7e01d8ead2a699a7dec166791f",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/06.webp",
+        "status": 200,
+        "bytes": 20606,
+        "sha256": "6b7262e5016f7b3f2c8bc05ac2131a80ae525cca8fa649bae842243bd7a6c8c1",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/08.webp",
+        "status": 200,
+        "bytes": 9102,
+        "sha256": "f99b87460fc0beb79c4eaba9d7505c233be537a82c0951eea40bccf6322c5ee3",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/07.webp",
+        "status": 200,
+        "bytes": 16480,
+        "sha256": "d61d42ebd8bbc999efe9489f924d4056c57c1873597b85f0af86c33dd3bac561",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/09.webp",
+        "status": 200,
+        "bytes": 16450,
+        "sha256": "12c738cf0d69657c10b0f493b9c4f1fb31e4f70f957a40987d5909e630921e61",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/10.webp",
+        "status": 200,
+        "bytes": 20042,
+        "sha256": "eb7e49cb1cf6b5cad1474246e4274ac2aaf9ddb1f3a9c6c4976e2df7754e4758",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/12.webp",
+        "status": 200,
+        "bytes": 14738,
+        "sha256": "05a07cf7c184f95b8457c764155f4589b4cfb7ce3d9ac00933efc420e69f19b8",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/11.webp",
+        "status": 200,
+        "bytes": 19606,
+        "sha256": "97d5361cf70f85fe639ece513b906200cb6dfa2ea7bb2239ffc0dfa7dec1eabb",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/13.webp",
+        "status": 200,
+        "bytes": 20640,
+        "sha256": "8ba56cc3c4d22508843a24d60ca71769278fbaed24c912cde542d01660c53d09",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/14.webp",
+        "status": 200,
+        "bytes": 20394,
+        "sha256": "d895d6559eba4475582dc694cdae6d4ae9ad710dc8070b23ef4341e066a011d7",
+        "exact": true
+      },
+      {
+        "file": "vehicles/e30/15.webp",
+        "status": 200,
+        "bytes": 16738,
+        "sha256": "bb7ad55ee6605c554385e5eb230aecdb60f39ed39fa930fb9530a82753e103df",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/00.webp",
+        "status": 200,
+        "bytes": 10636,
+        "sha256": "f04f160d7611a36a210f4eebd76ea5c23acf373e7eb64bea14b6456750ffc416",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/01.webp",
+        "status": 200,
+        "bytes": 18314,
+        "sha256": "69bd35313cb0f0aa7150b90b284a221f2e9e7640e5d5f5a6dcf6ccff8d34aa01",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/02.webp",
+        "status": 200,
+        "bytes": 21428,
+        "sha256": "2acd5aaa417a0c1d57b4b9ec1dbcde92f606c5f4eea940f3c2399ce1e1a5f2fa",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/03.webp",
+        "status": 200,
+        "bytes": 21458,
+        "sha256": "94333632b80e797ae271c96d353f243dd7162b3f303b9f7e7074954a40293506",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/04.webp",
+        "status": 200,
+        "bytes": 19318,
+        "sha256": "78047105208ff3b40201a724e8081024facd646b10ffce2624be34b630fd695d",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/05.webp",
+        "status": 200,
+        "bytes": 21556,
+        "sha256": "0597a27634d27166f75c16cf782a5fcb712198798c0e3b3e17cc75393ba492e1",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/06.webp",
+        "status": 200,
+        "bytes": 20136,
+        "sha256": "6b88d9a9c221643afab11967ba995274831d55cf71efe39146395ed1b66d74b3",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/07.webp",
+        "status": 200,
+        "bytes": 15624,
+        "sha256": "51140880aa91f7cf26364625990943413aec4986fe47149609e115de1fa7df3d",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/09.webp",
+        "status": 200,
+        "bytes": 15356,
+        "sha256": "f48197e1f4c21087e46b28c7ec9e88cd4041200a6ad6db2b54ef648a9b2c35be",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/08.webp",
+        "status": 200,
+        "bytes": 8948,
+        "sha256": "60608e1fd83414f56dd4eeebf645099a6b35d54c2a25d3b237ed5c4e418ccc75",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/10.webp",
+        "status": 200,
+        "bytes": 19692,
+        "sha256": "04b58b71cecac7f20c88c619109d8c061694d5cc55e1f66482bced5e0c3f3962",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/11.webp",
+        "status": 200,
+        "bytes": 20708,
+        "sha256": "d9ecea912c7c13189c4a02cf5929bf14f95cd43ee6c62f5307f71d59b94b8ae2",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/12.webp",
+        "status": 200,
+        "bytes": 18430,
+        "sha256": "620395ad4734efeeef648dafa3e36946df03fd2cf01c77e0153bcc05ff4aefa1",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/13.webp",
+        "status": 200,
+        "bytes": 21456,
+        "sha256": "4ea52cf9aedfcf545ad3a168f6ac8d75a41c40b54c8c851bde9ed96259ca72c3",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/14.webp",
+        "status": 200,
+        "bytes": 20026,
+        "sha256": "cee10f8b8861c8423e88a75baba157b36db3e26b757c079b3c652dc6ae972a9d",
+        "exact": true
+      },
+      {
+        "file": "vehicles/gt3rs/15.webp",
+        "status": 200,
+        "bytes": 16664,
+        "sha256": "995abee8c9985679d688e53b7aa69379ab371fe254e1a464d9c06861a42678c0",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/00.webp",
+        "status": 200,
+        "bytes": 9140,
+        "sha256": "266149c19dc2f76f0191aaa0ffcb871b1755280024d6b720c26213b6cff36f53",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/01.webp",
+        "status": 200,
+        "bytes": 16106,
+        "sha256": "d1046caacc199f1b0c225a773fcce560a862481a75d06301144fb2b933d18e27",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/02.webp",
+        "status": 200,
+        "bytes": 19312,
+        "sha256": "7b14c3d8f06e34e820d79e9a598ebf448bd607f44592afb941ae515c693ed0be",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/03.webp",
+        "status": 200,
+        "bytes": 20128,
+        "sha256": "1589ce561f16231084ab7a2b5ccc7206026f4cf61e479a457e759a91b0e730c3",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/04.webp",
+        "status": 200,
+        "bytes": 15854,
+        "sha256": "60985774659a4f761018473330347d893ac47a07d44efbf110ba878be2cfc2e9",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/05.webp",
+        "status": 200,
+        "bytes": 19786,
+        "sha256": "31082d91508e3c660bba34d406c2fddcc9db611481e9f7f8ffa28e9cb65c3cb7",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/07.webp",
+        "status": 200,
+        "bytes": 15618,
+        "sha256": "9029a4312380bc97b8fefecae161d3d622a6404997d5d7e18a734243f224f68c",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/06.webp",
+        "status": 200,
+        "bytes": 19196,
+        "sha256": "1cd2c028b47ae4208b7102cd2dd051248c44a7c086eae89b77ac1181c57765b6",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/08.webp",
+        "status": 200,
+        "bytes": 9390,
+        "sha256": "c7936e455fcf12d357ddd03910632df0025789713a4396ea0a9ffad9ad2d5baf",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/09.webp",
+        "status": 200,
+        "bytes": 15926,
+        "sha256": "8d75567fcf6fa2c17ca6438fb8da0288e044f3385460bb708a0fee74661bd7da",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/10.webp",
+        "status": 200,
+        "bytes": 19354,
+        "sha256": "8e3e576cbd688fa39c5bc39e737cc2b927fe86e178167c0955338b887f0fd60f",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/11.webp",
+        "status": 200,
+        "bytes": 19800,
+        "sha256": "9a8f07ad61930e6239f77232789077a7ff2cd5e97dc63a8fd7926b33f46551c1",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/12.webp",
+        "status": 200,
+        "bytes": 15578,
+        "sha256": "2b10acded5fcec68d8f540140765cbd29da27882978ca46644e8c7ff9837b85d",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/13.webp",
+        "status": 200,
+        "bytes": 19914,
+        "sha256": "54dc48276990152e5e0164548dcb3ab9a02ff747f67fee0f0bd2a00d178d1867",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/14.webp",
+        "status": 200,
+        "bytes": 19044,
+        "sha256": "778ee63a445cbece56716fa88fe38924bcc842acf8451ee6bc4f2733cfa56cc0",
+        "exact": true
+      },
+      {
+        "file": "vehicles/kadett/15.webp",
+        "status": 200,
+        "bytes": 15274,
+        "sha256": "508b16b6749ed0ccbccc3030e5a29cd9601a7b18d1be9c1dc9caf29addcdd5e7",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/00.webp",
+        "status": 200,
+        "bytes": 11190,
+        "sha256": "995d40455ebebe57834a8ba0e08bc67badc5c780f50c672a5a4d0e2a1e99aba2",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/01.webp",
+        "status": 200,
+        "bytes": 20644,
+        "sha256": "31c3b56e7ff1b5afa152b89a758e0a2f73df44e722f4768d658aee56c6caee1b",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/02.webp",
+        "status": 200,
+        "bytes": 23124,
+        "sha256": "a66cb573a9383b4a83edd7745f49338382f5a16e53c0f19a7abc8b0677d5bbd9",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/04.webp",
+        "status": 200,
+        "bytes": 18084,
+        "sha256": "85e1c0a03ad3f35e6c7cd897c224a200039669f18d16a339fcb75a856d0d1ff8",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/03.webp",
+        "status": 200,
+        "bytes": 22448,
+        "sha256": "575851f9ad6812037a0895e8ef29974faa620dc3e35a4cabd8227cca1e3ce811",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/05.webp",
+        "status": 200,
+        "bytes": 21144,
+        "sha256": "3531c2a83429f6f749b40b107b9d1a1718bfb1d689127d690a78a5df35fb4034",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/06.webp",
+        "status": 200,
+        "bytes": 20080,
+        "sha256": "89a1a3859093dcc69ea84b128ac4350beacf34caa087d088eb823cec368edd1b",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/07.webp",
+        "status": 200,
+        "bytes": 16646,
+        "sha256": "2973eb4d44554ec94f542bba0c0f5b1d12bc67321a9e2d6a2fed4539e75750a0",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/08.webp",
+        "status": 200,
+        "bytes": 8612,
+        "sha256": "424d630d58457e0aed54707f5626dde7fa365750fa92542b699beb2517a272ac",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/09.webp",
+        "status": 200,
+        "bytes": 16016,
+        "sha256": "f5c06b7d8cf5acb9ae2b8a9abb10d39ef9aed61ccd1365e989b1120fc3f94212",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/11.webp",
+        "status": 200,
+        "bytes": 20318,
+        "sha256": "fb414af2eac88a691f41e080a7bf11769e339bc9819b0d20eedae730c76a2036",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/10.webp",
+        "status": 200,
+        "bytes": 19582,
+        "sha256": "cf1fd0f2bfe1d747088b935953998a959235658511f400a30f74d9602007bf6b",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/12.webp",
+        "status": 200,
+        "bytes": 18064,
+        "sha256": "3a3935e32da3f7bfeb166fe65afb5f32dbfb00b75cb25d91ffa6a5aa8652fc97",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/13.webp",
+        "status": 200,
+        "bytes": 22184,
+        "sha256": "36dfc8a1b5210579b9bc59d03ae73292ffb2bad8d1bd5f6fb4757b524e8f44e5",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/14.webp",
+        "status": 200,
+        "bytes": 22404,
+        "sha256": "1923eef4009d6cf831e0d357f2a3062d667b7914e02de2bf8b33e49239e22ee2",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m1/15.webp",
+        "status": 200,
+        "bytes": 18844,
+        "sha256": "2f5c96df7a537520361f7bb8d2436d17e2fe1eba2b66caa3d2aa3fd4ca16494a",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/00.webp",
+        "status": 200,
+        "bytes": 8300,
+        "sha256": "441806d5e2f22ce0013268e9e7b4bc5cf3004f1aad39889ce6a759d73742f178",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/01.webp",
+        "status": 200,
+        "bytes": 14078,
+        "sha256": "b6d367c58486c986211695518346246d90e5807ee79df9631b969a1ba1be982a",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/02.webp",
+        "status": 200,
+        "bytes": 17060,
+        "sha256": "ce1a76f984d760e9f26938c29cf1544360681fc92396d8543da7689042ec7060",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/03.webp",
+        "status": 200,
+        "bytes": 16528,
+        "sha256": "548a56d3b687de7253d8ae919d7d341bf33ccc7684ae8f3041e47301e141b890",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/04.webp",
+        "status": 200,
+        "bytes": 14062,
+        "sha256": "2b49a3601c8373425a8bc157fd10fc9c60f19d5022c2609caf50e527896c60ef",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/05.webp",
+        "status": 200,
+        "bytes": 17176,
+        "sha256": "ee0ebf38a8a128b0e5b3c7f9fc405758e29a3bc8360a5ab5b8968a7758e8a2d4",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/06.webp",
+        "status": 200,
+        "bytes": 15892,
+        "sha256": "2eede36d74022f436e67a830ef806181816d049ddc5fba66ff2c1963a8950307",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/07.webp",
+        "status": 200,
+        "bytes": 13576,
+        "sha256": "2f650e7aa88d5e91d23f005f29ece45d949148b57f14bc694ce9305536905230",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/08.webp",
+        "status": 200,
+        "bytes": 8216,
+        "sha256": "e0b9ad62b54b95beec4a4316f0e552a693bd1f381ab7d9bbe3f7109a63d0f630",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/10.webp",
+        "status": 200,
+        "bytes": 16200,
+        "sha256": "632ed954df360e4c5f9f35d96cea7bd8a3a3325a6670b85a589366c77d7d762b",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/09.webp",
+        "status": 200,
+        "bytes": 12984,
+        "sha256": "82aad2ff748fc1d658f4be82f6c787928dcd38f04a3259cc6e0048d30d23d526",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/11.webp",
+        "status": 200,
+        "bytes": 16676,
+        "sha256": "2a4a4aa52041ae3452ed333b21b21e164e4ca64cbb41d8b01d31da08ff34dd50",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/12.webp",
+        "status": 200,
+        "bytes": 13906,
+        "sha256": "678df5596f55fad31fc665c08d0eb992d86406d2cc9391f361fc41f5cbd3b5b3",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/14.webp",
+        "status": 200,
+        "bytes": 16346,
+        "sha256": "cbaab8359350e179818bf600609a53852a60ad6f9d526d37d0a053c56dfe6204",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/13.webp",
+        "status": 200,
+        "bytes": 16570,
+        "sha256": "09a78feae017437a86fbf7ecc0aae39ecef9d7fa6b59825bcad79a9bb52bcaaf",
+        "exact": true
+      },
+      {
+        "file": "vehicles/m2/15.webp",
+        "status": 200,
+        "bytes": 13332,
+        "sha256": "1d8cc1c945f132ce59fb6feee721d7f14eb10bc2a3142dcf11910e15a0bc003b",
+        "exact": true
+      },
+      {
+        "file": "vehicles/manifest.json",
+        "status": 200,
+        "bytes": 64520,
+        "sha256": "7e4c48c05f6e7a76219c5c28dfba39a416c644a6ae38a4e059bd2f4ed4258df6",
+        "exact": true
+      },
+      {
+        "file": "wix-test.html",
+        "status": 200,
+        "bytes": 5227,
+        "sha256": "efdaa1d94fb18aaf4d8fc33503cc68b79be17579146125b99b3141511a3461e4",
+        "exact": true
+      }
+    ],
+    "errors": []
+  },
+  "deliveredBuild": {
+    "files": 122,
+    "bytes": 5419020,
+    "core": [
+      {
+        "file": "game-8a3c4b6baa52.js",
+        "bytes": 1056135,
+        "sha256": "8a3c4b6baa524e3e7aecd04a5afa38a57b2a4629807e74e8985a14407a799fd8",
+        "sha1": "c47dbfe2a7fd8e05a810afad84cb5956c1083163"
+      },
+      {
+        "file": "index.html",
+        "bytes": 316024,
+        "sha256": "db3b814ef604cb06bc15538f599b0f00dcae9846cbb8696a6412f137fc29f310",
+        "sha1": "d39f6df634b143e00865cfa0554176edafc8cf9e"
+      }
+    ]
+  },
+  "credits": {
+    "thisPass": 8.25,
+    "balanceAfter": 177.5,
+    "newImages": 3,
+    "newVideos": 0,
+    "newAudio": 0
+  },
+  "limits": [
+    "Cloud UI and Canvas2D browser verification; no physical iOS/Android multitouch or real GPU FPS claim",
+    "Native mesh/texture QA renders use approximate CPU lighting and do not replace WebGL screenshots",
+    "Google Maps CAPTCHA blocked a complete new Street View scan; listed primary references were used",
+    "3.3 six-client online race is a prior baseline, not a repeated3.4 live race"
+  ]
+}

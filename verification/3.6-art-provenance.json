@@ -1,0 +1,461 @@
+{
+  "release": "3.6.0",
+  "model": "gpt_image_2_5",
+  "variant": "flare",
+  "successfulJobs": 11,
+  "credits": 45.25,
+  "textureCredits": 42.5,
+  "minimapCredits": 2.75,
+  "balanceBefore": 118.25,
+  "balanceAfter": 73,
+  "confirmedBalanceDifference": 45.25,
+  "rejectedSubmissions": 2,
+  "rejectedSubmissionsCharged": false,
+  "assets": [
+    {
+      "index": 1,
+      "name": "village-facades",
+      "jobId": "80103b65-b01e-475e-97d8-19398f781cb3",
+      "file": "assets/nextlevel/village-facades.webp",
+      "bytes": 185092,
+      "sha256": "2b24d8653dbc55f900a57c2192753edee0bfa8d923feab60175f97abc89038c8",
+      "originalBytes": 15048057,
+      "originalSha256": "5d87cfbdf0236da0e1242ffca17095a7232e85e3e929c8695e2cabdc7cdc9aeb",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 4,
+      "refinedSlots": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        11,
+        13,
+        15
+      ],
+      "preservedSlots": [
+        1,
+        3,
+        5,
+        8,
+        9,
+        10,
+        12,
+        14
+      ],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": true,
+      "usage": "Ergänzte Fassaden, Naturstein, Putz, Holz und Sockel",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 4x4 atlas, same16 material tiles. Add beautiful subtle limewash trowel texture in plaster, rounded varied regional greywacke stones and cream/red brick relief, blue-grey slate courses, oak grain, warm aged-plaster nuances and lightly weathered stone plinths. Preserve every cell's base material and bright colour. Every material tile must repeat seamlessly on all4 edges. Avoid baked windows, doors, objects or large stains in repeating walls.",
+      "referenceJobId": "87f1341d-23c1-4d96-887a-61b8ce9fd6cb",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 2,
+      "name": "artisan-roofs",
+      "jobId": "8df071ff-a55f-4738-83ce-8a27ccac2f1e",
+      "file": "assets/nextlevel/artisan-roofs.webp",
+      "bytes": 130936,
+      "sha256": "bd38930dc7d481a506912286676f13b68d8be617f4bda7db361431779573b841",
+      "originalBytes": 11087150,
+      "originalSha256": "4e1b9035e37fd9ffb029bd7054a9c581af1fa4bf7205f2bddc6dacd1ad09ab66",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 2,
+      "refinedSlots": [
+        0,
+        1,
+        2
+      ],
+      "preservedSlots": [
+        3
+      ],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": true,
+      "usage": "Verfeinerte Schiefer-, Ziegel- und Metalldächer",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 2x2 seamless roofing atlas. Exactly preserve slate top-left, terracotta roof tiles top-right, standing-seam weathered metal bottom-left and timber/shingle material bottom-right. Shape overlapping courses with gently rounded edges, subtle irregularity and broad cool highlights; keep directional courses aligned to reference. Each tile repeats seamlessly. No moss clumps, roof outline, labels or perspective.",
+      "referenceJobId": "0909967c-e9fa-4c69-9b19-898e0e42d58f",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 3,
+      "name": "village-ground",
+      "jobId": "ef4c8c5f-d46a-4750-838f-7b4d17c456fb",
+      "file": "assets/nextlevel/village-ground.webp",
+      "bytes": 185892,
+      "sha256": "bf842ba17443cb41424763acd850f6c1ddd2b5176356cde5d32df389139d45c0",
+      "originalBytes": 13503743,
+      "originalSha256": "20e2326218276ebb11b5174d1c7065f1ebce251770c6e8cb0da604727a853ad4",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 2,
+      "refinedSlots": [
+        0,
+        1,
+        2
+      ],
+      "preservedSlots": [
+        3
+      ],
+      "webpQuality": 82,
+      "periodicEdgeConditioning": true,
+      "usage": "Gras, Gehwegpflaster und Kies; bewährter Asphalt bleibt erhalten",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 2x2 seamless ground atlas. Exact tile order: soft meadow grass top-left, warm village paving top-right, fine gravel bottom-left, calm charcoal asphalt bottom-right. Enrich paving rounded cobbles and pale mortar, grass low clover and varied broad tufts, gravel subtle pebble roundness. Asphalt remains flat clean drivable charcoal with very subtle aggregate and occasional tiny fleck, never road markings, potholes, cracks or painted oil. Balanced fine detail that does not shimmer. All4 tiles individually seamless.",
+      "referenceJobId": "3f26108b-e544-43eb-affc-5a9637f112ef",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 4,
+      "name": "artisan-windows",
+      "jobId": "4fa9fb09-da32-4345-83e5-9dcafb94539f",
+      "file": "assets/nextlevel/artisan-windows.webp",
+      "bytes": 113382,
+      "sha256": "3791208246ef88ead2f002141bf00e07795f13e58333a30673824625afc173b3",
+      "originalBytes": 10965692,
+      "originalSha256": "c07ca246373ee57f16c1790e768ab486814a686b748e7566653c146aead0c721",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 4,
+      "refinedSlots": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11
+      ],
+      "preservedSlots": [
+        1,
+        4,
+        7,
+        12,
+        13,
+        14,
+        15
+      ],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": false,
+      "usage": "Fensterrahmen, Spiegelungen und Haustüren",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 4x4 exact building facade detail atlas. Preserve all8 residential windows in row1&2 and all4 existing entrance doors in row3. Row4: solar panel at column1, the existing wide shop glazing spanning column2+3, and last reference panel at column4. Keep frames, openings and wide-pane position unchanged. Add rounded painted wooden and metal frames, warm indoor curtains with restrained depth, clear broad blue-sky reflections, tiny hinges, subtly aged door panels and brass handles. Preserve glazing in cell13 at the reference crop x18%-90%,y34%-82%. No readable text, people, new partitions or large glare.",
+      "referenceJobId": "a952c731-1008-4ab6-8e81-348e7a8cff32",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 5,
+      "name": "artisan-workshop",
+      "jobId": "3b32f9fa-2b78-4bef-b7ad-de49b4331f00",
+      "file": "assets/nextlevel/artisan-workshop.webp",
+      "bytes": 166276,
+      "sha256": "4e7f32e5f05d8e1db9f4031ce0c4f2e78374836caba452206835d9179051955f",
+      "originalBytes": 10551897,
+      "originalSha256": "e3346840cab0c18ec700f932fd2a97bb55c116da5aa4847b60de8544ea377702",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 4,
+      "refinedSlots": [
+        0,
+        1,
+        2,
+        8,
+        9,
+        10,
+        12,
+        14
+      ],
+      "preservedSlots": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        13,
+        15
+      ],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": false,
+      "usage": "Werkzeugwand, Schränke, Backwaren und Werkstattpaneele",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 4x4 exact existing workshop/shop prop atlas. Keep every object in its exact reference cell and front-facing view, including tools, tool cabinet, bread display, garage doors, blue machinery, red lift/panels, metal and courtyard paving. Refine tools with soft metallic edging, organised wall detail, bevelled red cabinet drawers, warm artisan bread scored crust, warm garage glazing, hydraulic/industrial panel details. Preserve slot4 blue machine paint, slot5 red lift paint at center strip x37%-63% y4%-62%, slot6 plain metal and slot7 courtyard paving. These crops MUST remain plain repeatable materials and not show pictorial objects. Preserve upper slots8-15 panel identities. No words/logos.",
+      "referenceJobId": "85fef767-d0c9-45af-a213-95d6b41843c0",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 6,
+      "name": "artisan-roadside",
+      "jobId": "de5b2e6e-a034-4a35-aed2-5ed636b18c34",
+      "file": "assets/nextlevel/artisan-roadside.webp",
+      "bytes": 214880,
+      "sha256": "c95869398c954535f9adce0c5352f9123a77c6729cd3faef240fec542a516d48",
+      "originalBytes": 12822351,
+      "originalSha256": "0ce259f401e7caeaba88ff8735af90e00b536c32a53b04d1d83966b695f07f9f",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 4,
+      "refinedSlots": [
+        8,
+        11,
+        14
+      ],
+      "preservedSlots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        15
+      ],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": false,
+      "usage": "Bäckertafel, Schulhofmotiv und Banklatten",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 4x4 exact current roadside prop atlas. Preserve all tiles in place, especially slot8 bakery chalkboard, slot11 school hopscotch pattern and slot14 warm oak bench slats. Enhance chalkboard wood roundness and chalk bread/croissant pictograms (NO words); clearer playful school pavement chalk motif; attractive oak bench grain and gently worn edges. Preserve other reference cell materials and avoid busy false signage. No text, no logos, no new grid arrangement.",
+      "referenceJobId": "319d7bd0-750a-48fe-8e45-619000b77e4c",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 7,
+      "name": "artisan-foliage",
+      "jobId": "03c6cc45-3ea7-4fb3-8dc7-3034df7aa19a",
+      "file": "assets/nextlevel/artisan-foliage.webp",
+      "bytes": 410096,
+      "sha256": "4914219efb1a69fb504a4ec74eada46bd15ac022d76e9754de3318e6d4c57f53",
+      "originalBytes": 10944998,
+      "originalSha256": "8033c7c08e7b4a334e307c06d9e66bda6784e12894fd94b7a4d993768a787fae",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 4,
+      "refinedSlots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "preservedSlots": [],
+      "webpQuality": 82,
+      "periodicEdgeConditioning": false,
+      "usage": "Bäume, Sträucher, Blumen und Blätter",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. TRANSPARENT 4x4 foliage sprite atlas with EXACT existing silhouettes, species, occupied boxes and empty margins. Preserve16cells and clear alpha space between them. Gently enrich rounded clusters of leaves with broader sculpted light, layered greens, friendly leaf variation, warm flowers and restrained depth. Large diffuse greens, no tiny noise/shimmer. Preserve slot0 dense broadleaf crown and slot14 cool pine crown, including their dense central crops. No visible background, shadows on a backdrop, stems extending into neighbouring cells, labels or frames.",
+      "referenceJobId": "006451c4-4378-4e73-af22-862e180b0b11",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 8,
+      "name": "car-details",
+      "jobId": "6a1cfd43-b5a7-430e-ab6c-d1cc94988ab0",
+      "file": "assets/nextlevel/car-details.webp",
+      "bytes": 123870,
+      "sha256": "56c373ffc4b3f34c9d648fc8b93c8fc6e355baff2434c05c64c66f363ce33095",
+      "originalBytes": 9890225,
+      "originalSha256": "0d79b98fc159588085faf1131bfe7746076f0050c5a73258d87981eaee9bcb4c",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 4,
+      "refinedSlots": [
+        3,
+        8,
+        9,
+        11,
+        14
+      ],
+      "preservedSlots": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        10,
+        12,
+        13,
+        15
+      ],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": false,
+      "usage": "Aluminium, Scheinwerfer, Rückleuchten, Bremsen und Kunststoff",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 4x4 exact automotive detail texture atlas. Keep all16 reference islands in EXACT cells and bounds. Refine tyre sidewalls/grooves, alloy rim highlights, clean grille perforation, headlamp/taillamp internal lenses, dark glass reflection, brushed metal and trim. Geometry and car body colour are NOT changed. Broad restrained soft highlights, realistic mechanical readability rendered as modern rounded stylized3D. Preserve all plain metallic and dark-glass patches as plain patches. Do not invent brand badges, lettering, extra tyre circles, text or mechanical perspective. Keep tyres deep charcoal rather than pure black.",
+      "referenceJobId": "32fe878e-a77e-4bc0-a1f1-59581ba2e984",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 9,
+      "name": "artisan-panels",
+      "jobId": "a9d03002-04e0-4b3a-9efe-29217ba6fda9",
+      "file": "assets/nextlevel/artisan-panels.webp",
+      "bytes": 51924,
+      "sha256": "0f7f714ffaadaa06f83741d439136c618e0babf6b7c8b8374d46238ba54fc774",
+      "originalBytes": 9330969,
+      "originalSha256": "c4c07e108910bddcdb6d71f47b692d7147c062f4f81f6a3a54b35c26af0252b8",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 2,
+      "refinedSlots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "preservedSlots": [],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": false,
+      "usage": "Rote und graphitfarbene Bedienflächen",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. Opaque 2x2 exact existing UI SURFACE atlas, NOT finished buttons. Preserve all reference tile colours/layout, corners/border placement. Enrich red enamel lacquer and graphite satin metal with soft wide bevels, tiny edge wear and restrained broad reflections. One tile's long diagonal/striping structure must retain exact original alignment. Same centre calmness and contrast so native light UI text stays legible. No lettering, icons, screws in central content, new boxes, logos or large bright glare.",
+      "referenceJobId": "7720658c-63d2-4ea5-9323-79f4114cacad",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 10,
+      "name": "artisan-medals",
+      "jobId": "b98ae23e-a767-4f62-9e38-50888592eff0",
+      "file": "assets/nextlevel/artisan-medals.webp",
+      "bytes": 189908,
+      "sha256": "a4169cceba9135a35c95199eae86946a31a43bb48d57fff0bfe2b2db288960e5",
+      "originalBytes": 10017463,
+      "originalSha256": "9eb2715d41dc03cd6bc5382d3afce410ed1a4ad0ff7e54eded031746eac66b3f",
+      "originalSize": [
+        2880,
+        2880
+      ],
+      "runtimeSize": [
+        1024,
+        1024
+      ],
+      "grid": 2,
+      "refinedSlots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "preservedSlots": [],
+      "webpQuality": 84,
+      "periodicEdgeConditioning": false,
+      "usage": "Gold-, Silber-, Bronze- und Siegermedaillen",
+      "prompt": "Create a complementary texture refinement for an existing premium stylized 3D village racing game. The supplied image is the CURRENT LIVE texture atlas: preserve its EXACT grid, cell coordinates, subject identity, facing, occupied bounds and colour family. Do not rearrange, add labels, borders, text, watermarks or logos. This is a texture sheet, never a screenshot, mockup, scene or board. Modern sculpted cartoon 3D with hand-painted richness, broad soft bevel highlights, gentle ambient occlusion, clean readable shapes, warm Eifel village palette, not photographic and not noisy. Retain all working UV islands and seam continuity. Details must read when reduced to 1024 pixels total. Flat orthographic texture artwork, no perspective presentation. Enhance the reference rather than redesigning it. TRANSPARENT 2x2 exact UI medal atlas. Preserve GOLD medal top-left, SILVER top-right, BRONZE bottom-left and existing neutral/unearned medal bottom-right; preserve exact ring silhouette, ribbon placement, margins and icon positions. Enrich embossed sculpted relief, soft metal bevels, broad premium highlights, red racing ribbon stitching. Keep warm cheerful polished game look, legible64pixel miniature silhouettes, no text, no additional icons, no glows/background, no changed composition.",
+      "referenceJobId": "a466d8c2-b568-43a8-82b8-9fc96bde11fe",
+      "quotedCredits": 4.25,
+      "generationResolutionTier": "4k",
+      "quality": "high"
+    },
+    {
+      "index": 11,
+      "name": "minimap-frame",
+      "jobId": "3a49d0a6-994b-42c9-bdd3-c12731cba3d2",
+      "file": "assets/nextlevel/minimap-frame.webp",
+      "bytes": 9334,
+      "sha256": "b2c1eb4ed5bd9949bae49facaa02429794ce9ab20a50ae91ef096c14ae1793e9",
+      "originalBytes": 3150895,
+      "originalSha256": "9b869cc9e8a621cb70d078721ecf5dd91fc2deed4a8720d4253a193268f64a9d",
+      "originalSize": [
+        2048,
+        2048
+      ],
+      "runtimeSize": [
+        512,
+        512
+      ],
+      "technicalAlphaCutout": true,
+      "webpQuality": 84,
+      "usage": "Neuer Rahmen der größeren nativen MiniMap",
+      "prompt": "Design ONE premium game HUD MINIMAP BEZEL as a standalone transparent PNG asset for a modern stylized 3D village racing game. Use the supplied red/graphite surface atlas ONLY as colour/material direction, NOT as a layout. A single square frame, flat orthographic FRONT VIEW, no perspective. Wide softened corners, refined graphite satin-metal shell, narrow painted red edge, small pale warm-metal accents. Frame confined to the outer 9 percent on all sides; the entire central 82 percent is completely TRANSPARENT and empty for a native live map canvas. Outside rounded corners also transparent. Clean modern sporty workshop aesthetic, hand-painted sculpted cartoon 3D matching the reference, restrained broad highlights and tiny edge wear. No text, letters, numbers, icons, actual map, screen, roads, compass, controls, logo, watermark or multiple panels. Symmetric stretchable 9-slice-friendly edges, crisp readable at256pixels. Entire artwork square edge-to-edge; no surrounding scenery or drop-shadow outside bounds.",
+      "referenceJobId": "7720658c-63d2-4ea5-9323-79f4114cacad",
+      "quotedCredits": 2.75,
+      "generationResolutionTier": "2k",
+      "quality": "high"
+    }
+  ]
+}

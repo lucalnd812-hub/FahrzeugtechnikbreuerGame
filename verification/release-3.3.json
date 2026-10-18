@@ -1,0 +1,28 @@
+{
+  "version": "3.3.0",
+  "url": "https://breuer-grand-prix-final.vercel.app/",
+  "projectId": "prj_ed4SbzEGOGAws5Lm2luQ24Awwgwr",
+  "deploymentId": "dpl_H2XJVZcaNymdVUPiWSF1kCPuS7Xr",
+  "state": "READY",
+  "tests": {
+    "fullPrograms": 36,
+    "passMessages": 98,
+    "passed": true,
+    "postDialogFix": "tests/online-records.mjs passed"
+  },
+  "http": {
+    "files": 120,
+    "bytes": 4502751,
+    "exact": true
+  },
+  "online": {
+    "clients": 6,
+    "fullRacePassed": true,
+    "cleanup": true
+  },
+  "profiles": {
+    "liveDuplicateRejected": true,
+    "createdLeaderboardRecords": 0
+  },
+  "physical3DFPS": null
+}

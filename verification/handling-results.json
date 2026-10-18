@@ -1,0 +1,641 @@
+{
+  "passed": true,
+  "handlingVersion": "arcade-handling-4",
+  "creditsSpent": 0,
+  "method": "Actual fixed-step vehicle simulation on surveyed routes. Binary steering/braking is sampled at 10 Hz with fixed auto gas. No GPU/browser/human usability or FPS claim.",
+  "releases": [
+    {
+      "car": "kadett",
+      "releaseDirectionStepRad": 0.09391721452388492,
+      "settledSlipRad": 0.00543395068389958,
+      "counterRotationReversedAfterSeconds": 0.06666666666666667,
+      "boostEvents": 1
+    },
+    {
+      "car": "e30",
+      "releaseDirectionStepRad": 0.10650970457959352,
+      "settledSlipRad": 0.0015865408185822781,
+      "counterRotationReversedAfterSeconds": 0.06666666666666667,
+      "boostEvents": 1
+    },
+    {
+      "car": "m1",
+      "releaseDirectionStepRad": 0.09599919360859976,
+      "settledSlipRad": 0.003162083038265133,
+      "counterRotationReversedAfterSeconds": 0.06666666666666667,
+      "boostEvents": 1
+    },
+    {
+      "car": "m2",
+      "releaseDirectionStepRad": 0.10087089704720141,
+      "settledSlipRad": 0.005093845590929676,
+      "counterRotationReversedAfterSeconds": 0.06666666666666667,
+      "boostEvents": 1
+    },
+    {
+      "car": "gt3rs",
+      "releaseDirectionStepRad": 0.10979661081675252,
+      "settledSlipRad": 0.001005366389159621,
+      "counterRotationReversedAfterSeconds": 0.05,
+      "boostEvents": 1
+    }
+  ],
+  "races": [
+    {
+      "track": "lammersdorf",
+      "car": "kadett",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 83.48333333333333,
+      "steps": 5010,
+      "autoResets": 0,
+      "driftBoosts": 9,
+      "maxCentrelineDistance": 5.175158970698841,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "kadett",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 87.5,
+      "steps": 5251,
+      "autoResets": 0,
+      "driftBoosts": 9,
+      "maxCentrelineDistance": 5.224381170274144,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "e30",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 99.86666666666666,
+      "steps": 5993,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 4.568733748920982,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "e30",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 105.76666666666667,
+      "steps": 6347,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 5.06542555684475,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "m1",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 89.46666666666667,
+      "steps": 5369,
+      "autoResets": 0,
+      "driftBoosts": 5,
+      "maxCentrelineDistance": 5.152218255040078,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "m1",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 93.51666666666667,
+      "steps": 5612,
+      "autoResets": 0,
+      "driftBoosts": 8,
+      "maxCentrelineDistance": 5.210072992018769,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "m2",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 83.85,
+      "steps": 5032,
+      "autoResets": 0,
+      "driftBoosts": 5,
+      "maxCentrelineDistance": 5.308750243951333,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "m2",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 88.26666666666667,
+      "steps": 5297,
+      "autoResets": 0,
+      "driftBoosts": 6,
+      "maxCentrelineDistance": 5.516524844529443,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "gt3rs",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 83.53333333333333,
+      "steps": 5013,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 5.47214892993764,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "lammersdorf",
+      "car": "gt3rs",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 87.98333333333333,
+      "steps": 5280,
+      "autoResets": 0,
+      "driftBoosts": 1,
+      "maxCentrelineDistance": 5.942240844038638,
+      "offroadFraction": 0.0005681818181818182,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "kadett",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 112.16666666666667,
+      "steps": 6731,
+      "autoResets": 0,
+      "driftBoosts": 4,
+      "maxCentrelineDistance": 4.0222184062666475,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "kadett",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 116.86666666666666,
+      "steps": 7013,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 4.26978136177673,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "e30",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 126.2,
+      "steps": 7573,
+      "autoResets": 0,
+      "driftBoosts": 0,
+      "maxCentrelineDistance": 3.931983929489788,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "e30",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 130.11666666666667,
+      "steps": 7808,
+      "autoResets": 0,
+      "driftBoosts": 0,
+      "maxCentrelineDistance": 3.9884157895562664,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "m1",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 113.06666666666666,
+      "steps": 6785,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 4.106935554923013,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "m1",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 117.75,
+      "steps": 7066,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 3.85591526442548,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "m2",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 109.91666666666667,
+      "steps": 6596,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 4.020879166896568,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "m2",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 114.95,
+      "steps": 6898,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 4.059049735223219,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "gt3rs",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 107.55,
+      "steps": 6454,
+      "autoResets": 0,
+      "driftBoosts": 0,
+      "maxCentrelineDistance": 4.207884601929492,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "bahnhof",
+      "car": "gt3rs",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 111.25,
+      "steps": 6676,
+      "autoResets": 0,
+      "driftBoosts": 0,
+      "maxCentrelineDistance": 4.446382701616015,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "kadett",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 111.43333333333334,
+      "steps": 6687,
+      "autoResets": 0,
+      "driftBoosts": 10,
+      "maxCentrelineDistance": 5.296818007150987,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "kadett",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 116.39999999999999,
+      "steps": 6985,
+      "autoResets": 0,
+      "driftBoosts": 12,
+      "maxCentrelineDistance": 4.564462728316557,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "e30",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 133.25,
+      "steps": 7996,
+      "autoResets": 0,
+      "driftBoosts": 5,
+      "maxCentrelineDistance": 4.825482780921173,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "e30",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 138.35,
+      "steps": 8302,
+      "autoResets": 0,
+      "driftBoosts": 2,
+      "maxCentrelineDistance": 5.040237932005911,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "m1",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 118.58333333333333,
+      "steps": 7116,
+      "autoResets": 0,
+      "driftBoosts": 9,
+      "maxCentrelineDistance": 5.39248755114529,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "m1",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 124.8,
+      "steps": 7489,
+      "autoResets": 0,
+      "driftBoosts": 5,
+      "maxCentrelineDistance": 4.7979730640746885,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "m2",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 112.33333333333333,
+      "steps": 6741,
+      "autoResets": 0,
+      "driftBoosts": 10,
+      "maxCentrelineDistance": 4.867628300768693,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "m2",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 116.26666666666667,
+      "steps": 6977,
+      "autoResets": 0,
+      "driftBoosts": 9,
+      "maxCentrelineDistance": 5.415283518525253,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "gt3rs",
+      "rules": "classic",
+      "laps": 2,
+      "finished": true,
+      "seconds": 111.93333333333334,
+      "steps": 6717,
+      "autoResets": 0,
+      "driftBoosts": 4,
+      "maxCentrelineDistance": 5.485904148956366,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    },
+    {
+      "track": "kraemer",
+      "car": "gt3rs",
+      "rules": "action",
+      "laps": 2,
+      "finished": true,
+      "seconds": 116.43333333333334,
+      "steps": 6987,
+      "autoResets": 0,
+      "driftBoosts": 3,
+      "maxCentrelineDistance": 5.619961885580686,
+      "offroadFraction": 0,
+      "orderedGates": 24
+    }
+  ],
+  "summary": {
+    "binaryRaces": 30,
+    "lapsPerRace": 2,
+    "physicsSteps": 195801,
+    "driftBoosts": 132,
+    "autoResets": 0,
+    "maxCentrelineDistance": 5.942240844038638
+  },
+  "responseComparison": {
+    "method": "Half-second deliberate drift at constant 30 m/s, beginning straight; scalar update functions only. Baseline is the deployed arcade-handling-3, new is arcade-handling-4; speed held equal to isolate direction responsiveness.",
+    "cars": [
+      {
+        "id": "kadett",
+        "previous": {
+          "bodyHeadingRadians": -0.35753958014237386,
+          "travelHeadingRadians": -0.029069090916663876,
+          "steering": 0.9941835130918913,
+          "yawRate": -0.8259787948545119,
+          "slip": 0.32847048922571
+        },
+        "current": {
+          "bodyHeadingRadians": -0.8720517542482523,
+          "travelHeadingRadians": -0.5510294727452382,
+          "steering": 0.9980695458637723,
+          "yawRate": -2.1861317626376815,
+          "slip": 0.32102228150301415
+        }
+      },
+      {
+        "id": "e30",
+        "previous": {
+          "bodyHeadingRadians": -0.43080572603064643,
+          "travelHeadingRadians": -0.12028166577537092,
+          "steering": 0.9959728883911153,
+          "yawRate": -0.9785157463769169,
+          "slip": 0.3105240602552755
+        },
+        "current": {
+          "bodyHeadingRadians": -1.0228895341762259,
+          "travelHeadingRadians": -0.7290929956766147,
+          "steering": 0.9987646841238311,
+          "yawRate": -2.5173352757156775,
+          "slip": 0.2937965384996112
+        }
+      },
+      {
+        "id": "m1",
+        "previous": {
+          "bodyHeadingRadians": -0.4101083659522879,
+          "travelHeadingRadians": -0.085156021441117,
+          "steering": 0.9930097243885213,
+          "yawRate": -0.9640295134330947,
+          "slip": 0.3249523445111709
+        },
+        "current": {
+          "bodyHeadingRadians": -0.839406558177229,
+          "travelHeadingRadians": -0.5379446509091892,
+          "steering": 0.9975867616367845,
+          "yawRate": -2.1344546841174488,
+          "slip": 0.3014619072680398
+        }
+      },
+      {
+        "id": "m2",
+        "previous": {
+          "bodyHeadingRadians": -0.387056126553096,
+          "travelHeadingRadians": -0.032001927715864964,
+          "steering": 0.9915990607567066,
+          "yawRate": -0.907450370832862,
+          "slip": 0.35505419883723105
+        },
+        "current": {
+          "bodyHeadingRadians": -0.8943383491952641,
+          "travelHeadingRadians": -0.5560544244466653,
+          "steering": 0.9969832386647242,
+          "yawRate": -2.2809974895876812,
+          "slip": 0.3382839247485988
+        }
+      },
+      {
+        "id": "gt3rs",
+        "previous": {
+          "bodyHeadingRadians": -0.5168206381327568,
+          "travelHeadingRadians": -0.18245144860588747,
+          "steering": 0.9966491103852748,
+          "yawRate": -1.169265294768389,
+          "slip": 0.33436918952686934
+        },
+        "current": {
+          "bodyHeadingRadians": -1.13475750654764,
+          "travelHeadingRadians": -0.8594827153114247,
+          "steering": 0.9990118172000546,
+          "yawRate": -2.7694512280311447,
+          "slip": 0.27527479123621534
+        }
+      }
+    ]
+  },
+  "additionalCourseEvidence": {
+    "passed": true,
+    "races": 90,
+    "cars": 5,
+    "tracks": 3,
+    "laps": [
+      2,
+      3,
+      5
+    ],
+    "rules": [
+      "classic",
+      "action"
+    ],
+    "difficulty": 1.06,
+    "physicsSteps": 1012257,
+    "maxCentrelineDistance": 4.29,
+    "autoResets": 0,
+    "source": "tests/driving-dynamics.mjs completed in this session"
+  },
+  "additionalVerification": {
+    "refinement": "passed: all five car drifts, exact two-second stationary recovery, course obstacles and barriers",
+    "courseRaces": "passed: all three tracks, six finishers, Classic/Action, actual items/oil, five laps, 30/60 Hz equivalent",
+    "raceModes": "passed: category records, ghosts, replay, Cup and medals",
+    "finishRegression": {
+      "status": "passed",
+      "individualRaceCases": 81,
+      "explicitVergeCases": 36,
+      "collisionRaceFinishers": 30,
+      "stationaryFinalLineCollision": true,
+      "serverValidated10HzPackets": 335840,
+      "largestPacketProgressDeltaMetres": 23.846,
+      "deterministicCornerCollision": {
+        "physicalImpulseMetres": 0.3,
+        "centrelineProjectionSwitchMetres": 17.041,
+        "geometry": "Same surveyed kraemer closed route; only start offset is rotated so makeVehicle supplies the confirmed local origin automatically.",
+        "manualProgressGateOrFinishAssignment": false,
+        "checks": "Real collideCars impulse; existing >15 m and <=2.2 m limits; exact 0.30 m impulse; confirmed projection/progress continuity; no unearned gate or finish; remote progress ownership; stationary follow-up preserves the confirmed collision."
+      },
+      "protections": [
+        "actual 2/3/5 lap finishes",
+        "all cars and tracks",
+        "both verge approaches",
+        "moving/stationary recovery",
+        "delayed ordered gates",
+        "finished state freezes once",
+        "reverse travel cannot earn gates",
+        "position teleports cannot earn progress",
+        "all actual 10 Hz packets pass production validator"
+      ]
+    }
+  },
+  "sourceFiles": [
+    {
+      "file": "src/driving-dynamics.js",
+      "sha256": "d013a6053615287828d495a8d9eccfef91e820bd5d3cdb070f98f27d7138b711"
+    },
+    {
+      "file": "src/car-catalog.js",
+      "sha256": "66c58391647af56ec0669f52d5a143e942aa445681adfaa25ced698ea9f39e17"
+    },
+    {
+      "file": "src/race-core.js",
+      "sha256": "3746413d482522e557b696b1cc6c21e9f608c61d59b0e22766277f7dcfeb8e10"
+    },
+    {
+      "file": "tests/driving-dynamics.mjs",
+      "sha256": "a27812f31bd74346795beba9635aae911a8a5ae45912b538764165836bdefeaf"
+    },
+    {
+      "file": "tests/handling-regression.mjs",
+      "sha256": "9601c0af8dbe50e81b2cf33a924e9bd4fc073d9a397980313e58eaa41e5d172a"
+    },
+    {
+      "file": "tests/finish-regression.mjs",
+      "sha256": "78dfdb8d98b217a68680cba330c3c5f3a69aadbbcbda84fc337df67107e1887b"
+    }
+  ]
+}

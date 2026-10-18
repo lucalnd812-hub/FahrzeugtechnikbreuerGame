@@ -1,0 +1,561 @@
+{
+  "version": "3.4",
+  "createdAt": "2026-10-15T12:28:10.811Z",
+  "productionFrozen": true,
+  "geometryHash": "d6927ec682065492",
+  "artHash": "7b33ddcfe4f31735",
+  "frames": 80,
+  "totalFrameBytes": 1368552,
+  "camera": {
+    "projection": "orthographic",
+    "motion": "fixed-camera-rotating-model",
+    "front": "+Z",
+    "yawRadiansPerFrame": 0.39269908169872414,
+    "elevationDegrees": 18,
+    "targetHeight": 0.66,
+    "orthographicWidth": 6.26,
+    "pixelsPerMetre": 102.23642172523962,
+    "groundAnchor": [
+      320,
+      264.173526
+    ],
+    "frameZero": "front"
+  },
+  "framing": {
+    "mode": "fixed-scale-ground-pivot",
+    "fit": 0.88,
+    "anchor": [
+      0.5,
+      0.64
+    ],
+    "bounds": [
+      65,
+      52,
+      510,
+      283
+    ],
+    "sharedWorldScale": true
+  },
+  "tests": [
+    {
+      "command": "node tests/vehicle-art.mjs",
+      "result": "PASS",
+      "scope": "Native transparent WebP integrity, asynchronous selection/dedupe/retry, manifest/art-source hashes, common projection, cache trim."
+    },
+    {
+      "command": "node tests/garage-vehicle-preview.mjs",
+      "result": "PASS",
+      "scope": "400 fixed-scale and fixed-ground projections; immediate selected-car thumbnail; Canvas/img paths; max 2 load jobs; bounded cache; hidden/dispose and finite errors."
+    },
+    {
+      "command": "node tests/canvas-renderer.mjs",
+      "result": "PASS",
+      "scope": "All three track Canvas compatibility paths; actual vehicle images; logical rendering counters, not physical GPU performance."
+    },
+    {
+      "command": "node qa/3.4-vehicle-preview/verify-rendered-contact.mjs qa/3.4-vehicle-preview/final-art",
+      "result": "PASS",
+      "scope": "80 native frames and 320 projected tyre-floor contacts; contact alpha occupied within 2px."
+    }
+  ],
+  "visualProof": {
+    "directory": "final-garages",
+    "method": "QA composites of unchanged native final WebP frames over actual newly painted garage; fixed full-fleet source scale and ground pivot, not browser captures.",
+    "checked": [
+      "garage-kadett-02.png",
+      "garage-m2-02.png",
+      "garage-m2-00.png",
+      "garage-m2-08.png",
+      "garage-gt3rs-02.png",
+      "garage-e30-02.png",
+      "garage-m1-02.png"
+    ],
+    "note": "These raw QA composites predate the final DOM-only fit/pivot change; native car art remains identical. Final actual browser layout is verified separately by root."
+  },
+  "changes": [
+    "A single fleet-wide orthographic metre/pixel scale replaces per-angle alphaBounds fitting.",
+    "Each frame carries the projected common world-ground pivot; frame crop removes transparent pixels only.",
+    "18-degree fixed camera with rotating native models; warm/cool garage lighting stays fixed in world space.",
+    "Native soft underbody and four tyre contact patches follow the car ground plane.",
+    "3x supersampling; native v5 glazing/cabin/body details; WebP bank remains compact.",
+    "Preview has no own animation loop, at most two queued loads, LRU trimming and DPR cap 2."
+  ],
+  "paidGenerations": 0,
+  "hashes": [
+    {
+      "file": "src/garage-vehicle-preview.js",
+      "bytes": 12026,
+      "sha256": "676f958e8be1936f43337e2a2a8a3136cc43724aab90e07688de60651fc1cd40"
+    },
+    {
+      "file": "src/vehicle-art.js",
+      "bytes": 9133,
+      "sha256": "782eb7d9f7cffeb1c8409df6a97e33026f49c729fd0157376d08f5460ee52626"
+    },
+    {
+      "file": "scripts/render-vehicles.mjs",
+      "bytes": 23877,
+      "sha256": "93d89e051393a8019b3aa253796f0ed7d370156bbe016bfee2d084e1dc547a6a"
+    },
+    {
+      "file": "tests/garage-vehicle-preview.mjs",
+      "bytes": 17681,
+      "sha256": "bd8dcbfe4766e975d7657e8ace98fc87b9e3f03e16d26c860a8a2de063f371b6"
+    },
+    {
+      "file": "tests/vehicle-art.mjs",
+      "bytes": 7330,
+      "sha256": "f6e077696c67e4ea7626c2ab9d8e428582d5d437a06e2211b22924848afb6f4c"
+    },
+    {
+      "file": "src/vehicle-models.js",
+      "bytes": 72885,
+      "sha256": "d6927ec682065492e60ac15b3ea80bdc914a8023c07adafb2f35a5f8d96270ca"
+    },
+    {
+      "file": "assets/vehicles/manifest.json",
+      "bytes": 64520,
+      "sha256": "7e4c48c05f6e7a76219c5c28dfba39a416c644a6ae38a4e059bd2f4ed4258df6"
+    },
+    {
+      "file": "assets/nextlevel/garage-painted.webp",
+      "bytes": 203518,
+      "sha256": "283ff64a713c5f0df28a7a7deb820905270900094623c7932989a43834e435bb"
+    },
+    {
+      "file": "assets/vehicles/kadett/00.webp",
+      "bytes": 9140,
+      "sha256": "266149c19dc2f76f0191aaa0ffcb871b1755280024d6b720c26213b6cff36f53"
+    },
+    {
+      "file": "assets/vehicles/kadett/01.webp",
+      "bytes": 16106,
+      "sha256": "d1046caacc199f1b0c225a773fcce560a862481a75d06301144fb2b933d18e27"
+    },
+    {
+      "file": "assets/vehicles/kadett/02.webp",
+      "bytes": 19312,
+      "sha256": "7b14c3d8f06e34e820d79e9a598ebf448bd607f44592afb941ae515c693ed0be"
+    },
+    {
+      "file": "assets/vehicles/kadett/03.webp",
+      "bytes": 20128,
+      "sha256": "1589ce561f16231084ab7a2b5ccc7206026f4cf61e479a457e759a91b0e730c3"
+    },
+    {
+      "file": "assets/vehicles/kadett/04.webp",
+      "bytes": 15854,
+      "sha256": "60985774659a4f761018473330347d893ac47a07d44efbf110ba878be2cfc2e9"
+    },
+    {
+      "file": "assets/vehicles/kadett/05.webp",
+      "bytes": 19786,
+      "sha256": "31082d91508e3c660bba34d406c2fddcc9db611481e9f7f8ffa28e9cb65c3cb7"
+    },
+    {
+      "file": "assets/vehicles/kadett/06.webp",
+      "bytes": 19196,
+      "sha256": "1cd2c028b47ae4208b7102cd2dd051248c44a7c086eae89b77ac1181c57765b6"
+    },
+    {
+      "file": "assets/vehicles/kadett/07.webp",
+      "bytes": 15618,
+      "sha256": "9029a4312380bc97b8fefecae161d3d622a6404997d5d7e18a734243f224f68c"
+    },
+    {
+      "file": "assets/vehicles/kadett/08.webp",
+      "bytes": 9390,
+      "sha256": "c7936e455fcf12d357ddd03910632df0025789713a4396ea0a9ffad9ad2d5baf"
+    },
+    {
+      "file": "assets/vehicles/kadett/09.webp",
+      "bytes": 15926,
+      "sha256": "8d75567fcf6fa2c17ca6438fb8da0288e044f3385460bb708a0fee74661bd7da"
+    },
+    {
+      "file": "assets/vehicles/kadett/10.webp",
+      "bytes": 19354,
+      "sha256": "8e3e576cbd688fa39c5bc39e737cc2b927fe86e178167c0955338b887f0fd60f"
+    },
+    {
+      "file": "assets/vehicles/kadett/11.webp",
+      "bytes": 19800,
+      "sha256": "9a8f07ad61930e6239f77232789077a7ff2cd5e97dc63a8fd7926b33f46551c1"
+    },
+    {
+      "file": "assets/vehicles/kadett/12.webp",
+      "bytes": 15578,
+      "sha256": "2b10acded5fcec68d8f540140765cbd29da27882978ca46644e8c7ff9837b85d"
+    },
+    {
+      "file": "assets/vehicles/kadett/13.webp",
+      "bytes": 19914,
+      "sha256": "54dc48276990152e5e0164548dcb3ab9a02ff747f67fee0f0bd2a00d178d1867"
+    },
+    {
+      "file": "assets/vehicles/kadett/14.webp",
+      "bytes": 19044,
+      "sha256": "778ee63a445cbece56716fa88fe38924bcc842acf8451ee6bc4f2733cfa56cc0"
+    },
+    {
+      "file": "assets/vehicles/kadett/15.webp",
+      "bytes": 15274,
+      "sha256": "508b16b6749ed0ccbccc3030e5a29cd9601a7b18d1be9c1dc9caf29addcdd5e7"
+    },
+    {
+      "file": "assets/vehicles/e30/00.webp",
+      "bytes": 8894,
+      "sha256": "c15ccb0e8dbbd312845fd4678784de64bbe6e4cacfabe09ae3b2d954151a7b9a"
+    },
+    {
+      "file": "assets/vehicles/e30/01.webp",
+      "bytes": 17972,
+      "sha256": "da7ec7d033f68ac0e64e0cdcc4839297131a7fae806c7f1e86531473f4a506a4"
+    },
+    {
+      "file": "assets/vehicles/e30/02.webp",
+      "bytes": 20940,
+      "sha256": "c67ff528598f94653b84fb6b859dda5ac70b5002c15b78cbfed5c7651807b344"
+    },
+    {
+      "file": "assets/vehicles/e30/03.webp",
+      "bytes": 19970,
+      "sha256": "8ab309b1fc93c78a11f434728f94a7a6be61d3d53e5755240f0173ec8f43d36e"
+    },
+    {
+      "file": "assets/vehicles/e30/04.webp",
+      "bytes": 15128,
+      "sha256": "d4395062dc0bb15390c694337093da1fb94c46e28bbde6220db49c14fbb3fcc3"
+    },
+    {
+      "file": "assets/vehicles/e30/05.webp",
+      "bytes": 21396,
+      "sha256": "d5eb313d71a7a9e31b8761dc0f93bb34ead28f7e01d8ead2a699a7dec166791f"
+    },
+    {
+      "file": "assets/vehicles/e30/06.webp",
+      "bytes": 20606,
+      "sha256": "6b7262e5016f7b3f2c8bc05ac2131a80ae525cca8fa649bae842243bd7a6c8c1"
+    },
+    {
+      "file": "assets/vehicles/e30/07.webp",
+      "bytes": 16480,
+      "sha256": "d61d42ebd8bbc999efe9489f924d4056c57c1873597b85f0af86c33dd3bac561"
+    },
+    {
+      "file": "assets/vehicles/e30/08.webp",
+      "bytes": 9102,
+      "sha256": "f99b87460fc0beb79c4eaba9d7505c233be537a82c0951eea40bccf6322c5ee3"
+    },
+    {
+      "file": "assets/vehicles/e30/09.webp",
+      "bytes": 16450,
+      "sha256": "12c738cf0d69657c10b0f493b9c4f1fb31e4f70f957a40987d5909e630921e61"
+    },
+    {
+      "file": "assets/vehicles/e30/10.webp",
+      "bytes": 20042,
+      "sha256": "eb7e49cb1cf6b5cad1474246e4274ac2aaf9ddb1f3a9c6c4976e2df7754e4758"
+    },
+    {
+      "file": "assets/vehicles/e30/11.webp",
+      "bytes": 19606,
+      "sha256": "97d5361cf70f85fe639ece513b906200cb6dfa2ea7bb2239ffc0dfa7dec1eabb"
+    },
+    {
+      "file": "assets/vehicles/e30/12.webp",
+      "bytes": 14738,
+      "sha256": "05a07cf7c184f95b8457c764155f4589b4cfb7ce3d9ac00933efc420e69f19b8"
+    },
+    {
+      "file": "assets/vehicles/e30/13.webp",
+      "bytes": 20640,
+      "sha256": "8ba56cc3c4d22508843a24d60ca71769278fbaed24c912cde542d01660c53d09"
+    },
+    {
+      "file": "assets/vehicles/e30/14.webp",
+      "bytes": 20394,
+      "sha256": "d895d6559eba4475582dc694cdae6d4ae9ad710dc8070b23ef4341e066a011d7"
+    },
+    {
+      "file": "assets/vehicles/e30/15.webp",
+      "bytes": 16738,
+      "sha256": "bb7ad55ee6605c554385e5eb230aecdb60f39ed39fa930fb9530a82753e103df"
+    },
+    {
+      "file": "assets/vehicles/m1/00.webp",
+      "bytes": 11190,
+      "sha256": "995d40455ebebe57834a8ba0e08bc67badc5c780f50c672a5a4d0e2a1e99aba2"
+    },
+    {
+      "file": "assets/vehicles/m1/01.webp",
+      "bytes": 20644,
+      "sha256": "31c3b56e7ff1b5afa152b89a758e0a2f73df44e722f4768d658aee56c6caee1b"
+    },
+    {
+      "file": "assets/vehicles/m1/02.webp",
+      "bytes": 23124,
+      "sha256": "a66cb573a9383b4a83edd7745f49338382f5a16e53c0f19a7abc8b0677d5bbd9"
+    },
+    {
+      "file": "assets/vehicles/m1/03.webp",
+      "bytes": 22448,
+      "sha256": "575851f9ad6812037a0895e8ef29974faa620dc3e35a4cabd8227cca1e3ce811"
+    },
+    {
+      "file": "assets/vehicles/m1/04.webp",
+      "bytes": 18084,
+      "sha256": "85e1c0a03ad3f35e6c7cd897c224a200039669f18d16a339fcb75a856d0d1ff8"
+    },
+    {
+      "file": "assets/vehicles/m1/05.webp",
+      "bytes": 21144,
+      "sha256": "3531c2a83429f6f749b40b107b9d1a1718bfb1d689127d690a78a5df35fb4034"
+    },
+    {
+      "file": "assets/vehicles/m1/06.webp",
+      "bytes": 20080,
+      "sha256": "89a1a3859093dcc69ea84b128ac4350beacf34caa087d088eb823cec368edd1b"
+    },
+    {
+      "file": "assets/vehicles/m1/07.webp",
+      "bytes": 16646,
+      "sha256": "2973eb4d44554ec94f542bba0c0f5b1d12bc67321a9e2d6a2fed4539e75750a0"
+    },
+    {
+      "file": "assets/vehicles/m1/08.webp",
+      "bytes": 8612,
+      "sha256": "424d630d58457e0aed54707f5626dde7fa365750fa92542b699beb2517a272ac"
+    },
+    {
+      "file": "assets/vehicles/m1/09.webp",
+      "bytes": 16016,
+      "sha256": "f5c06b7d8cf5acb9ae2b8a9abb10d39ef9aed61ccd1365e989b1120fc3f94212"
+    },
+    {
+      "file": "assets/vehicles/m1/10.webp",
+      "bytes": 19582,
+      "sha256": "cf1fd0f2bfe1d747088b935953998a959235658511f400a30f74d9602007bf6b"
+    },
+    {
+      "file": "assets/vehicles/m1/11.webp",
+      "bytes": 20318,
+      "sha256": "fb414af2eac88a691f41e080a7bf11769e339bc9819b0d20eedae730c76a2036"
+    },
+    {
+      "file": "assets/vehicles/m1/12.webp",
+      "bytes": 18064,
+      "sha256": "3a3935e32da3f7bfeb166fe65afb5f32dbfb00b75cb25d91ffa6a5aa8652fc97"
+    },
+    {
+      "file": "assets/vehicles/m1/13.webp",
+      "bytes": 22184,
+      "sha256": "36dfc8a1b5210579b9bc59d03ae73292ffb2bad8d1bd5f6fb4757b524e8f44e5"
+    },
+    {
+      "file": "assets/vehicles/m1/14.webp",
+      "bytes": 22404,
+      "sha256": "1923eef4009d6cf831e0d357f2a3062d667b7914e02de2bf8b33e49239e22ee2"
+    },
+    {
+      "file": "assets/vehicles/m1/15.webp",
+      "bytes": 18844,
+      "sha256": "2f5c96df7a537520361f7bb8d2436d17e2fe1eba2b66caa3d2aa3fd4ca16494a"
+    },
+    {
+      "file": "assets/vehicles/m2/00.webp",
+      "bytes": 8300,
+      "sha256": "441806d5e2f22ce0013268e9e7b4bc5cf3004f1aad39889ce6a759d73742f178"
+    },
+    {
+      "file": "assets/vehicles/m2/01.webp",
+      "bytes": 14078,
+      "sha256": "b6d367c58486c986211695518346246d90e5807ee79df9631b969a1ba1be982a"
+    },
+    {
+      "file": "assets/vehicles/m2/02.webp",
+      "bytes": 17060,
+      "sha256": "ce1a76f984d760e9f26938c29cf1544360681fc92396d8543da7689042ec7060"
+    },
+    {
+      "file": "assets/vehicles/m2/03.webp",
+      "bytes": 16528,
+      "sha256": "548a56d3b687de7253d8ae919d7d341bf33ccc7684ae8f3041e47301e141b890"
+    },
+    {
+      "file": "assets/vehicles/m2/04.webp",
+      "bytes": 14062,
+      "sha256": "2b49a3601c8373425a8bc157fd10fc9c60f19d5022c2609caf50e527896c60ef"
+    },
+    {
+      "file": "assets/vehicles/m2/05.webp",
+      "bytes": 17176,
+      "sha256": "ee0ebf38a8a128b0e5b3c7f9fc405758e29a3bc8360a5ab5b8968a7758e8a2d4"
+    },
+    {
+      "file": "assets/vehicles/m2/06.webp",
+      "bytes": 15892,
+      "sha256": "2eede36d74022f436e67a830ef806181816d049ddc5fba66ff2c1963a8950307"
+    },
+    {
+      "file": "assets/vehicles/m2/07.webp",
+      "bytes": 13576,
+      "sha256": "2f650e7aa88d5e91d23f005f29ece45d949148b57f14bc694ce9305536905230"
+    },
+    {
+      "file": "assets/vehicles/m2/08.webp",
+      "bytes": 8216,
+      "sha256": "e0b9ad62b54b95beec4a4316f0e552a693bd1f381ab7d9bbe3f7109a63d0f630"
+    },
+    {
+      "file": "assets/vehicles/m2/09.webp",
+      "bytes": 12984,
+      "sha256": "82aad2ff748fc1d658f4be82f6c787928dcd38f04a3259cc6e0048d30d23d526"
+    },
+    {
+      "file": "assets/vehicles/m2/10.webp",
+      "bytes": 16200,
+      "sha256": "632ed954df360e4c5f9f35d96cea7bd8a3a3325a6670b85a589366c77d7d762b"
+    },
+    {
+      "file": "assets/vehicles/m2/11.webp",
+      "bytes": 16676,
+      "sha256": "2a4a4aa52041ae3452ed333b21b21e164e4ca64cbb41d8b01d31da08ff34dd50"
+    },
+    {
+      "file": "assets/vehicles/m2/12.webp",
+      "bytes": 13906,
+      "sha256": "678df5596f55fad31fc665c08d0eb992d86406d2cc9391f361fc41f5cbd3b5b3"
+    },
+    {
+      "file": "assets/vehicles/m2/13.webp",
+      "bytes": 16570,
+      "sha256": "09a78feae017437a86fbf7ecc0aae39ecef9d7fa6b59825bcad79a9bb52bcaaf"
+    },
+    {
+      "file": "assets/vehicles/m2/14.webp",
+      "bytes": 16346,
+      "sha256": "cbaab8359350e179818bf600609a53852a60ad6f9d526d37d0a053c56dfe6204"
+    },
+    {
+      "file": "assets/vehicles/m2/15.webp",
+      "bytes": 13332,
+      "sha256": "1d8cc1c945f132ce59fb6feee721d7f14eb10bc2a3142dcf11910e15a0bc003b"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/00.webp",
+      "bytes": 10636,
+      "sha256": "f04f160d7611a36a210f4eebd76ea5c23acf373e7eb64bea14b6456750ffc416"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/01.webp",
+      "bytes": 18314,
+      "sha256": "69bd35313cb0f0aa7150b90b284a221f2e9e7640e5d5f5a6dcf6ccff8d34aa01"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/02.webp",
+      "bytes": 21428,
+      "sha256": "2acd5aaa417a0c1d57b4b9ec1dbcde92f606c5f4eea940f3c2399ce1e1a5f2fa"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/03.webp",
+      "bytes": 21458,
+      "sha256": "94333632b80e797ae271c96d353f243dd7162b3f303b9f7e7074954a40293506"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/04.webp",
+      "bytes": 19318,
+      "sha256": "78047105208ff3b40201a724e8081024facd646b10ffce2624be34b630fd695d"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/05.webp",
+      "bytes": 21556,
+      "sha256": "0597a27634d27166f75c16cf782a5fcb712198798c0e3b3e17cc75393ba492e1"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/06.webp",
+      "bytes": 20136,
+      "sha256": "6b88d9a9c221643afab11967ba995274831d55cf71efe39146395ed1b66d74b3"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/07.webp",
+      "bytes": 15624,
+      "sha256": "51140880aa91f7cf26364625990943413aec4986fe47149609e115de1fa7df3d"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/08.webp",
+      "bytes": 8948,
+      "sha256": "60608e1fd83414f56dd4eeebf645099a6b35d54c2a25d3b237ed5c4e418ccc75"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/09.webp",
+      "bytes": 15356,
+      "sha256": "f48197e1f4c21087e46b28c7ec9e88cd4041200a6ad6db2b54ef648a9b2c35be"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/10.webp",
+      "bytes": 19692,
+      "sha256": "04b58b71cecac7f20c88c619109d8c061694d5cc55e1f66482bced5e0c3f3962"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/11.webp",
+      "bytes": 20708,
+      "sha256": "d9ecea912c7c13189c4a02cf5929bf14f95cd43ee6c62f5307f71d59b94b8ae2"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/12.webp",
+      "bytes": 18430,
+      "sha256": "620395ad4734efeeef648dafa3e36946df03fd2cf01c77e0153bcc05ff4aefa1"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/13.webp",
+      "bytes": 21456,
+      "sha256": "4ea52cf9aedfcf545ad3a168f6ac8d75a41c40b54c8c851bde9ed96259ca72c3"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/14.webp",
+      "bytes": 20026,
+      "sha256": "cee10f8b8861c8423e88a75baba157b36db3e26b757c079b3c652dc6ae972a9d"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/15.webp",
+      "bytes": 16664,
+      "sha256": "995abee8c9985679d688e53b7aa69379ab371fe254e1a464d9c06861a42678c0"
+    }
+  ],
+  "domPreviewFraming": {
+    "fit": 0.94,
+    "anchor": [
+      0.5,
+      0.735
+    ],
+    "scope": "DOM garage preview only; sprite art and racing Canvas defaults unchanged",
+    "shortStageRegression": {
+      "sizes": [
+        [
+          1024,
+          181
+        ],
+        [
+          1024,
+          235
+        ],
+        [
+          568,
+          210
+        ],
+        [
+          568,
+          180
+        ]
+      ],
+      "realDOMDraws": 320,
+      "minimumScaleGainComparedWithPrevious": 1.2,
+      "minimumEnvelopeHeightOccupancy": 0.93
+    },
+    "checks": [
+      "node tests/garage-vehicle-preview.mjs: PASS",
+      "node tests/interactions.mjs: PASS"
+    ]
+  }
+}

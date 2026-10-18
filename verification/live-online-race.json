@@ -1,0 +1,35 @@
+{
+  "target": "https://breuer-grand-prix-final.vercel.app",
+  "testedAt": "2026-10-15T11:11:19.647Z",
+  "kind": "six-protocol-client-race",
+  "passed": true,
+  "checks": [
+    "database health",
+    "six independent driver identities",
+    "capacity, ready and authentication boundaries",
+    "shared configuration revision and countdown",
+    "same driver reconnects through HTTP and optional WebSocket",
+    "concurrent shared state and HTTP fallback",
+    "six validated immutable finishes across twelve checkpoints",
+    "host leaves and connected driver takes over"
+  ],
+  "websocket": {
+    "connected": 6,
+    "reconnections": 1,
+    "receivedSnapshots": 942,
+    "sentStateFrames": 1891
+  },
+  "cleanup": true,
+  "raceSeconds": 45.675,
+  "http": {
+    "requests": 323,
+    "statuses": {
+      "200": 311,
+      "201": 6,
+      "403": 3,
+      "409": 3
+    },
+    "medianMs": 416,
+    "p95Ms": 6909
+  }
+}

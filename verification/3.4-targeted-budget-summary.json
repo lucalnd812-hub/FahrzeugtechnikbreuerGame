@@ -1,0 +1,116 @@
+{
+  "recordedAt": "2026-10-15T12:23:52.679Z",
+  "source": "tests-final.log / tests/performance-production.mjs",
+  "note": "Actual Three.js scene/frustum CPU counts, six race cars, five camera positions for every track and quality profile. These are not WebGL draw calls, device FPS, GPU memory, or physical mobile measurements.",
+  "rows": [
+    {
+      "track": "lammersdorf",
+      "quality": 0,
+      "visibleTriangles": {
+        "min": 73681,
+        "max": 195173
+      },
+      "submittedMeshes": {
+        "min": 94,
+        "max": 269
+      }
+    },
+    {
+      "track": "lammersdorf",
+      "quality": 1,
+      "visibleTriangles": {
+        "min": 98317,
+        "max": 295214
+      },
+      "submittedMeshes": {
+        "min": 99,
+        "max": 359
+      }
+    },
+    {
+      "track": "lammersdorf",
+      "quality": 2,
+      "visibleTriangles": {
+        "min": 101461,
+        "max": 345300
+      },
+      "submittedMeshes": {
+        "min": 102,
+        "max": 403
+      }
+    },
+    {
+      "track": "bahnhof",
+      "quality": 0,
+      "visibleTriangles": {
+        "min": 86853,
+        "max": 102530
+      },
+      "submittedMeshes": {
+        "min": 131,
+        "max": 144
+      }
+    },
+    {
+      "track": "bahnhof",
+      "quality": 1,
+      "visibleTriangles": {
+        "min": 116048,
+        "max": 190234
+      },
+      "submittedMeshes": {
+        "min": 148,
+        "max": 233
+      }
+    },
+    {
+      "track": "bahnhof",
+      "quality": 2,
+      "visibleTriangles": {
+        "min": 119736,
+        "max": 259631
+      },
+      "submittedMeshes": {
+        "min": 157,
+        "max": 345
+      }
+    },
+    {
+      "track": "kraemer",
+      "quality": 0,
+      "visibleTriangles": {
+        "min": 62625,
+        "max": 151117
+      },
+      "submittedMeshes": {
+        "min": 83,
+        "max": 211
+      }
+    },
+    {
+      "track": "kraemer",
+      "quality": 1,
+      "visibleTriangles": {
+        "min": 82559,
+        "max": 255446
+      },
+      "submittedMeshes": {
+        "min": 92,
+        "max": 277
+      }
+    },
+    {
+      "track": "kraemer",
+      "quality": 2,
+      "visibleTriangles": {
+        "min": 88077,
+        "max": 275860
+      },
+      "submittedMeshes": {
+        "min": 98,
+        "max": 307
+      }
+    }
+  ],
+  "physicalBrowserGPUFPS": null
+}

@@ -1,0 +1,116 @@
+{
+  "release": "3.6.0",
+  "assets": [
+    {
+      "name": "village-facades",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 185092,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "artisan-roofs",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 130936,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "village-ground",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 185892,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "artisan-windows",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 113382,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "artisan-workshop",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 166276,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "artisan-roadside",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 214880,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "artisan-foliage",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 410096,
+      "opaqueCoverage": 0.5262,
+      "decoded": true
+    },
+    {
+      "name": "car-details",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 123870,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "artisan-panels",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 51924,
+      "opaqueCoverage": 1,
+      "decoded": true
+    },
+    {
+      "name": "artisan-medals",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 189908,
+      "opaqueCoverage": 0.5186,
+      "decoded": true
+    },
+    {
+      "name": "minimap-frame",
+      "size": [
+        512,
+        512
+      ],
+      "bytes": 9334,
+      "opaqueCoverage": 0.3761,
+      "decoded": true
+    }
+  ],
+  "errors": []
+}

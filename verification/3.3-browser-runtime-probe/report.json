@@ -1,0 +1,11 @@
+{
+  "version": "3.3",
+  "url": "https://breuer-grand-prix.vercel.app/",
+  "browser": "chromium",
+  "startedAt": "2026-10-15T10:33:06.383Z",
+  "status": "blocked",
+  "deviceGPUVerified": false,
+  "cases": [],
+  "reason": "browserType.launch: Executable doesn't exist at /root/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+  "finishedAt": "2026-10-15T10:33:06.625Z"
+}

@@ -1,0 +1,21 @@
+{
+  "release": "3.6.0",
+  "testedAt": "2026-10-16",
+  "fullSuite": {
+    "programs": 40,
+    "passMessages": 105,
+    "proof": "3.6-proof-manifest.json",
+    "beforeIsolatedCssFix": true
+  },
+  "cssFollowup": "3.6-minimap-css-followup.json",
+  "finalPublicFiles": 136,
+  "finalPublicBytes": 7183532,
+  "production": "3.6-deployment-3.6.json",
+  "http": "3.6-production-http-check.json",
+  "browser": "3.6-browser-layout-check.json",
+  "productionBrowser": "3.6-production-browser-check.json",
+  "higgsfieldCredits": 45.25,
+  "confirmedBalanceAfter": 73,
+  "physicalGPUFPS": null,
+  "physicalTouchTest": false
+}

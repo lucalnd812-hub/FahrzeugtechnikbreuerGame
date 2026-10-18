@@ -1,0 +1,24 @@
+PASS: 22 verified ElevenLabs files (454863 bytes), five distinct engine recordings; lazy user-gesture unlock, shared fetch/decode, smooth source reuse, bounded voices, event cooldowns, car crossfades, pause/hidden/mute/dispose cancellation, no clipped samples, no startup audio fetch. Mock WebAudio lifecycle tests; physical-device hearing/latency is a browser QA task.
+PASS Fixed garage flow: Auto → Strecke → Rennen, a separate Start/Online dock, selections retained, three settings pages, keyboard tabs/Escape, More menu, focus/announcements, independent preview, no scrolling and fixed Links/Rechts without analog UI.
+Functional DOM checks; viewport visibility must be verified from actual browser rectangles/screenshots at 568×320, 667×375, 844×390 and 1366×768.
+PASS Actual controller: lazy garage, car selection/rotation/audio/options/dialogs, failed-load retry, touch gas, map/tour, pause, stationary offroad reset, rendered-pose camera, all courses with two and five real laps, ghosts, solo rules, persistent three-course Cup, demo without records, gold-medal preservation, benchmark flow and immutable delayed online finish
+Controller DOM and renderer are mocked; these checks make no browser/device FPS claim.
+PASS network sample clock: real countdown, delayed reconnect, stale acknowledgements and wall-clock corrections preserve a monotone bounded sample timeline.
+PASS PostgreSQL lobby: bounded database requests, lazy schema init, six-player capacity, ready revisions, host grace/heartbeat race and reconnect.
+PASS PostgreSQL race: shared configuration, parallel ticks, monotone sequence, checkpoint and immutable finish validation.
+PASS PostgreSQL persistence: reopen database, preserved race/finish, room expiry and complete leave cleanup.
+PASS PostgreSQL transport timing: slow auth preserves receipt time, old/duplicate large deltas are ignored, equal concurrent sequences stay immutable and new jumps/checkpoints remain rejected.
+PASS PostgreSQL capture time: real 32 m/s latency compression, receipt timestamps, legacy fallback, old-frame presence and bounded/monotone time, jump and global-progress protections.
+PASS PostgreSQL finish capture: six-second delay, completed-endpoint retry, immutable finish and future/backdated/min-duration/progress/gate/event-consistency boundaries.
+PASS PostgreSQL sharp-bend projection tolerance with ordinary world motion; large progress/world teleports still rejected.
+PASS WebSocket synchronization: six drivers on two independent instances, shared PostgreSQL snapshots, HTTP fallback and monotone sequences.
+PASS WebSocket reconnect: same identity across instances, duplicate socket replacement and fresh-process durable state.
+PASS WebSocket boundaries: denied origins/query credentials, invalid auth/version/state, auth timeout, binary/JSON/12 KB limits and frame rate.
+Breuer realtime checkpoint: Error
+PASS WebSocket resilience: bounded lifetime, reconnect and database failure close the socket while durable HTTP remains available.
+PASS mixed transport race: six plausible checkpoint traversals, socket/HTTP finishing and immutable confirmed finishes.
+PASS WebSocket revocation and cleanup: leave removes access and every test room is deleted.
+PASS WebSocket transport timing: large old HTTP/WS deltas survive reconnect, slow HTTP auth preserves subsequent real WS movement and new jumps still close the socket.
+PASS WebSocket hello convergence: HTTP advances during hello, the confirmed roster becomes the validation baseline and new jumps remain rejected.
+PASS WebSocket capture timing: delayed 32 m/s positions/finish and endpoint retry converge; bounded/monotone time, large jumps, future events and immutable finish remain protected.
+PASS WebSocket sharp-bend projection survives normal motion; excessive progress remains rejected.

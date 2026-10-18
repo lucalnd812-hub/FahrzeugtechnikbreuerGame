@@ -1,0 +1,142 @@
+{
+  "recordedAt": "2026-10-15T14:25:25.063Z",
+  "source": "/workspace/scratch/6a130584ef11/breuer-grand-prix-vercel/src/game.js",
+  "sourceSha256": "e3c30aaec278e8701b658a86afa85cbae56cae9125870eacac6c6e96fdbb4427",
+  "method": "Actual source functions executed in Node vm; renderer, RAF, DOM, physics and platform dependencies instrumented/mocked.",
+  "physicalBrowserGPUFPS": null,
+  "cadence": [
+    {
+      "controlledRafHz": 60,
+      "quality": 0,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 600,
+      "scheduledRenderCalls": 300,
+      "hudCalls": 120
+    },
+    {
+      "controlledRafHz": 60,
+      "quality": 1,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 600,
+      "scheduledRenderCalls": 600,
+      "hudCalls": 120
+    },
+    {
+      "controlledRafHz": 90,
+      "quality": 0,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 900,
+      "scheduledRenderCalls": 300,
+      "hudCalls": 113
+    },
+    {
+      "controlledRafHz": 90,
+      "quality": 1,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 900,
+      "scheduledRenderCalls": 600,
+      "hudCalls": 113
+    },
+    {
+      "controlledRafHz": 120,
+      "quality": 0,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 1200,
+      "scheduledRenderCalls": 300,
+      "hudCalls": 120
+    },
+    {
+      "controlledRafHz": 120,
+      "quality": 1,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 1200,
+      "scheduledRenderCalls": 600,
+      "hudCalls": 120
+    },
+    {
+      "controlledRafHz": 144,
+      "quality": 0,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 1440,
+      "scheduledRenderCalls": 300,
+      "hudCalls": 120
+    },
+    {
+      "controlledRafHz": 144,
+      "quality": 1,
+      "paused": false,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 1440,
+      "scheduledRenderCalls": 600,
+      "hudCalls": 120
+    }
+  ],
+  "offlinePausedCadence": [
+    {
+      "controlledRafHz": 60,
+      "quality": 0,
+      "paused": true,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 600,
+      "scheduledRenderCalls": 20,
+      "hudCalls": 20
+    },
+    {
+      "controlledRafHz": 60,
+      "quality": 1,
+      "paused": true,
+      "online": false,
+      "seconds": 10,
+      "rafCallbacks": 600,
+      "scheduledRenderCalls": 20,
+      "hudCalls": 20
+    }
+  ],
+  "onlinePausedCadence": [
+    {
+      "controlledRafHz": 60,
+      "quality": 0,
+      "paused": true,
+      "online": true,
+      "seconds": 10,
+      "rafCallbacks": 600,
+      "scheduledRenderCalls": 300,
+      "hudCalls": 120
+    },
+    {
+      "controlledRafHz": 60,
+      "quality": 1,
+      "paused": true,
+      "online": true,
+      "seconds": 10,
+      "rafCallbacks": 600,
+      "scheduledRenderCalls": 600,
+      "hudCalls": 120
+    }
+  ],
+  "hudWrites": {
+    "unchangedHudUpdates": 100,
+    "propertyWrites": 0,
+    "actuallyChangedProperties": 0,
+    "redundantPropertyWrites": 0,
+    "classToggleCalls": 0,
+    "actuallyChangedClasses": 0,
+    "note": "Stationary paused-state values; DOM setters are instrumented mocks. Does not measure real browser style/layout time."
+  }
+}

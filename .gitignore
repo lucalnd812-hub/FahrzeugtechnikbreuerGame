@@ -1,0 +1,15 @@
+node_modules/
+public/
+.vercel/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.db-*
+.DS_Store
+__pycache__/
+*.pyc
+deployment/asset-pack-*.bin
+

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "index.html",
+    "bytes": 266914,
+    "matches": true,
+    "sha256": "86f652844039a5d0c6354f200e0f2dd2055d8e61eb342728b2cea6bbf56ff0f0"
+  },
+  {
+    "file": "game-4d71bb19b551.js",
+    "bytes": 977489,
+    "matches": true,
+    "sha256": "4d71bb19b5518cfc96a56a6926560bee84d1d5c98348035c83162a99680504b0"
+  }
+]

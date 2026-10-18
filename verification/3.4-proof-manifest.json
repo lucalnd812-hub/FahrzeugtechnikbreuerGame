@@ -1,0 +1,156 @@
+{
+  "version": "3.4.0",
+  "recordedAt": "2026-10-15T12:23:53.163Z",
+  "status": "passed",
+  "project": "/workspace/scratch/6a130584ef11/breuer-grand-prix-vercel",
+  "inventory": {
+    "programs": 37,
+    "files": [
+      "tests/tracks.mjs",
+      "tests/simulation-clock.mjs",
+      "tests/chase-camera.mjs",
+      "tests/race-config.mjs",
+      "tests/race-modes.mjs",
+      "tests/pickups.mjs",
+      "tests/touch-controls.mjs",
+      "tests/interaction-guard.mjs",
+      "tests/start-briefing.mjs",
+      "tests/driving-dynamics.mjs",
+      "tests/handling-regression.mjs",
+      "tests/scenery-identity.mjs",
+      "tests/village-polish.mjs",
+      "tests/entry-screen.mjs",
+      "tests/refinement.mjs",
+      "tests/performance-production.mjs",
+      "tests/course-races.mjs",
+      "tests/finish-regression.mjs",
+      "tests/road-surfaces.mjs",
+      "tests/canvas-renderer.mjs",
+      "tests/race-visibility.mjs",
+      "tests/vehicle-models.mjs",
+      "tests/vehicle-art.mjs",
+      "tests/showroom-framing.mjs",
+      "tests/racing-audio.mjs",
+      "tests/garage-flow.mjs",
+      "tests/interactions.mjs",
+      "tests/network-clock.mjs",
+      "tests/postgres.mjs",
+      "tests/realtime.mjs",
+      "tests/medal-targets.mjs",
+      "tests/garage-carousel.mjs",
+      "tests/garage-course-preview.mjs",
+      "tests/garage-vehicle-preview.mjs",
+      "tests/leaderboards.mjs",
+      "tests/online-records.mjs",
+      "tests/3.3-profile-leaderboards.mjs"
+    ],
+    "missing": []
+  },
+  "tests": {
+    "exitCode": 0,
+    "signal": null,
+    "startedAt": "2026-10-15T12:22:13.999Z",
+    "finishedAt": "2026-10-15T12:23:52.678Z",
+    "durationSeconds": 98.7,
+    "log": "tests-final.log",
+    "programs": 37,
+    "passMessages": 100
+  },
+  "build": {
+    "exitCode": 0,
+    "signal": null,
+    "startedAt": "2026-10-15T12:23:52.679Z",
+    "finishedAt": "2026-10-15T12:23:53.074Z",
+    "durationSeconds": 0.4,
+    "log": "build-final.log",
+    "javascript": [
+      {
+        "file": "game-d0181495942b.js",
+        "bytes": 1056105,
+        "sha256": "d0181495942b8477a391d5354c42c3a7e792768aaf37a2de9309f0de26167bd6",
+        "sha1": "03897290c1eaf4edadd177c90d1dbfae06be6511"
+      }
+    ],
+    "html": {
+      "file": "index.html",
+      "bytes": 316030,
+      "sha256": "0fb60a57866aecd1b89aa0241ec4c342adf2fce6036152a957f67f1e4e875226",
+      "sha1": "75ee7448d7b5ce509d10d3fe8dadf8b5b7f9f9e8"
+    },
+    "publicFiles": 122,
+    "publicBytes": 5418996,
+    "assetFiles": 115,
+    "assetBytes": 3449102,
+    "assetGroups": {
+      "audio": 23,
+      "nextlevel": 11,
+      "vehicles": 81,
+      "tracks": 4
+    },
+    "assetMismatches": [],
+    "archiveFiles": 117,
+    "archiveMismatches": []
+  },
+  "source": {
+    "originalManifest": "source-hashes-original.json",
+    "afterManifest": "source-hashes-after.json",
+    "files": 247,
+    "changed": []
+  },
+  "browser": {
+    "appTestByThisAgent": false,
+    "cuaActions": 0,
+    "physicalBrowserGPUFPS": null,
+    "note": "Local browser installation/launch is blocked; root owns real HTTPS browser QA. Node DOM/renderer fixtures do not prove browser rendering or physical phone performance."
+  },
+  "proofs": [
+    {
+      "file": "run-final.mjs",
+      "bytes": 9267,
+      "sha256": "72b50c4ee307f53deb60363218c3fc6b6a2544b9b7924fabecbd02ee6768ef31",
+      "sha1": "615d648b48e0094d115ed44ceda13a9ad7db03b1"
+    },
+    {
+      "file": "tests-final.log",
+      "bytes": 20917,
+      "sha256": "dc0b191e4a615ea615d37bc8ed31e0a8850e5dfdef6db434cefd425618e64ca8",
+      "sha1": "40ac4211408f4b53d9cc2030e56672be0055b725"
+    },
+    {
+      "file": "build-final.log",
+      "bytes": 228,
+      "sha256": "2fecdc7ef053f9645715fa4f51821332301a3a1bfb36e7356cf090fb67520c14",
+      "sha1": "0c3e4e5ecc5ce4dc394032267e57e984ad887264"
+    },
+    {
+      "file": "source-hashes-original.json",
+      "bytes": 53885,
+      "sha256": "246b31f3015d1eefd723e853d6433569d3714e61445ded6f1343181e29203660",
+      "sha1": "137030668ad47d5e83f4a60da1eab5410fe0fd84"
+    },
+    {
+      "file": "source-hashes-after.json",
+      "bytes": 53885,
+      "sha256": "b55366614aacb0d17f4571f6963b529e827fc1afba23cfd699a4cfc897aa3cde",
+      "sha1": "be147b961abfbfc0488ee7f01d26749540f512f5"
+    },
+    {
+      "file": "build-files-final.json",
+      "bytes": 26175,
+      "sha256": "f5f9753e93989589a74fc36d4b6251a3bc1ebfaeb99caa0b35195b013a8999fc",
+      "sha1": "089424d63f1017507d47227ce0c0ccc14e733389"
+    },
+    {
+      "file": "targeted-budget-summary.json",
+      "bytes": 2316,
+      "sha256": "5ccfea91039fcffdf25fde2de5a696751c1d68b154ae077a14efae437f784868",
+      "sha1": "9eec9534556ba4e0a24bf8a250e3fc509232365e"
+    },
+    {
+      "file": "browser-readiness.json",
+      "bytes": 772,
+      "sha256": "db2b73f6262cd757b8cdecbf99b51b2389fabd9cf3552b4ae190221d23e92db5",
+      "sha1": "5716b125d7d66574a0930fa7599c4b4e1ac61db9"
+    }
+  ]
+}

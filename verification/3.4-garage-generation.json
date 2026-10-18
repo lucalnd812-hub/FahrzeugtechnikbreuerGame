@@ -1,0 +1,14 @@
+{
+  "model": "gpt_image_2_5",
+  "quotedCredits": 2.75,
+  "jobId": "32a3187f-0a69-42e0-a645-cb45e3ebae50",
+  "reference": "https://breuer-grand-prix-final.vercel.app/nextlevel/garage-painted.webp",
+  "status": "completed",
+  "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_36jqElfhh5j5MoR9ve8m2IwdXr3/hf_20261015_120530_32a3187f-0a69-42e0-a645-cb45e3ebae50.png",
+  "originalBytes": 4870146,
+  "runtimePath": "assets/nextlevel/garage-painted.webp",
+  "runtimeBytes": 203518,
+  "runtimeSha256": "283ff64a713c5f0df28a7a7deb820905270900094623c7932989a43834e435bb",
+  "actualCredits": 2.75,
+  "balanceAfter": 177.5
+}

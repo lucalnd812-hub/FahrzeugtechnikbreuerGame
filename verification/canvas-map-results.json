@@ -1,0 +1,14 @@
+{
+  "file": "src/canvas-renderer.js",
+  "status": "frozen",
+  "sha256": "4736c458f348e8a948aa6208e2fbed657c259085d000d7ef607eb00db6c4e7b9",
+  "garageMethodByteIdentical": true,
+  "tests": "tests/canvas-renderer.mjs passed all three course flows, actual street/source polygon buffers, immutable physics data, oil/item ordering and all five garage models",
+  "changes": [
+    "Cached sunlight-based roof palette, warmer eaves and subdued shadows on existing sourced polygons",
+    "Native-world tree instance positions cached into 64m cells; crown shading and palette variation; aerial detail reduced",
+    "Actual existing garden metadata cached; landmark yards, vegetation and gardens painted before roads to keep every lane clear",
+    "Clipped Breuer, school, church and museum cues within actual building outlines; cafe umbrella/courtyard cues use existing landmark transforms"
+  ],
+  "bounds": "_drawGarage, cars, oil, items, driving, lap geometry and controller data unchanged; no new generators or paid assets"
+}

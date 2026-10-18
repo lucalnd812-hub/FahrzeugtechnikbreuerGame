@@ -1,0 +1,80 @@
+{
+  "sourceVersion": "3.2.0",
+  "status": "blocked",
+  "projectId": "prj_lcGL3l0qb1mPsffIZpVrXzVKN0eB",
+  "projectName": "breuer-grand-prix",
+  "verifiedProjectTeam": "team_rjF6K4vZdLABiJagqlfolPau",
+  "scope": "luca-s-projects6",
+  "creator": "lucalnd812-hub",
+  "existingProduction": {
+    "deploymentId": "dpl_43k3C1QBVG5vXLiU8u7kHEwbwsj2",
+    "url": "https://breuer-grand-prix.vercel.app/",
+    "unchanged": true
+  },
+  "previewDeploymentCreated": false,
+  "errors": {
+    "unscopedPreviewCreate": {
+      "status": 400,
+      "code": "missing_files",
+      "message": "Vercel API request failed (400: missing_files). Missing files",
+      "operation": "POST /v13/deployments",
+      "requestId": "cdg1:sfo1::jm69r-1791921023779-57c1be977a1f"
+    },
+    "verifiedTeamRead": {
+      "message": "Vercel API request failed (403: forbidden). Not authorized: Trying to access resource under scope \"luca-s-projects6\". You must re-authenticate to this scope or use a token with access to this scope.",
+      "recovery": "Try an available mapped CLI fallback first for the same authorized action, with the same explicit team/project and the CLI's own credentials. If it succeeds, use its result. If it fails or no CLI fallback is available, No automatic fix is known from this response. Report the error to the user. Do not retry unchanged or assume re-authentication will fix it.",
+      "remediation": {
+        "actor": "unknown",
+        "action": "none"
+      },
+      "status": 403,
+      "code": "forbidden",
+      "operation": "GET /v9/projects/{idOrName}",
+      "saml": false,
+      "ssoEnforced": false,
+      "scope": "luca-s-projects6",
+      "teamId": "team_rjF6K4vZdLABiJagqlfolPau",
+      "requestId": "cdg1:sfo1::cmvcv-1791921131169-e4188956326d"
+    }
+  },
+  "observations": [
+    "Upload endpoint docs explicitly require base64, digest and byte size. A tiny native upload returned isError:false with {result:{}}; the documented successful body is empty.",
+    "36 bounded unscoped upload operations returned success, with one durable receipt per digest. Preview creation still returned definite 400 missing_files.",
+    "A read-only get_project using the project's verified accountId returned 403 forbidden with an explicit scope authentication failure.",
+    "The missing-files connector error does not retain the server's list of missing digest values."
+  ],
+  "diagnosis": {
+    "inference": true,
+    "text": "Unscoped uploads may be staged in a personal/default cache while deployment creation resolves the existing project's team cache. The explicit denial confirms that the connected credentials cannot operate under the required Luca project-team scope. The namespace cause is inferred; the 403 is directly observed."
+  },
+  "packaging": {
+    "transportOnly": true,
+    "packedBinaries": 107,
+    "archiveParts": 14,
+    "maxNativeBase64Characters": 193336,
+    "sourceApiPresentBeforeBuild": true,
+    "isolatedRestoration": {
+      "originalFilesVerified": 173,
+      "sha1Mismatches": 0
+    },
+    "normalBuild": {
+      "status": "passed",
+      "javascriptBytes": 995865,
+      "htmlBytes": 266889
+    },
+    "deploymentManifest": "qa/3.2/packed-preview/manifest.json",
+    "originalFrozenManifest": "qa/3.2/manifest.json",
+    "uploadCheckpoint": "qa/3.2/packed-preview/progress.json",
+    "receipts": "qa/3.2/upload-receipts"
+  },
+  "requiredNextStep": "Re-authenticate the Vercel connector with access to scope luca-s-projects6 / team_rjF6K4vZdLABiJagqlfolPau, then stage/create a preview in that verified team and complete browser QA before any production action.",
+  "guardrails": {
+    "furtherVercelAttemptsStopped": true,
+    "noScopedUploadsAttempted": true,
+    "noAuthenticationBypass": true,
+    "noSecurityOrAclChanges": true,
+    "noNewPaidGeneration": true,
+    "noProductionAction": true
+  },
+  "writtenAt": "2026-10-13T19:53:59.524Z"
+}

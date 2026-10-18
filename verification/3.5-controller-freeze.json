@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-10-15T14:26:40.164Z",
+  "status": "controller-frozen-targeted-tests-passed",
+  "completeSuiteRun": false,
+  "productionBuildRun": false,
+  "physicalBrowserGPUFPS": null,
+  "files": [
+    {
+      "file": "src/game.js",
+      "bytes": 81891,
+      "sha256": "e3c30aaec278e8701b658a86afa85cbae56cae9125870eacac6c6e96fdbb4427"
+    },
+    {
+      "file": "src/render-cadence.js",
+      "bytes": 1076,
+      "sha256": "e43190ed2dab14be73ba86a73880ceaec636d447b7c9caf432dd1ba56167a675"
+    },
+    {
+      "file": "src/performance.js",
+      "bytes": 1841,
+      "sha256": "25b87b7f1bcb81f341483614b8ef8121d71bd6c6ebfad2661621acb8b87cc8ab"
+    },
+    {
+      "file": "tests/render-cadence.mjs",
+      "bytes": 2830,
+      "sha256": "c226ece3ba220f9be19724dedb783e0b070a21b73fa47d6df44c2f0c4b65bccd"
+    },
+    {
+      "file": "tests/interactions.mjs",
+      "bytes": 39857,
+      "sha256": "5d0f34c9511b14406c803b9dddcee3520cdcd9d8109329ca6b1407ffb32b38b0"
+    }
+  ],
+  "targetedLogs": [
+    {
+      "file": "render-cadence-targeted.log",
+      "sha256": "bc1fe26b1f004b9f212a01dd9912881e466ac274f393c672469bc3e71532ca8b",
+      "passMessages": 1
+    },
+    {
+      "file": "interactions-targeted.log",
+      "sha256": "72b8e32df66b78d6dd5640952dc2f184961bfafebcc792642ade0eb739571d5f",
+      "passMessages": 1
+    }
+  ]
+}

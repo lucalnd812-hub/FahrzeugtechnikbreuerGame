@@ -1,0 +1,23 @@
+{
+  "release": "3.6.0",
+  "id": "dpl_3RnvRCrzYYf2sGKqFJmawpGRjmww",
+  "project": {
+    "id": "prj_ed4SbzEGOGAws5Lm2luQ24Awwgwr",
+    "name": "breuer-grand-prix-final",
+    "framework": null
+  },
+  "target": "production",
+  "state": "READY",
+  "url": "https://breuer-grand-prix-final-jf9cqk63n-luca-s-projects6.vercel.app",
+  "aliases": [
+    "breuer-grand-prix-final.vercel.app",
+    "breuer-grand-prix-final-luca-s-projects6.vercel.app"
+  ],
+  "region": [
+    "fra1"
+  ],
+  "ready": 1792143849405,
+  "sourceFiles": 104,
+  "vehicleArt": "9b343cdfade29fe7",
+  "note": "Same existing Vercel project and Neon integration. Source upload reused the reviewed staging files; no environment variables or database attachment changed."
+}

@@ -1,0 +1,989 @@
+{
+  "finalSmall": {
+    "buttons": [
+      {
+        "id": "open-profile",
+        "r": {
+          "bottom": 45.5,
+          "height": 44,
+          "left": 460,
+          "right": 504,
+          "top": 1.5,
+          "width": 44,
+          "x": 460,
+          "y": 1.5
+        }
+      },
+      {
+        "id": "garage-extras",
+        "r": {
+          "bottom": 45.5,
+          "height": 44,
+          "left": 512,
+          "right": 556,
+          "top": 1.5,
+          "width": 44,
+          "x": 512,
+          "y": 1.5
+        }
+      },
+      {
+        "id": "rotate-car",
+        "r": {
+          "bottom": 100,
+          "height": 44,
+          "left": 408,
+          "right": 452,
+          "top": 56,
+          "width": 44,
+          "x": 408,
+          "y": 56
+        }
+      },
+      {
+        "id": "preview-lights",
+        "r": {
+          "bottom": 100,
+          "height": 44,
+          "left": 460,
+          "right": 504,
+          "top": 56,
+          "width": 44,
+          "x": 460,
+          "y": 56
+        }
+      },
+      {
+        "id": "rev-car",
+        "r": {
+          "bottom": 100,
+          "height": 44,
+          "left": 512,
+          "right": 556,
+          "top": 56,
+          "width": 44,
+          "x": 512,
+          "y": 56
+        }
+      },
+      {
+        "id": "1Auto",
+        "r": {
+          "bottom": 46,
+          "height": 44,
+          "left": 100,
+          "right": 210.65625,
+          "top": 2,
+          "width": 110.65625,
+          "x": 100,
+          "y": 2
+        }
+      },
+      {
+        "id": "2Strecke",
+        "r": {
+          "bottom": 46,
+          "height": 44,
+          "left": 218.65625,
+          "right": 329.328125,
+          "top": 2,
+          "width": 110.671875,
+          "x": 218.65625,
+          "y": 2
+        }
+      },
+      {
+        "id": "3Rennen",
+        "r": {
+          "bottom": 46,
+          "height": 44,
+          "left": 337.328125,
+          "right": 447.984375,
+          "top": 2,
+          "width": 110.65625,
+          "x": 337.328125,
+          "y": 2
+        }
+      },
+      {
+        "id": "car-choice-prev",
+        "r": {
+          "bottom": 252,
+          "height": 48,
+          "left": 12,
+          "right": 56,
+          "top": 204,
+          "width": 44,
+          "x": 12,
+          "y": 204
+        }
+      },
+      {
+        "id": "01KADETT COPEL",
+        "r": {
+          "bottom": 252,
+          "height": 48,
+          "left": 64,
+          "right": 348,
+          "top": 204,
+          "width": 284,
+          "x": 64,
+          "y": 204
+        }
+      },
+      {
+        "id": "car-choice-next",
+        "r": {
+          "bottom": 252,
+          "height": 48,
+          "left": 356,
+          "right": 400,
+          "top": 204,
+          "width": 44,
+          "x": 356,
+          "y": 204
+        }
+      },
+      {
+        "id": "garage-next",
+        "r": {
+          "bottom": 252,
+          "height": 48,
+          "left": 408,
+          "right": 556,
+          "top": 204,
+          "width": 148,
+          "x": 408,
+          "y": 204
+        }
+      }
+    ],
+    "clipped": [],
+    "preview": {
+      "vehiclePreviewCar": "kadett",
+      "vehiclePreviewFrame": "14",
+      "vehiclePreviewGroundX": "284.000000",
+      "vehiclePreviewGroundY": "108.780000",
+      "vehiclePreviewScale": "0.491059",
+      "vehiclePreviewState": "ready"
+    },
+    "slot": {
+      "bottom": 196,
+      "height": 148,
+      "left": 0,
+      "right": 568,
+      "top": 48,
+      "width": 568,
+      "x": 0,
+      "y": 48
+    },
+    "small": [],
+    "viewport": [
+      568,
+      260
+    ]
+  },
+  "earlierResponsiveMeasurements": [
+    {
+      "size": "844x390",
+      "buttons": [
+        {
+          "id": "open-profile",
+          "r": {
+            "bottom": 45.5,
+            "height": 44,
+            "left": 736,
+            "right": 780,
+            "top": 1.5,
+            "width": 44,
+            "x": 736,
+            "y": 1.5
+          }
+        },
+        {
+          "id": "garage-extras",
+          "r": {
+            "bottom": 45.5,
+            "height": 44,
+            "left": 788,
+            "right": 832,
+            "top": 1.5,
+            "width": 44,
+            "x": 788,
+            "y": 1.5
+          }
+        },
+        {
+          "id": "rotate-car",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 684,
+            "right": 728,
+            "top": 60,
+            "width": 44,
+            "x": 684,
+            "y": 60
+          }
+        },
+        {
+          "id": "preview-lights",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 736,
+            "right": 780,
+            "top": 60,
+            "width": 44,
+            "x": 736,
+            "y": 60
+          }
+        },
+        {
+          "id": "rev-car",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 788,
+            "right": 832,
+            "top": 60,
+            "width": 44,
+            "x": 788,
+            "y": 60
+          }
+        },
+        {
+          "id": "1Auto",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 100,
+            "right": 302.65625,
+            "top": 2,
+            "width": 202.65625,
+            "x": 100,
+            "y": 2
+          }
+        },
+        {
+          "id": "2Strecke",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 310.65625,
+            "right": 513.328125,
+            "top": 2,
+            "width": 202.671875,
+            "x": 310.65625,
+            "y": 2
+          }
+        },
+        {
+          "id": "3Rennen",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 521.328125,
+            "right": 724,
+            "top": 2,
+            "width": 202.671875,
+            "x": 521.328125,
+            "y": 2
+          }
+        },
+        {
+          "id": "car-choice-prev",
+          "r": {
+            "bottom": 378,
+            "height": 48,
+            "left": 12,
+            "right": 56,
+            "top": 330,
+            "width": 44,
+            "x": 12,
+            "y": 330
+          }
+        },
+        {
+          "id": "Opel Kadett C in Gelb auswählen",
+          "r": {
+            "bottom": 378,
+            "height": 48,
+            "left": 64,
+            "right": 380,
+            "top": 330,
+            "width": 316,
+            "x": 64,
+            "y": 330
+          }
+        },
+        {
+          "id": "car-choice-next",
+          "r": {
+            "bottom": 378,
+            "height": 48,
+            "left": 388,
+            "right": 432,
+            "top": 330,
+            "width": 44,
+            "x": 388,
+            "y": 330
+          }
+        },
+        {
+          "id": "garage-next",
+          "r": {
+            "bottom": 378,
+            "height": 48,
+            "left": 684,
+            "right": 832,
+            "top": 330,
+            "width": 148,
+            "x": 684,
+            "y": 330
+          }
+        }
+      ],
+      "clipped": [],
+      "preview": {
+        "vehiclePreviewCar": "kadett",
+        "vehiclePreviewFrame": "2",
+        "vehiclePreviewGroundX": "422.000000",
+        "vehiclePreviewGroundY": "201.390000",
+        "vehiclePreviewScale": "0.909123",
+        "vehiclePreviewState": "ready"
+      },
+      "slot": {
+        "bottom": 322,
+        "height": 274,
+        "left": 0,
+        "right": 844,
+        "top": 48,
+        "width": 844,
+        "x": 0,
+        "y": 48
+      },
+      "small": [],
+      "viewport": [
+        844,
+        390
+      ]
+    },
+    {
+      "size": "667x375",
+      "buttons": [
+        {
+          "id": "open-profile",
+          "r": {
+            "bottom": 45.5,
+            "height": 44,
+            "left": 559,
+            "right": 603,
+            "top": 1.5,
+            "width": 44,
+            "x": 559,
+            "y": 1.5
+          }
+        },
+        {
+          "id": "garage-extras",
+          "r": {
+            "bottom": 45.5,
+            "height": 44,
+            "left": 611,
+            "right": 655,
+            "top": 1.5,
+            "width": 44,
+            "x": 611,
+            "y": 1.5
+          }
+        },
+        {
+          "id": "rotate-car",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 507,
+            "right": 551,
+            "top": 60,
+            "width": 44,
+            "x": 507,
+            "y": 60
+          }
+        },
+        {
+          "id": "preview-lights",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 559,
+            "right": 603,
+            "top": 60,
+            "width": 44,
+            "x": 559,
+            "y": 60
+          }
+        },
+        {
+          "id": "rev-car",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 611,
+            "right": 655,
+            "top": 60,
+            "width": 44,
+            "x": 611,
+            "y": 60
+          }
+        },
+        {
+          "id": "1Auto",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 100,
+            "right": 243.65625,
+            "top": 2,
+            "width": 143.65625,
+            "x": 100,
+            "y": 2
+          }
+        },
+        {
+          "id": "2Strecke",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 251.65625,
+            "right": 395.328125,
+            "top": 2,
+            "width": 143.671875,
+            "x": 251.65625,
+            "y": 2
+          }
+        },
+        {
+          "id": "3Rennen",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 403.328125,
+            "right": 547,
+            "top": 2,
+            "width": 143.671875,
+            "x": 403.328125,
+            "y": 2
+          }
+        },
+        {
+          "id": "car-choice-prev",
+          "r": {
+            "bottom": 363,
+            "height": 48,
+            "left": 12,
+            "right": 56,
+            "top": 315,
+            "width": 44,
+            "x": 12,
+            "y": 315
+          }
+        },
+        {
+          "id": "Opel Kadett C in Gelb auswählen",
+          "r": {
+            "bottom": 363,
+            "height": 48,
+            "left": 64,
+            "right": 380,
+            "top": 315,
+            "width": 316,
+            "x": 64,
+            "y": 315
+          }
+        },
+        {
+          "id": "car-choice-next",
+          "r": {
+            "bottom": 363,
+            "height": 48,
+            "left": 388,
+            "right": 432,
+            "top": 315,
+            "width": 44,
+            "x": 388,
+            "y": 315
+          }
+        },
+        {
+          "id": "garage-next",
+          "r": {
+            "bottom": 363,
+            "height": 48,
+            "left": 507,
+            "right": 655,
+            "top": 315,
+            "width": 148,
+            "x": 507,
+            "y": 315
+          }
+        }
+      ],
+      "clipped": [],
+      "preview": {
+        "vehiclePreviewCar": "kadett",
+        "vehiclePreviewFrame": "2",
+        "vehiclePreviewGroundX": "333.500000",
+        "vehiclePreviewGroundY": "190.365000",
+        "vehiclePreviewScale": "0.859354",
+        "vehiclePreviewState": "ready"
+      },
+      "slot": {
+        "bottom": 307,
+        "height": 259,
+        "left": 0,
+        "right": 667,
+        "top": 48,
+        "width": 667,
+        "x": 0,
+        "y": 48
+      },
+      "small": [],
+      "viewport": [
+        667,
+        375
+      ]
+    },
+    {
+      "size": "568x320",
+      "buttons": [
+        {
+          "id": "open-profile",
+          "r": {
+            "bottom": 45.5,
+            "height": 44,
+            "left": 460,
+            "right": 504,
+            "top": 1.5,
+            "width": 44,
+            "x": 460,
+            "y": 1.5
+          }
+        },
+        {
+          "id": "garage-extras",
+          "r": {
+            "bottom": 45.5,
+            "height": 44,
+            "left": 512,
+            "right": 556,
+            "top": 1.5,
+            "width": 44,
+            "x": 512,
+            "y": 1.5
+          }
+        },
+        {
+          "id": "rotate-car",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 408,
+            "right": 452,
+            "top": 60,
+            "width": 44,
+            "x": 408,
+            "y": 60
+          }
+        },
+        {
+          "id": "preview-lights",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 460,
+            "right": 504,
+            "top": 60,
+            "width": 44,
+            "x": 460,
+            "y": 60
+          }
+        },
+        {
+          "id": "rev-car",
+          "r": {
+            "bottom": 104,
+            "height": 44,
+            "left": 512,
+            "right": 556,
+            "top": 60,
+            "width": 44,
+            "x": 512,
+            "y": 60
+          }
+        },
+        {
+          "id": "1Auto",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 100,
+            "right": 210.65625,
+            "top": 2,
+            "width": 110.65625,
+            "x": 100,
+            "y": 2
+          }
+        },
+        {
+          "id": "2Strecke",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 218.65625,
+            "right": 329.328125,
+            "top": 2,
+            "width": 110.671875,
+            "x": 218.65625,
+            "y": 2
+          }
+        },
+        {
+          "id": "3Rennen",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 337.328125,
+            "right": 447.984375,
+            "top": 2,
+            "width": 110.65625,
+            "x": 337.328125,
+            "y": 2
+          }
+        },
+        {
+          "id": "car-choice-prev",
+          "r": {
+            "bottom": 308,
+            "height": 48,
+            "left": 12,
+            "right": 56,
+            "top": 260,
+            "width": 44,
+            "x": 12,
+            "y": 260
+          }
+        },
+        {
+          "id": "Opel Kadett C in Gelb auswählen",
+          "r": {
+            "bottom": 308,
+            "height": 48,
+            "left": 64,
+            "right": 348,
+            "top": 260,
+            "width": 284,
+            "x": 64,
+            "y": 260
+          }
+        },
+        {
+          "id": "car-choice-next",
+          "r": {
+            "bottom": 308,
+            "height": 48,
+            "left": 356,
+            "right": 400,
+            "top": 260,
+            "width": 44,
+            "x": 356,
+            "y": 260
+          }
+        },
+        {
+          "id": "garage-next",
+          "r": {
+            "bottom": 308,
+            "height": 48,
+            "left": 408,
+            "right": 556,
+            "top": 260,
+            "width": 148,
+            "x": 408,
+            "y": 260
+          }
+        }
+      ],
+      "clipped": [],
+      "preview": {
+        "vehiclePreviewCar": "kadett",
+        "vehiclePreviewFrame": "2",
+        "vehiclePreviewGroundX": "333.500000",
+        "vehiclePreviewGroundY": "190.365000",
+        "vehiclePreviewScale": "0.859354",
+        "vehiclePreviewState": "ready"
+      },
+      "slot": {
+        "bottom": 252,
+        "height": 204,
+        "left": 0,
+        "right": 568,
+        "top": 48,
+        "width": 568,
+        "x": 0,
+        "y": 48
+      },
+      "small": [],
+      "viewport": [
+        568,
+        320
+      ]
+    },
+    {
+      "size": "568x260",
+      "buttons": [
+        {
+          "id": "open-profile",
+          "r": {
+            "bottom": 43.5,
+            "height": 44,
+            "left": 460,
+            "right": 504,
+            "top": -0.5,
+            "width": 44,
+            "x": 460,
+            "y": -0.5
+          }
+        },
+        {
+          "id": "garage-extras",
+          "r": {
+            "bottom": 43.5,
+            "height": 44,
+            "left": 512,
+            "right": 556,
+            "top": -0.5,
+            "width": 44,
+            "x": 512,
+            "y": -0.5
+          }
+        },
+        {
+          "id": "rotate-car",
+          "r": {
+            "bottom": 96,
+            "height": 44,
+            "left": 408,
+            "right": 452,
+            "top": 52,
+            "width": 44,
+            "x": 408,
+            "y": 52
+          }
+        },
+        {
+          "id": "preview-lights",
+          "r": {
+            "bottom": 96,
+            "height": 44,
+            "left": 460,
+            "right": 504,
+            "top": 52,
+            "width": 44,
+            "x": 460,
+            "y": 52
+          }
+        },
+        {
+          "id": "rev-car",
+          "r": {
+            "bottom": 96,
+            "height": 44,
+            "left": 512,
+            "right": 556,
+            "top": 52,
+            "width": 44,
+            "x": 512,
+            "y": 52
+          }
+        },
+        {
+          "id": "1Auto",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 100,
+            "right": 210.65625,
+            "top": 2,
+            "width": 110.65625,
+            "x": 100,
+            "y": 2
+          }
+        },
+        {
+          "id": "2Strecke",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 218.65625,
+            "right": 329.328125,
+            "top": 2,
+            "width": 110.671875,
+            "x": 218.65625,
+            "y": 2
+          }
+        },
+        {
+          "id": "3Rennen",
+          "r": {
+            "bottom": 46,
+            "height": 44,
+            "left": 337.328125,
+            "right": 447.984375,
+            "top": 2,
+            "width": 110.65625,
+            "x": 337.328125,
+            "y": 2
+          }
+        },
+        {
+          "id": "car-choice-prev",
+          "r": {
+            "bottom": 252,
+            "height": 48,
+            "left": 12,
+            "right": 56,
+            "top": 204,
+            "width": 44,
+            "x": 12,
+            "y": 204
+          }
+        },
+        {
+          "id": "Opel Kadett C in Gelb auswählen",
+          "r": {
+            "bottom": 252,
+            "height": 48,
+            "left": 64,
+            "right": 348,
+            "top": 204,
+            "width": 284,
+            "x": 64,
+            "y": 204
+          }
+        },
+        {
+          "id": "car-choice-next",
+          "r": {
+            "bottom": 252,
+            "height": 48,
+            "left": 356,
+            "right": 400,
+            "top": 204,
+            "width": 44,
+            "x": 356,
+            "y": 204
+          }
+        },
+        {
+          "id": "garage-next",
+          "r": {
+            "bottom": 252,
+            "height": 48,
+            "left": 408,
+            "right": 556,
+            "top": 204,
+            "width": 148,
+            "x": 408,
+            "y": 204
+          }
+        }
+      ],
+      "clipped": [
+        "open-profile",
+        "garage-extras"
+      ],
+      "preview": {
+        "vehiclePreviewCar": "kadett",
+        "vehiclePreviewFrame": "2",
+        "vehiclePreviewGroundX": "333.500000",
+        "vehiclePreviewGroundY": "190.365000",
+        "vehiclePreviewScale": "0.859354",
+        "vehiclePreviewState": "ready"
+      },
+      "slot": {
+        "bottom": 196,
+        "height": 152,
+        "left": 0,
+        "right": 568,
+        "top": 44,
+        "width": 568,
+        "x": 0,
+        "y": 44
+      },
+      "small": [],
+      "viewport": [
+        568,
+        260
+      ]
+    }
+  ],
+  "finalPreview": {
+    "box": {
+      "bottom": 322,
+      "height": 274,
+      "left": 0,
+      "right": 844,
+      "top": 48,
+      "width": 844,
+      "x": 0,
+      "y": 48
+    },
+    "data": {
+      "vehiclePreviewCar": "gt3rs",
+      "vehiclePreviewFrame": "14",
+      "vehiclePreviewGroundX": "422.000000",
+      "vehiclePreviewGroundY": "201.390000",
+      "vehiclePreviewScale": "0.909123",
+      "vehiclePreviewState": "ready"
+    }
+  },
+  "desktopSelections": [
+    {
+      "car": "kadett",
+      "groundX": "412.500000",
+      "groundY": "244.755000",
+      "scale": "1.104883",
+      "state": "ready"
+    },
+    {
+      "car": "kadett",
+      "groundX": "412.500000",
+      "groundY": "244.755000",
+      "scale": "1.104883",
+      "state": "ready"
+    },
+    {
+      "car": "e30",
+      "groundX": "412.500000",
+      "groundY": "244.755000",
+      "scale": "1.104883",
+      "state": "fallback"
+    },
+    {
+      "car": "m1",
+      "groundX": "412.500000",
+      "groundY": "244.755000",
+      "scale": "1.104883",
+      "state": "fallback"
+    },
+    {
+      "car": "m2",
+      "groundX": "412.500000",
+      "groundY": "244.755000",
+      "scale": "1.104883",
+      "state": "fallback"
+    }
+  ],
+  "note": "Immediate measurements during resize/selection can precede animation or image settling. finalSmall and finalPreview were captured after settling; no real phone/GPU FPS proof."
+}

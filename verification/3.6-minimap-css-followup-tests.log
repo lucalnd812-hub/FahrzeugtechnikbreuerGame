@@ -1,0 +1,3 @@
+PASS GPS click/close/ESC and focus/aria state; held steering pointers and keys are released; Space does not leak to drift; driving buttons remain available
+PASS Static map cache survives moving players, rejects old course/size/DPR images and skips unchanged/hidden frames; player, rival and start markers stay distinct
+PASS The shipped GPS template retains connected toggle/details/help/close accessibility targets; physical CSS layout is verified separately in the browser

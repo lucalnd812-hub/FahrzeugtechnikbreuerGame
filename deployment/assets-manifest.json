@@ -1,0 +1,843 @@
+{
+  "version": 1,
+  "encoding": "gzip-json-base64",
+  "assets": [
+    {
+      "file": "assets/audio/boost.mp3",
+      "size": 6940,
+      "sha": "9378cc6821a6ce3e5004b9ad96ea312cf713ec5d"
+    },
+    {
+      "file": "assets/audio/countdown.mp3",
+      "size": 3178,
+      "sha": "76f29438af0a6f0620ea7031bfdfe2ffe9640b85"
+    },
+    {
+      "file": "assets/audio/crowd.mp3",
+      "size": 48109,
+      "sha": "bc9e4e54a00222be8bfd3a57c8241b611722c6f0"
+    },
+    {
+      "file": "assets/audio/drift.mp3",
+      "size": 32017,
+      "sha": "ac6985d0e3bf2b1f95aeb2173d6893aeaf4e9396"
+    },
+    {
+      "file": "assets/audio/engine-e30.mp3",
+      "size": 48109,
+      "sha": "c7d415be54a4417ec4a5d40a5cad0531d1bb3e20"
+    },
+    {
+      "file": "assets/audio/engine-gt3rs.mp3",
+      "size": 48109,
+      "sha": "b868d52893259b6996fcb974fa3e861e94620c75"
+    },
+    {
+      "file": "assets/audio/engine-kadett.mp3",
+      "size": 48109,
+      "sha": "5ed72d19dbe4859cc855f6adb636b50358b3a097"
+    },
+    {
+      "file": "assets/audio/engine-m1.mp3",
+      "size": 48109,
+      "sha": "92d7f33069370d0aad378933e09ff7d5907dc7a0"
+    },
+    {
+      "file": "assets/audio/engine-m2.mp3",
+      "size": 48109,
+      "sha": "0e92968ca38bacca489b825907f836243e650139"
+    },
+    {
+      "file": "assets/audio/finish.mp3",
+      "size": 17389,
+      "sha": "01c89001fd3df2daf04238b637367b52b0691985"
+    },
+    {
+      "file": "assets/audio/go.mp3",
+      "size": 7567,
+      "sha": "e93057bb4c3072625d46dbb1bec3660100a4af3b"
+    },
+    {
+      "file": "assets/audio/impact.mp3",
+      "size": 2760,
+      "sha": "5c433cffab891454b9df8451ebea2daaf6d1839a"
+    },
+    {
+      "file": "assets/audio/lap.mp3",
+      "size": 9239,
+      "sha": "50c343883db581ab8fd774c89675d9581a217543"
+    },
+    {
+      "file": "assets/audio/manifest.json",
+      "size": 11166,
+      "sha": "4e6a6feba1006b4ac604795fc47676d8f4c3d424"
+    },
+    {
+      "file": "assets/audio/oil-hit.mp3",
+      "size": 10075,
+      "sha": "56d65b0f7ca649f425ec183fd7fee6bd558bb095"
+    },
+    {
+      "file": "assets/audio/oil.mp3",
+      "size": 3596,
+      "sha": "a41229928d2660c6f43a88beffe50f0380b0f38c"
+    },
+    {
+      "file": "assets/audio/pickup.mp3",
+      "size": 5895,
+      "sha": "b279202dc6707ba979f7fd40a249acec45a81f24"
+    },
+    {
+      "file": "assets/audio/reset.mp3",
+      "size": 8612,
+      "sha": "347c720195e776d1327f68919f6c148676ebc73d"
+    },
+    {
+      "file": "assets/audio/shield.mp3",
+      "size": 9239,
+      "sha": "a11415d59247d4690de04528f890e1ff22ddeca2"
+    },
+    {
+      "file": "assets/audio/ui-back.mp3",
+      "size": 1297,
+      "sha": "0b4e6ba286b338acf110228f302031dd193130c9"
+    },
+    {
+      "file": "assets/audio/ui-click.mp3",
+      "size": 2760,
+      "sha": "ce657b2f057a1a1c41d68da50fafe0fdb8f7219e"
+    },
+    {
+      "file": "assets/audio/ui-select.mp3",
+      "size": 5686,
+      "sha": "b571b3e8f2c5eb0e7ca2319e2fa2f5ba35656455"
+    },
+    {
+      "file": "assets/audio/wind.mp3",
+      "size": 39959,
+      "sha": "7965a964ac8fda4dbf25e1b91eb3a7afcd83556c"
+    },
+    {
+      "file": "assets/barlow.woff2",
+      "size": 22444,
+      "sha": "05ba48a1a6621b8a5f0c9735aaffd0e9577797e5"
+    },
+    {
+      "file": "assets/breuer-logo.png",
+      "size": 35525,
+      "sha": "214e1543b63f9243f3f9e5666b24262f88ebf823"
+    },
+    {
+      "file": "assets/nextlevel/arcade-hero.webp",
+      "size": 194550,
+      "sha": "43e607f186a533786e7b804aca47c939bf999399"
+    },
+    {
+      "file": "assets/nextlevel/arcade-intro.mp4",
+      "size": 272533,
+      "sha": "ef5909ce0a7acb6eb138ef70a4736b339f788176"
+    },
+    {
+      "file": "assets/nextlevel/artisan-courses.webp",
+      "size": 370322,
+      "sha": "9e442d0592fb6bb25a96115dd72f8dc960ea07d0"
+    },
+    {
+      "file": "assets/nextlevel/artisan-foliage.webp",
+      "size": 410096,
+      "sha": "88d4bdddfa718c4e6b635173275efb6d56a934c3"
+    },
+    {
+      "file": "assets/nextlevel/artisan-items.webp",
+      "size": 167200,
+      "sha": "fd89c017da46d9b5f2938632b6f9acb3575a60aa"
+    },
+    {
+      "file": "assets/nextlevel/artisan-mechanic.webp",
+      "size": 96020,
+      "sha": "146a73492db1fba5a4b24a1152945c05dbe0bf7f"
+    },
+    {
+      "file": "assets/nextlevel/artisan-medals.webp",
+      "size": 189908,
+      "sha": "bb28695abcec9e0aa0e28c39c234fefae547e0d2"
+    },
+    {
+      "file": "assets/nextlevel/artisan-panels.webp",
+      "size": 51924,
+      "sha": "2475cbc658d454c21e6723d1b91ba9fd216550ea"
+    },
+    {
+      "file": "assets/nextlevel/artisan-roadside.webp",
+      "size": 214880,
+      "sha": "c1b0e0b3da9a2b868e59fee5acea9ddd6b083eec"
+    },
+    {
+      "file": "assets/nextlevel/artisan-roofs.webp",
+      "size": 130936,
+      "sha": "47aff86abf992cba7f9fc8bb835303f6fb4c095c"
+    },
+    {
+      "file": "assets/nextlevel/artisan-sky.webp",
+      "size": 66390,
+      "sha": "f9c3c90626254ca2075ff7e8e35385b57ab91a49"
+    },
+    {
+      "file": "assets/nextlevel/artisan-windows.webp",
+      "size": 113382,
+      "sha": "e3986a83b797dc09eb12fe038e875f9c7e3d120d"
+    },
+    {
+      "file": "assets/nextlevel/artisan-workshop.webp",
+      "size": 166276,
+      "sha": "68e2751fd60143a09dca248a01b9d83a1f8f7de6"
+    },
+    {
+      "file": "assets/nextlevel/brick.webp",
+      "size": 23576,
+      "sha": "da346e9ddb9832925dcb68c5a37b31213a244559"
+    },
+    {
+      "file": "assets/nextlevel/car-details.webp",
+      "size": 123870,
+      "sha": "280777e8974ac4695ab6d95bbfc278e1588f6ff7"
+    },
+    {
+      "file": "assets/nextlevel/car-finish.webp",
+      "size": 13624,
+      "sha": "8029047484fb10e043682dae49d9070e0b54cdb2"
+    },
+    {
+      "file": "assets/nextlevel/garage-painted.webp",
+      "size": 203518,
+      "sha": "eff4ca5f6e6cd6a3fca2b65cc8ff94a9a84a7c71"
+    },
+    {
+      "file": "assets/nextlevel/minimap-frame.webp",
+      "size": 9334,
+      "sha": "bcc0a2bc8e42253e52c244fffb2855111e742de7"
+    },
+    {
+      "file": "assets/nextlevel/plaster.webp",
+      "size": 4594,
+      "sha": "48c664acaa88b050b5f4a92a5eda099a55f5f8bf"
+    },
+    {
+      "file": "assets/nextlevel/road-painted.webp",
+      "size": 1556,
+      "sha": "57a325a5b752592cf4ead469d1a2b2940c2cafce"
+    },
+    {
+      "file": "assets/nextlevel/slate.webp",
+      "size": 17070,
+      "sha": "fceba1d7a325a27d39ca160d84ff56565dc8dec0"
+    },
+    {
+      "file": "assets/nextlevel/stone.webp",
+      "size": 23614,
+      "sha": "34cd7c809a73c6f2fc058f90fdb8660f4b3765f8"
+    },
+    {
+      "file": "assets/nextlevel/village-details.webp",
+      "size": 84342,
+      "sha": "a73c8008f4cd03b431c1fbbc6c67b0f7358d20c3"
+    },
+    {
+      "file": "assets/nextlevel/village-facades.webp",
+      "size": 185092,
+      "sha": "dd0572ca08cc89b49e823e86d3f5b304ff4ef6c0"
+    },
+    {
+      "file": "assets/nextlevel/village-ground.webp",
+      "size": 185892,
+      "sha": "56107d0ba8daad2babcbb1cb467bf861564a9539"
+    },
+    {
+      "file": "assets/vehicles/e30/00.webp",
+      "size": 8606,
+      "sha": "1ed7f1c0a7990311d646e1b529ee867636147db7"
+    },
+    {
+      "file": "assets/vehicles/e30/01.webp",
+      "size": 16766,
+      "sha": "b64e2663dfda7712aaff1f21c6f82d0d60f56cb8"
+    },
+    {
+      "file": "assets/vehicles/e30/02.webp",
+      "size": 19670,
+      "sha": "2f0c4050c9e7a61ec6c7a178e0d3e6f94e93eae3"
+    },
+    {
+      "file": "assets/vehicles/e30/03.webp",
+      "size": 18986,
+      "sha": "60feea020be83780ef6f4c2317e180faa64334b4"
+    },
+    {
+      "file": "assets/vehicles/e30/04.webp",
+      "size": 15774,
+      "sha": "cc713f8b3fae3e4ea0715c1b539716e46cdc5305"
+    },
+    {
+      "file": "assets/vehicles/e30/05.webp",
+      "size": 20252,
+      "sha": "11ce55d3065645061b6c770fd3574901a1b6e886"
+    },
+    {
+      "file": "assets/vehicles/e30/06.webp",
+      "size": 18826,
+      "sha": "e713d8c6168825c2971e2357c095138ebc1e66ed"
+    },
+    {
+      "file": "assets/vehicles/e30/07.webp",
+      "size": 15686,
+      "sha": "e6faa042c3f8617b10759f67b0f6a64e2e5a8931"
+    },
+    {
+      "file": "assets/vehicles/e30/08.webp",
+      "size": 8368,
+      "sha": "027d0373331b3dfb35eeb999500342b0600df11a"
+    },
+    {
+      "file": "assets/vehicles/e30/09.webp",
+      "size": 15344,
+      "sha": "b6100e8065a2417400bbff618cebe99581c7a73f"
+    },
+    {
+      "file": "assets/vehicles/e30/10.webp",
+      "size": 18790,
+      "sha": "e94757109a2fbf8005e74a6e6f85cb8639deef01"
+    },
+    {
+      "file": "assets/vehicles/e30/11.webp",
+      "size": 18926,
+      "sha": "313f3c395c6037db73c5afa5dd92ff63a0934e1c"
+    },
+    {
+      "file": "assets/vehicles/e30/12.webp",
+      "size": 15020,
+      "sha": "7f3a55e20f06f3daf22981c8453f3f9f13d670e2"
+    },
+    {
+      "file": "assets/vehicles/e30/13.webp",
+      "size": 19484,
+      "sha": "b367596e651f244151ebdcb8ff4c2a809262c707"
+    },
+    {
+      "file": "assets/vehicles/e30/14.webp",
+      "size": 19006,
+      "sha": "ff2c40ee6e57c34e1dcecdcd0cb0b325fad9fba9"
+    },
+    {
+      "file": "assets/vehicles/e30/15.webp",
+      "size": 15514,
+      "sha": "804712eba2d7fbdcafd5d8784a4f7493a3f890c5"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/00.webp",
+      "size": 9378,
+      "sha": "3ae6c3debba846a04337f0af4bcccfff96003be8"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/01.webp",
+      "size": 17376,
+      "sha": "e569b20bf14976eb0891edc460c4b5955fd1e5a7"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/02.webp",
+      "size": 19640,
+      "sha": "4757559e356a42d7acde9acc54dd70871defac86"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/03.webp",
+      "size": 20238,
+      "sha": "8476f311720cc6e5f245d6b39254af823092d4c3"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/04.webp",
+      "size": 18302,
+      "sha": "6f128034c3d60348f7176e0ad73cc195a4eb722c"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/05.webp",
+      "size": 20566,
+      "sha": "335aa8bec5a752e7daec8af6708dc4b9a3384810"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/06.webp",
+      "size": 19366,
+      "sha": "55f46988b17e42694b567a42329fb9e41a6b32ec"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/07.webp",
+      "size": 14928,
+      "sha": "9442033516ff99f515d4c9a627383168e9a3638e"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/08.webp",
+      "size": 8606,
+      "sha": "01cde309d3665f2d19ded9a2de68c43e0906b0a6"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/09.webp",
+      "size": 14302,
+      "sha": "20c7892992ce3cb21678ed2a48cb8b129358a880"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/10.webp",
+      "size": 18570,
+      "sha": "1c46c8ee4f9143fdcbf496123ac21ebd6929da1e"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/11.webp",
+      "size": 19206,
+      "sha": "f0330416c6384922034c618cba7132099b1b8b3a"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/12.webp",
+      "size": 17604,
+      "sha": "60d4177c7fa6a563ba399eaa4bdabf951c18a4f9"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/13.webp",
+      "size": 19190,
+      "sha": "0cd2c855448b6304d280f1e756ad49ba9b713438"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/14.webp",
+      "size": 19582,
+      "sha": "43077d186cecd3ecd49f3a940cbc36a80dc6a555"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/15.webp",
+      "size": 15786,
+      "sha": "f798d783b7f9fd8a9fcbf7b0f6e5ccd73bee9d30"
+    },
+    {
+      "file": "assets/vehicles/kadett/00.webp",
+      "size": 9422,
+      "sha": "2b0d28c5c07c6f286fd4f9e0234586de36c8378b"
+    },
+    {
+      "file": "assets/vehicles/kadett/01.webp",
+      "size": 15426,
+      "sha": "76883a15df9b0630c77d74020bda90f16060b94b"
+    },
+    {
+      "file": "assets/vehicles/kadett/02.webp",
+      "size": 19378,
+      "sha": "08c31a7d17a0d34dc205bad5881095f6c440b983"
+    },
+    {
+      "file": "assets/vehicles/kadett/03.webp",
+      "size": 19276,
+      "sha": "327f9b7f12b32c523c73c9f2713a067d23c3d730"
+    },
+    {
+      "file": "assets/vehicles/kadett/04.webp",
+      "size": 16556,
+      "sha": "1b1ef2470fd7e4a43393e400b9eb981fd46483ea"
+    },
+    {
+      "file": "assets/vehicles/kadett/05.webp",
+      "size": 19018,
+      "sha": "d498a86dad28a50d7f0428d4199389c39d860cf9"
+    },
+    {
+      "file": "assets/vehicles/kadett/06.webp",
+      "size": 19258,
+      "sha": "098c7e7f4006473b1350ccb0176b7fa596b0b1e4"
+    },
+    {
+      "file": "assets/vehicles/kadett/07.webp",
+      "size": 15926,
+      "sha": "af285bafa72ff16a44d96b328595478f7aec7231"
+    },
+    {
+      "file": "assets/vehicles/kadett/08.webp",
+      "size": 9442,
+      "sha": "c0be825215cf9131394140f00ef7e22ef792fcd9"
+    },
+    {
+      "file": "assets/vehicles/kadett/09.webp",
+      "size": 15410,
+      "sha": "8fc6761395bbe5aa34826b7b6fcb9f3c2bdad797"
+    },
+    {
+      "file": "assets/vehicles/kadett/10.webp",
+      "size": 19090,
+      "sha": "2fc4c85eaf1cfcb51d062a6a4ad4dfcb3b7778c7"
+    },
+    {
+      "file": "assets/vehicles/kadett/11.webp",
+      "size": 19146,
+      "sha": "6b5232be0b77a94e7f62e251c63a0735f7f777d6"
+    },
+    {
+      "file": "assets/vehicles/kadett/12.webp",
+      "size": 16106,
+      "sha": "d341cc89ab7b94253b8dc78e79cb82b54a1e4026"
+    },
+    {
+      "file": "assets/vehicles/kadett/13.webp",
+      "size": 19284,
+      "sha": "3d567ac616d75e7ada769774edd9e6a7cb7c5be2"
+    },
+    {
+      "file": "assets/vehicles/kadett/14.webp",
+      "size": 17980,
+      "sha": "d71d71f9a20697f96b5063ba0b0da96103b6bc08"
+    },
+    {
+      "file": "assets/vehicles/kadett/15.webp",
+      "size": 14660,
+      "sha": "297d3caa140c9213d461c069c21310da4af275de"
+    },
+    {
+      "file": "assets/vehicles/m1/00.webp",
+      "size": 10336,
+      "sha": "fcfb90c142e8cf811be8472dd683ca5e35e57923"
+    },
+    {
+      "file": "assets/vehicles/m1/01.webp",
+      "size": 19294,
+      "sha": "b6499a5a215b3c9ebb78036acd57292e334bfbc0"
+    },
+    {
+      "file": "assets/vehicles/m1/02.webp",
+      "size": 21546,
+      "sha": "bad74803a61487e0c088a7bee1916d7ea29d81d6"
+    },
+    {
+      "file": "assets/vehicles/m1/03.webp",
+      "size": 21248,
+      "sha": "9e614f61c783fa404d0170d18a328d3b8cae45e7"
+    },
+    {
+      "file": "assets/vehicles/m1/04.webp",
+      "size": 17694,
+      "sha": "de5538e914d86e869ae7b881bff5a79736e2249c"
+    },
+    {
+      "file": "assets/vehicles/m1/05.webp",
+      "size": 19986,
+      "sha": "8ea5b2f182208b81b969e9a7e79eacb47860a466"
+    },
+    {
+      "file": "assets/vehicles/m1/06.webp",
+      "size": 18950,
+      "sha": "0ff155f7387349dc0fd181c0e60225e221220c43"
+    },
+    {
+      "file": "assets/vehicles/m1/07.webp",
+      "size": 15944,
+      "sha": "9dacc323e6da23e55b405759b40159aea3c476a7"
+    },
+    {
+      "file": "assets/vehicles/m1/08.webp",
+      "size": 8156,
+      "sha": "453120509c57e2b4c93245cb25fb1f229091155f"
+    },
+    {
+      "file": "assets/vehicles/m1/09.webp",
+      "size": 15140,
+      "sha": "96b46710b38267e001879f06339f82f5c4017ce8"
+    },
+    {
+      "file": "assets/vehicles/m1/10.webp",
+      "size": 19068,
+      "sha": "fb2f5a176d9032efb1fb9c73f52d23e8c82d3714"
+    },
+    {
+      "file": "assets/vehicles/m1/11.webp",
+      "size": 19418,
+      "sha": "5adeb879ac2e4078ea434816f69f2c8549f94556"
+    },
+    {
+      "file": "assets/vehicles/m1/12.webp",
+      "size": 17470,
+      "sha": "5258d5322c4cbe9ebe3045d403b1af1491d753c7"
+    },
+    {
+      "file": "assets/vehicles/m1/13.webp",
+      "size": 21264,
+      "sha": "62b6bfa86de24f40c4c4ebecd93415ccf63b7f2b"
+    },
+    {
+      "file": "assets/vehicles/m1/14.webp",
+      "size": 20606,
+      "sha": "7fca60b9ed5dac276f1ddeeab2906e9a7ec633bd"
+    },
+    {
+      "file": "assets/vehicles/m1/15.webp",
+      "size": 17524,
+      "sha": "6fa60abc9e717540fd16fcf50c143b56c242587d"
+    },
+    {
+      "file": "assets/vehicles/m2/00.webp",
+      "size": 7776,
+      "sha": "5782e0e10be7ccafa47e63d6431c7ce6afd01240"
+    },
+    {
+      "file": "assets/vehicles/m2/01.webp",
+      "size": 13522,
+      "sha": "b82160fe9bfc7dbc484d28a688754264ef5f0cb3"
+    },
+    {
+      "file": "assets/vehicles/m2/02.webp",
+      "size": 16596,
+      "sha": "cd934e6b0795d1ba9a404b9d0526de98498624cc"
+    },
+    {
+      "file": "assets/vehicles/m2/03.webp",
+      "size": 16170,
+      "sha": "9b4e62b3c0821b2d28e4424b3cbb566537083e74"
+    },
+    {
+      "file": "assets/vehicles/m2/04.webp",
+      "size": 14354,
+      "sha": "33e9a218db8278fe47687851d05ee2e139690037"
+    },
+    {
+      "file": "assets/vehicles/m2/05.webp",
+      "size": 16966,
+      "sha": "d735d9e5fa0ddce262b146f5efecd0eda7f81086"
+    },
+    {
+      "file": "assets/vehicles/m2/06.webp",
+      "size": 15812,
+      "sha": "817db24bc652203288528cf24962ac18877b69df"
+    },
+    {
+      "file": "assets/vehicles/m2/07.webp",
+      "size": 13090,
+      "sha": "465d953a4e552a9b3cb7436a6f353e68098e24a8"
+    },
+    {
+      "file": "assets/vehicles/m2/08.webp",
+      "size": 7428,
+      "sha": "5241fd9291868e49680e32855b0766140d102d87"
+    },
+    {
+      "file": "assets/vehicles/m2/09.webp",
+      "size": 12318,
+      "sha": "e7827c14fa65be3ebdc351e46919b6baef2736a8"
+    },
+    {
+      "file": "assets/vehicles/m2/10.webp",
+      "size": 15132,
+      "sha": "8734660d2f5a21f45f9ec372162dec8491c05a2b"
+    },
+    {
+      "file": "assets/vehicles/m2/11.webp",
+      "size": 16074,
+      "sha": "21e800656dcb714db561321b9daa5dc06aea0bed"
+    },
+    {
+      "file": "assets/vehicles/m2/12.webp",
+      "size": 13882,
+      "sha": "f3f3b0b9323956fe341a21dea40975c57608c76a"
+    },
+    {
+      "file": "assets/vehicles/m2/13.webp",
+      "size": 16454,
+      "sha": "87d531efad630f034d3b8f88429bab1c5b1de3c3"
+    },
+    {
+      "file": "assets/vehicles/m2/14.webp",
+      "size": 16000,
+      "sha": "02b4e9798b64c8f54cd637728db1b2848588e365"
+    },
+    {
+      "file": "assets/vehicles/m2/15.webp",
+      "size": 12922,
+      "sha": "803f3ce40d3c83f6e1499a94aa94ed7d4d193818"
+    },
+    {
+      "file": "assets/vehicles/manifest.json",
+      "size": 65087,
+      "sha": "1d8ccb7906bd47ec71d700e7bed179390ff58c4a"
+    }
+  ],
+  "parts": [
+    {
+      "file": "deployment/asset-pack-01.bin",
+      "size": 145000,
+      "sha": "60620318e699260679b85ca2eb5fbab9f37851ea"
+    },
+    {
+      "file": "deployment/asset-pack-02.bin",
+      "size": 145000,
+      "sha": "a52b7134286f384a618d8210f4b1262aae493aab"
+    },
+    {
+      "file": "deployment/asset-pack-03.bin",
+      "size": 145000,
+      "sha": "e2f4ccf11919f6d94c608719d29a229bb47410cd"
+    },
+    {
+      "file": "deployment/asset-pack-04.bin",
+      "size": 145000,
+      "sha": "1e0d331d095dea6ad20c41dcf96d4244755dc602"
+    },
+    {
+      "file": "deployment/asset-pack-05.bin",
+      "size": 145000,
+      "sha": "f986b3e924b5605d92c0ed131dc6880468fb617c"
+    },
+    {
+      "file": "deployment/asset-pack-06.bin",
+      "size": 145000,
+      "sha": "6b669f8eeeb1a1a027fa5f68a2202d7c7dcddaf0"
+    },
+    {
+      "file": "deployment/asset-pack-07.bin",
+      "size": 145000,
+      "sha": "8d9e0c680cdde2d5039e990f9f9a7a643056fbf6"
+    },
+    {
+      "file": "deployment/asset-pack-08.bin",
+      "size": 145000,
+      "sha": "720748ce11005db8e39e530fabbf83ffa9c59246"
+    },
+    {
+      "file": "deployment/asset-pack-09.bin",
+      "size": 145000,
+      "sha": "b43b02d51b9d01350162874f656e564a1eee62f7"
+    },
+    {
+      "file": "deployment/asset-pack-10.bin",
+      "size": 145000,
+      "sha": "ed5f232a049eabbfa9d72f0f112159c175d0ac79"
+    },
+    {
+      "file": "deployment/asset-pack-11.bin",
+      "size": 145000,
+      "sha": "57ab318a5e1507021f57ce6cd63b1209e93009a3"
+    },
+    {
+      "file": "deployment/asset-pack-12.bin",
+      "size": 145000,
+      "sha": "5635e4cc1ce3334d0d383151df385a6f7ea2cb45"
+    },
+    {
+      "file": "deployment/asset-pack-13.bin",
+      "size": 145000,
+      "sha": "40824a4252d6980ab0184eb15e9d8f5553a797d5"
+    },
+    {
+      "file": "deployment/asset-pack-14.bin",
+      "size": 145000,
+      "sha": "40c7301ee7f06082535516bac063cec24b29387f"
+    },
+    {
+      "file": "deployment/asset-pack-15.bin",
+      "size": 145000,
+      "sha": "81458e0d515d3e0da3c252b8b3766806601f7faa"
+    },
+    {
+      "file": "deployment/asset-pack-16.bin",
+      "size": 145000,
+      "sha": "f2ea8d6524adc44d3769b7eb0fd08e784df32438"
+    },
+    {
+      "file": "deployment/asset-pack-17.bin",
+      "size": 145000,
+      "sha": "a3542ea5a9440fbb30c75898e4026ee747434693"
+    },
+    {
+      "file": "deployment/asset-pack-18.bin",
+      "size": 145000,
+      "sha": "c46c2f3c638fcff2001ae376b30fe073b5367710"
+    },
+    {
+      "file": "deployment/asset-pack-19.bin",
+      "size": 145000,
+      "sha": "ecd40ee743a005d9529d656c764af64411be720f"
+    },
+    {
+      "file": "deployment/asset-pack-20.bin",
+      "size": 145000,
+      "sha": "0be6e33fbfa431a55bda4ee6ff3dd5bea80e2009"
+    },
+    {
+      "file": "deployment/asset-pack-21.bin",
+      "size": 145000,
+      "sha": "8243e40dd208ca88cd3eeed41307cf7f73fade1b"
+    },
+    {
+      "file": "deployment/asset-pack-22.bin",
+      "size": 145000,
+      "sha": "c5c3c5a6a2db27fd58f9daa48fe342c551a18acd"
+    },
+    {
+      "file": "deployment/asset-pack-23.bin",
+      "size": 145000,
+      "sha": "553862fb6a40590be821a515593040a8f750f155"
+    },
+    {
+      "file": "deployment/asset-pack-24.bin",
+      "size": 145000,
+      "sha": "fda9231602cde6212b340e80bcef11410f2f56d8"
+    },
+    {
+      "file": "deployment/asset-pack-25.bin",
+      "size": 145000,
+      "sha": "e414ee4d959c13a58552402fc41e5d26fe026a35"
+    },
+    {
+      "file": "deployment/asset-pack-26.bin",
+      "size": 145000,
+      "sha": "8e12c772dde73427a73e54c1b352bf0513fd296f"
+    },
+    {
+      "file": "deployment/asset-pack-27.bin",
+      "size": 145000,
+      "sha": "df4393073139bef61a785fcbf77fc38f3fd97ffe"
+    },
+    {
+      "file": "deployment/asset-pack-28.bin",
+      "size": 145000,
+      "sha": "ff5a8ce29640f87e3c7f8a88870299c5b7816968"
+    },
+    {
+      "file": "deployment/asset-pack-29.bin",
+      "size": 145000,
+      "sha": "196b99dd741f3b2b3a3b31b92c857ee115458164"
+    },
+    {
+      "file": "deployment/asset-pack-30.bin",
+      "size": 145000,
+      "sha": "5993a62761ffd5f7c58ce4a9eb9960bb38708330"
+    },
+    {
+      "file": "deployment/asset-pack-31.bin",
+      "size": 145000,
+      "sha": "7f4db55ac204be4017504f49f9daad4106aec004"
+    },
+    {
+      "file": "deployment/asset-pack-32.bin",
+      "size": 145000,
+      "sha": "04296e4cf0bab046c0ae2a7abf2920f2579485cf"
+    },
+    {
+      "file": "deployment/asset-pack-33.bin",
+      "size": 145000,
+      "sha": "195e8b5f6a6332ff8f72098005bb916f707ef4ac"
+    },
+    {
+      "file": "deployment/asset-pack-34.bin",
+      "size": 145000,
+      "sha": "d062e1a77a597b18e4acf1a4bb807968ad58dae0"
+    },
+    {
+      "file": "deployment/asset-pack-35.bin",
+      "size": 145000,
+      "sha": "f5e9633eb2e83cbd5a7441efecfaf6898906c734"
+    },
+    {
+      "file": "deployment/asset-pack-36.bin",
+      "size": 67531,
+      "sha": "de72a3228de410507db7e8ccde195c9a7bee35ee"
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "version": "3.5",
+  "createdAt": "2026-10-15T14:55:04.718Z",
+  "productionFrozen": true,
+  "geometryHash": "ad4dbb722ab6397a",
+  "artHash": "41fc56f05862f8c4",
+  "totalFrameBytes": 1305024,
+  "frames": 80,
+  "camera": {
+    "projection": "orthographic",
+    "motion": "fixed-camera-rotating-model",
+    "front": "+Z",
+    "yawRadiansPerFrame": 0.39269908169872414,
+    "yawOffsetDegrees": 0,
+    "elevationDegrees": 18,
+    "targetHeight": 0.66,
+    "orthographicWidth": 6.26,
+    "pixelsPerMetre": 102.23642172523962,
+    "groundAnchor": [
+      320,
+      264.173526
+    ],
+    "frameZero": "front"
+  },
+  "colorManagement": {
+    "toneMapping": "NeutralToneMapping",
+    "exposure": 1.05,
+    "output": "SRGBColorSpace"
+  },
+  "textures": {
+    "matcap": {
+      "path": "assets/nextlevel/car-finish.webp",
+      "sha256": "f5ca4778c44499456f56ae5a98617d836618ed9356acb920f894e9df48d6ac94",
+      "bytes": 13624
+    },
+    "details": {
+      "path": "assets/nextlevel/car-details.webp",
+      "sha256": "50c8e227eabaa18ce5f380e2ee8aee40329a9324f38e125ca4e71b76a47c3344",
+      "bytes": 145112
+    }
+  },
+  "framing": {
+    "mode": "fixed-scale-ground-pivot",
+    "fit": 0.88,
+    "anchor": [
+      0.5,
+      0.64
+    ],
+    "bounds": [
+      67,
+      50,
+      506,
+      284
+    ],
+    "sharedWorldScale": true
+  },
+  "domPreview": {
+    "fit": 0.94,
+    "groundPivot": [
+      0.5,
+      0.735
+    ],
+    "sourceScale": "one fleet-wide all-angle projection envelope",
+    "pendingLoadsMaximum": 2,
+    "cacheFramesMaximum": 24,
+    "DPRMaximum": 2,
+    "ownAnimationLoop": false
+  },
+  "validation": [
+    {
+      "command": "npm run test:art",
+      "result": "PASS",
+      "log": "qa/3.5/vehicle-art-test.log",
+      "scope": "Native camera-space matcap, smooth-normal reflections, sRGB bilinear textures, native UV semantics, single-pass coat/dark mask, opt-in exact THREE NeutralToneMapping1.05."
+    },
+    {
+      "command": "node tests/vehicle-art.mjs",
+      "result": "PASS",
+      "scope": "80 actual WebP integrity/hash/dimension checks, current geometry/renderer/texture hash recipe, shared projection, asynchronous load/dedupe/retry/cache trim."
+    },
+    {
+      "command": "node tests/garage-vehicle-preview.mjs",
+      "result": "PASS",
+      "scope": "400 mathematical projections plus320 actual DOM draws across short landscape stages; fixed all-angle/all-car scale and ground; max2loads; HTMLfallback; hidden/disposal/timeout/retry behavior."
+    },
+    {
+      "command": "node qa/3.4-vehicle-preview/verify-rendered-contact.mjs qa/3.5-vehicle-finish/final-art",
+      "result": "PASS",
+      "scope": "80 native source frames and320 occupied projected tyre-floor points; no physical-device/GPU performance claim."
+    }
+  ],
+  "approval": "Root visually approved rounded Kadett/M2/GT3 and authorized final80 after M1 regression confirmation. E30 and corrected M1 checked before final80.",
+  "visualProof": {
+    "method": "Native final WebP frames composited over actual garage at common source scale and floor pivot; these are QA composites, not browser captures.",
+    "directory": "qa/3.5-vehicle-finish/final-garages",
+    "baseline": "qa/3.5-vehicle-finish/baseline-3.4",
+    "comparisons": "qa/3.5-vehicle-finish/rounded-comparison",
+    "fixedM1": "qa/3.5-vehicle-finish/m1-livery-fixed/m1/00.webp"
+  },
+  "matcapPreparation": "qa/3.5-vehicle-finish/matcap-preprocess.json",
+  "paidGenerationsByThisAgent": 0,
+  "hashes": [
+    {
+      "file": "scripts/render-vehicles.mjs",
+      "bytes": 30790,
+      "sha256": "df179582c11e4febc2ce8b7e999a357788db4f4a92f0f5fcebe75a01c69cd2b7"
+    },
+    {
+      "file": "src/vehicle-art.js",
+      "bytes": 9133,
+      "sha256": "782eb7d9f7cffeb1c8409df6a97e33026f49c729fd0157376d08f5460ee52626"
+    },
+    {
+      "file": "src/garage-vehicle-preview.js",
+      "bytes": 12026,
+      "sha256": "676f958e8be1936f43337e2a2a8a3136cc43724aab90e07688de60651fc1cd40"
+    },
+    {
+      "file": "tests/vehicle-rasterizer.mjs",
+      "bytes": 7810,
+      "sha256": "e5c9f368aee0b75390e3d6353c92bc8393e1a02a02d6ddb2d926e42d69664f9b"
+    },
+    {
+      "file": "tests/vehicle-art.mjs",
+      "bytes": 8348,
+      "sha256": "e23ea42d2eef45962b16a4d26d5a4af56322e1d2625b4f99ff21f4a28d654f56"
+    },
+    {
+      "file": "tests/garage-vehicle-preview.mjs",
+      "bytes": 17681,
+      "sha256": "bd8dcbfe4766e975d7657e8ace98fc87b9e3f03e16d26c860a8a2de063f371b6"
+    },
+    {
+      "file": "src/vehicle-models.js",
+      "bytes": 83183,
+      "sha256": "ad4dbb722ab6397a3b2874ab8682967d129a055b297f011805f3eb936e364813"
+    },
+    {
+      "file": "assets/vehicles/manifest.json",
+      "bytes": 65087,
+      "sha256": "6bacbf02964ca34bf6f306bdfa2e98d8b2b19b390b9ca856cd1013fdb56b8d4f"
+    },
+    {
+      "file": "assets/nextlevel/car-finish.webp",
+      "bytes": 13624,
+      "sha256": "f5ca4778c44499456f56ae5a98617d836618ed9356acb920f894e9df48d6ac94"
+    },
+    {
+      "file": "assets/nextlevel/car-details.webp",
+      "bytes": 145112,
+      "sha256": "50c8e227eabaa18ce5f380e2ee8aee40329a9324f38e125ca4e71b76a47c3344"
+    },
+    {
+      "file": "assets/nextlevel/garage-painted.webp",
+      "bytes": 203518,
+      "sha256": "283ff64a713c5f0df28a7a7deb820905270900094623c7932989a43834e435bb"
+    },
+    {
+      "file": "assets/vehicles/kadett/00.webp",
+      "bytes": 9352,
+      "sha256": "6874c2d9b93f0dd951dadec55e38767056237aad2e825f89778f51de996166b1"
+    },
+    {
+      "file": "assets/vehicles/kadett/01.webp",
+      "bytes": 15358,
+      "sha256": "108dde500bc903e6450824d9b3fe53ec7c87e00f9f4f4a1e7202fca3e5948176"
+    },
+    {
+      "file": "assets/vehicles/kadett/02.webp",
+      "bytes": 19288,
+      "sha256": "f09be409fdcd8254e14ae52390128eb6dd6c4a698ebafe381220330188c73f6e"
+    },
+    {
+      "file": "assets/vehicles/kadett/03.webp",
+      "bytes": 19254,
+      "sha256": "9a2ca55f9e23d6901f2b97a6aaa3b8326f6aad43d0aac57f93a78261e4ee5b36"
+    },
+    {
+      "file": "assets/vehicles/kadett/04.webp",
+      "bytes": 16472,
+      "sha256": "73005eb2f7be81035b5963e9969436c16215a43bf258aad168724182c2d6a9e5"
+    },
+    {
+      "file": "assets/vehicles/kadett/05.webp",
+      "bytes": 19000,
+      "sha256": "5d617a22f0ae1c2f9073daa66d41649a5494c561aca33b70a92d476fd5bccce3"
+    },
+    {
+      "file": "assets/vehicles/kadett/06.webp",
+      "bytes": 19202,
+      "sha256": "9cb8fb2f2f95e11f1fa70588d43fe325165e6496dc7641a1f8f69ebbc1d14d0e"
+    },
+    {
+      "file": "assets/vehicles/kadett/07.webp",
+      "bytes": 15968,
+      "sha256": "abd0c84cca788f5d58edd3426df16e3463fff2eb4ba15dc0bb3de3b703404b9e"
+    },
+    {
+      "file": "assets/vehicles/kadett/08.webp",
+      "bytes": 9420,
+      "sha256": "912fc286697f8ca9d6511f56c12943349efebe0dcb5824ae29c2b8686cf67cc5"
+    },
+    {
+      "file": "assets/vehicles/kadett/09.webp",
+      "bytes": 15390,
+      "sha256": "70606326d15d5057979c3c14a28d93ef931343447ab90e8b5730b859a6dfda79"
+    },
+    {
+      "file": "assets/vehicles/kadett/10.webp",
+      "bytes": 19046,
+      "sha256": "a7c49a5d838f36a2a44a63dba9072b857a711a85e38b3c194f28c1ae734d6096"
+    },
+    {
+      "file": "assets/vehicles/kadett/11.webp",
+      "bytes": 19134,
+      "sha256": "304c26da0b6bf122dda4e176e00eb7c1da690c034138bd08d717e09f12095dfc"
+    },
+    {
+      "file": "assets/vehicles/kadett/12.webp",
+      "bytes": 15962,
+      "sha256": "c38f380ad2fb841658eb795c26474d57087095f608a22ed09021f0fe42918982"
+    },
+    {
+      "file": "assets/vehicles/kadett/13.webp",
+      "bytes": 19266,
+      "sha256": "dc5ab21ad5d5740e8b6c1670e60cd901b7fb66fe86466591e5542cc2412af20f"
+    },
+    {
+      "file": "assets/vehicles/kadett/14.webp",
+      "bytes": 17872,
+      "sha256": "66b1f49ca85a2eb266c8f5b4f7233bd0d6ef9b00f15977f6795913e27f9f3bd2"
+    },
+    {
+      "file": "assets/vehicles/kadett/15.webp",
+      "bytes": 14558,
+      "sha256": "53f51bc45ff43d75e904c84d80fdf327f1c5219f9489a6bc8f94756cd12c62d1"
+    },
+    {
+      "file": "assets/vehicles/e30/00.webp",
+      "bytes": 8362,
+      "sha256": "f104216dd9e2c8c45ad123c2ebe4c68cac50c115fc3d9fa4e25d8517fb64b1df"
+    },
+    {
+      "file": "assets/vehicles/e30/01.webp",
+      "bytes": 16528,
+      "sha256": "51fad9a31dd32e0b769bc7ff3725a0f9d6427bfc914ae70258546764774d9804"
+    },
+    {
+      "file": "assets/vehicles/e30/02.webp",
+      "bytes": 19460,
+      "sha256": "42d8ffb31c1dfbbd22a33635a9cf535d73c5cb2cac4b0899c1723607e076d19c"
+    },
+    {
+      "file": "assets/vehicles/e30/03.webp",
+      "bytes": 18904,
+      "sha256": "4c94501e5900d826d5b7fc8bed4d89605b82b4ff534dc77aad8cb46c21e353ca"
+    },
+    {
+      "file": "assets/vehicles/e30/04.webp",
+      "bytes": 15662,
+      "sha256": "d8cf2ca9f7ea3a6e5fe0866af1acf80e8b1359f43dccb02437505830713aef66"
+    },
+    {
+      "file": "assets/vehicles/e30/05.webp",
+      "bytes": 20050,
+      "sha256": "a9cdf59b1bd1d10a51434a119fd540221c386d065e0a213d169b619686e746b0"
+    },
+    {
+      "file": "assets/vehicles/e30/06.webp",
+      "bytes": 18776,
+      "sha256": "66ed923530aa9f10f5acb97de23bb719ac9ef7d22348e4410abf002abba5b8d7"
+    },
+    {
+      "file": "assets/vehicles/e30/07.webp",
+      "bytes": 15564,
+      "sha256": "eeb21d297941a00d2612c22bf1deb4993f4152596f80c4dcf40ab70fddb9f95b"
+    },
+    {
+      "file": "assets/vehicles/e30/08.webp",
+      "bytes": 8238,
+      "sha256": "e673ad16a5005ed80644d239fbe4327d4659777492c2cf9d65b58175bf43bab1"
+    },
+    {
+      "file": "assets/vehicles/e30/09.webp",
+      "bytes": 15252,
+      "sha256": "0e227da0ba57d214a93705632ceb59c94d650cf7a7661c2c9982bb211dbac5cc"
+    },
+    {
+      "file": "assets/vehicles/e30/10.webp",
+      "bytes": 18526,
+      "sha256": "ebd7e6859c894d01c6f97e22c1c1bcf19d8133d22e10edc389a96aee44ecbd73"
+    },
+    {
+      "file": "assets/vehicles/e30/11.webp",
+      "bytes": 18876,
+      "sha256": "7a01230a8a05ba2060a58b62ee5a6548ecb8c422752a8670e8ff8493be512ce9"
+    },
+    {
+      "file": "assets/vehicles/e30/12.webp",
+      "bytes": 15136,
+      "sha256": "04f126cf0ceca71e02b821760ead5663da237fe24a30163d294f9b48534c6c60"
+    },
+    {
+      "file": "assets/vehicles/e30/13.webp",
+      "bytes": 19412,
+      "sha256": "bb98019eb5fd175ddb85c068eb6bcd95222725e98c35dcc2ab8f243fc51ac405"
+    },
+    {
+      "file": "assets/vehicles/e30/14.webp",
+      "bytes": 18886,
+      "sha256": "519ace616d09e68cdfe5b3479d7c0c8e62263383a389ef088cc03646fc8e066e"
+    },
+    {
+      "file": "assets/vehicles/e30/15.webp",
+      "bytes": 15252,
+      "sha256": "e217ba143b8817a85c2c861ca1c253609305201fb01f7b945b440c8b61a9b543"
+    },
+    {
+      "file": "assets/vehicles/m1/00.webp",
+      "bytes": 10258,
+      "sha256": "57776f551e087cd747ca0ef15047ba50e8161ea2cd51a9a10259a7fa4bb01a86"
+    },
+    {
+      "file": "assets/vehicles/m1/01.webp",
+      "bytes": 19198,
+      "sha256": "147198e4bf52640ebd0f0511ecc912970201edf0f54c53e0fcf10406e061f0ef"
+    },
+    {
+      "file": "assets/vehicles/m1/02.webp",
+      "bytes": 21574,
+      "sha256": "ef55db2303de5e1008798a58109e88fb96a4c70ccc34150ccae7bd30ef5eeeb9"
+    },
+    {
+      "file": "assets/vehicles/m1/03.webp",
+      "bytes": 21216,
+      "sha256": "61b4c800f7185e10e0977c2d8a3ba96f59b6eea1708829e281b887281ae7b2fd"
+    },
+    {
+      "file": "assets/vehicles/m1/04.webp",
+      "bytes": 17634,
+      "sha256": "e69950e61cd4ecc51d44ab119891f7a10cf8f6fb0c8b42b4881fc870837d5fba"
+    },
+    {
+      "file": "assets/vehicles/m1/05.webp",
+      "bytes": 19938,
+      "sha256": "617ad9e20510eb607ce1c2fd2e18ee7911ae9094f40d99a6b5aab4e55eeeb1a3"
+    },
+    {
+      "file": "assets/vehicles/m1/06.webp",
+      "bytes": 18922,
+      "sha256": "0ded82d807d59210a363b28d76b66ddc27ccc161644d2351fc7df38ad052b023"
+    },
+    {
+      "file": "assets/vehicles/m1/07.webp",
+      "bytes": 15862,
+      "sha256": "bd7afa71fff9bc4dc8971b63c3830afa96760c542806b624b782464e1e6e4f2d"
+    },
+    {
+      "file": "assets/vehicles/m1/08.webp",
+      "bytes": 8136,
+      "sha256": "8472442800e107a55a016a2c8c9597e2dbf4cf7db1308f54ee4295761abdd666"
+    },
+    {
+      "file": "assets/vehicles/m1/09.webp",
+      "bytes": 15098,
+      "sha256": "634de9259ddfaac8e79a95c1e3df38ba0e5110bcdbdf27a445a04497fc54c4dd"
+    },
+    {
+      "file": "assets/vehicles/m1/10.webp",
+      "bytes": 18944,
+      "sha256": "db00568ebfa0f2ebd62d7c06728cdc5644e8ef3a9bd2a095316ff0c460969bc9"
+    },
+    {
+      "file": "assets/vehicles/m1/11.webp",
+      "bytes": 19418,
+      "sha256": "9e34dff4dfa869349b54282c0a9e03a2df62257b378e13e192d7adba4dfc3f12"
+    },
+    {
+      "file": "assets/vehicles/m1/12.webp",
+      "bytes": 17404,
+      "sha256": "bd43ee620f4e7d4bf01b540d8af7d9e45d1470593d2ede15dae69c782b2f23e1"
+    },
+    {
+      "file": "assets/vehicles/m1/13.webp",
+      "bytes": 21230,
+      "sha256": "61a3b220bb23e20b9564f9dbd599735d8e2c3d013e94343d3ed62bf6e663296e"
+    },
+    {
+      "file": "assets/vehicles/m1/14.webp",
+      "bytes": 20566,
+      "sha256": "a13bcd8febe27ffc53cba1796315f34df87044a3a19d70e32295be31680f87b5"
+    },
+    {
+      "file": "assets/vehicles/m1/15.webp",
+      "bytes": 17498,
+      "sha256": "6822442527522838b3d94fe0f3551e4fa63b1d5812205c55ed587b064ececccd"
+    },
+    {
+      "file": "assets/vehicles/m2/00.webp",
+      "bytes": 7692,
+      "sha256": "b64f3f492de452b1c40fd6d23d6164d45685aa240ae5458d8f136baa1ec43baa"
+    },
+    {
+      "file": "assets/vehicles/m2/01.webp",
+      "bytes": 13578,
+      "sha256": "7099858f7e3173e18e3c318bce468bd613758e7d25f015c335967c2acf910738"
+    },
+    {
+      "file": "assets/vehicles/m2/02.webp",
+      "bytes": 16544,
+      "sha256": "c552c4fd5071a5810700591e6305061d69647e351c0fd634a80b11268298c641"
+    },
+    {
+      "file": "assets/vehicles/m2/03.webp",
+      "bytes": 16068,
+      "sha256": "3805fcfe756ccf23ec60ad39f04a5d571a1e09bc1817d1f82a6252843b0f7619"
+    },
+    {
+      "file": "assets/vehicles/m2/04.webp",
+      "bytes": 14210,
+      "sha256": "ec49ed5c080883790fb4b5e055acd53783f7a9a0d37ad845adde70ee6d893c7c"
+    },
+    {
+      "file": "assets/vehicles/m2/05.webp",
+      "bytes": 16900,
+      "sha256": "3f5f261d1fa751297e6fa8abb9884370b36c9bb2b888d6ef21938ccf0494731e"
+    },
+    {
+      "file": "assets/vehicles/m2/06.webp",
+      "bytes": 15804,
+      "sha256": "bfad900fd868f42fae6d3529a395ebc9c8cbc196ffb410bcc404bbf7af241cad"
+    },
+    {
+      "file": "assets/vehicles/m2/07.webp",
+      "bytes": 12822,
+      "sha256": "acd4e63e9dbbbab1ef6c4d3de64aead428d5046738ab331e3b1192d90a7318e1"
+    },
+    {
+      "file": "assets/vehicles/m2/08.webp",
+      "bytes": 7438,
+      "sha256": "5ebe79c5c1566756281834ecd28d528b83ffebd5d98fcf26aaf3f637d3c6db5d"
+    },
+    {
+      "file": "assets/vehicles/m2/09.webp",
+      "bytes": 12254,
+      "sha256": "6d0f420b19a3c7546dd8f9011aa98351f92dce491e90b616d3cb90d07342b2c7"
+    },
+    {
+      "file": "assets/vehicles/m2/10.webp",
+      "bytes": 15040,
+      "sha256": "c185b96dc16b7ab0f861d74c2e2da0056577f41ca4bc9aa5e23e3fa2143b97a2"
+    },
+    {
+      "file": "assets/vehicles/m2/11.webp",
+      "bytes": 15926,
+      "sha256": "66566e7016a35747edbfc29d3b0ea2bbf29f1c254ceab564a67b9eafdf72a862"
+    },
+    {
+      "file": "assets/vehicles/m2/12.webp",
+      "bytes": 13762,
+      "sha256": "f34c48c8c147ca3980b1e384f8bdf07dc5c3a917686f5772159801121779f89b"
+    },
+    {
+      "file": "assets/vehicles/m2/13.webp",
+      "bytes": 16308,
+      "sha256": "995d9d1f7ec209b9f7e4acae2dec289452e5461cfa262b58d156f4ff5736346d"
+    },
+    {
+      "file": "assets/vehicles/m2/14.webp",
+      "bytes": 15882,
+      "sha256": "59044c984ebccc25ed6c8fe91f8c7ccdcc4799f33ef8a8e70e5f9fe8266d030a"
+    },
+    {
+      "file": "assets/vehicles/m2/15.webp",
+      "bytes": 12850,
+      "sha256": "851567786151657d85a2bd42c9633ea4d6d4c226b575b5d1e8ec8643a10f2f12"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/00.webp",
+      "bytes": 9426,
+      "sha256": "1795e3415a89c1cd052a091957640f3ef1186426931b6b6ddbd1d714c327fc40"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/01.webp",
+      "bytes": 17314,
+      "sha256": "026541f92bdbc371e79ae3672a9247321ea02222e11d1ae9d0957f04fd5b34a6"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/02.webp",
+      "bytes": 19584,
+      "sha256": "d5ecf8d73df91ff7e541e7981d4683f208296368290a4b5cccd0077d1471d223"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/03.webp",
+      "bytes": 20126,
+      "sha256": "3a6f530d1451009725b13143b91d7142df0fc9599d147c291f16c439de8fe364"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/04.webp",
+      "bytes": 18226,
+      "sha256": "11819930c9886fed267aba2a3cdce71f346103fe6d77b283cd95b1dd3f803def"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/05.webp",
+      "bytes": 20390,
+      "sha256": "f99f816ca27483998e4cfbd16a7327437cf1fe52f2233b8482324c425df4873b"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/06.webp",
+      "bytes": 19260,
+      "sha256": "b0fd965f6478586effb94508df3a69c353d153bc72345c87d172bbe38e392fb3"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/07.webp",
+      "bytes": 14884,
+      "sha256": "17e278e0b82dcc035f4868566ca802f10a66c2a307b1bd5969a0c578e16ce31d"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/08.webp",
+      "bytes": 8616,
+      "sha256": "d2fbb385d2a148a9034318ec3a0ca3572741c353857f4be6d2a96ed5be1863ac"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/09.webp",
+      "bytes": 14314,
+      "sha256": "9240eca825ca043a8a4b555583de0da70a1523f77a7f4c82fd706a97caaf7574"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/10.webp",
+      "bytes": 18366,
+      "sha256": "0161b78069aa1a601a3bf74d0588a40a47b249378ee2665313cf1ee752ac7992"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/11.webp",
+      "bytes": 19134,
+      "sha256": "31756bd25c839a57208d5f02d1b9ac6e373cf39901d7e432cb7964b21290daee"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/12.webp",
+      "bytes": 17580,
+      "sha256": "6903e58140bda96aa2736563cb57b976a20d94d897fad92f4e23a962b9d0ade7"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/13.webp",
+      "bytes": 19138,
+      "sha256": "654cb31fc09749c157d468afd40f8f84488cca89bea88436eedc8cebc7b8094d"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/14.webp",
+      "bytes": 19516,
+      "sha256": "3b5ca16596e5e101eed3bf85d87243bb1e48887ec70e680884fb68806c203240"
+    },
+    {
+      "file": "assets/vehicles/gt3rs/15.webp",
+      "bytes": 15750,
+      "sha256": "ef6b5fd8fc72d40d475db448d7a379f14c3b28d55312c9902324ae0d44ca7b6c"
+    }
+  ]
+}

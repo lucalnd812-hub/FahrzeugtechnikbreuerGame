@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "finishedAt": "2026-10-13T07:32:49.961901+00:00",
+  "scope": "Village geometry, surfaces, lighting, landmark courts and resource ownership",
+  "sourceFiles": [
+    "src/world.js",
+    "src/scenery.js",
+    "src/landmarks.js",
+    "src/village-identity.js",
+    "src/road-surface.js"
+  ],
+  "changes": [
+    "Measured wall footprints preserved; 12 cm bevel illumination strips at corners plus restrained baked wall depth",
+    "Shared eight-design facade atlas with softer sky reflections and shallow 8-triangle window reveals",
+    "Rounded instanced deciduous foliage and restrained sun/ground palette",
+    "One shared Higgsfield calm road tile, no bump pass, world-aligned repeat and disposed-world late-load guard",
+    "Terrain-conforming Breuer forecourt, school courtyard/play area and roundabout soil; courtyards exclude mapped asphalt and sidewalks",
+    "Road and sidewalk normals interpolated from the same area-weighted original DGM vertex field at every clip/chunk boundary",
+    "Landmark palettes/textures owned per world rather than disposed global texture reuse",
+    "setCarQuality delegates on robust carModel/vehicleSpec identity"
+  ],
+  "checks": {
+    "scenery-identity": {
+      "passed": true,
+      "tracks": [
+        {
+          "track": "lammersdorf",
+          "styles": 9,
+          "windows": 2730,
+          "doors": 211,
+          "mappedRoofVerticesUnmoved": 3981,
+          "meshes": 251,
+          "triangles": 134987
+        },
+        {
+          "track": "bahnhof",
+          "styles": 9,
+          "windows": 3774,
+          "doors": 282,
+          "mappedRoofVerticesUnmoved": 5364,
+          "meshes": 332,
+          "triangles": 183101
+        },
+        {
+          "track": "kraemer",
+          "styles": 9,
+          "windows": 4052,
+          "doors": 300,
+          "mappedRoofVerticesUnmoved": 5832,
+          "meshes": 302,
+          "triangles": 194237
+        }
+      ],
+      "gardenClearance": "Every measured garden rectangle independently checked against racing and ordinary road segments"
+    },
+    "village-polish": {
+      "passed": true,
+      "continuousShadingVertices": [
+        {
+          "track": "lammersdorf",
+          "vertices": 59397
+        },
+        {
+          "track": "bahnhof",
+          "vertices": 84465
+        },
+        {
+          "track": "kraemer",
+          "vertices": 72729
+        }
+      ],
+      "terrainCourtRays": 12,
+      "perWorldTextures": "No new world reuses textures disposed with its predecessor"
+    },
+    "road-surfaces": {
+      "passed": true,
+      "roadRays": 774,
+      "oilRays": 12395,
+      "oilItems": 78,
+      "cpu": [
+        {
+          "track": "lammersdorf",
+          "buildMs": 1212.1,
+          "lookup20000Ms": 22.5
+        },
+        {
+          "track": "bahnhof",
+          "buildMs": 1145.6,
+          "lookup20000Ms": 22.4
+        },
+        {
+          "track": "kraemer",
+          "buildMs": 1041.7,
+          "lookup20000Ms": 24.2
+        }
+      ]
+    },
+    "performance-production": {
+      "passed": true,
+      "worldSwitches": 10,
+      "qualityTransitionsPerWorld": 30,
+      "geometryMaterialsTextures": "Stable after warming; each active/inactive resource disposed exactly once",
+      "nodeHeapMiB": [
+        31.9,
+        36.6
+      ],
+      "cpuSceneCounts": [
+        {
+          "track": "lammersdorf",
+          "quality": 0,
+          "triangles": [
+            69693,
+            181794
+          ],
+          "submittedMeshes": [
+            94,
+            265
+          ]
+        },
+        {
+          "track": "bahnhof",
+          "quality": 0,
+          "triangles": [
+            81081,
+            99776
+          ],
+          "submittedMeshes": [
+            128,
+            144
+          ]
+        },
+        {
+          "track": "kraemer",
+          "quality": 0,
+          "triangles": [
+            57993,
+            137366
+          ],
+          "submittedMeshes": [
+            82,
+            207
+          ]
+        }
+      ]
+    }
+  },
+  "limits": [
+    "CPU Three.js scene/geometry verification is not a real-device WebGL FPS measurement",
+    "OSM/NRW data remains unchanged; facade colours and event details remain artistic interpretation",
+    "No new complete Street View scan claimed"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "operation": "get_runtime_errors",
+  "status": 403,
+  "available": false,
+  "message": "Connected Vercel account cannot access the optional grouped observability endpoint.",
+  "cliAvailable": false,
+  "note": "No permission changes or retry. This does not affect READY deployment, exact136-file HTTP verification, live race/menu or successful SELECT1 and loaded existing leaderboard."
+}

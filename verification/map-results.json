@@ -1,0 +1,71 @@
+{
+  "version": "3.2.0",
+  "scope": [
+    "src/world.js",
+    "src/scenery.js",
+    "src/landmarks.js",
+    "src/village-identity.js",
+    "tests/scenery-identity.mjs",
+    "tests/village-polish.mjs"
+  ],
+  "unchangedRoadTerrainAndLapSources": {
+    "src/tracks/base.json": true,
+    "src/tracks/lammersdorf.json": true,
+    "src/tracks/bahnhof.json": true,
+    "src/tracks/kraemer.json": true,
+    "src/road-surface.js": true
+  },
+  "paintedMaterials": {
+    "stone": {
+      "bytes": 23614,
+      "sha256": "fcdb81d9a901180421fd24f465826c262fb243ace823effcd5aaa10531a4e5a2"
+    },
+    "slate": {
+      "bytes": 17070,
+      "sha256": "87bba4b4329cc9e31ff24d68ccc9f08c145892d1f73c6301acd5f9d20e4b51e0"
+    },
+    "brick": {
+      "bytes": 23576,
+      "sha256": "ea0ae8424bfd69f2f8b9ec9c04d76a3ad9fe17077d9ecd1bf10b5456d0f2bf70"
+    },
+    "plaster": {
+      "bytes": 4594,
+      "sha256": "4e1f53117b071d005f3dd0f934c3eeeace1e18e7fd5fa7789d181289c5efd1d9"
+    }
+  },
+  "changes": [
+    "Controlled warm plaster/slate palettes, softer sky/fog/daylight, smoother cloud silhouettes",
+    "Ground-contact vertex colours on surveyed landmark walls without moving source vertices",
+    "Shared painted plaster on school walls, grey timber, broad soft reflected sky in window pixels",
+    "Stable per-instance green palettes plus vertex underside shading, including low-detail forest",
+    "Rounded planted near-street gardens guarded against every ordinary street and race lane",
+    "Roundabout planting guarded by exact corridor clearance, matching the existing terrain-draped island"
+  ],
+  "checks": {
+    "sceneryIdentity": "pass: all three courses; original mapped roof vertices; independent rectangle-to-road clearance including new flowerbeds",
+    "villagePolish": "pass: 216591 continuous surface normals; 12 surveyed court rays; per-instance crown tints and shaded underside buffers; independently owned textures",
+    "roadAndOilRays": "pass:774 real road rays and12395 terrain-clipped oil rays from78splashes across all3courses",
+    "performanceResourceDisposal": "pass: ten real world switches; six cars per world; all three render profiles;30quality transitions; stable resources and exact-once disposal; see map-performance.log"
+  },
+  "limits": [
+    "Exact previous authored streets, source roofs, terrain and lap geometry preserved; no new Street View survey claimed",
+    "Colours, planted gardens and event decor are illustrative interpretations",
+    "CPU scene/resource counts do not measure browser GPU FPS",
+    "Offline landmark SVG views show form only, with averaged procedural colours; not the generated textures or WebGL lighting"
+  ],
+  "performance": {
+    "lammersdorfQ0VisibleTriangles": [
+      73681,
+      185678
+    ],
+    "lammersdorfQ0SubmittedMeshes": [
+      94,
+      268
+    ],
+    "nodeHeapPostWarmupMiB": [
+      32.0,
+      36.8
+    ],
+    "note": "CPU scene/resource evidence, not measured GPU memory, draw calls or FPS."
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "productionFrozen": true,
+  "finalSourceSHA256": {
+    "src/scenery.js": "6314e51b259c8dc93f7821a859ac13e62edd9e21b3b01941708134def04cc121",
+    "src/landmarks.js": "94a76550bafcc8da32bc8f8f05878a1fc2568ecf073a0a55e5d2bc858cfffc19",
+    "src/canvas-renderer.js": "428e521ca83924fa46ff4eb7a7ffded89b5a23b4051f3d0b4edb5a34a80effc8",
+    "src/world.js": "d7844a8f08b5724eebb90dbfd6bc0981424f9d29204c228359ed859155676d4a"
+  },
+  "changes": [
+    "16-cell shared painted facade atlas with per-triangle padded UVs, five shared repeating painted low-LOD materials",
+    "Four individually cached repeating grass/paving/gravel/asphalt crops from generated ground atlas",
+    "Static road-mask-clipped transparent feathering and ground-contact shadows, medium/high only",
+    "Workshop pale clinker, grey school timber, bakery/cafe natural stone; native footprint and roofs preserved",
+    "Workshop red paved interior floor now conforms to the real DGM, without grass poking through lift bays",
+    "Gutters corrected to follow source facade edges instead of projecting sideways",
+    "Gentler outdoor hemisphere/sun lighting and matte facade/ground roughness",
+    "Canvas compatibility view reuses prefiltered native surface textures and original silhouettes/coordinates"
+  ],
+  "protectedSourceSHA256": {
+    "src/road-surface.js": "080a1d4d52d2437a67a14bb18b40dcfaad8eeff5752eb8096bf31d5175e8850a",
+    "src/tracks/base.json": "c80da914e5bd7e69b48a9882c426943ff0cbbc7c216e87727b177dc2ec93f21d",
+    "src/tracks/lammersdorf.json": "6683d16b3365792e05dda5bc0d8ca457e18ac57f0345535751d1e84f725feeb7",
+    "src/tracks/bahnhof.json": "8e90737a232c1637f9529fc67452a06ffe5137d40ad5cc66dc0fde0827f3bd18",
+    "src/tracks/kraemer.json": "58e3405496f316de1ade7139478d36f94dee7263617d796c9d44f9fd8af3cc5d"
+  },
+  "assets": {
+    "village-facades": {
+      "bytes": 312366,
+      "sha256": "5294c228692b7abf27d913d3713f0a1c9afdb8a6d4bb7d2a318dc7fe0dad06bf"
+    },
+    "village-ground": {
+      "bytes": 412282,
+      "sha256": "e02e88eb73e739367513d2c43ef5dddfa7a06037fcd307ee303f85f79824e6fb"
+    }
+  },
+  "geometryAndTextureAudit": {
+    "singleSharedHighAtlas": true,
+    "atlasUVSlots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15
+    ],
+    "wallTriangles": 40762,
+    "lowWallMeshes": 45,
+    "highWallMeshes": 11,
+    "fadeTriangles": 14381,
+    "fadeStats": {
+      "vergeSections": 295,
+      "contactEdges": 1230,
+      "meshCount": 23,
+      "minimumQuality": 1
+    },
+    "lowHighFacadeLODsExclusive": true,
+    "groundFadeDepthWrite": false,
+    "fadeRenderOrder": 1,
+    "oilRenderOrder": 2,
+    "sourceHashesUnchanged": {
+      "src/road-surface.js": "080a1d4d52d2437a67a14bb18b40dcfaad8eeff5752eb8096bf31d5175e8850a",
+      "src/tracks/base.json": "c80da914e5bd7e69b48a9882c426943ff0cbbc7c216e87727b177dc2ec93f21d",
+      "src/tracks/lammersdorf.json": "6683d16b3365792e05dda5bc0d8ca457e18ac57f0345535751d1e84f725feeb7",
+      "src/tracks/bahnhof.json": "8e90737a232c1637f9529fc67452a06ffe5137d40ad5cc66dc0fde0827f3bd18",
+      "src/tracks/kraemer.json": "58e3405496f316de1ade7139478d36f94dee7263617d796c9d44f9fd8af3cc5d"
+    },
+    "assetHashes": {
+      "village-facades": {
+        "bytes": 312366,
+        "sha256": "5294c228692b7abf27d913d3713f0a1c9afdb8a6d4bb7d2a318dc7fe0dad06bf"
+      },
+      "village-ground": {
+        "bytes": 412282,
+        "sha256": "e02e88eb73e739367513d2c43ef5dddfa7a06037fcd307ee303f85f79824e6fb"
+      }
+    }
+  },
+  "mapBudgetComparisons": [
+    {
+      "track": "lammersdorf",
+      "quality": 0,
+      "beforePeakMeshes": 232,
+      "afterPeakMeshes": 233,
+      "beforePeakTriangles": 169590,
+      "afterPeakTriangles": 169590
+    },
+    {
+      "track": "lammersdorf",
+      "quality": 1,
+      "beforePeakMeshes": 286,
+      "afterPeakMeshes": 269,
+      "beforePeakTriangles": 197354,
+      "afterPeakTriangles": 222716
+    },
+    {
+      "track": "lammersdorf",
+      "quality": 2,
+      "beforePeakMeshes": 329,
+      "afterPeakMeshes": 313,
+      "beforePeakTriangles": 247646,
+      "afterPeakTriangles": 272802
+    },
+    {
+      "track": "bahnhof",
+      "quality": 0,
+      "beforePeakMeshes": 144,
+      "afterPeakMeshes": 144,
+      "beforePeakTriangles": 102968,
+      "afterPeakTriangles": 102530
+    },
+    {
+      "track": "bahnhof",
+      "quality": 1,
+      "beforePeakMeshes": 199,
+      "afterPeakMeshes": 181,
+      "beforePeakTriangles": 130503,
+      "afterPeakTriangles": 146579
+    },
+    {
+      "track": "bahnhof",
+      "quality": 2,
+      "beforePeakMeshes": 276,
+      "afterPeakMeshes": 255,
+      "beforePeakTriangles": 169237,
+      "afterPeakTriangles": 187133
+    },
+    {
+      "track": "kraemer",
+      "quality": 0,
+      "beforePeakMeshes": 210,
+      "afterPeakMeshes": 211,
+      "beforePeakTriangles": 125642,
+      "afterPeakTriangles": 125534
+    },
+    {
+      "track": "kraemer",
+      "quality": 1,
+      "beforePeakMeshes": 273,
+      "afterPeakMeshes": 262,
+      "beforePeakTriangles": 179464,
+      "afterPeakTriangles": 198850
+    },
+    {
+      "track": "kraemer",
+      "quality": 2,
+      "beforePeakMeshes": 318,
+      "afterPeakMeshes": 307,
+      "beforePeakTriangles": 210693,
+      "afterPeakTriangles": 230882
+    }
+  ],
+  "checks": {
+    "scenery-identity": "passed final before the one-line floor conformity correction; surveyed roof invariants not affected by that correction",
+    "village-polish": "passed after final floor correction",
+    "road-surfaces": "passed after final floor correction, 774 road rays and 12395 oil rays from 78 splashes",
+    "canvas-renderer": "passed final, no later Canvas edits",
+    "performance-production": "passed 10 worlds/six cars/all qualities/30 quality changes/stable ownership; followed by one-line floor correction adding 16 visible native triangles; root reruns complete chain",
+    "native-textured-previews": "passed after final floor correction, actual local decoded WebP pixels/UV buffers/vertex+instance colours/LOD exclusivity and source SHA checks"
+  },
+  "limits": "Native CPU previews approximate lighting, texture filtering and transparency; no WebGL fog, shadowmaps, Three tone mapping or real-device FPS proof. No new Street View scan claimed. Regional unnamed facades are stable artistic interpretations, not a street-by-street material survey."
+}

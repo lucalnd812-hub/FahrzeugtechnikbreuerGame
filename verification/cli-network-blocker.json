@@ -1,0 +1,14 @@
+{
+  "sourceVersion": "3.2.0",
+  "deploymentStarted": false,
+  "nativeProjectTeamReadStatus": 403,
+  "cliVersion": "64.0.1",
+  "deviceStepReportedCompletedByUser": true,
+  "cliAuthConfirmationRetrieved": false,
+  "error": "Network access to https://api.vercel.com:443 was blocked by policy.",
+  "escalation": "Rejected because this session disables sandbox_approval and request_permissions.",
+  "sourceHelper": "scripts/publish-live.mjs",
+  "helperSyntaxCheck": "passed",
+  "helperVercelExecution": "not run in blocked environment",
+  "productionUnchanged": true
+}

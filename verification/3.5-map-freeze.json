@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-10-15T14:47:40.822671+00:00",
+  "status": "production-map-frozen-after-native-view-approval",
+  "files": {
+    "src/scenery.js": {
+      "bytes": 76981,
+      "sha256": "b1879a8b29591414172900be8b3d9d79630a79e76e63731c1e1907cc2ada5c8e"
+    },
+    "src/landmarks.js": {
+      "bytes": 40990,
+      "sha256": "a26e14585e939c24254d4a61744436db8a1c11d543f5368626a2fd1d82d0f778"
+    },
+    "src/world.js": {
+      "bytes": 28487,
+      "sha256": "3f2da83291b1af99db7f32bb1400f2b35b6573773e231790ed2237cf7821c2de"
+    },
+    "src/canvas-renderer.js": {
+      "bytes": 30238,
+      "sha256": "c591da158264c8c436c7aab0860c8c99aeeb5c80d8a3112e07cbcec5813dd7dc"
+    },
+    "src/village-identity.js": {
+      "bytes": 6039,
+      "sha256": "83d0fb1d2395714df8b4007646a2b685c1fa7d2036016e7a31c7d61507c1657f"
+    },
+    "tests/artisan-world.mjs": {
+      "bytes": 9250,
+      "sha256": "a3b9005eb2fc8189067839bcbd388a3d17413f0aeec6f2d96530923e866142cd"
+    }
+  },
+  "protectedFilesUnchanged": {
+    "src/tracks/base.json": "c80da914e5bd7e69b48a9882c426943ff0cbbc7c216e87727b177dc2ec93f21d",
+    "src/tracks/lammersdorf.json": "6683d16b3365792e05dda5bc0d8ca457e18ac57f0345535751d1e84f725feeb7",
+    "src/tracks/bahnhof.json": "8e90737a232c1637f9529fc67452a06ffe5137d40ad5cc66dc0fde0827f3bd18",
+    "src/tracks/kraemer.json": "58e3405496f316de1ade7139478d36f94dee7263617d796c9d44f9fd8af3cc5d",
+    "src/road-surface.js": "080a1d4d52d2437a67a14bb18b40dcfaad8eeff5752eb8096bf31d5175e8850a",
+    "src/driving-dynamics.js": "d013a6053615287828d495a8d9eccfef91e820bd5d3cdb070f98f27d7138b711"
+  },
+  "assets": {
+    "village-facades": {
+      "bytes": 213774,
+      "sha256": "26c18911f189ef2a84a1b772cf5359f9e1257036c55c05a6daf6a4133f8c54b8"
+    },
+    "village-ground": {
+      "bytes": 166748,
+      "sha256": "e42e69845b07216b43e79fd3d9f1c1565b402c7d6a779d680a59a9d76385cb0d"
+    },
+    "artisan-windows": {
+      "bytes": 126278,
+      "sha256": "bf6420bc33a39dcba2db830667ab55a13447bef67c2e621b2c30c9720f65da91"
+    },
+    "artisan-workshop": {
+      "bytes": 190894,
+      "sha256": "aee161a3c5b0cf05521598ec695972c88414cb4731e7c89f5f2032a5cd193588"
+    },
+    "artisan-roadside": {
+      "bytes": 241212,
+      "sha256": "52ac5498c049c15a49529eda5ee0d0e5b7e91d4cfd823502bcb4b5249c45e846"
+    },
+    "artisan-roofs": {
+      "bytes": 134544,
+      "sha256": "3e6e290de8d0a4af34e815ae7cbf18b920fb5c4ceb616c5918e838d054615a73"
+    },
+    "artisan-foliage": {
+      "bytes": 356958,
+      "sha256": "7207d1ecb70998d6959b1bea0ff1afc9a152616f1232c0c7814e24973dba461c"
+    },
+    "artisan-sky": {
+      "bytes": 66390,
+      "sha256": "df65edec73ff5374630d6903617f2461663f61f2c86874c278ca4065691a6118"
+    }
+  },
+  "newTests": [
+    "tests/artisan-world.mjs"
+  ],
+  "notes": [
+    "No GPU/FPS claim",
+    "No production threshold raised",
+    "Source changes stop at this freeze; QA artifacts may be read."
+  ]
+}

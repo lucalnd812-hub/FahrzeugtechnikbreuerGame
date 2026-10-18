@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-13",
+  "status": "passed",
+  "pickupCauses": [
+    "The controller applied Action rules and crate cooldown visibility before world.updateVisibility. Its distance-culling pass then overwrote crate.mesh.visible, showing AI-consumed/cooldown crates and Classic crates that collection correctly rejected.",
+    "Collection sampled only the vehicle centre at the end of a physics step. Fast grazing crossings of the existing 2.4 metre circle could fall entirely between samples."
+  ],
+  "pickupFixes": [
+    "A final logical availability gate now runs after the distance pass. Hidden cooldown or Classic crates cannot reappear as collectable props.",
+    "The browser and course-race checks share collectPickup, which sweeps a bounded actual movement segment through the existing pickup circle. Large reset paths and remote/finished vehicles cannot collect.",
+    "Inventory capacity, 3 second inventory cooldown, 5 second crate respawn, and existing gadget effects are preserved."
+  ],
+  "touchCauses": [
+    "Pressed screen halves painted an animated red gradient over the racing canvas.",
+    "Generic button click feedback also targeted steering controls; native mobile tap highlighting remained enabled.",
+    "Unchanged pointer moves and repeated key presses rewrote feedback state, including a transient release/re-hold on repeated keys."
+  ],
+  "touchFixes": [
+    "Steering feedback is confined to small direction labels. Screen halves remain transparent in active, hover, clicked and held states, with native tap highlight disabled.",
+    "Steering and continuous pedal controls are excluded from generic menu click feedback.",
+    "Unchanged held direction produces no repeated CSS/ARIA changes, and repeated keys retain the original pointer owner."
+  ],
+  "verification": {
+    "tests/pickups.mjs": {
+      "status": "passed",
+      "realBoostedGrazingCrossings": 10,
+      "cars": 5,
+      "physicsStepSeconds": [0.016666666666666666, 0.05],
+      "courseDrivenPickupsAndUses": {"lammersdorf": 8, "bahnhof": 11, "kraemer": 11},
+      "eligibilityCases": ["full inventory", "inventory cooldown", "remote ownership", "finished vehicle", "Classic rules", "spent crate", "single claimant", "exact respawn", "activation", "reset path", "outside radius"]
+    },
+    "tests/touch-controls.mjs": {
+      "status": "passed",
+      "sameHalfPointerMovesWithoutFeedbackWrites": 50,
+      "keyRepeatsWithoutRelease": 10,
+      "preservedCases": ["whole-screen left/right", "multi-touch", "cross-half slide", "pointer cancel", "pause/briefing gates", "orientation", "cleanup"]
+    },
+    "tests/interactions.mjs": {
+      "status": "passed",
+      "newAssertions": ["Classic crate meshes remain hidden after distance pass", "actual driving obtains an item", "spent crate remains hidden after render", "desktop item button enables", "PC KeyE activates obtained item"],
+      "scope": "Production controller and physics executed in a DOM/renderer test harness. Renderer is mocked; no browser/device FPS claim."
+    },
+    "tests/course-races.mjs": {
+      "status": "passed",
+      "scope": "All three routes, six actual drivers, Classic and Action, shared pickup logic, item/oil use, and presentation-rate equivalence."
+    }
+  },
+  "newTestForPackageScript": "tests/pickups.mjs",
+  "productionFilesEdited": ["src/race-core.js", "src/touch-controls.js", "src/mobile-racing.css", "src/game.js"],
+  "paidCredits": 0,
+  "limitations": ["Mobile visual flicker fix requires the root browser/device verification pass; CPU regressions do not measure mobile compositing or 3D FPS."]
+}

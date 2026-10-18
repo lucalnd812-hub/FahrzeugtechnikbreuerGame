@@ -1,0 +1,43 @@
+{
+  "startingBalance": 185.75,
+  "model": "gpt_image_2_5",
+  "quality": "high",
+  "resolution": "2k",
+  "quotedCreditsPerImage": 2.75,
+  "jobs": [
+    {
+      "index": 0,
+      "jobId": "48a37e72-cb66-44d3-8a0a-9ad46b7a5696",
+      "asset": "village-facades.webp",
+      "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_36jqElfhh5j5MoR9ve8m2IwdXr3/hf_20261015_114839_48a37e72-cb66-44d3-8a0a-9ad46b7a5696.png",
+      "original": "../qa/3.4/village-facades-original.png",
+      "status": "completed",
+      "runtimeBytes": 312366,
+      "runtimeSha256": "5294c228692b7abf27d913d3713f0a1c9afdb8a6d4bb7d2a318dc7fe0dad06bf",
+      "runtimeSize": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "index": 1,
+      "jobId": "dc05bbb6-2803-4595-ba9f-eb22e5231f67",
+      "asset": "village-ground.webp",
+      "resultUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_36jqElfhh5j5MoR9ve8m2IwdXr3/hf_20261015_114840_dc05bbb6-2803-4595-ba9f-eb22e5231f67.png",
+      "original": "../qa/3.4/village-ground-original.png",
+      "status": "completed",
+      "runtimeBytes": 412282,
+      "runtimeSha256": "e02e88eb73e739367513d2c43ef5dddfa7a06037fcd307ee303f85f79824e6fb",
+      "runtimeSize": [
+        1024,
+        1024
+      ]
+    }
+  ],
+  "endingBalance": 180.25,
+  "confirmedSpentCredits": 5.5,
+  "newElevenLabsJobs": 0,
+  "currentPassCredits": 8.25,
+  "finalBalance": 177.5,
+  "garageJob": "32a3187f-0a69-42e0-a645-cb45e3ebae50"
+}

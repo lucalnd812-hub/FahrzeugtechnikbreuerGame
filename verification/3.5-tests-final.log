@@ -1,0 +1,150 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> breuer-grand-prix@3.5.0 test
+> node tests/tracks.mjs && node tests/simulation-clock.mjs && node tests/chase-camera.mjs && node tests/race-config.mjs && node tests/race-modes.mjs && node tests/pickups.mjs && node tests/touch-controls.mjs && node tests/interaction-guard.mjs && node tests/start-briefing.mjs && node tests/driving-dynamics.mjs && node tests/handling-regression.mjs && node tests/scenery-identity.mjs && node tests/village-polish.mjs && node tests/entry-screen.mjs && node tests/refinement.mjs && node --expose-gc tests/performance-production.mjs && node tests/course-races.mjs && node tests/finish-regression.mjs && node tests/road-surfaces.mjs && node tests/canvas-renderer.mjs && node tests/race-visibility.mjs && node tests/vehicle-models.mjs && node tests/vehicle-art.mjs && node tests/showroom-framing.mjs && node tests/racing-audio.mjs && node tests/garage-flow.mjs && node tests/interactions.mjs && node tests/network-clock.mjs && node tests/postgres.mjs && node tests/realtime.mjs && node tests/medal-targets.mjs && node tests/garage-carousel.mjs && node tests/garage-course-preview.mjs && node tests/garage-vehicle-preview.mjs && node tests/leaderboards.mjs && node tests/online-records.mjs && node tests/3.3-profile-leaderboards.mjs && node tests/render-cadence.mjs && node tests/artisan-world.mjs
+
+PASS Track catalog, route closure/lengths, corridor filtering, shared cache, isolated maps, failed-request retry, revision guard, abort and terrain interpolation
+PASS Fixed simulation at 30/60/10 Hz, retained slow-frame debt, invalid timing, reset and angle-safe pose interpolation
+PASS Shared rendered-pose camera anchor; equal 30/60/120 Hz motion, angle wrapping, smooth view switch, respawn and stationary stability
+PASS Shared race normalization, exact lap/difficulty options, zero opponents, solo modes, assistance and isolated record categories
+PASS Category-scoped records, quota fallback, bounded ghosts and replay, FPS-independent lap/sectors, persistent three-race Cup, medals and measured-frame report calculations
+PASS 10 real boosted car movements across a crate between physics samples, all five vehicles at 60 Hz and a 50 ms step
+PASS Rules, finished/remote ownership, full inventory, cooldown, one claimant, exact respawn, gadget use and reset-path rejection
+PASS lammersdorf: 8 actual driven pickups and activations before finishing the selected course
+PASS bahnhof: 11 actual driven pickups and activations before finishing the selected course
+PASS kraemer: 11 actual driven pickups and activations before finishing the selected course
+PASS Whole-screen binary steering, cross-half slides, four fingers, independent pointer cancellation, blocked HUD actions, briefing/pause gates, keyboard/focus cleanup and physical-phone orientation
+PASS Long-press game surfaces suppress native selection/image menus while inputs, links, editable text and pointer activation retain native behavior
+PASS Per-race steering briefings, pointer/key gates, focus trap/restoration, single start callback, online reminder timing, replacement/teardown cancellation and independent pause gates
+PASS All five identities, responsive progressive binary steering, usable racing-speed turn radius, braking/front loading, charged/recoverable drift, countersteering, clean resets and distinct car personalities
+PASS lammersdorf: all five cars complete 2/3/5 actual laps in Classic and Action at the highest AI difficulty
+PASS bahnhof: all five cars complete 2/3/5 actual laps in Classic and Action at the highest AI difficulty
+PASS kraemer: all five cars complete 2/3/5 actual laps in Classic and Action at the highest AI difficulty
+PASS 90 independently driven AI races, 1012257 actual fixed steps, maximum centreline distance 4.29 m; 7397 ms CPU test time. This is a physics measurement, not a browser/GPU FPS claim.
+PASS All five cars: immediate finger release, one exit boost, settled on-road exits, prompt countersteering and no inherited opposite drift
+PASS 30 actual two-lap races with binary phone steering and fixed auto gas; 195801 physics steps, 132 drift boosts, no auto resets
+PASS Deterministic local styles, eight different windows/four doors in one atlas, measured roof vertices unchanged, all gardens off every race/ordinary road, bounded culled batches and late-texture ownership.
+{"track":"lammersdorf","styles":9,"identities":202,"windows":1553,"doors":211,"shutters":628,"gardens":452,"solarRoofs":30,"meshes":280,"triangles":200037,"unchangedRoofVertices":3981}
+{"track":"bahnhof","styles":9,"identities":257,"windows":2150,"doors":282,"shutters":1002,"gardens":589,"solarRoofs":36,"meshes":360,"triangles":265251,"unchangedRoofVertices":5364}
+{"track":"kraemer","styles":9,"identities":261,"windows":2427,"doors":300,"shutters":1198,"gardens":602,"solarRoofs":42,"meshes":335,"triangles":286550,"unchangedRoofVertices":5832}
+PASS Measured silhouettes with bevel illumination, road/sidewalk normals continuous across every shared vertex, actual sloped forecourt rays and independent texture ownership across track changes.
+[{"track":"lammersdorf","continuousShadingVertices":59397,"terrainCourtRays":4},{"track":"bahnhof","continuousShadingVertices":84465,"terrainCourtRays":4},{"track":"kraemer","continuousShadingVertices":72729,"terrainCourtRays":4}]
+PASS entry screen: real markup, five cars, finite loading/readiness, keyboard modality, autoplay denial/failure, Reduced Motion, visibility, orientation and late media completion.
+PASS Spatial lookup matches an exhaustive search on the road, junctions and distant points
+PASS Exactly two seconds offroad and stationary; movement cancels, road idling never resets, no progress is awarded
+PASS All five cars enter a drift through strong steering, charge and release a boost; a short tap does not drift
+PASS Eight real obstacles slow a collision, respect shields and are avoided by every AI car over two laps
+PASS Rails, posts, signs and kerbs clear the entire road; open workshop contains two lifts and distance detail
+PASS Sustained slow frames reduce quality, recovery restores it, tab-sized stalls are ignored
+PASS Ten real world switches, six cars each, all three quality profiles, stable resources after 30 quality transitions, exact-once disposal of active/inactive objects.
+lammersdorf Q0: 63155–203601 visible triangles; 89–266 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+lammersdorf Q1: 91709–308564 visible triangles; 94–356 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+lammersdorf Q2: 97997–355780 visible triangles; 97–400 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+bahnhof Q0: 68531–92475 visible triangles; 125–139 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+bahnhof Q1: 101958–184486 visible triangles; 137–230 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+bahnhof Q2: 108390–258319 visible triangles; 146–340 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+kraemer Q0: 50725–155587 visible triangles; 78–209 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+kraemer Q1: 67601–264958 visible triangles; 85–274 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+kraemer Q2: 78447–285640 visible triangles; 91–304 submitted meshes (CPU scene count, not measured WebGL draw calls/FPS)
+Explicit-GC Node heap over post-warmup switches: 33.5–38.5 MB; not a GPU memory measurement.
+PASS Wheel animation, low-car budget, shared environment ownership and adaptive quality hysteresis. Real device FPS remains a separate browser check.
+PASS lammersdorf classic: six finishers, 53.17–64.62 s, 30/60 Hz identical, 0 obstacle hits
+PASS lammersdorf action: six finishers, 56.60–64.17 s, 30/60 Hz identical, 1 obstacle hits
+PASS lammersdorf: real pickups/items/oil (20/18/36) and six five-lap finishers on the slow difficulty
+PASS bahnhof classic: six finishers, 69.07–73.92 s, 30/60 Hz identical, 0 obstacle hits
+PASS bahnhof action: six finishers, 67.08–76.62 s, 30/60 Hz identical, 0 obstacle hits
+PASS bahnhof: real pickups/items/oil (32/31/33) and six five-lap finishers on the slow difficulty
+PASS kraemer classic: six finishers, 71.03–82.55 s, 30/60 Hz identical, 0 obstacle hits
+PASS kraemer action: six finishers, 79.77–85.28 s, 30/60 Hz identical, 1 obstacle hits
+PASS kraemer: real pickups/items/oil (29/28/33) and six five-lap finishers on the slow difficulty
+PASS Fixed-step overload retains and repays all active simulation time. No renderer FPS claim.
+lammersdorf sharp bend left: largest continuous centreline projection step 9.123 m; exactly two physical laps.
+lammersdorf sharp bend right: largest continuous centreline projection step 4.825 m; exactly two physical laps.
+PASS lammersdorf: every car finishes 2/3/5 laps on lateral analogue lines; both outer-verge approaches finish after exactly two real circuits.
+bahnhof sharp bend left: largest continuous centreline projection step 5.259 m; exactly two physical laps.
+bahnhof sharp bend right: largest continuous centreline projection step 13.886 m; exactly two physical laps.
+PASS bahnhof: every car finishes 2/3/5 laps on lateral analogue lines; both outer-verge approaches finish after exactly two real circuits.
+kraemer sharp bend left: largest continuous centreline projection step 23.598 m; exactly two physical laps.
+kraemer sharp bend right: largest continuous centreline projection step 6.077 m; exactly two physical laps.
+PASS kraemer: every car finishes 2/3/5 laps on lateral analogue lines; both outer-verge approaches finish after exactly two real circuits.
+PASS lammersdorf: moving and stationary recovery preserve real lap distance, delayed gates recover, finish freezes once, and reverse/teleport shortcuts cannot finish.
+PASS bahnhof: moving and stationary recovery preserve real lap distance, delayed gates recover, finish freezes once, and reverse/teleport shortcuts cannot finish.
+PASS kraemer: moving and stationary recovery preserve real lap distance, delayed gates recover, finish freezes once, and reverse/teleport shortcuts cannot finish.
+PASS A deterministic 0.30 m physical collision confirms a 17.041 m real-corner projection switch without fabricated progress, checkpoints or finish.
+PASS 30 additional real driver races with collisions after the physics step; 1 trusted small impulses switch the centreline by more than 15 m without losing course progress.
+PASS Remote collision preserves server-owned progress, gates and accepted phase.
+PASS A physically driven final-line collision finishes on the next step while braking, without an additional metre or lap.
+PASS: 81 individual race cases (36 explicit former grass-edge failures), 30 collision-race finishers and a stationary final-line collision; all three tracks and 5 cars, 2/3/5 laps, analogue lateral trajectories, action obstacles, manual/two-second recovery and ordered-gate/shortcut regressions; 335840 actual 10 Hz packets accepted by the shared server validator, largest packet progress delta 23.846 m. Actual production physics; no fabricated finishing progress and no rendering/FPS claim.
+PASS 774 real road rays across all 3 courses; 12395 terrain-clipped oil triangle rays from 78 splashes, including start pads, slopes and roundabout apron. No duplicate coplanar asphalt; decals remain 1 cm above the actual local surface with depth testing enabled.
+{"cpuBudgets":[{"track":"lammersdorf","worldBuildMs":3123.7,"heightLookups20000Ms":43.4,"oilItems":26},{"track":"bahnhof","worldBuildMs":2824.5,"heightLookups20000Ms":33,"oilItems":26},{"track":"kraemer","worldBuildMs":4198.5,"heightLookups20000Ms":37.8,"oilItems":26}],"note":"CPU geometry/lookup costs, not measured browser GPU FPS."}
+PASS lammersdorf: exact route vertices, sourced footprints, viewport/scissor/DPR, spatial culling, player focus, real hazards/items/oil and immutable race data.
+PASS bahnhof: exact route vertices, sourced footprints, viewport/scissor/DPR, spatial culling, player focus, real hazards/items/oil and immutable race data.
+PASS kraemer: exact route vertices, sourced footprints, viewport/scissor/DPR, spatial culling, player focus, real hazards/items/oil and immutable race data.
+PASS All five loaded original-model views, angle selection, proportions, first-frame preload and asynchronous garage invalidation.
+PASS Real Canvas compatibility rendering flow; logical Canvas counters are not WebGL performance measurements.
+PASS: 216 real racing-car poses, 36 ghosts, 36 animated crates and 36 late oil meshes keep current world matrices across all three courses and quality changes; car bodies intersect the camera frustum and raycast at their requested positions. CPU geometry regression, not a GPU/FPS measurement.
+kadett Q0: 5538 triangles / 6 draws / 1 transparent
+kadett Q1: 15402 triangles / 15 draws / 2 transparent
+kadett Q2: 15402 triangles / 15 draws / 2 transparent
+e30 Q0: 5978 triangles / 6 draws / 1 transparent
+e30 Q1: 15198 triangles / 15 draws / 2 transparent
+e30 Q2: 15198 triangles / 15 draws / 2 transparent
+m1 Q0: 5124 triangles / 6 draws / 1 transparent
+m1 Q1: 15174 triangles / 15 draws / 2 transparent
+m1 Q2: 15174 triangles / 15 draws / 2 transparent
+m2 Q0: 5563 triangles / 6 draws / 1 transparent
+m2 Q1: 15651 triangles / 15 draws / 2 transparent
+m2 Q2: 15651 triangles / 15 draws / 2 transparent
+gt3rs Q0: 5190 triangles / 6 draws / 1 transparent
+gt3rs Q1: 15173 triangles / 15 draws / 2 transparent
+gt3rs Q2: 15173 triangles / 15 draws / 2 transparent
+PASS: five sculpted matcap vehicles, convex door skins, unit normals, bowed glass, closed headers, real atlas UVs, safe live texture ownership, wheel/lamps/cabin identity, 6/15 draw LODs and single disposal.
+Vehicle art: wrap, asynchronous loading, deduplication, retry, fallback and drawing PASS
+Vehicle art: 80 current transparent frames, dimensions and file integrity PASS (1305024 bytes)
+PASS all five showroom models: fixed elevation, full fit and viewport occupation at 5 aspect ratios ×16 rotations
+PASS painted garage: selection and lighting states without unused model allocation
+PASS: 22 verified ElevenLabs files (454863 bytes), five distinct engine recordings; lazy user-gesture unlock, shared fetch/decode, smooth source reuse, bounded voices, event cooldowns, car crossfades, pause/hidden/mute/dispose cancellation, no clipped samples, no startup audio fetch. Mock WebAudio lifecycle tests; physical-device hearing/latency is a browser QA task.
+PASS Fixed garage flow: Auto → Strecke → Rennen, a separate Start/Online dock, selections retained, three settings pages, keyboard tabs/Escape, More menu, focus/announcements, independent preview, no scrolling and fixed Links/Rechts without analog UI.
+Functional DOM checks; viewport visibility must be verified from actual browser rectangles/screenshots at 568×320, 667×375, 844×390 and 1366×768.
+PASS Actual controller: lazy garage/finish textures, car selection/rotation/audio/options/dialogs, failed-load retry, touch gas, map/tour, sparse offline pause, zero unchanged HUD mutations, cached crate heights, item/medal datasets, stationary offroad reset, rendered-pose camera, all courses with two and five real laps, ghosts, solo rules, persistent three-course Cup, demo without records, gold-medal preservation, benchmark flow and immutable delayed online finish
+Controller DOM and renderer are mocked; these checks make no browser/device FPS claim.
+PASS network sample clock: real countdown, delayed reconnect, stale acknowledgements and wall-clock corrections preserve a monotone bounded sample timeline.
+PASS PostgreSQL lobby: bounded database requests, lazy schema init, six-player capacity, ready revisions, host grace/heartbeat race and reconnect.
+PASS PostgreSQL race: shared configuration, parallel ticks, monotone sequence, checkpoint and immutable finish validation.
+PASS PostgreSQL persistence: reopen database, preserved race/finish, room expiry and complete leave cleanup.
+PASS PostgreSQL transport timing: slow auth preserves receipt time, old/duplicate large deltas are ignored, equal concurrent sequences stay immutable and new jumps/checkpoints remain rejected.
+PASS PostgreSQL capture time: real 32 m/s latency compression, receipt timestamps, legacy fallback, old-frame presence and bounded/monotone time, jump and global-progress protections.
+PASS PostgreSQL finish capture: six-second delay, completed-endpoint retry, immutable finish and future/backdated/min-duration/progress/gate/event-consistency boundaries.
+PASS PostgreSQL sharp-bend projection tolerance with ordinary world motion; large progress/world teleports still rejected.
+PASS WebSocket synchronization: six drivers on two independent instances, shared PostgreSQL snapshots, HTTP fallback and monotone sequences.
+PASS WebSocket reconnect: same identity across instances, duplicate socket replacement and fresh-process durable state.
+PASS WebSocket boundaries: denied origins/query credentials, invalid auth/version/state, auth timeout, binary/JSON/12 KB limits and frame rate.
+Breuer realtime checkpoint: Error
+PASS WebSocket resilience: bounded lifetime, reconnect and database failure close the socket while durable HTTP remains available.
+PASS mixed transport race: six plausible checkpoint traversals, socket/HTTP finishing and immutable confirmed finishes.
+PASS WebSocket revocation and cleanup: leave removes access and every test room is deleted.
+PASS WebSocket transport timing: large old HTTP/WS deltas survive reconnect, slow HTTP auth preserves subsequent real WS movement and new jumps still close the socket.
+PASS WebSocket hello convergence: HTTP advances during hello, the confirmed roster becomes the validation baseline and new jumps remain rejected.
+PASS WebSocket capture timing: delayed 32 m/s positions/finish and endpoint retry converge; bounded/monotone time, large jumps, future events and immutable finish remain protected.
+PASS WebSocket sharp-bend projection survives normal motion; excessive progress remains rejected.
+PASS Lammersdorf has exactly 35/40/50-second goals per lap for every car, multiplied cleanly for 1/2/3/5/10 laps
+PASS Other courses scale against the real Lammersdorf length; displayed hundredths remain consistent across multiple laps and invalid inputs stay finite
+PASS Faster is better: exact gold/silver/bronze boundaries award the medal, and a slower time falls into the next category
+PASS New challenge goals preserve existing records, separate handling versions and previously earned gold medals
+PASS garage carousel: actual five-car/three-course markup, wrapping, engine-owned selection clicks, keyboard focus, profile/ranking hooks and cleanup.
+PASS garage course previews: 15 real-size route fits, short cells, complete strokes/start markers, compact captions and hidden bootstrap.
+PASS standalone garage vehicle preview: 400 fixed-scale/ground-pivot projections, real five-car library, no global renderer dependency, capped DPR, bounded async rotation, retained images, thumbnail/HTML fallback, finite errors and late recovery, hidden-step pause, reduced motion, responsive redraw and full disposal.
+PASS profile migration: additive locked PostgreSQL tables, real unique index and preserved old room rows.
+PASS durable identities: 256-bit owner tokens, hash-only storage, Unicode/NFKC/whitespace uniqueness, concurrent collisions and owner authentication.
+PASS API boundaries: origin/method/JSON limits, no database wake on invalid input and strict exact record categories.
+PASS guest finish: private hashed ticket before driving, name reservation after the finish, one atomic owner claim and safe retries without replay into another profile.
+PASS run validation: bound tickets, wall-clock/minimum/sector checks, atomic better-only UPSERTs and concurrent duplicate/contradictory submissions.
+PASS public rankings: top list plus a rank outside the top, stable ties, no credentials and exact track/car/lap/rule/mode/opponent/difficulty/assist/version separation.
+PASS persistence and recovery: reopened PostgreSQL keeps profiles/owner tokens/ranks; expired pending tickets are cleaned and completed submissions remain idempotent.
+PASS OnlineRecords: nonblocking tickets, race/category ownership, anonymous post-finish claim, pending-submit deduplication, reply-loss idempotency, authenticated pass import, storage fallback, private reconnect cache with original start, owner/category/expiry checks and real PostgreSQL round trips
+PASS Actual profile UI events: separate pass step, native footer submission, preserved draft, visualViewport keyboard lifecycle, escaped names, private pass blob URL, stale name/import success after dismissal and stale leaderboard replies
+PASS Production profile/leaderboard API with real PostgreSQL: unique normalized names, concurrent reservations, hashed credentials, auth, exact categories, plausible timed tickets, sector validation, top/own ranks, idempotency, atomic best results, expiry and restart persistence
+Isolated local database and controlled server clock; no live deployment, permanent public profiles or physical browser/GPU performance are claimed.
+PASS Actual render scheduler: retained 30/60 Hz deadlines on 60/90/120/144 Hz RAF, normal jitter, one submission per callback, no suspension catch-up burst, dirty two-Hz offline pause and unchanged fixed simulation steps. Controlled timing, not browser/device FPS.
+PASS Artisan map: 44-triangle bounded chamfers, 3D window reveals, installed Three shader-source contracts (not GPU compilation), low-profile ordinary map fallback, eight real WebP art sources, one cutout forest batch per tile, non-overlapping near LOD without unchanged-state buffer uploads, single-pass oil-safe ground fades, immutable map data and exact-once texture disposal.
+{"trees":1197,"farForestBatches":34,"farTriangles":9576,"nearTiles":101,"atlasSourceRequests":8,"groundFadeBatches":23}
