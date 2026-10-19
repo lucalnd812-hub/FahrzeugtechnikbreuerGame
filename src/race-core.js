@@ -59,14 +59,28 @@ export function resetVehicle(v,track,distance=v.safeS){
   const p=track.at(distance);Object.assign(v,{x:p.x,z:p.z,angle:p.angle,speed:0,spin:0,s:p.s,drift:0,slip:0,steering:0,steerTime:0,yawRate:0,lateralLoad:0,bodyRoll:0,bodyPitch:0,gripLoss:0,offroadStillTime:0,resetRemaining:0,offroad:false,wrongWay:false,wasDrifting:false,drifting:false});
 }
 
-export function botInput(v,track,difficulty=1){
+/** Bot pace per difficulty (.76 easy, .91 normal, 1.06 hard). Measured solo
+ * Lammersdorf laps: easy ≈ silver/bronze, normal ≈ silver, hard ≈ gold pace.
+ * `pace` scales the bot's top speed; `corner` is how much it lifts in bends. */
+export function botProfile(difficulty=.91){
+  const d=Number.isFinite(Number(difficulty))?Number(difficulty):.91,k=clamp((d-.76)/.3,0,1);
+  // Below "easy" (demo/QA drivers) the pace keeps falling off proportionally.
+  if(d<.76)return {pace:Math.max(.3,.96*d/.76),corner:.5+(.76-d)};
+  return {pace:.96+k*.16,corner:.5-k*.2};
+}
+
+/** `lead` = metres this bot is ahead of the player (negative when behind).
+ * A gentle catch-up keeps the pack in reach without teleporting anyone. */
+export function botInput(v,track,difficulty=1,lead=0){
   const p=track.nearest(v.x,v.z),target=track.at(p.s+7+v.speed*.43);
   const hazard=(v.raceConfig||track.raceConfig||DEFAULT_RACE_CONFIG).rules==='action'?track.obstacles.find(h=>mod(h.s-p.s,track.length)<36):null;
   if(hazard){const offset=-hazard.side*2.1;target.x+=target.dz*offset;target.z-=target.dx*offset;}
   const want=Math.atan2(target.x-v.x,target.z-v.z),error=angleDelta(want-v.angle);
   const turn=Math.abs(angleDelta(track.at(p.s+24).angle-p.angle));
-  const targetSpeed=(CARS[v.car].max-1.5)*difficulty/(1+turn*1.4)*(hazard?.78:1);
-  return {gas:v.speed<targetSpeed?1:.08,brake:v.speed>targetSpeed+2?1:0,steer:clamp(-error*2,-1,1),drift:Math.abs(error)>.28&&Math.abs(error)<.9&&v.speed>16&&!hazard,autoDrift:false};
+  const profile=botProfile(difficulty),gap=Number.isFinite(lead)?lead:0;
+  const pace=clamp(profile.pace+clamp(-gap/900,-.05,.06),.7,1.15);
+  const targetSpeed=CARS[v.car].max*pace/(1+turn*profile.corner)*(hazard?.68:1);
+  return {pace,gas:v.speed<targetSpeed?1:.08,brake:v.speed>targetSpeed+2?1:0,steer:clamp(-error*2,-1,1),drift:Math.abs(error)>.12&&Math.abs(error)<.9&&v.speed>16&&!hazard,autoDrift:!hazard};
 }
 
 // The driveable verge ends at 8 m, so confirmed progress stays continuous over
@@ -113,7 +127,7 @@ export function stepVehicle(v,track,input,dt,time,config){
   if(drifting){v.drift=Math.min(2.5,v.drift+dt*1.65);}
   else if(v.wasDrifting){if(v.drift>.45&&!v.offroad&&v.spin===0){v.boost=Math.max(v.boost,.6+v.drift*.65);events.push('driftBoost');}v.drift=0;}
   v.wasDrifting=drifting;v.drifting=drifting;
-  const max=car.max*(v.boost>0?1.35:1)*(v.offroad?.38:1)*(v.spin>0?.3:1);
+  const max=car.max*clamp(Number(input.pace)||1,.7,1.15)*(v.boost>0?1.35:1)*(v.offroad?.38:1)*(v.spin>0?.3:1);
   const throttle=clamp(input.gas||0,0,1),brake=clamp(input.brake||0,0,1);
   let grade=0;
   if(typeof track.heightAt==='function'){

@@ -66,4 +66,21 @@ nahtlos weitermachen kann. Unten im „Verlauf“ den neuesten Stand ergänzen.
   mit Zugangsdaten – beide git- und vercel-ignoriert). `npx vercel deploy --prod --yes` → live, Bundle
   `game-81f728a6945c.js` identisch mit lokalem Build, `/api/health` ok, Garage live geprüft.
   `.vercelignore` lässt art/, tests/, docs/, qa/, verification/, public/ und .env* weg.
+- 2026-10-19 V4 (Kundenfeedback), lokal, NICHT committet:
+  - Bots: `botProfile()` in `race-core.js` (Leicht .76 / Normal .91 / Schwer 1.06 → Tempo .96–1.12, weniger Bremsen
+    in Kurven, Auto-Drift, `input.pace` skaliert nur Bot-Topspeed), leichter Aufhol-Effekt über `lead`
+    (Abstand zum Spieler, in `game.js` übergeben). Solo-Runde Lammersdorf: ≈42/38/35 s (Gold 35). Slalom-Tempo ×.68.
+    Demo/Benchmark nutzen `pace:1`. `tests/handling-regression.mjs` hat eigenen `cautiousGuide`.
+  - Banner über der Strecke + Startportal: `userData.overhead`, in `world.js` `fadeOverhead` (6–16 m Kameraabstand).
+  - Streckenvorschau: Canvas per CSS begrenzt (`contain:size`, `minmax(0,1fr)`), ragte auf iPhones in die Buttons.
+  - M2: `PAINT` + `repaint()` in `ai_car.py` (Grau 112/118/127, wenig Metall), GLBs + 16 Garagenbilder neu (CPU).
+    Katalogfarbe `0x70767f`.
+  - Itemkisten: gemalte Comic-Fläche `assets/nextlevel/item-box.webp` (Higgsfield) + schwarze Kontur (inverted hull).
+  - Einheitliches UI: `src/ui-kit.css` (zuletzt gebündelt), Icons `assets/nextlevel/ui-icons.webp` (24 Higgsfield-Icons,
+    Atlas 6×4) über `data-icon` / `data-icon-end`. Buttons weiß, Primär gelb, Panels dunkel mit Tusche-Rand.
+    Glyphen (‹ › × ↗ ↻ ↓ ◀ ▶ ↺) und Emoji aus Buttons entfernt; „Leistung prüfen“ im Menü ausgeblendet.
+    Basis-Selektoren mit `:where()` → Layout/Sichtbarkeit bleiben bei den alten Regeln, nur Look erzwungen.
+  - Licht: Sonne `0xffcf8c` 2.85, Comic-Grade Sättigung 1.36, Wärme .1; Wimpelketten alle 38 m, Laternen alle 29 m.
+    Q0-Spitze 366.735 Dreiecke (Grenze 600.000). `npm test` Exit 0.
+  - Higgsfield V4: 3 Bilder (≈4,5 Credits) → Runde 2 gesamt ≈112 von 200.
 - Offen: echte FPS auf einem Handy messen; Rauch/Wackeln im echten Browser ansehen; Richtung der Kurvenpfeile prüfen.

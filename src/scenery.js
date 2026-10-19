@@ -647,7 +647,7 @@ export function dressCourse(scene,data,track,M,heightAt=()=>0){
  { const straw=material(0xe9c25c,{roughness:1}),band=material(0xc8402f,{roughness:.9}),flags=material(0xffffff,{vertexColors:true,side:THREE.DoubleSide,roughness:.9});
   for(let s=20;s<track.length;s+=22){const p=track.at(s),turn=Math.atan2(Math.sin(track.at(s+12).angle-track.at(s-12).angle),Math.cos(track.at(s+12).angle-track.at(s-12).angle));if(Math.abs(turn)<.55)continue;
    for(const side of [-1,1]){const x=p.x+p.dz*7.6*side,z=p.z-p.dx*7.6*side;if(inside(x,z)||!safe(x,z,1.0,4.0,p.angle,'straw-bales'))continue;addStrawBales(batch,straw,band,x,z,p.angle);}}
-  for(let s=45;s<track.length-30;s+=62){const p=track.at(s),l=[p.x+p.dz*8.4,p.z-p.dx*8.4],r=[p.x-p.dz*8.4,p.z+p.dx*8.4];
+  for(let s=45;s<track.length-30;s+=38){const p=track.at(s),l=[p.x+p.dz*8.4,p.z-p.dx*8.4],r=[p.x-p.dz*8.4,p.z+p.dx*8.4];
    if(inside(...l)||inside(...r)||!safe(...l,.3,.3,p.angle,'bunting-post')||!safe(...r,.3,.3,p.angle,'bunting-post'))continue;
    const yl=heightAt(...l),yr=heightAt(...r);for(const [q,y] of [[l,yl],[r,yr]])batch.add(new THREE.CylinderGeometry(.07,.09,6.4,6),M.metal,q[0],3.2,q[1]);
    // The batch drops each part onto the ground at its centre, so heights stay relative.
@@ -656,7 +656,7 @@ export function dressCourse(scene,data,track,M,heightAt=()=>0){
  // Lamp posts, street signs, warm gardens, bins and benches add scale to the village.
  { let seed=7001; addVillagePosters({batch,track,safe,material,rand:()=>rand(seed++)}); }
  const lampPost=material(0x26392f,{roughness:.55,metalness:.2}),lampGlass=material(0xfff1b8,{emissive:0xffd98a,emissiveIntensity:.55,roughness:.3});
- for(let s=25;s<track.length;s+=38){const p=track.at(s),side=Math.floor(s/38)%2?1:-1,x=p.x+p.dz*8*side,z=p.z-p.dx*8*side;if(!safe(x,z,2.1,.4,p.angle,'lamp'))continue;
+ for(let s=25;s<track.length;s+=29){const p=track.at(s),side=Math.floor(s/29)%2?1:-1,x=p.x+p.dz*8*side,z=p.z-p.dx*8*side;if(!safe(x,z,2.1,.4,p.angle,'lamp'))continue;
   // Old-town lantern on a dark green post with a hanging geranium basket.
   const hx=x-p.dz*.62*side,hz=z+p.dx*.62*side;
   batch.add(new THREE.CylinderGeometry(.07,.12,4.6,8),lampPost,x,2.3,z);batch.add(new THREE.CylinderGeometry(.16,.2,.35,8),lampPost,x,.18,z);

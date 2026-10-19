@@ -46,6 +46,13 @@ console.log('PASS All five cars: immediate finger release, one exit boost, settl
 // left/right and the brake are available. This is actual stepVehicle movement
 // over the surveyed route, not checkpoint assignment or a teleport test.
 const base=JSON.parse(fs.readFileSync(new URL('../src/tracks/base.json',import.meta.url)));
+// A careful phone driver: the bots now race harder, so the human guide keeps
+// the earlier conservative corner braking (bot steering, slower target speed).
+function cautiousGuide(v,track){
+  const guide=botInput(v,track,.91),p=track.nearest(v.x,v.z);
+  const turn=Math.abs(angleDelta(track.at(p.s+24).angle-p.angle)),target=(CARS[v.car].max-1.5)/(1+turn*1.4);
+  return {steer:guide.steer,brake:v.speed>target+2?1:0};
+}
 const races=[];let totalSteps=0,totalBoosts=0,maxCentrelineDistance=0;
 for(const meta of TRACKS){
   const course=JSON.parse(fs.readFileSync(new URL('../src/tracks/'+meta.id+'.json',import.meta.url))),data={...base,...course};
@@ -56,7 +63,7 @@ for(const meta of TRACKS){
     let input={},resets=0,boosts=0,finishes=0,offroadSteps=0,maxDistance=0,physical=track.delta(track.nearest(v.x,v.z).s,0),roadS=v.s,frames=0;
     for(;frames<60*480&&v.finish===null;frames++){
       if(frames%6===0){
-        const guide=botInput(v,track,1);
+        const guide=cautiousGuide(v,track);
         input={gas:1,brake:guide.brake,steer:Math.abs(guide.steer)>.12?Math.sign(guide.steer):0,autoDrift:true};
       }
       const events=stepVehicle(v,track,input,dt,frames*dt,raceConfig),near=track.nearest(v.x,v.z);

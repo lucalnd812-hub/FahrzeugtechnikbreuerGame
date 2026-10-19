@@ -106,6 +106,7 @@ def _load_car(car_id, pivot):
     # Full-resolution source mesh and 4K texture: the showroom is a close-up.
     exec(open(ROOT + 'art/blender/ai_car.py', encoding='utf8').read(), globals())
     body = _import(ROOT + f'art/ai3d/{car_id}_tripo.glb')
+    repaint(body, car_id)
     normalise(body, car_id, '+X')
     w = find_wheels(body, car_id)
     wheel = split_wheels(body, w)

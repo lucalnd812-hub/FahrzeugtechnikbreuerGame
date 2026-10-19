@@ -7,7 +7,7 @@ import {TRACKS,sampleGround} from '../src/tracks.js';
 
 assert.equal(CARS,CATALOGUE,'Existing physics imports must share the rendering/validation catalogue');
 assert.deepEqual(CARS.map(car=>car.id),['kadett','e30','m1','m2','gt3rs']);
-assert.equal(CARS[3].color,0x92989d);assert.equal(CARS[4].color,0x267ddb);
+assert.equal(CARS[3].color,0x70767f);assert.equal(CARS[4].color,0x267ddb);
 assert.ok(Object.isFrozen(CARS)&&CARS.every(car=>Object.isFrozen(car)&&Object.isFrozen(car.handling)));
 assert.equal(HANDLING_VERSION,'arcade-handling-4','Changed physics must use a fresh record/ghost namespace');
 // Preserve saved vehicle identities and the original performance baselines.

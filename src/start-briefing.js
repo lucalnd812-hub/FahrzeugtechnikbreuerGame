@@ -22,7 +22,7 @@ export class StartBriefing{
     <div class="race-briefing-instructions"><p><b>Links halten</b> = links lenken.<br><b>Rechts halten</b> = rechts lenken.</p><p>Du kannst überall auf die jeweilige Bildschirmhälfte tippen. Das Auto gibt automatisch Gas.</p><span class="race-briefing-tools">BREMSE &amp; ITEM bleiben in der Mitte erreichbar.</span></div>
    </div>
    <div class="race-briefing-desktop" data-briefing-desktop><div class="race-briefing-key-row"><span><kbd>←</kbd><kbd>→</kbd><b>Lenken</b></span><span><kbd>↑</kbd><kbd>↓</kbd><b>Gas / Bremse</b></span></div><p>Auch WASD funktioniert. <b>Leertaste</b> zum Driften, <b>E</b> für dein Item.</p></div>
-   <footer class="race-briefing-footer"><button type="button" class="race-briefing-back" data-briefing-cancel>Zurück</button><span class="race-briefing-note" role="status"></span><button type="button" class="race-briefing-ready" data-briefing-ready>Los geht’s <span aria-hidden="true">›</span></button></footer>
+   <footer class="race-briefing-footer"><button type="button" class="race-briefing-back" data-icon="left" data-briefing-cancel>Zurück</button><span class="race-briefing-note" role="status"></span><button type="button" class="race-briefing-ready" data-icon="flag" data-briefing-ready>Los geht’s</button></footer>
   </div>`;
   this.title=this.element.querySelector('.race-briefing-title');this.mobilePanel=this.element.querySelector('[data-briefing-mobile]');this.desktopPanel=this.element.querySelector('[data-briefing-desktop]');
   this.ready=this.element.querySelector('[data-briefing-ready]');this.cancelButton=this.element.querySelector('[data-briefing-cancel]');this.note=this.element.querySelector('.race-briefing-note');
@@ -44,7 +44,7 @@ export class StartBriefing{
   this.element.dataset.mobile=String(!!mobile);this.element.dataset.network=String(!!network);this.element.hidden=false;
   this.mobilePanel.hidden=!mobile;this.desktopPanel.hidden=!!mobile;
   this.title.textContent=mobile?'Links halten. Rechts halten.':'Deine nächste Runde wartet.';
-  this.ready.textContent=network?'Bereit fürs Rennen ›':'Los geht’s ›';
+  this.ready.textContent=network?'Bereit fürs Rennen':'Los geht’s';
   this.note.textContent=network?'Alle fahren gleichzeitig los.':'Danach startet der Countdown.';
   const promise=new Promise(resolve=>{this._pending={resolve,onReady,onCancel};});
   try{this.ready.focus({preventScroll:true});}catch{this.element.focus?.();}

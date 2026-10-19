@@ -11,9 +11,9 @@ export const COMIC_DEFAULTS=Object.freeze({
  ink:1,            // outline strength 0..1
  silhouette:.045,   // relative depth jump that counts as an object edge
  crease:.010,       // relative depth curvature that counts as a corner/fold
- saturation:1.3,
+ saturation:1.36,
  contrast:1.1,
- warmth:.07,       // highlights toward warm sun, shadows toward cool sky
+  warmth:.1,       // highlights toward warm sun, shadows toward cool sky
  vignette:.22,
 });
 

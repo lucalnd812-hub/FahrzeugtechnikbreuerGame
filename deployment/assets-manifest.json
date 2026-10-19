@@ -574,88 +574,88 @@
     },
     {
       "file": "assets/vehicles/m2/00.webp",
-      "size": 33024,
-      "sha": "b97a4657f41d4842fc649141d1c18bb67cf1fe1c"
+      "size": 37608,
+      "sha": "be7fb33a136527e237dccd9b002f046143291bb6"
     },
     {
       "file": "assets/vehicles/m2/01.webp",
-      "size": 33366,
-      "sha": "af04385d979318cdcc59f6190b0a5e324ae24f9b"
+      "size": 38248,
+      "sha": "7a0dfe49fe11da217f48a67d9b00d56ba40e464d"
     },
     {
       "file": "assets/vehicles/m2/02.webp",
-      "size": 31834,
-      "sha": "364483c519f15d057f3f11a7720460834752a1de"
+      "size": 37964,
+      "sha": "9e07af0ed98496ceca48fe7bba7808eb5f89786d"
     },
     {
       "file": "assets/vehicles/m2/03.webp",
-      "size": 30884,
-      "sha": "81c647a0ebdeb49829278e24191ec8126c20732a"
+      "size": 39036,
+      "sha": "2ff8bf64b0f4068b0860d444771b31d5c7440e35"
     },
     {
       "file": "assets/vehicles/m2/04.webp",
-      "size": 32918,
-      "sha": "9a8f91cef188ac0a416641f4506f0e94fe82d35e"
+      "size": 41036,
+      "sha": "ae74c786a07bb3ba44d0063ee27a4716047e1058"
     },
     {
       "file": "assets/vehicles/m2/05.webp",
-      "size": 38952,
-      "sha": "d8abe2a02bb1c1cb43ba21fe6ecfe8798dd1c9bf"
+      "size": 44226,
+      "sha": "47ce96ae178de29651453cbf8eb39f07133c8875"
     },
     {
       "file": "assets/vehicles/m2/06.webp",
-      "size": 40284,
-      "sha": "10408073290356d43d549d20e0bcbc3234e14943"
+      "size": 44606,
+      "sha": "d71a79d06c8d94adbdcf9fd37182f0f167afc62d"
     },
     {
       "file": "assets/vehicles/m2/07.webp",
-      "size": 36280,
-      "sha": "cb3b50a5fe2368da8d9596b30c262a6504967f98"
+      "size": 40160,
+      "sha": "2cd9615453a18fa5364c14e52d5181a08fcff583"
     },
     {
       "file": "assets/vehicles/m2/08.webp",
-      "size": 31576,
-      "sha": "9bc79dec713d7757e00ef37e16e78439d94775db"
+      "size": 34974,
+      "sha": "81fa525ce59909c531544b0ae3c64c322ed6eb5e"
     },
     {
       "file": "assets/vehicles/m2/09.webp",
-      "size": 34028,
-      "sha": "81260c1e5f05a874b7214b4e46160e4671d5e8bf"
+      "size": 39068,
+      "sha": "e5c72885f11eade2f7f58be6956ac8576eb2f766"
     },
     {
       "file": "assets/vehicles/m2/10.webp",
-      "size": 32494,
-      "sha": "5048b747295a626e16bd49866644f31e885f957a"
+      "size": 38442,
+      "sha": "65ff606db36cb80e69368fa3e4d07b17cd46435c"
     },
     {
       "file": "assets/vehicles/m2/11.webp",
-      "size": 31630,
-      "sha": "c371cb1f8172a110654fc8723f5f85c4493632bc"
+      "size": 39496,
+      "sha": "f490f88ec80a38b655dbd2fd3046eef2b5a47ec3"
     },
     {
       "file": "assets/vehicles/m2/12.webp",
-      "size": 31912,
-      "sha": "e52e8a9f2d9f4221056479655b45ff85871413d3"
+      "size": 40338,
+      "sha": "50f43244f5a77e71d30ba71c1936f3d5423f4262"
     },
     {
       "file": "assets/vehicles/m2/13.webp",
-      "size": 35760,
-      "sha": "5400b2e5b40623315e6423bcd489b6a064631320"
+      "size": 42494,
+      "sha": "06e9673f32b356521e7dbf729f0ca42f5a95a0b0"
     },
     {
       "file": "assets/vehicles/m2/14.webp",
-      "size": 38280,
-      "sha": "bb7c7481013b0bbf0d494e30c593da572b5a9f70"
+      "size": 43258,
+      "sha": "6afa4903c70f86827cf2f495e567da5b30699eab"
     },
     {
       "file": "assets/vehicles/m2/15.webp",
-      "size": 36360,
-      "sha": "a710b8ccc593f295b0397bcadd38bfd0e0ab5174"
+      "size": 40586,
+      "sha": "ff8b3de1b7279eb87cf1d28e18120b6b70c1ba0e"
     },
     {
       "file": "assets/vehicles/manifest.json",
-      "size": 26217,
-      "sha": "1b1b0a99f1052113c8489414cc4435c52962e390"
+      "size": 26163,
+      "sha": "ece62de9e53c7a78d4cff945cbe77d70e106e2da"
     }
   ],
   "parts": [

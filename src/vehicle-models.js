@@ -18,7 +18,7 @@ export const VEHICLE_MODELS = Object.freeze([
     profile:[[-2.18,.765,.87],[-2.00,.805,.92],[-1.43,.84,.94],[-.62,.83,.84],[.75,.69,.85],[1.40,.605,.94],[1.99,.545,.91],[2.18,.48,.835]],
     cabin:{front:[.74,.70,.695],roofFront:[.045,1.115,.625],roofRear:[-.68,1.135,.64],rear:[-1.085,.825,.72],pillar:-.51}}),
   // F87 Competition proportions from BMW's 09/2018 dimensional sheet.
-  Object.freeze({id:'m2',length:4.461,width:1.854,height:1.410,wheelbase:2.693,radius:.349,tyreWidth:.279,paint:0x92989d,
+  Object.freeze({id:'m2',length:4.461,width:1.854,height:1.410,wheelbase:2.693,radius:.349,tyreWidth:.279,paint:0x70767f,
     axles:[-1.350,1.343],track:1.590,flare:.020,arch:.380,modern:true,
     profile:[[-2.2305,.79,.80],[-2.13,.835,.855],[-1.77,.905,.88],[-1.35,.954,.907],[-.72,.945,.89],[.66,.94,.865],[1.27,.92,.89],[1.82,.873,.877],[2.09,.826,.84],[2.2305,.765,.803]],
     cabin:{front:[.77,.947,.740],roofFront:[.27,1.365,.642],roofRear:[-.67,1.377,.652],rear:[-1.48,.95,.747],pillar:-.47}}),

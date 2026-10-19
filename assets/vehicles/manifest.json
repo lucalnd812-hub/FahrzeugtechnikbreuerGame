@@ -2,8 +2,8 @@
  "version": 7,
  "modelVersion": "breuer-fleet-8",
  "renderStyle": "blender-cycles-showroom",
- "geometryHash": "d636176fa2a481f1",
- "artHash": "d636176fa2a481f1",
+ "geometryHash": "7a5c3ce793fea996",
+ "artHash": "7a5c3ce793fea996",
  "textures": {
   "matcap": {
    "path": "assets/nextlevel/car-finish.webp",
@@ -49,10 +49,10 @@
  "framing": {
   "mode": "backdrop-pixel-match",
   "bounds": [
-   195,
-   194,
-   954,
-   433
+   0,
+   0,
+   1344,
+   752
   ],
   "anchor": [
    0.5,
@@ -64,7 +64,7 @@
   {
    "id": "kadett",
    "name": "Opel Kadett C Coupé",
-   "source": "8742d2d92a38b9bf",
+   "source": "2aa9d888a4aac683",
    "framing": {
     "bounds": [
      196,
@@ -339,7 +339,7 @@
   {
    "id": "e30",
    "name": "BMW E30 M3 Gruppe A",
-   "source": "01eef3ff3f71e953",
+   "source": "5e7b1f0b0d229e6a",
    "framing": {
     "bounds": [
      196,
@@ -614,7 +614,7 @@
   {
    "id": "m1",
    "name": "BMW M1 Procar",
-   "source": "8bdf82542a2babf7",
+   "source": "737f33641d3a2e5d",
    "framing": {
     "bounds": [
      196,
@@ -889,13 +889,13 @@
   {
    "id": "m2",
    "name": "BMW M2 Competition",
-   "source": "0e7733bcdac039c5",
+   "source": "a70af9676a2d1f94",
    "framing": {
     "bounds": [
-     196,
-     236,
-     953,
-     391
+     0,
+     0,
+     1344,
+     752
     ],
     "groundAnchor": [
      672,
@@ -906,265 +906,265 @@
     {
      "frame": 0,
      "contentBounds": [
-      258,
-      270,
-      801,
-      356
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 169301,
-     "bytes": 33024,
-     "sha256": "7cfbdc0b13ba56400745b8749d0691a4c815c1df6e31cd8f7e245f0f2d03d958"
+     "visiblePixels": 190330,
+     "bytes": 37608,
+     "sha256": "c34b61df5cde59855820f42f70bd9675bc78b1d5e8063fdd3002d7c7935cc5ee"
     },
     {
      "frame": 1,
      "contentBounds": [
-      202,
-      270,
-      754,
-      352
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 165121,
-     "bytes": 33366,
-     "sha256": "fd59c3c354c16fe79ceacb7a70360b41f3d5856db1a0c75b91d436003f6f3baf"
+     "visiblePixels": 180299,
+     "bytes": 38248,
+     "sha256": "0465b8a02f97305ff7f8a78784a56929d3482fa0a8a119831ae0bb719bc74b0e"
     },
     {
      "frame": 2,
      "contentBounds": [
-      196,
-      267,
-      802,
-      332
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 159515,
-     "bytes": 31834,
-     "sha256": "e77fab5af4363ab9f7c2f9eb1e4706656c22b3a001ef8fe7b4a5cd41cb5e8484"
+     "visiblePixels": 180832,
+     "bytes": 37964,
+     "sha256": "11050e1e36b0bb092ce10dc091b001b329e8ef62d9886802ba4b06b36d497431"
     },
     {
      "frame": 3,
      "contentBounds": [
-      196,
-      263,
-      877,
-      299
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 156344,
-     "bytes": 30884,
-     "sha256": "26b2355fd0b81d761da8ee7c850de16b71c6bdd22667b08077e91bd50ecd6df9"
+     "visiblePixels": 189726,
+     "bytes": 39036,
+     "sha256": "cb22b690fdf05d6cb16f293f15677c782b07b52b8c4912b5b56f94c9af363023"
     },
     {
      "frame": 4,
      "contentBounds": [
-      198,
-      259,
-      932,
-      289
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 167722,
-     "bytes": 32918,
-     "sha256": "83cbb032d26f0fa60ef259e395bd05d0a60d93bb18b828f999d23506b9e42473"
+     "visiblePixels": 213052,
+     "bytes": 41036,
+     "sha256": "2fae50d00a7ec3b87293038c591cbdaf915d740139efdb89f4e0100eb9d7a823"
     },
     {
      "frame": 5,
      "contentBounds": [
-      252,
-      254,
-      897,
-      348
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 187806,
-     "bytes": 38952,
-     "sha256": "0bc6ffb99e28178f5114e41179147cc6711f483e7c0db2e3011946605e00b865"
+     "visiblePixels": 238027,
+     "bytes": 44226,
+     "sha256": "d8faed563bb11f266cb4b631555bc62d85a62c88980cb64e35ab58bdc1375507"
     },
     {
      "frame": 6,
      "contentBounds": [
-      317,
-      246,
-      832,
-      380
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 199253,
-     "bytes": 40284,
-     "sha256": "90cfbe3a243029abdf0d0c3666cc340b1aa9e5f49fdd90183439a04542548786"
+     "visiblePixels": 235638,
+     "bytes": 44606,
+     "sha256": "7b9b8f5df9db5c40f0af621343bfa2e6b8bc7336c471de1d702b6f5b286bb2af"
     },
     {
      "frame": 7,
      "contentBounds": [
-      391,
-      239,
-      758,
-      388
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 195706,
-     "bytes": 36280,
-     "sha256": "d76e6cac787899cd24d7d65040a9485473a1ecd6f1a6f6e483d3ae73e1f861f2"
+     "visiblePixels": 221486,
+     "bytes": 40160,
+     "sha256": "a6a6c02544c06a15215ee68776b488939c64555db7d99bb5e9faed2e9e8db79d"
     },
     {
      "frame": 8,
      "contentBounds": [
-      243,
-      236,
-      870,
-      391
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 182492,
-     "bytes": 31576,
-     "sha256": "9dc785ceb699851f5c07186755cb523bce615c747e377b7bdf18342f9b1aeeed"
+     "visiblePixels": 201786,
+     "bytes": 34974,
+     "sha256": "5d1c76e36e4a0797dda071b5a70d6db97ba99381d518fe815b277de92c450062"
     },
     {
      "frame": 9,
      "contentBounds": [
-      198,
-      239,
-      755,
-      387
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 187874,
-     "bytes": 34028,
-     "sha256": "0a8c7e97b319afb648d777cb79e525d54a4b91993a15728ea9bf82a5465b9708"
+     "visiblePixels": 202448,
+     "bytes": 39068,
+     "sha256": "6253d72a2406dd5646e29fd2af5ebeed8daa00802e2cae8cb81c46d23b713171"
     },
     {
      "frame": 10,
      "contentBounds": [
-      196,
-      246,
-      801,
-      353
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 174860,
-     "bytes": 32494,
-     "sha256": "0a48d80f56067058bff70c10e9b8a009afd9070f300417107f672330b2190410"
+     "visiblePixels": 196989,
+     "bytes": 38442,
+     "sha256": "8ebc127882a4c98cacded6cde2de9a09e9c7614efce0e660c485d832587473f7"
     },
     {
      "frame": 11,
      "contentBounds": [
-      196,
-      254,
-      877,
-      307
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 163315,
-     "bytes": 31630,
-     "sha256": "840e4162397e70a43b11496cf536f55c5fb0dd60733bd2f8906abee058ea012f"
+     "visiblePixels": 196189,
+     "bytes": 39496,
+     "sha256": "a60d38fdb34c4ffbdea9d2f6ee57df98f38e6b454fd064373b743fdf736e200e"
     },
     {
      "frame": 12,
      "contentBounds": [
-      198,
-      259,
-      932,
-      282
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 164136,
-     "bytes": 31912,
-     "sha256": "8a8310cedee580e535df38edf13bc3ab5de7589021a76a5ad4cbd1416b2cc23d"
+     "visiblePixels": 201226,
+     "bytes": 40338,
+     "sha256": "1ea9af633431528cd8f7433d1c89666b0541445883ba3ad98ef41653a0d2d91a"
     },
     {
      "frame": 13,
      "contentBounds": [
-      251,
-      263,
-      898,
-      320
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 170826,
-     "bytes": 35760,
-     "sha256": "e8aebf2f79c9adc6556a924ea5eeedeba7cc13b8ed2227ef4d89363604199ef9"
+     "visiblePixels": 215588,
+     "bytes": 42494,
+     "sha256": "17204b8457f59c71cd270d52360054c3f0c0eeb52b1117e92d1c2d59342f5c15"
     },
     {
      "frame": 14,
      "contentBounds": [
-      308,
-      267,
-      841,
-      358
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 180135,
-     "bytes": 38280,
-     "sha256": "f49a9ce58d232d55088be99cbe471b4257af529452c76014c43d448a76460a82"
+     "visiblePixels": 216088,
+     "bytes": 43258,
+     "sha256": "eeb0e0272eb70f55ed249e3419401d27880f1ddcf6632479b43b89cc1fac1b24"
     },
     {
      "frame": 15,
      "contentBounds": [
-      384,
-      270,
-      765,
-      357
+      0,
+      0,
+      1344,
+      752
      ],
      "groundAnchor": [
       672,
       477.942
      ],
-     "visiblePixels": 178142,
-     "bytes": 36360,
-     "sha256": "4c072a5d9c5b1a7fd524f82abbeac57d29d9e441bbbd2edb5f8d73fb562cf82b"
+     "visiblePixels": 204244,
+     "bytes": 40586,
+     "sha256": "ba7ec2acab92e68d932af78ce5c3636e15e55ed73c9bd3d136fd0b7043e26634"
     }
    ]
   },
   {
    "id": "gt3rs",
    "name": "Porsche 911 GT3 RS",
-   "source": "0e50cb08af1447f5",
+   "source": "1f51efb0ecc3e7b9",
    "framing": {
     "bounds": [
      195,

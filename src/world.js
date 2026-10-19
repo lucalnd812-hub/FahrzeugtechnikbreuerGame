@@ -149,7 +149,7 @@ export function makeWorld(data,track){
  const heightAt=(x,z)=>terrainHeightAt(data,x,z),drivingHeightAt=(x,z)=>surfaceHeightAt(data,x,z);
  const M=villageMaterials();// Golden afternoon: warm low sun, cool sky fill so shadows read blue-green.
  scene.add(new THREE.HemisphereLight(0xd6e6ff,0x7f9466,1.15));
- const sun=new THREE.DirectionalLight(0xffd8a3,2.7);sun.position.set(-115,92,75);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-85,right:85,top:85,bottom:-85,near:10,far:380});sun.shadow.bias=-.0003;sun.shadow.normalBias=.09;scene.add(sun,sun.target);
+ const sun=new THREE.DirectionalLight(0xffcf8c,2.85);sun.position.set(-115,92,75);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-85,right:85,top:85,bottom:-85,near:10,far:380});sun.shadow.bias=-.0003;sun.shadow.normalBias=.09;scene.add(sun,sun.target);
  sun.shadow.camera.updateProjectionMatrix();sun.shadow.radius=2;
  const grass=material(0xf2f3e3,{map:surfaceTexture('grass'),roughness:1,vertexColors:true});
  if(data.terrain&&data.terrain.values?.length===data.terrain.width*data.terrain.height){
@@ -194,7 +194,7 @@ export function makeWorld(data,track){
  const p=track.at(0),gate=new THREE.Group(),gateBatch=new Batch();gate.position.set(p.x,heightAt(p.x,p.z),p.z);gate.rotation.y=p.angle;gate.name='breuer:start-finish';
  let gateWidth=7.2;while(gateWidth<11&&[-1,1].some(side=>!clearOfCourse(track,p.x+p.dz*gateWidth*side,p.z-p.dx*gateWidth*side,.7,.8,p.angle,6.55)))gateWidth+=.4;
  for(const side of [-1,1]){gateBatch.box(.7,6.5,.8,M.red,side*gateWidth,3.25,0);spectators.safety.push({x:p.x+p.dz*gateWidth*side,z:p.z-p.dx*gateWidth*side,w:.7,d:.8,a:p.angle,kind:'gate'});}gateBatch.box(gateWidth*2+.7,1,.8,M.dark,0,6.05,0);
- for(const side of [-1,1]){const name=sign('BREUER GRAND PRIX',11.9,'#ffffff','#1f2024',.075);name.position.set(0,6.05,side*.42);if(side<0)name.rotation.y=Math.PI;gate.add(name);}
+ for(const side of [-1,1]){const name=sign('BREUER GRAND PRIX',11.9,'#ffffff','#1f2024',.075);name.position.set(0,6.05,side*.42);if(side<0)name.rotation.y=Math.PI;name.userData.overhead=true;gate.add(name);}
  // Ground-level start graphics belong to the terrain, not the flat gantry.
  // This also keeps the long blue launch pad from covering oil on gradients.
  const gatePoint=(x,z)=>[p.x+Math.cos(p.angle)*x+Math.sin(p.angle)*z,p.z-Math.sin(p.angle)*x+Math.cos(p.angle)*z];
@@ -277,7 +277,17 @@ export function makeWorld(data,track){
   for(const part of casters){const dx=p.x-part.center.x,dz=p.z-part.center.z;part.mesh.castShadow=dx*dx+dz*dz<(profile.shadowDistance+part.radius)**2;}
   for(const tile of treeTiles){const dx=p.x-tile.userData.center.x,dz=p.z-tile.userData.center.z,d2=dx*dx+dz*dz;const close=profile.treeDistance>0&&p.y<90&&d2<profile.treeDistance**2;tile.userData.setNear(close);}
  };
- const animate=(time,reduced=false,focus=null)=>{if(!disposed)spectators.animate(time,reduced,focus,appliedQuality);};
+ // Banners across the course fade out while the chase camera passes under
+ // them, so the board never fills the view in front of the car.
+ const overhead=[];scene.updateMatrixWorld(true);
+ scene.traverse(o=>{if(!o.userData.overhead||!o.material)return;const at=new THREE.Vector3();o.getWorldPosition(at);o.material.transparent=true;o.material.depthWrite=false;o.material.userData.keepTransparency=true;overhead.push({o,x:at.x,z:at.z,alpha:1});});
+ const fadeOverhead=focus=>{
+  if(!focus)return;
+  for(const b of overhead){const d=Math.hypot(focus.x-b.x,focus.z-b.z),k=Math.min(1,Math.max(0,(d-6)/10)),alpha=k*k*(3-2*k);
+   if(Math.abs(alpha-b.alpha)<.01&&alpha!==0&&alpha!==1)continue;b.alpha=alpha;b.o.visible=alpha>.02;
+   const m=b.o.material;if(m){m.transparent=true;m.depthWrite=false;m.opacity=alpha;}}
+ };
+ const animate=(time,reduced=false,focus=null)=>{if(disposed)return;spectators.animate(time,reduced,focus,appliedQuality);fadeOverhead(focus);};
  const dispose=()=>{if(disposed)return;disposed=true;const result=disposeScene(scene);sky.dispose();ranged.length=treeTiles.length=casters.length=qualityObjects.length=carModels.length=0;sourceMaterials.clear();return result;};
  setQuality(0);
  scene.userData.stats={...village,...landmarks.stats,groundTransitions,hedgerowPieces:hedgerows.pieces,meadowFlowers:hedgerows.flowers,frontGardenHouses:frontGardens.houses,frontGardenTrees:frontGardens.trees,frontGardenBeds:frontGardens.beds,frontGardenFenceMetres:frontGardens.fenceMetres,frontGardenRecords:frontGardens.records,grandstands:festival.stands,grandstandFans:festival.standFans,bannerGantries:festival.banners,flagPoles:festival.flags,parkedCars:festival.cars,festivalRecords:festival.records,spectatorCount:spectators.spectatorCount,treeCount:trees,obstacleCount:obstacles.length};delete scene.userData.stats.centers;

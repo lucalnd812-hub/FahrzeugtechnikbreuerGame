@@ -25,7 +25,7 @@ function visibleStats(car) {
 }
 
 assert.deepEqual(VEHICLE_MODELS.map(spec=>spec.id),['kadett','e30','m1','m2','gt3rs']);
-assert.equal(VEHICLE_MODELS[3].paint,0x92989d);assert.equal(VEHICLE_MODELS[4].paint,0x267ddb);
+assert.equal(VEHICLE_MODELS[3].paint,0x70767f);assert.equal(VEHICLE_MODELS[4].paint,0x267ddb);
 assert.equal(VEHICLE_MODELS[3].wheelbase,2.693);assert.equal(VEHICLE_MODELS[4].wheelbase,2.457);
 
 function bodySample(body,from,direction) {

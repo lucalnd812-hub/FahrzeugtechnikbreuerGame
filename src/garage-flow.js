@@ -85,7 +85,7 @@ export function createGarageFlow({root = document, onStepChange = () => {}, onLa
     next.hidden = index === steps.length - 1;
     launch.hidden = index !== steps.length - 1;
     launch.inert = launch.hidden;
-    next.textContent = 'Weiter →';
+    next.textContent = 'Weiter';
     next.setAttribute('aria-label', index === 0 ? 'Weiter zur Strecke' : 'Weiter zum Rennen');
     refresh();
     if (announce) announcement.textContent = description;

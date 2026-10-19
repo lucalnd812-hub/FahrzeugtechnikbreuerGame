@@ -93,7 +93,7 @@ export function dressFestival(scene,data,track,M,heightAt=()=>0,{reserved=[]}={}
   if([l,r].some(q=>index.contains(...q)||!clearOfCourse(track,q[0],q[1],.4,.4,p.angle,6.55)))continue;
   for(const q of [l,r]){big.add(tint(new THREE.CylinderGeometry(.13,.16,6.6,8),0xd8262e,{light:.2}),paint,q[0],3.3,q[1]);big.add(tint(new THREE.SphereGeometry(.2,8,5),0xffc52e),paint,q[0],6.7,q[1]);keep(q[0],q[1],.5,.5,p.angle,'banner-pole');}
   const y=(heightAt(...l)+heightAt(...r))/2+5.3,text=texts[banners%texts.length];
-  for(const back of [0,1]){const b=sign(text,half*2-.6,'#ffffff',back?'#1f2a44':'#d8262e',.11);b.position.set(p.x,y,p.z);b.rotation.y=p.angle+(back?0:Math.PI);b.position.x+=Math.sin(p.angle)*(back?.04:-.04);b.position.z+=Math.cos(p.angle)*(back?.04:-.04);scene.add(b);}
+  for(const back of [0,1]){const b=sign(text,half*2-.6,'#ffffff',back?'#1f2a44':'#d8262e',.11);b.position.set(p.x,y,p.z);b.rotation.y=p.angle+(back?0:Math.PI);b.position.x+=Math.sin(p.angle)*(back?.04:-.04);b.position.z+=Math.cos(p.angle)*(back?.04:-.04);b.userData.overhead=true;scene.add(b);}
   banners++;
  }
  // -------------------------------------------------------------------- flags

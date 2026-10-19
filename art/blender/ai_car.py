@@ -23,6 +23,12 @@ SPECS = {
     'm2': dict(length=4.461, width=1.854, height=1.41, radius=.349, tyre=.279),
     'gt3rs': dict(length=4.572, width=1.90, height=1.322, radius=.367, tyre=.324),
 }
+# Paint corrections on top of the generated texture. The M2 came out as a
+# chrome-like silver (light texture + high metallic map); the game car is the
+# grey M2 Competition, so its light body panels become a solid mid grey.
+PAINT = {
+    'm2': dict(rgb=(112, 118, 127), metal=.3, rough=.3),
+}
 LODS = {'high': dict(body=45000, wheel=1400, tex=1024), 'low': dict(body=14000, wheel=320, tex=1024)}
 FRONT = {'+X': -90, '-X': 90, '+Y': 180, '-Y': 0}
 
@@ -50,6 +56,35 @@ def _import(path):
     ob.data.transform(ob.matrix_world)
     ob.matrix_world = Matrix.Identity(4)
     return ob
+
+
+def repaint(ob, car_id):
+    """Recolour the light, unsaturated body paint (PAINT) in the source maps."""
+    spec = PAINT.get(car_id)
+    if not spec:
+        return 0
+    import numpy as np
+    nodes = ob.data.materials[0].node_tree.nodes
+    images = [n.image for n in nodes if n.type == 'TEX_IMAGE' and n.image]
+    color = next(i for i in images if i.name.startswith('Color'))
+    orm = next((i for i in images if i.name.startswith('ORM')), None)
+    w, h = color.size
+    px = np.empty(w * h * 4, dtype=np.float32); color.pixels.foreach_get(px); px = px.reshape(h, w, 4)
+    rgb = px[..., :3]
+    v, lo = rgb.max(-1), rgb.min(-1)
+    sat = (v - lo) / np.maximum(v, 1e-4)
+    # Smooth mask: bright (paint) and grey (not glass, rubber, lights or badges).
+    m = np.clip((v - .5) / .12, 0, 1) * np.clip((.14 - sat) / .06, 0, 1) * np.clip((.985 - v) / .03, 0, 1)
+    target = np.array(spec['rgb'], dtype=np.float32) / 255
+    shade = np.clip(.62 + .5 * (v - .82) / .18, .45, 1.1)[..., None]
+    rgb[:] = rgb * (1 - m[..., None]) + np.clip(target * shade, 0, 1) * m[..., None]
+    color.pixels.foreach_set(px.ravel()); color.update()
+    if orm is not None:
+        o = np.empty(w * h * 4, dtype=np.float32); orm.pixels.foreach_get(o); o = o.reshape(h, w, 4)
+        o[..., 1] = o[..., 1] * (1 - m) + spec['rough'] * m
+        o[..., 2] = o[..., 2] * (1 - m) + spec['metal'] * m
+        orm.pixels.foreach_set(o.ravel()); orm.update()
+    return float(m.mean())
 
 
 def _bounds(me):
@@ -207,6 +242,7 @@ def process(car_id, glb, front='+X', out_dir=None):
     out_dir = out_dir or ROOT + 'assets/vehicles3d'
     _clear()
     ob = _import(glb)
+    repaint(ob, car_id)
     normalise(ob, car_id, front)
     w = find_wheels(ob, car_id)
     wheel = split_wheels(ob, w)

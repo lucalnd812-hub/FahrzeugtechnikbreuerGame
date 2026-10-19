@@ -305,7 +305,7 @@ function input(){
 function simulate(dt,time=elapsed){
  elapsed=time;
  for(const v of vehicles)if(!v.remote)previousPoses.set(v.id,{x:v.x,z:v.z,angle:v.angle});
- for(const v of vehicles){if(v.remote)continue;const events=stepVehicle(v,track,v===player?simulationInput:botInput(v,track,raceConfig.difficulty),dt,elapsed,raceConfig);
+ for(const v of vehicles){if(v.remote)continue;const events=stepVehicle(v,track,v===player?simulationInput:botInput(v,track,raceConfig.difficulty,player?v.progress-player.progress:0),dt,elapsed,raceConfig);
   if(v===player){if(events.includes('driftBoost')){notify('DRIFT BOOST!',1.1);audio.play('boost');}if(events.includes('breuerBoost')){notify('BREUER BOOST!',1.5);audio.play('boost');}if(events.includes('autoReset')){audio.play('reset');notify('Wieder auf Kurs. Weiter geht’s!',1.5);}if(events.includes('obstacleHit')){notify('Hindernis erwischt. Slalom fahren!',1.3);audio.play('impact');}if(events.includes('finish'))finishRace();}
   const pickup=collectPickup(v,world.crates,elapsed,events.includes('autoReset')?null:previousPoses.get(v.id));
   if(pickup&&v===player){audio.play('pickup');notify(itemNames[pickup.type]+' eingesammelt',1.2);}
@@ -398,9 +398,9 @@ function frame(ts){
  else if(mode!=='garage'&&player&&world){
   if(!paused||online){
    if(mode==='countdown'){
-    elapsed=(online?Date.now()+online.offset:ts)-startedAt;elapsed/=1000;const number=elapsed<0?String(Math.ceil(-elapsed)):'LOS!';if(number!==countNumber){countNumber=number;$('countdown').textContent=number;audio.play(number==='LOS!'?'go':'countdown');}if(elapsed>=0){mode='race';simulationInput=benchmark||demo?botInput(player,track,.9):input();if(online){clock.reset(elapsed);renderAlpha=1;}else{clock.reset();renderAlpha=clock.advance(elapsed,(step,time)=>simulate(step,time));}setTimeout(()=>$('countdown').hidden=true,650);}
+    elapsed=(online?Date.now()+online.offset:ts)-startedAt;elapsed/=1000;const number=elapsed<0?String(Math.ceil(-elapsed)):'LOS!';if(number!==countNumber){countNumber=number;$('countdown').textContent=number;audio.play(number==='LOS!'?'go':'countdown');}if(elapsed>=0){mode='race';simulationInput=benchmark||demo?{...botInput(player,track,.9),pace:1}:input();if(online){clock.reset(elapsed);renderAlpha=1;}else{clock.reset();renderAlpha=clock.advance(elapsed,(step,time)=>simulate(step,time));}setTimeout(()=>$('countdown').hidden=true,650);}
    }else if(mode==='race'){
-    simulationInput=benchmark||demo?botInput(player,track,.9):input();
+    simulationInput=benchmark||demo?{...botInput(player,track,.9),pace:1}:input();
     // Offline time follows every simulated step. Online uses the synchronized server clock.
     renderAlpha=clock.advance(document.hidden?0:raw/1000,(step,time)=>simulate(step,online?Math.max(0,(Date.now()+online.offset-startedAt)/1000-clock.debt+step):time));
     if(benchmark&&performance.now()-benchmark.started>=benchmark.duration)finishBenchmark();

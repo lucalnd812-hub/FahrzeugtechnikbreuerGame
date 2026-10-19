@@ -102,7 +102,7 @@ export class TouchControls{
    button.setAttribute('data-touch',action);button.setAttribute('data-touch-zone',action);
    button.setAttribute('aria-label',action==='left'?'Linke Bildschirmhälfte halten: nach links lenken':'Rechte Bildschirmhälfte halten: nach rechts lenken');
    button.setAttribute('aria-pressed','false');
-   const label=this.doc.createElement('span');label.className='touch-zone-label';label.setAttribute('aria-hidden','true');label.textContent=index===0?'‹ LINKS':'RECHTS ›';
+   const label=this.doc.createElement('span');label.className='touch-zone-label';label.setAttribute('aria-hidden','true');label.textContent=index===0?'LINKS':'RECHTS';label.setAttribute(index===0?'data-icon':'data-icon-end',index===0?'left':'right');
    button.appendChild(label);container.appendChild(button);return button;
   });
   this.root.appendChild(container);this._zoneContainer=container;return zones;
