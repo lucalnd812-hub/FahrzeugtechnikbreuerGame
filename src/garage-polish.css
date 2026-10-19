@@ -370,7 +370,9 @@
 
 /* Small landscapes use one vehicle stage. Selection is a quiet bottom line;
    the step line shares the header and never takes height from the vehicle. */
-#garage,#hud,#view,.entry-screen,.course-loading,.race-briefing,button,h1,h2,h3,img[draggable=false]{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+html,body,#garage,#hud,#view,.entry-screen,.course-loading,.race-briefing,.shade,.orientation-lock,button,h1,h2,h3,img,canvas{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+/* While racing the attribution stays visible but never catches a steering thumb. */
+#hud:not([hidden])~.credit{pointer-events:none;opacity:.6}
 input,textarea,[contenteditable=true],#garage input,#dialog input,#dialog textarea{user-select:text;-webkit-user-select:text;-webkit-touch-callout:default}
 #garage .profile-button [data-profile-name]{max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-height:620px) and (min-width:500px),(any-pointer:coarse) and (orientation:landscape){
@@ -750,3 +752,17 @@ input,textarea,[contenteditable=true],#garage input,#dialog input,#dialog textar
  #results #challenge-medal[data-medal]::before{width:26px;height:26px;left:4px}
 }
 @media(prefers-reduced-motion:reduce){#garage .car-tab,#garage .car-thumb,#garage .stat-bar i{transition:none}}
+/* Car cards on large screens: the Blender turntable is the hero of the card,
+   name and maker sit underneath it instead of squeezing the car to a stamp. */
+@media(min-width:901px) and (min-height:621px){
+ #garage .car-tab:not(:last-child){grid-template-rows:minmax(0,1fr) auto auto;padding:4px 12px 9px}
+ #garage .car-tab:not(:last-child)[aria-pressed=true]{padding:3px 11px 8px}
+ #garage .car-tab:not(:last-child) .car-thumb{width:118%;max-width:none;height:112%;margin:-7% -9% 0;object-fit:cover;object-position:50% 44%;transform:none}
+ #garage .car-tab:not(:last-child):hover .car-thumb{transform:translateY(-2px) scale(1.04)}
+ #garage .car-tab:last-child .car-thumb{object-fit:cover;object-position:50% 50%;height:130%;margin:-10% 0;transform:none}
+ #garage .car-tab:last-child:hover .car-thumb{transform:translateY(-2px) scale(1.04)}
+ #garage .car-tab strong{position:relative;z-index:1;font-size:18px}
+ #garage .car-tab small{position:relative;z-index:1;display:block;margin-top:1px;opacity:.85}
+ #garage .car-tab[aria-pressed=true]{background-image:linear-gradient(180deg,#0000 42%,#2a2417d9 100%),linear-gradient(135deg,#e8c47426,#3b4a2c22),var(--artisan-panels);background-size:100% 100%,100% 100%,200% 200%;background-position:center,center,0 100%;color:#fff6dc;text-shadow:0 1px 2px #1b160c}
+ #garage .car-tab[aria-pressed=true] small{color:#ffe9b8}
+}

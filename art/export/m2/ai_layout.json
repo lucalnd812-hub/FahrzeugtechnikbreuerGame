@@ -1,0 +1,25 @@
+{
+ "layout": {
+  "track": 1.662,
+  "radius": 0.349,
+  "axles": [
+   -1.206,
+   1.395
+  ]
+ },
+ "lods": [
+  {
+   "lod": "high",
+   "bodyTris": 44999,
+   "wheelTris": 1399,
+   "bytes": 1174024
+  },
+  {
+   "lod": "low",
+   "bodyTris": 13999,
+   "wheelTris": 320,
+   "bytes": 549068
+  }
+ ],
+ "source": "m2_tripo.glb"
+}

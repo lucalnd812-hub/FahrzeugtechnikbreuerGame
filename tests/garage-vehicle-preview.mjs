@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {createGarageVehiclePreview} from '../src/garage-vehicle-preview.js';
-import {VehicleArtLibrary,frameIndexForAngle,vehicleArtPlacement,getVehicleArtFraming} from '../src/vehicle-art.js';
+import {VehicleArtLibrary,frameIndexForAngle,vehicleArtPlacement,getVehicleArtFraming,naturalGroundY} from '../src/vehicle-art.js';
 import manifest from '../assets/vehicles/manifest.json' with {type:'json'};
 
 // Exercises the real shared art library and alpha bounds. This deliberately has
@@ -49,7 +49,8 @@ function realLibrary(){
 }
 const flush=async()=>{for(let i=0;i<12;i++)await Promise.resolve();};
 const child=(env,name)=>env.host.children.find(node=>node.className===name);
-const garagePlacement=(car,frame,width,height)=>vehicleArtPlacement(car,frame,{width,height,fit:.94,anchorY:.735});
+const GROUND_Y=naturalGroundY(.94);
+const garagePlacement=(car,frame,width,height)=>vehicleArtPlacement(car,frame,{width,height,fit:.94,anchorY:GROUND_Y});
 function checkCrop(draw,car,frame,width,height){
  assert.equal(draw.length,9,'Canvas must crop the manifest alpha padding, not fit the empty 640x400 image');
  const bounds=manifest.cars[car].files.find(file=>file.frame===frame).contentBounds;
@@ -59,7 +60,7 @@ function checkCrop(draw,car,frame,width,height){
  for(const [actual,expected] of [[x,p.left],[y,p.top],[w,p.width],[h,p.height]])assert.ok(Math.abs(actual-expected)<1e-7);
  assert.ok(Math.abs(w/bounds[2]-p.scale)<1e-10,'Alpha crop must use the fixed full-turntable scale');
  assert.ok(Math.abs(x+(p.sourceAnchor[0]-bounds[0])*p.scale-width*.5)<1e-7,'World ground pivot X stays fixed');
- assert.ok(Math.abs(y+(p.sourceAnchor[1]-bounds[1])*p.scale-height*.735)<1e-7,'World ground pivot Y stays on the same garage floor');
+ assert.ok(Math.abs(y+(p.sourceAnchor[1]-bounds[1])*p.scale-height*GROUND_Y)<1e-7,'World ground pivot Y stays on the same garage floor');
 }
 
 // Initial desired angle is front-quarter view 14; only that plus fallback 00
@@ -109,6 +110,8 @@ preview.update({visible:false,car:4,heading:1});const hiddenDraws=env.context.dr
 for(let i=0;i<50;i++)preview.update({visible:false,heading:i});await flush();
 assert.equal(env.context.draws.length,hiddenDraws);assert.equal(art.requests.length,hiddenRequests);assert.equal(canvas.hidden,true);assert.equal(status.hidden,true);
 preview.update({visible:true,car:3,heading:-.65,rev:0});await flush();assert.equal(canvas.hidden,false);assert.ok(art.requests.length>requestsAfterError,'Showing the garage allows a finite failed-frame retry');
+// Same car and heading after a hidden step (course -> race) must be drawn again.
+preview.update({visible:false});await flush();preview.update({visible:true,car:3,heading:-.65,rev:0});await flush();assert.equal(canvas.hidden,false,'The unchanged car reappears after a hidden step');
 const drawsBeforeDispose=env.context.draws.length;preview.dispose();preview.dispose();
 assert.equal(env.host.children.length,0);assert.equal(env.observers[0].closed,true);assert.equal(env.listeners.get('resize').size,0);assert.equal(thumb.listeners.get('load').size,0);assert.equal(env.timers.size,0);
 preview.update({car:2});preview.resize();assert.equal(env.context.draws.length,drawsBeforeDispose);
@@ -187,7 +190,8 @@ for(const [width,height] of [[1024,181],[1024,235],[568,210],[568,180]])for(let 
   assert.equal(e.host.dataset.vehiclePreviewScale,stableScale);assert.equal(e.host.dataset.vehiclePreviewGroundY,stableGround);
  }
  const corrected=garagePlacement(car,2,width,height),previous=vehicleArtPlacement(car,2,{width,height,fit:.88,anchorY:.64});
- assert.ok(corrected.scale>previous.scale*1.2,'Short landscape cars recover at least 20% projected size from the previously wasted space');
+ // Baseline is the old fixed .64 pivot on the same (Blender) artwork.
+ assert.ok(corrected.scale>=previous.scale*.999,'The stage-less fallback never shrinks the car below the old fixed pivot');
  const framing=getVehicleArtFraming(car);
  assert.ok(framing.bounds[3]*corrected.scale>height*.93,'The common vehicle envelope uses at least 93% of short-stage height');
  p.dispose();

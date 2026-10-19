@@ -1,0 +1,216 @@
+{
+ "groundAnchor": [
+  672.0,
+  477.942
+ ],
+ "files": [
+  {
+   "frame": 0,
+   "file": "assets/vehicles/kadett/00.webp",
+   "contentBounds": [
+    270,
+    271,
+    826,
+    356
+   ],
+   "visiblePixels": 165290,
+   "bytes": 35690,
+   "sha256": "72f8220c90917481cbf13ca8f1e6ba43a2464c6f64585c7c10a314d962311a67"
+  },
+  {
+   "frame": 1,
+   "file": "assets/vehicles/kadett/01.webp",
+   "contentBounds": [
+    198,
+    270,
+    742,
+    354
+   ],
+   "visiblePixels": 161081,
+   "bytes": 38030,
+   "sha256": "1b426889eac75e7095b843a1b3986ce59ea03065a4731d579e888af7ab040241"
+  },
+  {
+   "frame": 2,
+   "file": "assets/vehicles/kadett/02.webp",
+   "contentBounds": [
+    196,
+    267,
+    802,
+    330
+   ],
+   "visiblePixels": 151430,
+   "bytes": 36428,
+   "sha256": "674e0bb168414be3200956e460ba2f7350ff0e038863c1c010c0597d8e503922"
+  },
+  {
+   "frame": 3,
+   "file": "assets/vehicles/kadett/03.webp",
+   "contentBounds": [
+    196,
+    265,
+    878,
+    296
+   ],
+   "visiblePixels": 147067,
+   "bytes": 33576,
+   "sha256": "8a828d0a477de202c656c2fbac0c9f87b874a630426c0298997923aacef1c9af"
+  },
+  {
+   "frame": 4,
+   "file": "assets/vehicles/kadett/04.webp",
+   "contentBounds": [
+    199,
+    263,
+    930,
+    283
+   ],
+   "visiblePixels": 159415,
+   "bytes": 35036,
+   "sha256": "9baa307b87f44a35f00a704bd35215449c637ca0a91122ca1385ca0568d9baef"
+  },
+  {
+   "frame": 5,
+   "file": "assets/vehicles/kadett/05.webp",
+   "contentBounds": [
+    253,
+    260,
+    896,
+    343
+   ],
+   "visiblePixels": 172252,
+   "bytes": 39660,
+   "sha256": "eeb0f374b5fcbd54a3686235a208e73f5bcbe569dc2347725af3df53dfc447fe"
+  },
+  {
+   "frame": 6,
+   "file": "assets/vehicles/kadett/06.webp",
+   "contentBounds": [
+    316,
+    258,
+    833,
+    368
+   ],
+   "visiblePixels": 184940,
+   "bytes": 44530,
+   "sha256": "2513302af55c83551f6cbdb5b9a1507d5a1bfd692e2f0a8710c9b041ab47dd2a"
+  },
+  {
+   "frame": 7,
+   "file": "assets/vehicles/kadett/07.webp",
+   "contentBounds": [
+    387,
+    257,
+    762,
+    370
+   ],
+   "visiblePixels": 186776,
+   "bytes": 43136,
+   "sha256": "b409b7e4fd8de55398a58588177d6586de2738e82c35aed12f114cacc683f873"
+  },
+  {
+   "frame": 8,
+   "file": "assets/vehicles/kadett/08.webp",
+   "contentBounds": [
+    229,
+    258,
+    876,
+    368
+   ],
+   "visiblePixels": 176239,
+   "bytes": 35812,
+   "sha256": "9e64b48e481d95d8e3c2e412743615a50ac3e57da1ccd1727a05baa02de13c3f"
+  },
+  {
+   "frame": 9,
+   "file": "assets/vehicles/kadett/09.webp",
+   "contentBounds": [
+    197,
+    257,
+    742,
+    367
+   ],
+   "visiblePixels": 171996,
+   "bytes": 39182,
+   "sha256": "5c10896fa2d07f4ec962bbf341f88bdabbdf9bebe4361ff31a658483237ad949"
+  },
+  {
+   "frame": 10,
+   "file": "assets/vehicles/kadett/10.webp",
+   "contentBounds": [
+    196,
+    258,
+    795,
+    339
+   ],
+   "visiblePixels": 156095,
+   "bytes": 36042,
+   "sha256": "9f79791d87e3e0354633a0ef3550080708b1dbb3700aafb26fa0c1f5491642b6"
+  },
+  {
+   "frame": 11,
+   "file": "assets/vehicles/kadett/11.webp",
+   "contentBounds": [
+    196,
+    261,
+    868,
+    303
+   ],
+   "visiblePixels": 147353,
+   "bytes": 32980,
+   "sha256": "c0a59f6ed6c2b8d8ff77619f5901b1dade0bc7ba73572bd0604da8d0a672e4b3"
+  },
+  {
+   "frame": 12,
+   "file": "assets/vehicles/kadett/12.webp",
+   "contentBounds": [
+    199,
+    264,
+    930,
+    275
+   ],
+   "visiblePixels": 155838,
+   "bytes": 34180,
+   "sha256": "2d39b62783c9f6a9ec7de6c089a57f0e6d6edf989dd176a5978786c61cc1e3ac"
+  },
+  {
+   "frame": 13,
+   "file": "assets/vehicles/kadett/13.webp",
+   "contentBounds": [
+    249,
+    266,
+    900,
+    322
+   ],
+   "visiblePixels": 164101,
+   "bytes": 38946,
+   "sha256": "191efbbbeade924d7745ac03a086482dbc3e77422b016edeed97225204565ccf"
+  },
+  {
+   "frame": 14,
+   "file": "assets/vehicles/kadett/14.webp",
+   "contentBounds": [
+    308,
+    268,
+    841,
+    357
+   ],
+   "visiblePixels": 172954,
+   "bytes": 42754,
+   "sha256": "75c36a2a7dfcc1ea7fd4c605cd4efb3869f9640d58a1b9de092ce7f5ffd62bd1"
+  },
+  {
+   "frame": 15,
+   "file": "assets/vehicles/kadett/15.webp",
+   "contentBounds": [
+    381,
+    270,
+    768,
+    357
+   ],
+   "visiblePixels": 172960,
+   "bytes": 40776,
+   "sha256": "0fcb6d4f7037ad27da906062b20e9cb700b7d9ae7030a2a3f68d529950f53f78"
+  }
+ ]
+}

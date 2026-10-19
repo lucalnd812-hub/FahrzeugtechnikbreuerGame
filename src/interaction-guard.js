@@ -15,6 +15,15 @@ export function installInteractionGuard(root=document){
   if(!target||editable(target)||!target.closest?.(GAME_SURFACES))return;
   if(event.cancelable!==false)event.preventDefault();
  };
+ // Some mobile browsers still start a "select" on a long hold despite CSS.
+ // A selection that is not inside an editable field is dropped immediately.
+ const clearSelection=()=>{
+  const selection=root.getSelection?.();
+  if(!selection||selection.isCollapsed||!selection.rangeCount)return;
+  const node=selection.anchorNode,element=node?.nodeType===3?node.parentElement:node;
+  if(element&&!editable(element))selection.removeAllRanges();
+ };
  for(const name of ['contextmenu','selectstart','dragstart'])root.addEventListener(name,protect,{capture:true,passive:false});
- return ()=>{for(const name of ['contextmenu','selectstart','dragstart'])root.removeEventListener(name,protect,{capture:true});};
+ root.addEventListener('selectionchange',clearSelection);
+ return ()=>{for(const name of ['contextmenu','selectstart','dragstart'])root.removeEventListener(name,protect,{capture:true});root.removeEventListener('selectionchange',clearSelection);};
 }

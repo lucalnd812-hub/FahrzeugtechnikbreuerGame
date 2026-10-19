@@ -27,11 +27,19 @@ import {installInteractionGuard} from './interaction-guard.js';
 import {RenderCadence} from './render-cadence.js';
 import {loadVehicleFinishes} from './vehicle-finish.js';
 import {createMiniMap,drawRaceMinimap} from './minimap.js';
+import {animateItemBox} from './item-box.js';
+import {loadVehicleAssets} from './vehicle-assets.js';
+import {ComicPost} from './comic-post.js';
+import {installToonShading} from './toon-shading.js';
+// Cel shading for every lit material; must run before the first shader compiles.
+installToonShading();
 
 const $=id=>document.getElementById(id),$$=s=>[...document.querySelectorAll(s)];
 installInteractionGuard(document);
 let MAP=null,track=null;
 const keys=new Set(),touch=new Set(),meshes=new Map();
+// QA only: ?debug exposes the live scene objects for in-browser inspection.
+if(new URLSearchParams(location.search).has('debug'))globalThis.__breuerDebug={get world(){return world;},meshes,get player(){return player;},get comic(){return comic;},get renderer(){return renderer;}};
 const itemNames={boost:'NITRO',shield:'SCHUTZSCHILD',oil:'ÖLSPUR'};
 const save={get(key){try{return localStorage.getItem(key);}catch{return null;}},set(key,value){try{localStorage.setItem(key,value);}catch{}}};
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -39,10 +47,12 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let renderer,camera,world,player,vehicles=[],oils=[],oilMeshes=new Map(),selected=Number(save.get('breuer-car')||0),mode='garage',paused=false,pauseAt=0,startedAt=0,elapsed=0,lastFrame=0,accumulator=0,online=null,pollTimer=null,cameraTop=false,bannerUntil=0,streetUpdated=-1,countNumber='',statusErrors=0,lastFocus=null;
 let showroom,garageCamera,carHeading=-.65,displayHeading=-.65,carTransition=0,revUntil=0,dragging=null,previewLights=false,tour=null,mapPoi=0,hudMapAt=0;
 const mapCache=new WeakMap();
-const minimapUI=createMiniMap({root:$('minimap-panel'),onInteract:()=>{keys.clear();touchControls?.clear();},onChange:()=>{hudMapAt=-Infinity;if(MAP&&player&&!$('hud').hidden)drawMap($('minimap'),vehicles);}});
+const minimapUI=createMiniMap({root:$('minimap-panel'),onInteract:()=>{keys.clear();touchControls?.clear();},onChange:expanded=>{$('map-open')?.setAttribute('aria-expanded',String(expanded));hudMapAt=-Infinity;if(MAP&&player&&!$('hud').hidden)drawMap($('minimap'),vehicles);}});
 const frameQuality=new FrameQuality(),cameraRig=new ChaseCameraRig(),cameraLook=new THREE.Vector3(),worldCadence=new RenderCadence();
 const hudNodes=new Map();
-let worldRenderDirty=true,probeNeedsBaseline=true;
+let worldRenderDirty=true,probeNeedsBaseline=true,comic=null;
+// World frames get the comic finish (ink outlines and grade); the 2D fallback renders as before.
+function renderWorld(){if(comic)comic.render(world.scene,camera);else renderer.render(world.scene,camera);}
 let graphics=save.get('breuer-graphics')||'auto',graphicsLevel=0,hudAt=-1,shadowAt=-1,simulationInput=null;
 selected=Number.isFinite(selected)?clamp(Math.trunc(selected),0,CARS.length-1):0;
 const coarse=matchMedia('(pointer: coarse)').matches;
@@ -55,7 +65,7 @@ let touchControls=null,environment=null,garageFlow=null,entryScreen=null,briefin
 const onlineRecords=new OnlineRecords({request:api,storage:{getItem:key=>save.get(key),setItem:(key,value)=>localStorage.setItem(key,value)}});
 const mobileLayout=()=>matchMedia('(any-pointer: coarse), (max-width: 1180px) and (max-height: 500px)').matches;
 function trackMeta(id=trackId){return TRACKS.find(t=>t.id===id)||TRACKS[0];}
-function syncGaragePreview(){const stage=$('garage-course-stage'),active=$('garage').getAttribute('data-setup-current')==='track'&&$('garage').getAttribute('data-garage-view')==='setup';stage.hidden=!active;if(active){const meta=trackMeta();$('garage-course-name').textContent=meta.name;$('garage-course-distance').textContent=(meta.length/1000).toFixed(2).replace('.',',')+' km pro Runde · Start/Ziel bei Breuer';drawGarageCourse($('garage-course-preview'),meta);}}
+function syncGaragePreview(){const stage=$('garage-course-stage'),active=$('garage').getAttribute('data-setup-current')==='track'&&$('garage').getAttribute('data-garage-view')==='setup';stage.hidden=!active;if(active){const meta=trackMeta();$('garage-course-name').textContent=document.querySelector('.track-tab[aria-pressed=true] strong')?.textContent||meta.name;$('garage-course-distance').textContent=(meta.length/1000).toFixed(2).replace('.',',')+' km pro Runde · Start/Ziel bei Breuer';drawGarageCourse($('garage-course-preview'),meta);}}
 function readConfig(){const config=normalizeRaceConfig({trackId,laps:Number($('laps')?.value||2),opponents:Number($('opponents')?.value||5),difficulty:Number($('difficulty').value),rules:$('rules')?.value||'action',mode:$('race-mode')?.value||'race',assist:mobileLayout()||$('auto-gas').checked,autoDrift:$('auto-drift')?.checked!==false});if(config.mode==='cup')config.opponents=5;return config;}
 function recordConfig(config=raceConfig,network=false){return {...config,raceType:network?'online':'solo',car:selected,trackVersion:trackMeta(config.trackId).version,handlingVersion:HANDLING_VERSION,assists:{autoGas:mobileLayout()||config.assist,autoDrift:config.autoDrift}};}
 function updateRaceOptions(){
@@ -80,7 +90,9 @@ const audio=new RacingAudio({getCar:()=>selected,assetBase:'/audio/',onMuteChang
 }});
 
 function chooseCar(n){
- selected=((Math.trunc(n)%CARS.length)+CARS.length)%CARS.length;save.set('breuer-car',selected);const spec=CARS[selected];carTransition=reduced?0:1;revUntil=0;
+ selected=((Math.trunc(n)%CARS.length)+CARS.length)%CARS.length;save.set('breuer-car',selected);const spec=CARS[selected];carTransition=reduced?0:1;
+ // Choosing a car starts it: a short blip of revs (sound only when it is on).
+ revUntil=reduced?0:performance.now()+1100;
  $$('[data-car]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.car)===selected)));
  $('car-note').textContent=["Der schnelle ;-) · Gelb, spritzig und bereit für Max’ Heimstrecke.",'Der Kurvenkünstler. AC Schnitzer, viel Grip und ein sattes Fahrgefühl.','Der Procar. Breit, tief und bereit für die lange Gerade.','Der M2 Competition. Grauer Lack, satte Kraft und lebendige Drifts.','Der GT3 RS. Blauer Lack, großer Flügel und Grip bis zur Ziellinie.'][selected];
  $('preview-name').textContent=spec.name;$('preview-tag').textContent=spec.tag;
@@ -131,7 +143,7 @@ function mapTransform(canvas,large=false){
 }
 function drawMap(canvas,drivers=[],large=false){
  if(!MAP)return;
- if(!large)return drawRaceMinimap(canvas,{map:MAP,track,drivers,player,cache:mapCache,pixelRatio:devicePixelRatio||1});
+ if(!large)return drawRaceMinimap(canvas,{map:MAP,track,drivers,player,cache:mapCache,pixelRatio:devicePixelRatio||1,local:!minimapUI?.expanded});
  const {w,h,scale,X,Z}=mapTransform(canvas,large),dpr=Math.min(devicePixelRatio||1,2);
  if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);mapCache.delete(canvas);}
  let cached=mapCache.get(canvas);
@@ -177,7 +189,7 @@ $('start-tour').onclick=()=>startTour();$('end-tour').onclick=()=>backToGarage()
 function renderTour(dt,time){
  if(tour.autoplay&&performance.now()>tour.next)tourStop(tour.index+1);world.courseHighlight.visible=tour.index===0;const spot=tourStops[tour.index],target=new THREE.Vector3(...spot.eye),look=new THREE.Vector3(...spot.look);
  if(!reduced){target.x+=Math.sin(time*.2)*1.4;target.z+=Math.cos(time*.2)*1.4;}camera.position.lerp(target,reduced?1:1-Math.exp(-dt*1.4));camera.lookAt(look);camera.fov=55;camera.far=tour.index===0?800:[260,360,480][graphicsLevel];camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();
- renderer.setFocus?.(null);renderer.setVehicles?.([]);renderer.setTour?.(spot.look);world.sun.position.set(look.x-100,150,look.z+80);world.sun.target.position.set(look.x,0,look.z);world.animate(time,reduced,camera.position);world.updateVisibility(camera,graphicsLevel);prepareShadows(time);renderer.setScissorTest(false);renderer.setViewport(0,0,innerWidth,innerHeight);renderer.render(world.scene,camera);audio.update(0,false);
+ renderer.setFocus?.(null);renderer.setVehicles?.([]);renderer.setTour?.(spot.look);world.sun.position.set(look.x-115,92,look.z+75);world.sun.target.position.set(look.x,0,look.z);world.animate(time,reduced,camera.position);world.updateVisibility(camera,graphicsLevel);prepareShadows(time);renderer.setScissorTest(false);renderer.setViewport(0,0,innerWidth,innerHeight);renderWorld();audio.update(0,false);
 }
 function renderGarage(dt,time){
  if(garageVehiclePreview){
@@ -206,7 +218,7 @@ async function ensureWorld(id){
  if(worldLoading?.id===id)return worldLoading.promise;
  const serial=++loadSerial,button=$('start-solo');entryScreen?.setLoading(true,'Straßen und Gebäude werden geladen …');touchControls?.setBlocked('loading',true);keys.clear();button.disabled=true;button.textContent='Strecke lädt …';$('load-status').textContent='Straßen und Gebäude werden geladen …';
  const promise=(async()=>{try{
-  const data=await loadTrack(id);if(serial!==loadSerial)return false;
+  const art=loadVehicleAssets({high:[CARS[selected]?.id].filter(Boolean),low:CARS.map(car=>car.id)}),data=await loadTrack(id);await art;if(serial!==loadSerial)return false;
   $('load-status').textContent='Die Rennstrecke wird aufgebaut …';entryScreen?.setPhase('Die Rennstrecke wird aufgebaut …');await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
   const nextTrack=new Track(data.route,raceConfig);nextTrack.heightAt=(x,z)=>sampleGround(data,x,z);
   const nextWorld=makeWorld(data,nextTrack);if(serial!==loadSerial){nextWorld.dispose?.();return false;}
@@ -260,6 +272,7 @@ $('pause').onclick=()=>togglePause();$('resume').onclick=()=>togglePause(false);
 
 function activateItem(){if(player&&mode==='race'&&!paused&&!briefing?.isOpen&&!touchControls?.blocked){const type=useItem(player,oils,elapsed);if(type){audio.play(type);notify(itemNames[type]+'!',1.4);}else notify('Erst eine Werkzeugkiste einsammeln.',1.5);}else if(mode==='countdown')notify('Gleich geht’s los. Die Kisten stehen auf der Strecke.');}
 $('use-item').onclick=activateItem;
+$('map-open').onclick=()=>minimapUI?.toggle();
 $('camera-switch').onclick=()=>{cameraTop=!cameraTop;worldRenderDirty=true;notify(cameraTop?'Streckenübersicht.':'Zurück hinter dein Auto.');};
 window.addEventListener('keydown',e=>{
  if(minimapUI?.handleKeydown(e))return;
@@ -346,7 +359,7 @@ function updateHUD(){
  hudClass('drift-fill','charged',player.drift>.6);hudText('drift-label',player.drifting?(player.drift>.6?'GERADESTELLEN = BOOST':'DRIFT LÄDT …'):'STARK LENKEN = DRIFT');
  hudFlag('reset-status','hidden',player.resetRemaining<=0);hudText('reset-seconds',Math.ceil(player.resetRemaining));hudWidth('reset-progress',(player.offroadStillTime/2*100)+'%');
  if(elapsed-streetUpdated>.7){streetUpdated=elapsed;let nearest=Infinity,name='Lammersdorf';for(const r of MAP.roads){if(!MAP.routeNames.includes(r.name))continue;for(const p of r.points){const d=(p[0]-player.x)**2+(p[1]-player.z)**2;if(d<nearest){nearest=d;name=r.name;}}}const poi=MAP.pois.find(p=>Math.hypot(player.x-p.point[0],player.z-p.point[1])<32);hudText('street',name+(poi?' · '+poi.name:''));updateStandings();}
- if(performance.now()-hudMapAt>90){hudMapAt=performance.now();drawMap(hudElement('minimap'),vehicles);}
+ if(performance.now()-hudMapAt>(minimapUI?.expanded?90:33)){hudMapAt=performance.now();drawMap(hudElement('minimap'),vehicles);}
 }
 
 function render(dt){
@@ -358,7 +371,7 @@ function render(dt){
   m.userData.flames.scale.z=reduced?1:.9+Math.sin(elapsed*40)*.2;
   animateCar(m,v.speed,v.steering||0,elapsed,!reduced&&v.drifting,v.drift,reduced?null:{bodyRoll:v.bodyRoll,bodyPitch:v.bodyPitch});
  }
- for(const b of world.crates){b.mesh.children[0].rotation.y=reduced?0:elapsed*.9;b.mesh.position.y=(Number.isFinite(b.groundY)?b.groundY:ground(b.x,b.z))+(reduced?0:Math.sin(elapsed*2+b.s)*.1);}
+ for(const b of world.crates){animateItemBox(b.mesh,elapsed,b.s*.37+b.x*.11,reduced);b.mesh.position.y=Number.isFinite(b.groundY)?b.groundY:ground(b.x,b.z);}
  for(const o of oils){if(!oilMeshes.has(o.id)){const m=makeOilDecal(MAP,o.x,o.z);world.scene.add(m);oilMeshes.set(o.id,m);}}
  for(const [id,m] of oilMeshes){if(!oils.some(o=>o.id===id)){world.scene.remove(m);m.geometry.dispose();m.material.dispose();oilMeshes.delete(id);}}
  if(ghostMesh&&ghostReplay){const p=ghostReplay.at(Math.max(0,elapsed));ghostMesh.visible=!!p&&mode!=='countdown';if(p){ghostMesh.position.set(p.x,ground(p.x,p.z)+.036,p.z);ghostMesh.rotation.y=p.angle;animateCar(ghostMesh,p.speed,0,elapsed);}}
@@ -366,13 +379,14 @@ function render(dt){
  const view=cameraRig.sample(pose,player.speed,dt,{top:cameraTop,reduced});
  if(renderer.isCompatibilityRenderer){const renderedVehicles=vehicles.map(v=>{const m=meshes.get(v.id);return {...v,x:m?.position.x??v.x,z:m?.position.z??v.z,angle:m?.rotation.y??v.angle};});renderer.setVehicles(renderedVehicles);renderer.setFocus({...renderedVehicles.find(v=>v.id===player.id),cameraX:cameraRig.anchor.x,cameraZ:cameraRig.anchor.z,cameraAngle:cameraRig.heading,cameraTop:cameraRig.overhead});}
  camera.position.set(view.position.x,view.position.y,view.position.z);cameraLook.set(view.look.x,view.look.y,view.look.z);camera.lookAt(cameraLook);
+ const debugCam=globalThis.__breuerDebug?.cam;if(debugCam){camera.position.set(...debugCam.position);cameraLook.set(...debugCam.look);camera.lookAt(cameraLook);pose.x=debugCam.look[0];pose.z=debugCam.look[2];}
  if(Math.abs(camera.fov-view.fov)>.001){camera.fov=view.fov;camera.updateProjectionMatrix();}
- world.sun.position.set(pose.x-100,pose.y+150,pose.z+80);world.sun.target.position.set(pose.x,pose.y,pose.z);
+ world.sun.position.set(pose.x-115,pose.y+92,pose.z+75);world.sun.target.position.set(pose.x,pose.y,pose.z);
  world.animate(elapsed,reduced,camera.position);world.updateVisibility(camera,graphicsLevel);
  // The distance pass may show a nearby mesh. Cooldown/rules must be the final
  // visibility gate, otherwise AI-collected crates reappear but cannot be taken.
  for(const b of world.crates)b.mesh.visible=b.mesh.visible&&pickupAvailable(b,Math.max(0,elapsed),raceConfig.rules);
- if(!reduced)world.skid(player,elapsed);prepareShadows(elapsed);renderer.setScissorTest(false);renderer.setViewport(0,0,innerWidth,innerHeight);renderer.render(world.scene,camera);audio.update(player.speed,mode==='race'&&!paused,player.drifting,{car:player.car,race:true,boost:player.boost,crowd:Math.max(0,1-Math.hypot(player.x-3.68,player.z-4.08)/90)});
+ if(!reduced)world.skid(player,elapsed);prepareShadows(elapsed);renderer.setScissorTest(false);renderer.setViewport(0,0,innerWidth,innerHeight);comic?.setSpeedLines?.(reduced||paused?0:player.boost>0?1:Math.max(0,(player.speed-27)/14)*.45);renderWorld();audio.update(player.speed,mode==='race'&&!paused,player.drifting,{car:player.car,race:true,boost:player.boost,crowd:Math.max(0,1-Math.hypot(player.x-3.68,player.z-4.08)/90)});
 }
 
 function frame(ts){
@@ -500,9 +514,11 @@ async function pollRoom(){
 
 function applyGraphics(){
  if(!renderer)return;graphicsLevel=renderer.isCompatibilityRenderer?0:graphics==='smooth'?0:graphics==='detail'?2:frameQuality.level;
- const ratios=coarse?[.7,.9,1.2]:[.8,1,1.25];renderer.setPixelRatio(Math.min(devicePixelRatio||1,ratios[graphicsLevel]));renderer.shadowMap.enabled=graphicsLevel>0;renderer.shadowMap.needsUpdate=true;shadowAt=-1;camera.far=[260,360,480][graphicsLevel];world?.setQuality?.(graphicsLevel);for(const m of meshes.values())setCarQuality(m,graphicsLevel);for(const m of showroom?.cars||[])setCarQuality(m,Math.max(1,graphicsLevel));resize();
+ // Never below one pixel per CSS pixel: blurry phones looked cheap. MSAA in the
+ // comic target smooths edges instead of rendering more pixels.
+ const ratios=coarse?[1.1,1.2,1.35]:[1,1,1.25];renderer.setPixelRatio(Math.min(devicePixelRatio||1,ratios[graphicsLevel]));comic?.setSamples(graphicsLevel===0?0:4);renderer.shadowMap.enabled=true;renderer.shadowMap.needsUpdate=true;shadowAt=-1;camera.far=[260,360,480][graphicsLevel];world?.setQuality?.(graphicsLevel);for(const m of meshes.values())setCarQuality(m,graphicsLevel);for(const m of showroom?.cars||[])setCarQuality(m,Math.max(1,graphicsLevel));resize();
 }
-function prepareShadows(time){if(time<shadowAt||time-shadowAt>(graphicsLevel===2?.05:.08)){renderer.shadowMap.needsUpdate=true;shadowAt=time;}}
+function prepareShadows(time){if(time<shadowAt||time-shadowAt>(graphicsLevel===2?.05:graphicsLevel===1?.08:.12)){renderer.shadowMap.needsUpdate=true;shadowAt=time;}}
 if(!['auto','smooth','detail','2d'].includes(graphics))graphics='auto';$('graphics').value=graphics;
 $('graphics').onchange=()=>{const previous=graphics;graphics=$('graphics').value;save.set('breuer-graphics',graphics);if(graphics==='2d'&&previous!=='2d'||previous==='2d'&&graphics!=='2d'){location.reload();return;}applyGraphics();notify(renderer.isCompatibilityRenderer?'2D-Kompatibilität ist aktiv.':graphics==='smooth'?'Flüssige Darstellung aktiviert.':graphics==='detail'?'Mehr Grafikdetails aktiviert.':'Die Grafik passt sich automatisch an.');};
 function resize(){garageDirty=true;worldRenderDirty=true;syncGaragePreview();if(!renderer)return;const w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();if($('track-preview'))drawMap($('track-preview'),[],true);}
@@ -524,15 +540,15 @@ try{
  bindOptions();
  entryScreen=new EntryScreen({root:document,reduced,onEnter:()=>{garageDirty=true;garageFlow?.goTo('car',{scroll:false});}});
  if(graphics==='2d')renderer=new LightweightCanvasRenderer({canvas:$('view')});else{try{renderer=new THREE.WebGLRenderer({canvas:$('view'),antialias:false,alpha:true,powerPreference:'high-performance'});}catch(e){console.warn('WebGL unavailable; using 2D compatibility:',e.message);renderer=new LightweightCanvasRenderer({canvas:$('view')});}}
- renderer.shadowMap.autoUpdate=false;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NeutralToneMapping;renderer.toneMappingExposure=1.05;
+ if(!renderer.isCompatibilityRenderer)comic=new ComicPost(renderer);renderer.shadowMap.autoUpdate=false;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NeutralToneMapping;renderer.toneMappingExposure=1.12;
  camera=new THREE.PerspectiveCamera(63,innerWidth/innerHeight,.2,260);showroom=makePremiumShowroom({makeCar,disposeScene,renderModels:false});garageCamera=new THREE.PerspectiveCamera(35,1,.1,120);
- garageVehiclePreview=createGarageVehiclePreview({host:$('showroom-slot'),reduced});
+ garageVehiclePreview=createGarageVehiclePreview({host:$('showroom-slot'),stage:$('garage-art'),reduced});
  // The menu loads independently of the village. Shared models are kept only once.
  if(renderer.isCompatibilityRenderer&&$('renderer-mode')){$('renderer-mode').hidden=false;$('renderer-mode').textContent='2D-Kompatibilität ist aktiv. Du fährst mit denselben Rennregeln ohne Grafikbeschleunigung.';}
  renderer.onInvalidate=()=>{garageDirty=true;};chooseCar(selected);
  applyGraphics();window.addEventListener('resize',resize);$('garage').addEventListener('scroll',()=>garageDirty=true,{passive:true,capture:true});if(typeof ResizeObserver!=='undefined')new ResizeObserver(()=>garageDirty=true).observe($('showroom-slot'));
  $('view').addEventListener('webglcontextlost',e=>{e.preventDefault();togglePause(true);notify('Grafikverbindung verloren. Seite bitte neu laden.',10);});
- $('start-solo').disabled=false;$('start-solo').textContent='Starten';$('load-status').textContent='Such dir einen Kurs aus. Die Strecke lädt erst beim Start.';
+ $('start-solo').disabled=false;$('start-solo').textContent='Starten';$('load-status').textContent='Alles bereit. Die Strecke lädt, sobald du startest.';
  garageFlow=createGarageFlow({onStepChange:()=>{garageDirty=true;syncGaragePreview();},onLayoutChange:()=>{garageDirty=true;syncGaragePreview();}});garageCarousel=createGarageCarousel({root:document});
  driverUI=createDriverProfileUI({root:document,client:onlineRecords,dialog,dialogHead,closeDialog,notify,getCategory:()=>recordConfig(readConfig()),getTrackName:id=>trackMeta(id).name});
  if($('online-result-submit'))$('online-result-submit').onclick=()=>submitFinishedRun();if($('result-leaderboard'))$('result-leaderboard').onclick=()=>driverUI.leaderboard(finishedRun?.config||recordConfig(readConfig()));

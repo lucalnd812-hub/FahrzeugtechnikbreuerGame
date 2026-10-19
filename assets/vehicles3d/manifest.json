@@ -1,0 +1,75 @@
+{
+ "version": 2,
+ "cars": {
+  "kadett": {
+   "track": 1.455,
+   "radius": 0.321,
+   "axles": [
+    -1,
+    1.35
+   ],
+   "source": "daaf3723e2bedc5c",
+   "tris": {
+    "high": 50600,
+    "low": 15280
+   },
+   "origin": "higgsfield-tripo-h3.1"
+  },
+  "m1": {
+   "track": 1.441,
+   "radius": 0.341,
+   "axles": [
+    -1.288,
+    1.16
+   ],
+   "source": "9da215ea545e0126",
+   "tris": {
+    "high": 50595,
+    "low": 15278
+   },
+   "origin": "higgsfield-tripo-h3.1"
+  },
+  "e30": {
+   "track": 1.511,
+   "radius": 0.329,
+   "axles": [
+    -1.225,
+    1.257
+   ],
+   "source": "50b29317f2ce45d9",
+   "tris": {
+    "high": 50599,
+    "low": 15279
+   },
+   "origin": "higgsfield-tripo-h3.1"
+  },
+  "m2": {
+   "track": 1.662,
+   "radius": 0.349,
+   "axles": [
+    -1.206,
+    1.395
+   ],
+   "source": "e5dbd7c9ae047846",
+   "tris": {
+    "high": 50595,
+    "low": 15279
+   },
+   "origin": "higgsfield-tripo-h3.1"
+  },
+  "gt3rs": {
+   "track": 1.593,
+   "radius": 0.367,
+   "axles": [
+    -1.111,
+    1.24
+   ],
+   "source": "eb8781f2acc50bd6",
+   "tris": {
+    "high": 50600,
+    "low": 15276
+   },
+   "origin": "higgsfield-tripo-h3.1"
+  }
+ }
+}

@@ -1,0 +1,216 @@
+{
+ "groundAnchor": [
+  672.0,
+  477.942
+ ],
+ "files": [
+  {
+   "frame": 0,
+   "file": "assets/vehicles/gt3rs/00.webp",
+   "contentBounds": [
+    233,
+    282,
+    819,
+    344
+   ],
+   "visiblePixels": 164041,
+   "bytes": 31762,
+   "sha256": "53ed2da89212f5dd169660ef26205f302d01b4ddb43555d5c3aa4a5a4baa2e19"
+  },
+  {
+   "frame": 1,
+   "file": "assets/vehicles/gt3rs/01.webp",
+   "contentBounds": [
+    199,
+    281,
+    756,
+    341
+   ],
+   "visiblePixels": 159065,
+   "bytes": 34182,
+   "sha256": "e691df486f609e10f8adb3e8e9c161f658f1695ce4fd9d69928b3b49f205ea48"
+  },
+  {
+   "frame": 2,
+   "file": "assets/vehicles/gt3rs/02.webp",
+   "contentBounds": [
+    196,
+    280,
+    804,
+    320
+   ],
+   "visiblePixels": 150775,
+   "bytes": 34038,
+   "sha256": "d0c3f830522e87f9daccf1a99b9c663c15c28468556ada1f80d1659dcc758e52"
+  },
+  {
+   "frame": 3,
+   "file": "assets/vehicles/gt3rs/03.webp",
+   "contentBounds": [
+    196,
+    279,
+    878,
+    285
+   ],
+   "visiblePixels": 147336,
+   "bytes": 34642,
+   "sha256": "110cfea13dc6c4dc57396da74366fbf1bdb74839c4cc05cf952b357f54829ffc"
+  },
+  {
+   "frame": 4,
+   "file": "assets/vehicles/gt3rs/04.webp",
+   "contentBounds": [
+    197,
+    268,
+    952,
+    294
+   ],
+   "visiblePixels": 158686,
+   "bytes": 36398,
+   "sha256": "568298a54a5e20f50836f6f097dd82b3c6e44779344ec280e4ec6a12ca7bde2d"
+  },
+  {
+   "frame": 5,
+   "file": "assets/vehicles/gt3rs/05.webp",
+   "contentBounds": [
+    249,
+    241,
+    900,
+    359
+   ],
+   "visiblePixels": 172909,
+   "bytes": 40446,
+   "sha256": "33aeaae47845d7eda8dbf39c4f765e7d84c689d5a64f6d95508cf50afa0af71a"
+  },
+  {
+   "frame": 6,
+   "file": "assets/vehicles/gt3rs/06.webp",
+   "contentBounds": [
+    322,
+    211,
+    827,
+    413
+   ],
+   "visiblePixels": 189253,
+   "bytes": 44288,
+   "sha256": "801fb74507d221c62ede2a5c1bb34f1d9f66dc11805b640ecf02b911293b50f6"
+  },
+  {
+   "frame": 7,
+   "file": "assets/vehicles/gt3rs/07.webp",
+   "contentBounds": [
+    396,
+    194,
+    752,
+    433
+   ],
+   "visiblePixels": 193822,
+   "bytes": 41456,
+   "sha256": "bdcab287e620c989b702c44f27d4cb43a6a70f523b547d2c4ae9b1b112f19183"
+  },
+  {
+   "frame": 8,
+   "file": "assets/vehicles/gt3rs/08.webp",
+   "contentBounds": [
+    233,
+    201,
+    817,
+    426
+   ],
+   "visiblePixels": 185294,
+   "bytes": 36704,
+   "sha256": "7f624f9790d1f7df7e5537093f96a1a0e0c2c3658e575f0b79cd4e9e873708e1"
+  },
+  {
+   "frame": 9,
+   "file": "assets/vehicles/gt3rs/09.webp",
+   "contentBounds": [
+    198,
+    194,
+    755,
+    433
+   ],
+   "visiblePixels": 186513,
+   "bytes": 40068,
+   "sha256": "746ffd6a6ddb37d3d559e09897fb14cfa9ff227f63d9c384c2bc8cb60c022be2"
+  },
+  {
+   "frame": 10,
+   "file": "assets/vehicles/gt3rs/10.webp",
+   "contentBounds": [
+    195,
+    212,
+    806,
+    411
+   ],
+   "visiblePixels": 175369,
+   "bytes": 38328,
+   "sha256": "7fb8902c2d03095e883d18da9536868f68e286e27b7c4dad16a8748888a495b9"
+  },
+  {
+   "frame": 11,
+   "file": "assets/vehicles/gt3rs/11.webp",
+   "contentBounds": [
+    195,
+    241,
+    878,
+    333
+   ],
+   "visiblePixels": 155743,
+   "bytes": 34364,
+   "sha256": "a98945c2d915b92ed06b9fdd68ccc59310a6cc39b92028043fd966e7d4f2ce9b"
+  },
+  {
+   "frame": 12,
+   "file": "assets/vehicles/gt3rs/12.webp",
+   "contentBounds": [
+    197,
+    269,
+    930,
+    274
+   ],
+   "visiblePixels": 153585,
+   "bytes": 35212,
+   "sha256": "a2663f4093ce9d8c87504a69a86a57654df26f64a54c5cf7f7b8d94b5dba3436"
+  },
+  {
+   "frame": 13,
+   "file": "assets/vehicles/gt3rs/13.webp",
+   "contentBounds": [
+    249,
+    279,
+    898,
+    305
+   ],
+   "visiblePixels": 157655,
+   "bytes": 38518,
+   "sha256": "a3e78de7469cd56c11ba7f9d0e68ad780d2543717a85a33828bf32e0d109f822"
+  },
+  {
+   "frame": 14,
+   "file": "assets/vehicles/gt3rs/14.webp",
+   "contentBounds": [
+    325,
+    280,
+    823,
+    333
+   ],
+   "visiblePixels": 165259,
+   "bytes": 39686,
+   "sha256": "f0b1a14d0aab4a59c5336b27fba20f7798c84cf9ce37054b747c5340a9b9d0c4"
+  },
+  {
+   "frame": 15,
+   "file": "assets/vehicles/gt3rs/15.webp",
+   "contentBounds": [
+    397,
+    281,
+    724,
+    345
+   ],
+   "visiblePixels": 167760,
+   "bytes": 36650,
+   "sha256": "23597e30a4d0ac46a89f52e453d456da6a6ffae6e3de7d4994814718ecf1992a"
+  }
+ ]
+}

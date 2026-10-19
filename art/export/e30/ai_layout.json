@@ -1,0 +1,25 @@
+{
+ "layout": {
+  "track": 1.511,
+  "radius": 0.329,
+  "axles": [
+   -1.225,
+   1.257
+  ]
+ },
+ "lods": [
+  {
+   "lod": "high",
+   "bodyTris": 44999,
+   "wheelTris": 1400,
+   "bytes": 1194936
+  },
+  {
+   "lod": "low",
+   "bodyTris": 13999,
+   "wheelTris": 320,
+   "bytes": 569392
+  }
+ ],
+ "source": "e30_tripo.glb"
+}

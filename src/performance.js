@@ -21,7 +21,9 @@ export class FrameQuality{
 // Shared limits for game cameras and scenery. A tour may deliberately use a
 // larger camera far plane; a race only needs the next few streets in view.
 export const RENDER_PROFILES=Object.freeze([
- Object.freeze({far:260,fogNear:105,fogFar:285,detailScale:.62,shadowDistance:0,treeDistance:0,crowdHz:8}),
+ // Phones keep the full look (cel shadows, near trees, clouds); they save on
+ // view distance, shadow range and pixel count instead of dropping features.
+ Object.freeze({far:300,fogNear:120,fogFar:315,detailScale:.74,shadowDistance:58,treeDistance:64,crowdHz:10}),
  Object.freeze({far:360,fogNear:150,fogFar:385,detailScale:.82,shadowDistance:90,treeDistance:110,crowdHz:14}),
  Object.freeze({far:480,fogNear:190,fogFar:465,detailScale:1,shadowDistance:125,treeDistance:150,crowdHz:20})
 ]);

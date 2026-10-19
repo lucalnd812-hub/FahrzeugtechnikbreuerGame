@@ -13,3 +13,8 @@ __pycache__/
 *.pyc
 deployment/asset-pack-*.bin
 
+
+# Street View screenshots are private modelling references only; never shipped.
+art/references/
+art/renders/
+art/blender/__pycache__/

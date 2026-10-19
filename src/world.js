@@ -7,7 +7,13 @@ import {terrainHeightAt,surfaceHeightAt,roadSurfaceGeometries,drapedPolygonGeome
 import {installLandmarks,modelBuildingIds} from './landmarks.js';
 import {createVehicleModel,setVehicleQuality} from './vehicle-models.js';
 import {upgradeVillageTextures} from './village-textures.js';
-import {material,block,object,sign,logoBoard,surfaceTexture,worldUV,Batch,makeVillage,villageMaterials,makeChurch,makeATM,dressCourse,plantTrees,landscape,upgradePaintedTiles,makeGroundTransitions} from './scenery.js';
+import {material,block,object,sign,logoBoard,surfaceTexture,worldUV,Batch,makeVillage,villageMaterials,makeChurch,makeATM,dressCourse,plantTrees,landscape,upgradePaintedTiles,makeGroundTransitions,plantHedgerows} from './scenery.js';
+import {tintGround} from './ground-tint.js';
+import {plantFrontGardens} from './front-gardens.js';
+import {dressFestival} from './race-festival.js';
+import {makeItemBox} from './item-box.js';
+import {paintRoad} from './road-paint.js';
+import {createRaceEffects} from './race-effects.js';
 
 const mat=(c,extra={})=>new THREE.MeshStandardMaterial({color:c,roughness:.75,...extra});
 const mesh=(g,m,x=0,y=0,z=0)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;return o;};
@@ -58,7 +64,7 @@ export function setCarQuality(car,level=1){
   if(o.userData.originalReceiveShadow===undefined)o.userData.originalReceiveShadow=o.receiveShadow;
   applyObjectQuality(o,quality);
   const basic=(Array.isArray(o.material)?o.material:[o.material]).every(m=>m.isMeshBasicMaterial);
-  o.castShadow=quality>0&&o.userData.originalCastShadow&&!basic;o.receiveShadow=quality>0&&o.userData.originalReceiveShadow;
+  o.castShadow=quality>0&&o.userData.originalCastShadow&&!basic;o.receiveShadow=!!o.userData.originalReceiveShadow;
  });
  for(const lod of car.userData.lodGroups||[]){lod.low.visible=quality===0;for(const high of lod.high)high.visible=quality>0;}
 }
@@ -68,6 +74,8 @@ export function setCarQuality(car,level=1){
 export function disposeScene(root,{excludeTextures=[]}={}){
  const geometries=new Set(),materials=new Set(),textures=new Set(),excluded=new Set([root.environment,root.background,...excludeTextures].filter(t=>t?.isTexture));
  root.traverse(o=>{
+  // Blender fleet meshes share cached geometry/materials across worlds.
+  if(o.userData?.sharedVehicleAsset)return;
   if(o.geometry)geometries.add(o.geometry);
   for(const m of Array.isArray(o.material)?o.material:o.material?[o.material]:[])materials.add(m);
   for(const variant of o.userData?.qualityMaterials?.values?.()||[])for(const m of Array.isArray(variant)?variant:[variant])if(m?.isMaterial)materials.add(m);
@@ -110,7 +118,7 @@ function terrainGeometry(terrain){
   positions.push(terrain.origin[0]+x*terrain.step,terrain.values[z*terrain.width+x]-.035,terrain.origin[1]+z*terrain.step);
   if(z<terrain.height-1&&x<terrain.width-1){const a=z*terrain.width+x;indices.push(a,a+terrain.width,a+1,a+1,a+terrain.width,a+terrain.width+1);}
  }
- const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setIndex(indices);g.computeVertexNormals();return g;
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setIndex(indices);g.computeVertexNormals();return tintGround(g);
 }
 
 // Split existing triangles rather than rebuilding joins. Road contours remain
@@ -128,20 +136,28 @@ export function chunkGeometry(geometry,cellSize=96){
  if(source!==geometry)source.dispose();geometry.dispose();return result;
 }
 
+// three builds the background cube once per texture: when the painted sky
+// arrives after the first frame, release the placeholder cube so it is rebuilt.
+// Module scope on purpose: the pending load must not keep a whole world alive.
+// A world disposed meanwhile reports loaded:false, so nothing is touched then.
+function loadPaintedSky(sky){upgradeVillageTextures({'artisan-sky':sky}).then(([r])=>{if(r?.loaded)sky.dispose();});}
 export function makeWorld(data,track){
  resetDrivingOverlays(data);
- const scene=new THREE.Scene();scene.background=new THREE.Color(0x83d0e9);scene.fog=new THREE.Fog(0xc0e1dd,105,285);
- const lowSky=scene.background,skyCanvas=document.createElement('canvas');skyCanvas.width=256;skyCanvas.height=128;const skyContext=skyCanvas.getContext('2d');skyContext.fillStyle='#9acedd';skyContext.fillRect(0,0,256,128);const sky=new THREE.CanvasTexture(skyCanvas);sky.name='artisan:sky';sky.colorSpace=THREE.SRGBColorSpace;sky.mapping=THREE.EquirectangularReflectionMapping;upgradeVillageTextures({'artisan-sky':sky});scene.userData.skyTexture=sky;
+ const scene=new THREE.Scene();scene.background=new THREE.Color(0x83d0e9);scene.fog=new THREE.Fog(0x9bcde7,105,285);
+ const lowSky=scene.background,skyCanvas=document.createElement('canvas');skyCanvas.width=256;skyCanvas.height=128;const skyContext=skyCanvas.getContext('2d');skyContext.fillStyle='#9acedd';skyContext.fillRect(0,0,256,128);const sky=new THREE.CanvasTexture(skyCanvas);sky.name='artisan:sky';sky.colorSpace=THREE.SRGBColorSpace;sky.mapping=THREE.EquirectangularReflectionMapping;
+ loadPaintedSky(sky);scene.userData.skyTexture=sky;
  const heightAt=(x,z)=>terrainHeightAt(data,x,z),drivingHeightAt=(x,z)=>surfaceHeightAt(data,x,z);
- const M=villageMaterials();scene.add(new THREE.HemisphereLight(0xf2f5eb,0x9eae85,1.8));
- const sun=new THREE.DirectionalLight(0xffedd8,1.4);sun.position.set(-100,150,80);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-85,right:85,top:85,bottom:-85,near:10,far:380});sun.shadow.bias=-.0003;sun.shadow.normalBias=.09;scene.add(sun,sun.target);
+ const M=villageMaterials();// Golden afternoon: warm low sun, cool sky fill so shadows read blue-green.
+ scene.add(new THREE.HemisphereLight(0xd6e6ff,0x7f9466,1.15));
+ const sun=new THREE.DirectionalLight(0xffd8a3,2.7);sun.position.set(-115,92,75);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-85,right:85,top:85,bottom:-85,near:10,far:380});sun.shadow.bias=-.0003;sun.shadow.normalBias=.09;scene.add(sun,sun.target);
  sun.shadow.camera.updateProjectionMatrix();sun.shadow.radius=2;
- const grass=material(0xf2f3e3,{map:surfaceTexture('grass'),roughness:1});
+ const grass=material(0xf2f3e3,{map:surfaceTexture('grass'),roughness:1,vertexColors:true});
  if(data.terrain&&data.terrain.values?.length===data.terrain.width*data.terrain.height){
   const groundBatch=new Batch({chunkSize:192,maxDistance:430,castShadow:false,name:'terrain',rangeKind:'base'});grass.userData.uvScale=.25;
   for(const g of chunkGeometry(terrainGeometry(data.terrain),192))groundBatch.add(g,grass);groundBatch.flush(scene);
  }else{const groundGeo=worldUV(new THREE.PlaneGeometry(6500,6500).rotateX(-Math.PI/2),.25),ground=object(groundGeo,grass,0,-.035,0);ground.castShadow=false;scene.add(ground);}
  landscape(scene,data,M,heightAt);
+ const hedgerows=plantHedgerows(scene,data,track,M,heightAt);
  const groundTransitions=makeGroundTransitions(scene,data,track,M);
  const asphalt=material(0xffffff,{map:surfaceTexture('asphalt'),roughness:.96});asphalt.userData.uvScale=.40;const sidewalk=M.paving;
  // One quiet Higgsfield painted tile replaces coarse procedural noise for every
@@ -164,6 +180,10 @@ export function makeWorld(data,track){
  const workshop=landmarks.byId.breuer,bakery=landmarks.byId.bakery,school=landmarks.byId.school,church=get(93722401)?makeChurch(scene,get(93722401),M):null,atmPoi=data.pois.find(p=>p.id==='atm'),atm=atmPoi?makeATM(scene,atmPoi,M):null;
  for(const [id,model] of [['church',church],['atm',atm]]){const poi=data.pois.find(p=>p.id===id);if(poi&&model)model.position.y+=heightAt(...poi.point);}
  const spectators=dressCourse(scene,data,track,M,heightAt),trees=plantTrees(scene,data,track,M,heightAt);
+ // Keep Breuer's yard and driveway clear of garden fences, flags and stands.
+ const breuerYard=[];if(workshop){const c=Math.cos(workshop.rotation.y),s=Math.sin(workshop.rotation.y),o=workshop.position;for(let lx=-9;lx<=11;lx+=4)for(let lz=-4;lz<=16;lz+=4)breuerYard.push({x:o.x+lx*c+lz*s,z:o.z-lx*s+lz*c,w:4.4,d:4.4,kind:'yard'});}
+ const festival=dressFestival(scene,data,track,M,heightAt,{reserved:[...breuerYard,...spectators.safety.filter(r=>r.kind!=='rail'),...village.gardenDetails]});
+ const frontGardens=plantFrontGardens(scene,data,track,M,heightAt,{reserved:[...breuerYard,...spectators.safety,...village.gardenDetails,...festival.records],skipBuildingIds:data.pois.map(p=>p.buildingId).filter(Boolean)});
  const props=new Batch({chunkSize:96,maxDistance:450,castShadow:false,vertexColors:true,heightAt,drape:true}),kerbs=[];
  // Red/white event kerbs and short dashed markings make the course readable.
  for(let s=0;s<track.length;s+=3){const p=track.at(s);for(const side of [-1,1]){const x=p.x+p.dz*5.4*side,z=p.z-p.dx*5.4*side;if(!clearOfCourse(track,x,z,.38,2.85,p.angle,5.12))continue;props.box(.38,.09,2.85,Math.floor(s/3)%2?M.red:M.white,x,.11,z,p.angle);kerbs.push({x,z,w:.38,d:2.85,a:p.angle});}}
@@ -174,7 +194,7 @@ export function makeWorld(data,track){
  const p=track.at(0),gate=new THREE.Group(),gateBatch=new Batch();gate.position.set(p.x,heightAt(p.x,p.z),p.z);gate.rotation.y=p.angle;gate.name='breuer:start-finish';
  let gateWidth=7.2;while(gateWidth<11&&[-1,1].some(side=>!clearOfCourse(track,p.x+p.dz*gateWidth*side,p.z-p.dx*gateWidth*side,.7,.8,p.angle,6.55)))gateWidth+=.4;
  for(const side of [-1,1]){gateBatch.box(.7,6.5,.8,M.red,side*gateWidth,3.25,0);spectators.safety.push({x:p.x+p.dz*gateWidth*side,z:p.z-p.dx*gateWidth*side,w:.7,d:.8,a:p.angle,kind:'gate'});}gateBatch.box(gateWidth*2+.7,1,.8,M.dark,0,6.05,0);
- for(const side of [-1,1]){const name=sign('BREUER GRAND PRIX',11.9,'#ffffff','#1f2024',.075);name.position.set(0,6.05,side*.42);gate.add(name);}
+ for(const side of [-1,1]){const name=sign('BREUER GRAND PRIX',11.9,'#ffffff','#1f2024',.075);name.position.set(0,6.05,side*.42);if(side<0)name.rotation.y=Math.PI;gate.add(name);}
  // Ground-level start graphics belong to the terrain, not the flat gantry.
  // This also keeps the long blue launch pad from covering oil on gradients.
  const gatePoint=(x,z)=>[p.x+Math.cos(p.angle)*x+Math.sin(p.angle)*z,p.z-Math.sin(p.angle)*x+Math.cos(p.angle)*z];
@@ -192,7 +212,8 @@ export function makeWorld(data,track){
  // Light, scattered cloud groups, with no terrain fabricated as survey data.
  const cloudGeo=new THREE.SphereGeometry(1,8,5),cloudMat=new THREE.MeshBasicMaterial({color:0xf8fcff,transparent:true,opacity:.78});
  const clouds=new THREE.InstancedMesh(cloudGeo,cloudMat,90),dummy=new THREE.Object3D();for(let i=0;i<90;i++){const cluster=Math.floor(i/5),j=i%5;dummy.position.set((random(cluster+3)-.5)*2600+j*17,165+random(cluster+16)*90,(random(cluster+54)-.5)*2600);dummy.scale.set(35+random(i)*25,8+random(i+1)*8,21+random(i+7)*17);dummy.updateMatrix();clouds.setMatrixAt(i,dummy.matrix);}scene.add(clouds);
- const crates=[];for(let s=85;s<track.length-30;s+=145){const p=track.at(s);for(const offset of [-2.2,2.2]){const g=new THREE.Group();g.add(block(1.05,1.05,1.05,material(0xf6c747,{emissive:0xe39118,emissiveIntensity:.15}),0,.9,0));for(const side of [-1,1]){const question=sign('?',.7,'#fffcec','#de7333',.8);question.position.set(0,.9,side*.54);g.add(question);}const x=p.x-p.dz*offset,z=p.z+p.dx*offset,groundY=drivingHeightAt(x,z);g.position.set(x,groundY,z);g.userData.baseY=groundY;g.rotation.y=p.angle;scene.add(g);crates.push({s,x,z,groundY,mesh:g,available:0});}}
+ const roadPaint=paintRoad(scene,track,heightAt);
+ const crates=[];for(let s=85;s<track.length-30;s+=145){const p=track.at(s);for(const offset of [-2.2,2.2]){const g=makeItemBox();const x=p.x-p.dz*offset,z=p.z+p.dx*offset,groundY=drivingHeightAt(x,z);g.position.set(x,groundY,z);g.userData.baseY=groundY;g.rotation.y=p.angle;scene.add(g);crates.push({s,x,z,groundY,mesh:g,available:0});}}
  const obstacles=[];
  for(const h of track.obstacles){
   const g=new THREE.Group();g.name='obstacle:'+h.id;g.position.set(h.x,drivingHeightAt(h.x,h.z),h.z);g.rotation.y=h.angle;const hb=new Batch();
@@ -207,7 +228,9 @@ export function makeWorld(data,track){
  const markCount=144,marks=new THREE.InstancedMesh(new THREE.PlaneGeometry(.15,1).rotateX(-Math.PI/2),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.55,depthWrite:false}),markCount),markDummy=new THREE.Object3D(),markColor=new THREE.Color(),asphaltColor=new THREE.Color(0x64666a),zeroScale=new THREE.Vector3(0,0,0),history=new Float32Array(markCount).fill(-100);
  marks.frustumCulled=false;marks.instanceMatrix.setUsage(THREE.DynamicDrawUsage);scene.add(marks);let markHead=0,lastMark=-1,lastFade=-1;
  for(let i=0;i<markCount;i++){markDummy.scale.setScalar(0);markDummy.updateMatrix();marks.setMatrixAt(i,markDummy.matrix);marks.setColorAt(i,new THREE.Color(0x252931));}
+ const startPoint=track.at(0),effects=createRaceEffects(scene,{heightAt,start:{x:startPoint.x,z:startPoint.z,angle:startPoint.angle}});
  const skid=(v,time)=>{
+  effects.update(v,time);
   if(time<lastMark){history.fill(-100);lastMark=-1;}
   if(v?.drifting&&v.speed>11&&time-lastMark>.05){lastMark=time;for(const side of [-1,1]){const i=markHead++%markCount;history[i]=time;const x=v.x-Math.sin(v.angle)*1.35+Math.cos(v.angle)*side*.87,z=v.z-Math.cos(v.angle)*1.35-Math.sin(v.angle)*side*.87,a=v.angle+v.slip,length=Math.min(2.2,v.speed*.067),front=heightAt(x+Math.sin(a)*length/2,z+Math.cos(a)*length/2),back=heightAt(x-Math.sin(a)*length/2,z-Math.cos(a)*length/2);markDummy.position.set(x,heightAt(x,z)+.092,z);markDummy.rotation.set(-Math.atan2(front-back,length),a,0);markDummy.scale.set(1,1,length);markDummy.updateMatrix();marks.setMatrixAt(i,markDummy.matrix);marks.setColorAt(i,new THREE.Color(0x252931));}marks.instanceMatrix.needsUpdate=marks.instanceColor.needsUpdate=true;}
   if(time-lastFade<.1&&time>=lastFade)return;lastFade=time;
@@ -237,26 +260,27 @@ export function makeWorld(data,track){
  const setQuality=(level=0)=>{
   if(disposed)return;const quality=Math.max(0,Math.min(2,Math.round(level)));if(appliedQuality===quality)return;appliedQuality=quality;
   const profile=RENDER_PROFILES[quality];scene.fog.near=profile.fogNear;scene.fog.far=profile.fogFar;scene.environmentIntensity=quality===0?.12:quality===1?.25:.4;
-  scene.background=quality===0?lowSky:sky;
-  sun.castShadow=quality>0;const mapSize=quality===2?1024:512;
+  // The painted sky is one background texture: cheap enough for every profile.
+  scene.background=sky;
+  sun.castShadow=true;const mapSize=quality===2?1024:quality===1?768:512;
   if(sun.shadow.mapSize.x!==mapSize){sun.shadow.map?.dispose();sun.shadow.map=null;sun.shadow.mapSize.set(mapSize,mapSize);}sun.shadow.needsUpdate=true;
   for(const [m,original] of sourceMaterials){if(m.isMeshStandardMaterial){const bump=quality===2?original.bumpMap:null;if(m.bumpMap!==bump){m.bumpMap=bump;m.needsUpdate=true;}}}
   for(const o of qualityObjects){applyObjectQuality(o,quality);o.receiveShadow=quality>0&&o.userData.originalReceiveShadow;if(o.userData.minimumQuality!==undefined||o.userData.maximumQuality!==undefined)o.visible=quality>=(o.userData.minimumQuality??0)&&quality<=(o.userData.maximumQuality??2);}
   for(const car of carModels)setCarQuality(car,quality);
-  for(const part of casters)part.mesh.castShadow=quality>0;
-  clouds.visible=quality>0;
+  for(const part of casters)part.mesh.castShadow=true;
+  clouds.visible=true;
  };
  const updateVisibility=(camera,quality=appliedQuality)=>{
   if(disposed)return;setQuality(quality);const profile=RENDER_PROFILES[appliedQuality],p=camera.position;
   scene.fog.far=Math.min(profile.fogFar,camera.far*.96);scene.fog.near=Math.min(profile.fogNear,scene.fog.far*.62);
   for(const part of ranged){const dx=p.x-part.center.x,dz=p.z-part.center.z,scale=part.kind==='base'?(appliedQuality===0?.7:appliedQuality===1?.88:1):profile.detailScale;part.mesh.visible=appliedQuality>=(part.mesh.userData.minimumQuality??0)&&appliedQuality<=(part.mesh.userData.maximumQuality??2)&&dx*dx+dz*dz<(part.range*scale+part.radius)**2;}
-  for(const part of casters){const dx=p.x-part.center.x,dz=p.z-part.center.z;part.mesh.castShadow=appliedQuality>0&&dx*dx+dz*dz<(profile.shadowDistance+part.radius)**2;}
+  for(const part of casters){const dx=p.x-part.center.x,dz=p.z-part.center.z;part.mesh.castShadow=dx*dx+dz*dz<(profile.shadowDistance+part.radius)**2;}
   for(const tile of treeTiles){const dx=p.x-tile.userData.center.x,dz=p.z-tile.userData.center.z,d2=dx*dx+dz*dz;const close=profile.treeDistance>0&&p.y<90&&d2<profile.treeDistance**2;tile.userData.setNear(close);}
  };
  const animate=(time,reduced=false,focus=null)=>{if(!disposed)spectators.animate(time,reduced,focus,appliedQuality);};
  const dispose=()=>{if(disposed)return;disposed=true;const result=disposeScene(scene);sky.dispose();ranged.length=treeTiles.length=casters.length=qualityObjects.length=carModels.length=0;sourceMaterials.clear();return result;};
  setQuality(0);
- scene.userData.stats={...village,...landmarks.stats,groundTransitions,spectatorCount:spectators.spectatorCount,treeCount:trees,obstacleCount:obstacles.length};delete scene.userData.stats.centers;
+ scene.userData.stats={...village,...landmarks.stats,groundTransitions,hedgerowPieces:hedgerows.pieces,meadowFlowers:hedgerows.flowers,frontGardenHouses:frontGardens.houses,frontGardenTrees:frontGardens.trees,frontGardenBeds:frontGardens.beds,frontGardenFenceMetres:frontGardens.fenceMetres,frontGardenRecords:frontGardens.records,grandstands:festival.stands,grandstandFans:festival.standFans,bannerGantries:festival.banners,flagPoles:festival.flags,parkedCars:festival.cars,festivalRecords:festival.records,spectatorCount:spectators.spectatorCount,treeCount:trees,obstacleCount:obstacles.length};delete scene.userData.stats.centers;
  return {scene,sun,gate,crates,workshop,church,bakery,school,atm,courseHighlight,courseTiles,obstacles,courseProps:spectators.safety,kerbs,skid,updateVisibility,setQuality,dispose,animate,stats:scene.userData.stats};
 }
 

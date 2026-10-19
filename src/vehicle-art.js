@@ -43,6 +43,41 @@ export function vehicleArtPlacement(index,frame,{x=0,y=0,width,height,fit=.88,an
     pixelsPerMetre:scale*framing.pixelsPerMetre};
 }
 
+/** Ground-pivot height that centres the whole fleet envelope inside a stage
+ * of the given fit, so short landscape garages use their full height. */
+export function naturalGroundY(fit=.94){
+  const b=vehicleArtManifest.framing?.bounds,a=vehicleArtManifest.camera?.groundAnchor;
+  if(!(b?.length===4&&b[3]>0&&a?.length===2))return .735;
+  const inset=(1-fit)/2;return inset+(1-2*inset)*(a[1]-b[1])/b[3];
+}
+
+/** Showroom backdrop mode: every view is rendered with the painted garage's
+ * own camera at the backdrop's exact pixel size (art/blender/ai_sprites.py).
+ * Background and car then share one transform and the tyres stay on the
+ * painted turntable at any stage size. */
+export const VEHICLE_BACKDROP=Object.freeze(vehicleArtManifest.camera?.projection==='backdrop'?{
+  image:vehicleArtManifest.camera.backdrop||'/nextlevel/garage-showroom.webp',
+  width:vehicleArtManifest.width,height:vehicleArtManifest.height,
+  anchor:vehicleArtManifest.camera.groundAnchor,safeWidth:vehicleArtManifest.camera.safeWidth||860,
+}:null);
+
+/** Cover the stage width, but never crop the turntable's middle. */
+export function backdropTransform(width,height,backdrop=VEHICLE_BACKDROP,focus=.45){
+  if(!backdrop||!(width>0&&height>0))return null;
+  const {width:bw,height:bh,anchor,safeWidth}=backdrop;
+  // A little wider than cover: the whole platform and car stay above the
+  // showroom controls; the floor colour fills below the painting.
+  const scale=Math.max(width/bw,Math.min(height/bh,width/safeWidth)*.82);
+  // The showroom controls cover the stage's lower quarter, so the platform
+  // sits at half height; the painted floor continues below as a flat colour.
+  const x=width/2-bw/2*scale,y=Math.min(0,height*focus-anchor[1]*scale);
+  return {scale,x,y};
+}
+
+export function vehicleArtBounds(index,frame){
+  return vehicleArtManifest.cars?.[index]?.files?.find(file=>file.frame===frame)?.contentBounds||null;
+}
+
 export function frameIndexForAngle(angle = 0, count = VEHICLE_ART_FRAMES) {
   if (!Number.isFinite(angle)) angle = 0;
   return ((Math.round(angle / TAU * count) % count) + count) % count;

@@ -55,7 +55,8 @@ for(const q of [0,1,2,0]){
  for(const o of lowWalls)assert.equal(o.visible,q===0,'Low walls must replace, rather than overlap, high atlas walls');
  world.updateVisibility(camera,q);
  world.scene.traverse(o=>{if(!o.isMesh)return;for(let p=o;p;p=p.parent)if(!p.visible)return;for(const m of Array.isArray(o.material)?o.material:[o.material])if(q===0){assert.ok(!m.userData.paintAtlas,'The conservative low profile must not require custom shader injection');if(m.isMeshLambertMaterial&&o.geometry.attributes.sourceBuilding)assert.notEqual(m.map?.name,'artisan:roof-atlas','Q0 measured roofs use a normal cropped tile');}});
- assert.equal(world.scene.background===world.scene.userData.skyTexture,q>0);
+ // The painted sky is a single background texture, so phones get it as well.
+ assert.equal(world.scene.background,world.scene.userData.skyTexture);
 }
 // Every world owns its Texture handles, including late atlas crops and sky.
 const owned=new Map();for(const t of [...allTextures,world.scene.userData.skyTexture]){owned.set(t,0);t.addEventListener('dispose',()=>owned.set(t,owned.get(t)+1));}world.dispose();world.dispose();for(const count of owned.values())assert.equal(count,1,'Texture disposal exactly once');

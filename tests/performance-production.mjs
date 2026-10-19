@@ -52,8 +52,8 @@ for(let pass=0;pass<10;pass++){
  const original=resources(world.scene),camera=new THREE.PerspectiveCamera(56,16/9,.1,RENDER_PROFILES[0].far);
  for(let q=0;q<3;q++){
   world.setQuality(q);cars.forEach(car=>setCarQuality(car,q));camera.far=RENDER_PROFILES[q].far;camera.updateProjectionMatrix();
-  assert.equal(world.sun.castShadow,q>0);assert.equal(world.scene.environmentIntensity,q===0?.12:q===1?.25:.4);
-  assert.equal(world.sun.shadow.mapSize.x,q===2?1024:512);
+  assert.equal(world.sun.castShadow,true,'phones keep cel shadows');assert.equal(world.scene.environmentIntensity,q===0?.12:q===1?.25:.4);
+  assert.equal(world.sun.shadow.mapSize.x,q===2?1024:q===1?768:512);
   for(const fraction of [0,.2,.4,.6,.8]){
    const p=track.at(track.length*fraction),look=track.at(track.length*fraction+14);
    camera.position.set(p.x-p.dx*11,track.heightAt(p.x,p.z)+7,p.z-p.dz*11);camera.lookAt(look.x,track.heightAt(look.x,look.z)+1,look.z);

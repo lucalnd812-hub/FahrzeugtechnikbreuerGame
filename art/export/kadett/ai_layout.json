@@ -1,0 +1,25 @@
+{
+ "layout": {
+  "track": 1.455,
+  "radius": 0.321,
+  "axles": [
+   -1.0,
+   1.35
+  ]
+ },
+ "lods": [
+  {
+   "lod": "high",
+   "bodyTris": 45000,
+   "wheelTris": 1400,
+   "bytes": 1232372
+  },
+  {
+   "lod": "low",
+   "bodyTris": 14000,
+   "wheelTris": 320,
+   "bytes": 601808
+  }
+ ],
+ "source": "kadett_tripo.glb"
+}

@@ -1,2978 +1,1440 @@
 {
-  "version": 5,
-  "modelVersion": "breuer-fleet-6",
-  "renderStyle": "sculpted-soft-matcap-arcade",
-  "geometryHash": "ad4dbb722ab6397a",
-  "artHash": "9b343cdfade29fe7",
-  "textures": {
-    "matcap": {
-      "path": "assets/nextlevel/car-finish.webp",
-      "sha256": "f5ca4778c44499456f56ae5a98617d836618ed9356acb920f894e9df48d6ac94",
-      "bytes": 13624
-    },
-    "details": {
-      "path": "assets/nextlevel/car-details.webp",
-      "sha256": "56c373ffc4b3f34c9d648fc8b93c8fc6e355baff2434c05c64c66f363ce33095",
-      "bytes": 123870
-    }
+ "version": 7,
+ "modelVersion": "breuer-fleet-8",
+ "renderStyle": "blender-cycles-showroom",
+ "geometryHash": "d636176fa2a481f1",
+ "artHash": "d636176fa2a481f1",
+ "textures": {
+  "matcap": {
+   "path": "assets/nextlevel/car-finish.webp",
+   "sha256": "f5ca4778c44499456f56ae5a98617d836618ed9356acb920f894e9df48d6ac94",
+   "bytes": 13624
   },
-  "colorManagement": {
-    "toneMapping": "NeutralToneMapping",
-    "exposure": 1.05,
-    "output": "SRGBColorSpace"
-  },
-  "renderer": "CPU triangle rasterizer with native camera-space matcaps, bilinear sRGB detail atlases, NeutralToneMapping, supersampling and projected tyre-contact shadows",
-  "width": 640,
-  "height": 400,
-  "frames": 16,
-  "samples": 3,
-  "quality": 2,
-  "camera": {
-    "projection": "orthographic",
-    "motion": "fixed-camera-rotating-model",
-    "front": "+Z",
-    "yawRadiansPerFrame": 0.39269908169872414,
-    "yawOffsetDegrees": 0,
-    "elevationDegrees": 18,
-    "targetHeight": 0.66,
-    "orthographicWidth": 6.26,
-    "pixelsPerMetre": 102.23642172523962,
-    "groundAnchor": [
-      320,
-      264.173526
-    ],
-    "frameZero": "front"
-  },
-  "framing": {
-    "mode": "fixed-scale-ground-pivot",
-    "fit": 0.88,
-    "anchor": [
-      0.5,
-      0.64
-    ],
+  "details": {
+   "path": "assets/nextlevel/car-details.webp",
+   "sha256": "56c373ffc4b3f34c9d648fc8b93c8fc6e355baff2434c05c64c66f363ce33095",
+   "bytes": 123870
+  }
+ },
+ "colorManagement": {
+  "toneMapping": "Standard",
+  "exposure": -0.45,
+  "output": "SRGBColorSpace"
+ },
+ "renderer": "Blender Cycles (art/blender/ai_sprites.py), Higgsfield/Tripo models, transparent WebP turntable",
+ "width": 1344,
+ "height": 752,
+ "frames": 16,
+ "samples": 20,
+ "quality": 2,
+ "camera": {
+  "projection": "backdrop",
+  "backdrop": "/nextlevel/garage-showroom.webp",
+  "motion": "fixed-camera-rotating-model",
+  "front": "+Z",
+  "frameZero": "front",
+  "yawRadiansPerFrame": 0.39269908169872414,
+  "yawOffsetDegrees": 0,
+  "heightMetres": 0.738,
+  "distanceMetres": 4.624,
+  "focalPixels": 664,
+  "horizon": 372,
+  "groundAnchor": [
+   672,
+   477.942
+  ],
+  "safeWidth": 860,
+  "pixelsPerMetre": 143.59861591695503
+ },
+ "framing": {
+  "mode": "backdrop-pixel-match",
+  "bounds": [
+   195,
+   194,
+   954,
+   433
+  ],
+  "anchor": [
+   0.5,
+   0.6355611702127659
+  ],
+  "sharedWorldScale": true
+ },
+ "cars": [
+  {
+   "id": "kadett",
+   "name": "Opel Kadett C Coupé",
+   "source": "8742d2d92a38b9bf",
+   "framing": {
     "bounds": [
-      67,
-      50,
-      506,
-      284
+     196,
+     257,
+     953,
+     370
     ],
-    "sharedWorldScale": true
-  },
-  "cars": [
+    "groundAnchor": [
+     672,
+     477.942
+    ]
+   },
+   "files": [
     {
-      "id": "kadett",
-      "name": "Opel Kadett C Coupé",
-      "dimensions": [
-        1.850000023841858,
-        1.3980000116825104,
-        4.413875579833984
-      ],
-      "framing": {
-        "bounds": [
-          85,
-          103,
-          470,
-          222
-        ],
-        "groundAnchor": [
-          320,
-          264.173526
-        ]
-      },
-      "files": [
-        {
-          "frame": 0,
-          "contentBounds": [
-            222,
-            108,
-            196,
-            216
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              248.434505,
-              229.263491
-            ],
-            [
-              391.565495,
-              229.263491
-            ],
-            [
-              248.434505,
-              304.928227
-            ],
-            [
-              391.565495,
-              304.928227
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 33956,
-          "bytes": 9422,
-          "sha256": "2611e06be7d1c1569358006dc9f9b925cf6ab41f4f629bca63d4e7e65325e09c"
-        },
-        {
-          "frame": 1,
-          "contentBounds": [
-            161,
-            105,
-            318,
-            216
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              297.114328,
-              223.457833
-            ],
-            [
-              429.35012,
-              240.383886
-            ],
-            [
-              203.411905,
-              293.362934
-            ],
-            [
-              335.647698,
-              310.288987
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 43595,
-          "bytes": 15426,
-          "sha256": "71afc838d222b505aa7c2b9b97139e398dab5732de211b838efe45cea7558859"
-        },
-        {
-          "frame": 2,
-          "contentBounds": [
-            107,
-            103,
-            426,
-            214
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              349.278287,
-              223.850769
-            ],
-            [
-              450.487181,
-              255.126038
-            ],
-            [
-              176.138786,
-              277.353818
-            ],
-            [
-              277.34768,
-              308.629086
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 52331,
-          "bytes": 19378,
-          "sha256": "83781b815f64241893be242fe3bfcdabd021dee65c8bc8e38f717a47760918c9"
-        },
-        {
-          "frame": 3,
-          "contentBounds": [
-            85,
-            105,
-            469,
-            203
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              396.984893,
-              230.38248
-            ],
-            [
-              451.758751,
-              271.245588
-            ],
-            [
-              170.767233,
-              259.338121
-            ],
-            [
-              225.541092,
-              300.201229
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 56156,
-          "bytes": 19276,
-          "sha256": "54271d91aaeccc44d551b99afa59ceb0f98c03eef87dbbf89334d042fb07fd1b"
-        },
-        {
-          "frame": 4,
-          "contentBounds": [
-            90,
-            108,
-            459,
-            186
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              432.971246,
-              242.058572
-            ],
-            [
-              432.971246,
-              286.28848
-            ],
-            [
-              188.115016,
-              242.058572
-            ],
-            [
-              188.115016,
-              286.28848
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 56666,
-          "bytes": 16556,
-          "sha256": "2274a9f810a7f5d0d3d5121ca812a169333aeda2597c248c0913ff7b425aa52e"
-        },
-        {
-          "frame": 5,
-          "contentBounds": [
-            85,
-            109,
-            469,
-            197
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              451.758751,
-              257.101464
-            ],
-            [
-              396.984893,
-              297.964572
-            ],
-            [
-              225.541092,
-              228.145823
-            ],
-            [
-              170.767233,
-              269.008931
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 56248,
-          "bytes": 19018,
-          "sha256": "4c049ac45dfd8681f473694e4d5f680768644b9950dec9778828fd2ea1495b26"
-        },
-        {
-          "frame": 6,
-          "contentBounds": [
-            107,
-            111,
-            426,
-            204
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              450.487181,
-              273.221014
-            ],
-            [
-              349.278287,
-              304.496282
-            ],
-            [
-              277.34768,
-              219.717966
-            ],
-            [
-              176.138786,
-              250.993234
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 52301,
-          "bytes": 19258,
-          "sha256": "3df71716f7527847077777be8ce4fe2f94c1a8c4f60bd48a44e9d1e461c90838"
-        },
-        {
-          "frame": 7,
-          "contentBounds": [
-            161,
-            115,
-            318,
-            207
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              429.35012,
-              287.963166
-            ],
-            [
-              297.114328,
-              304.889219
-            ],
-            [
-              335.647698,
-              218.058065
-            ],
-            [
-              203.411905,
-              234.984118
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 42875,
-          "bytes": 15926,
-          "sha256": "b8e22af3bfb2c3cd8f6610d5201ae9d6a18b5d030d8a51cfe0fea07a3a40d248"
-        },
-        {
-          "frame": 8,
-          "contentBounds": [
-            222,
-            119,
-            196,
-            206
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              391.565495,
-              299.083561
-            ],
-            [
-              248.434505,
-              299.083561
-            ],
-            [
-              391.565495,
-              223.418825
-            ],
-            [
-              248.434505,
-              223.418825
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 32159,
-          "bytes": 9442,
-          "sha256": "9efb3cfe2d0c87e45aadfbf2c0ff1f319c94970c31b48a050dd2512b185f35bf"
-        },
-        {
-          "frame": 9,
-          "contentBounds": [
-            161,
-            115,
-            318,
-            206
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              342.885672,
-              304.889219
-            ],
-            [
-              210.64988,
-              287.963166
-            ],
-            [
-              436.588095,
-              234.984118
-            ],
-            [
-              304.352302,
-              218.058065
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 42874,
-          "bytes": 15410,
-          "sha256": "dd58abc092c24b024a59303ea22d08d85f566d9080d2f46aaababa443234e115"
-        },
-        {
-          "frame": 10,
-          "contentBounds": [
-            107,
-            111,
-            426,
-            203
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              290.721713,
-              304.496282
-            ],
-            [
-              189.512819,
-              273.221014
-            ],
-            [
-              463.861214,
-              250.993234
-            ],
-            [
-              362.65232,
-              219.717966
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 52296,
-          "bytes": 19090,
-          "sha256": "77a019055d8e405a1d7d8844363e9e9d9f8e260122298db051a72fe1bccee7ca"
-        },
-        {
-          "frame": 11,
-          "contentBounds": [
-            86,
-            109,
-            469,
-            197
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              243.015107,
-              297.964572
-            ],
-            [
-              188.241249,
-              257.101464
-            ],
-            [
-              469.232767,
-              269.008931
-            ],
-            [
-              414.458908,
-              228.145823
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 56221,
-          "bytes": 19146,
-          "sha256": "3c7fefdfa6fb3cf2897c8adc097aeb8e7b0370fee34d1af6d3272eb9b167b5c1"
-        },
-        {
-          "frame": 12,
-          "contentBounds": [
-            91,
-            108,
-            459,
-            186
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              207.028754,
-              286.28848
-            ],
-            [
-              207.028754,
-              242.058572
-            ],
-            [
-              451.884984,
-              286.28848
-            ],
-            [
-              451.884984,
-              242.058572
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 56730,
-          "bytes": 16106,
-          "sha256": "3a5793d233ac02cb04df32b156e4653365ba3ef1e190af4b6dec7d0529e1b89f"
-        },
-        {
-          "frame": 13,
-          "contentBounds": [
-            86,
-            105,
-            469,
-            203
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              188.241249,
-              271.245588
-            ],
-            [
-              243.015107,
-              230.38248
-            ],
-            [
-              414.458908,
-              300.201229
-            ],
-            [
-              469.232767,
-              259.338121
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 56171,
-          "bytes": 19284,
-          "sha256": "88d92962fe40c02a4ad9b8cd2801361456eabd590cd1ed18734f757c5131ce3b"
-        },
-        {
-          "frame": 14,
-          "contentBounds": [
-            107,
-            103,
-            426,
-            214
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              189.512819,
-              255.126038
-            ],
-            [
-              290.721713,
-              223.850769
-            ],
-            [
-              362.65232,
-              308.629086
-            ],
-            [
-              463.861214,
-              277.353818
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 52331,
-          "bytes": 17980,
-          "sha256": "5c4bc4463c93437258b40b4164030ef55a811fae44b3d763acee2a94144e2d8b"
-        },
-        {
-          "frame": 15,
-          "contentBounds": [
-            161,
-            105,
-            318,
-            215
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              210.64988,
-              240.383886
-            ],
-            [
-              342.885672,
-              223.457833
-            ],
-            [
-              304.352302,
-              310.288987
-            ],
-            [
-              436.588095,
-              293.362934
-            ]
-          ],
-          "triangles": 15342,
-          "visiblePixels": 43595,
-          "bytes": 14660,
-          "sha256": "21307a20293090c93ceae190c256af57996a1eba720cd1cd742d9505a853e982"
-        }
-      ]
+     "frame": 0,
+     "contentBounds": [
+      270,
+      271,
+      826,
+      356
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 165290,
+     "bytes": 35690,
+     "sha256": "72f8220c90917481cbf13ca8f1e6ba43a2464c6f64585c7c10a314d962311a67"
     },
     {
-      "id": "e30",
-      "name": "AC Schnitzer BMW E30 M3",
-      "dimensions": [
-        1.8899999856948853,
-        1.4374995193481446,
-        4.572415828704834
-      ],
-      "framing": {
-        "bounds": [
-          71,
-          91,
-          498,
-          238
-        ],
-        "groundAnchor": [
-          320,
-          264.173526
-        ]
-      },
-      "files": [
-        {
-          "frame": 0,
-          "contentBounds": [
-            220,
-            95,
-            200,
-            232
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              243.322684,
-              224.524572
-            ],
-            [
-              396.677316,
-              224.524572
-            ],
-            [
-              243.322684,
-              305.465305
-            ],
-            [
-              396.677316,
-              305.465305
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 39885,
-          "bytes": 8606,
-          "sha256": "513a09327f57c7eecf53202947c931eac1630d3d7fd1990c2a16b4c903e33a0c"
-        },
-        {
-          "frame": 1,
-          "contentBounds": [
-            150,
-            91,
-            338,
-            238
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              298.260249,
-              218.475141
-            ],
-            [
-              439.941455,
-              236.610198
-            ],
-            [
-              198.024087,
-              293.254627
-            ],
-            [
-              339.705294,
-              311.389684
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 50545,
-          "bytes": 16766,
-          "sha256": "a6f294049f1df2a9fcc9ede1ddd94a13387bbd089230be3875333e31b5d9eb7c"
-        },
-        {
-          "frame": 2,
-          "contentBounds": [
-            93,
-            97,
-            450,
-            225
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              356.507494,
-              219.382874
-            ],
-            [
-              464.945595,
-              252.89209
-            ],
-            [
-              171.295218,
-              276.616615
-            ],
-            [
-              279.733319,
-              310.125831
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 60132,
-          "bytes": 19670,
-          "sha256": "436b010c70e004ddce37ec3af32271bdfedd0603533930b2c24b6b66ed0d8574"
-        },
-        {
-          "frame": 3,
-          "contentBounds": [
-            71,
-            99,
-            494,
-            211
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              409.196804,
-              227.109578
-            ],
-            [
-              467.883081,
-              270.891479
-            ],
-            [
-              167.205304,
-              258.084255
-            ],
-            [
-              225.891581,
-              301.866156
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 63287,
-          "bytes": 18986,
-          "sha256": "df787d53e2d71dde5847e17d3d9c0b7214203f354211ed537040993239cc070a"
-        },
-        {
-          "frame": 4,
-          "contentBounds": [
-            82,
-            104,
-            474,
-            192
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              448.306709,
-              240.478932
-            ],
-            [
-              448.306709,
-              287.86812
-            ],
-            [
-              186.376997,
-              240.478932
-            ],
-            [
-              186.376997,
-              287.86812
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 62250,
-          "bytes": 15774,
-          "sha256": "bdffea5cb8b43e47cb82dc3e646dd2c8bb531e61a77a630b7c90e268fd40a3b0"
-        },
-        {
-          "frame": 5,
-          "contentBounds": [
-            71,
-            104,
-            494,
-            205
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              467.883081,
-              257.455573
-            ],
-            [
-              409.196804,
-              301.237474
-            ],
-            [
-              225.891581,
-              226.480896
-            ],
-            [
-              167.205304,
-              270.262797
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 62123,
-          "bytes": 20252,
-          "sha256": "47f49631318b2fac713323191dc7674f13593e54df40f8797b30629d6f22c413"
-        },
-        {
-          "frame": 6,
-          "contentBounds": [
-            93,
-            106,
-            450,
-            212
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              464.945595,
-              275.454962
-            ],
-            [
-              356.507494,
-              308.964178
-            ],
-            [
-              279.733319,
-              218.221221
-            ],
-            [
-              171.295218,
-              251.730437
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 58011,
-          "bytes": 18826,
-          "sha256": "82117fe1d7b3008e1e8968e10685163e6c36a294035bad0345376e33a10abe44"
-        },
-        {
-          "frame": 7,
-          "contentBounds": [
-            150,
-            110,
-            338,
-            214
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              439.941455,
-              291.736854
-            ],
-            [
-              298.260249,
-              309.871911
-            ],
-            [
-              339.705294,
-              216.957368
-            ],
-            [
-              198.024087,
-              235.092425
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 47387,
-          "bytes": 15686,
-          "sha256": "606ce5abf297f19f75138fd9265d5563c00800279c8f76a24a9fed649b28a05b"
-        },
-        {
-          "frame": 8,
-          "contentBounds": [
-            220,
-            114,
-            200,
-            214
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              396.677316,
-              303.82248
-            ],
-            [
-              243.322684,
-              303.82248
-            ],
-            [
-              396.677316,
-              222.881747
-            ],
-            [
-              243.322684,
-              222.881747
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 36064,
-          "bytes": 8368,
-          "sha256": "007d60ce9833995d6e3c036dce98c33b893bc8c2296eb5891c7d3c921a2bbf93"
-        },
-        {
-          "frame": 9,
-          "contentBounds": [
-            152,
-            110,
-            338,
-            214
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              341.739751,
-              309.871911
-            ],
-            [
-              200.058545,
-              291.736854
-            ],
-            [
-              441.975913,
-              235.092425
-            ],
-            [
-              300.294706,
-              216.957368
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 47387,
-          "bytes": 15344,
-          "sha256": "cbd434d893873a4cd980ffe26fb814e843fa9e26fb7a6f867d4389c48efcbba5"
-        },
-        {
-          "frame": 10,
-          "contentBounds": [
-            97,
-            106,
-            450,
-            211
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              283.492506,
-              308.964178
-            ],
-            [
-              175.054405,
-              275.454962
-            ],
-            [
-              468.704782,
-              251.730437
-            ],
-            [
-              360.266681,
-              218.221221
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 58007,
-          "bytes": 18790,
-          "sha256": "cc4abcae3f1963115e1a947de0fceb79f558a0a845792aa5e96facf6f7fb7e67"
-        },
-        {
-          "frame": 11,
-          "contentBounds": [
-            75,
-            104,
-            494,
-            205
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              230.803196,
-              301.237474
-            ],
-            [
-              172.116919,
-              257.455573
-            ],
-            [
-              472.794696,
-              270.262797
-            ],
-            [
-              414.108419,
-              226.480896
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 62098,
-          "bytes": 18926,
-          "sha256": "11cb21fed9fa29e7d63e139979b21c109150ba7f52ca1f96198bcb56c0f6874c"
-        },
-        {
-          "frame": 12,
-          "contentBounds": [
-            84,
-            104,
-            474,
-            192
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              191.693291,
-              287.86812
-            ],
-            [
-              191.693291,
-              240.478932
-            ],
-            [
-              453.623003,
-              287.86812
-            ],
-            [
-              453.623003,
-              240.478932
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 62320,
-          "bytes": 15020,
-          "sha256": "2e59c56055da44c9b1d47ec3cc10abe9fd8bde4151324048f72fe9bd9e5b6bcf"
-        },
-        {
-          "frame": 13,
-          "contentBounds": [
-            75,
-            99,
-            494,
-            211
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              172.116919,
-              270.891479
-            ],
-            [
-              230.803196,
-              227.109578
-            ],
-            [
-              414.108419,
-              301.866156
-            ],
-            [
-              472.794696,
-              258.084255
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 63318,
-          "bytes": 19484,
-          "sha256": "ccc6adaf103d11e39ff039d0e8c4bc61f5b5a6881b6fad7816bc74ea2c5244d1"
-        },
-        {
-          "frame": 14,
-          "contentBounds": [
-            97,
-            97,
-            450,
-            225
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              175.054405,
-              252.89209
-            ],
-            [
-              283.492506,
-              219.382874
-            ],
-            [
-              360.266681,
-              310.125831
-            ],
-            [
-              468.704782,
-              276.616615
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 60132,
-          "bytes": 19006,
-          "sha256": "4e71491c4e5989a55422110acae857470fdad3763055dd3d29dc51c14b1ec6d0"
-        },
-        {
-          "frame": 15,
-          "contentBounds": [
-            152,
-            91,
-            338,
-            238
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              200.058545,
-              236.610198
-            ],
-            [
-              341.739751,
-              218.475141
-            ],
-            [
-              300.294706,
-              311.389684
-            ],
-            [
-              441.975913,
-              293.254627
-            ]
-          ],
-          "triangles": 15138,
-          "visiblePixels": 50545,
-          "bytes": 15514,
-          "sha256": "62a2015056708ae05339fb5e09bd7e2a3c66abe2e3b5d65433c173b257a28c7f"
-        }
-      ]
+     "frame": 1,
+     "contentBounds": [
+      198,
+      270,
+      742,
+      354
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 161081,
+     "bytes": 38030,
+     "sha256": "1b426889eac75e7095b843a1b3986ce59ea03065a4731d579e888af7ab040241"
     },
     {
-      "id": "m1",
-      "name": "BMW M1 Procar",
-      "dimensions": [
-        2.1399152278900146,
-        1.2304999735355377,
-        4.568596601486206
-      ],
-      "framing": {
-        "bounds": [
-          67,
-          68,
-          506,
-          266
-        ],
-        "groundAnchor": [
-          320,
-          264.173526
-        ]
-      },
-      "files": [
-        {
-          "frame": 0,
-          "contentBounds": [
-            207,
-            73,
-            226,
-            257
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              233.610224,
-              224.8405
-            ],
-            [
-              406.389776,
-              224.8405
-            ],
-            [
-              233.610224,
-              305.718047
-            ],
-            [
-              406.389776,
-              305.718047
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 46250,
-          "bytes": 10336,
-          "sha256": "baca3afbbe9582a1aebc00c551d770309d15168d5b0bd2b8a4646d751c06dd89"
-        },
-        {
-          "frame": 1,
-          "contentBounds": [
-            145,
-            68,
-            350,
-            266
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              288.895864,
-              217.618466
-            ],
-            [
-              448.523356,
-              238.050631
-            ],
-            [
-              188.737951,
-              292.339577
-            ],
-            [
-              348.365443,
-              312.771741
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 51662,
-          "bytes": 19294,
-          "sha256": "11de78374f2fed17b9f3af8da011fb70ded0256533313c50c7af0883149e1c40"
-        },
-        {
-          "frame": 2,
-          "contentBounds": [
-            89,
-            73,
-            455,
-            254
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              348.916827,
-              217.484018
-            ],
-            [
-              471.09042,
-              255.237735
-            ],
-            [
-              163.849135,
-              274.67308
-            ],
-            [
-              286.022728,
-              312.426797
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 59222,
-          "bytes": 21546,
-          "sha256": "76cc016b5534403284717183eb0a5b2966802e5d1d69bf6cae97373b9a8d0159"
-        },
-        {
-          "frame": 3,
-          "contentBounds": [
-            67,
-            88,
-            498,
-            225
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              404.535465,
-              224.457625
-            ],
-            [
-              470.655337,
-              273.785233
-            ],
-            [
-              162.732873,
-              255.408122
-            ],
-            [
-              228.852745,
-              304.73573
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 61399,
-          "bytes": 21248,
-          "sha256": "e52676d6cd3627d9675d2ec5eba54a6f3e3341c974f13994cde06254a56a32bd"
-        },
-        {
-          "frame": 4,
-          "contentBounds": [
-            81,
-            111,
-            474,
-            188
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              447.284345,
-              237.477617
-            ],
-            [
-              447.284345,
-              290.869435
-            ],
-            [
-              185.559105,
-              237.477617
-            ],
-            [
-              185.559105,
-              290.869435
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 58141,
-          "bytes": 17694,
-          "sha256": "d81ab5bf80b07f02a4c7fb4f70d1ea98dd221874c83acfaf1eb6c75c5de50ca1"
-        },
-        {
-          "frame": 5,
-          "contentBounds": [
-            67,
-            131,
-            498,
-            181
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              470.655337,
-              254.561819
-            ],
-            [
-              404.535465,
-              303.889427
-            ],
-            [
-              228.852745,
-              223.611322
-            ],
-            [
-              162.732873,
-              272.93893
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 56970,
-          "bytes": 19986,
-          "sha256": "dd1879703228ece936278e3c27b8f32db98c0f5d5525c0df41b7369dc39c5f8c"
-        },
-        {
-          "frame": 6,
-          "contentBounds": [
-            89,
-            132,
-            456,
-            188
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              471.09042,
-              273.109317
-            ],
-            [
-              348.916827,
-              310.863033
-            ],
-            [
-              286.022728,
-              215.920255
-            ],
-            [
-              163.849135,
-              253.673972
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 52553,
-          "bytes": 18950,
-          "sha256": "c7004f7bb5755af0152a0f397345af8c235a69b18ec89dae017158b3940bd317"
-        },
-        {
-          "frame": 7,
-          "contentBounds": [
-            145,
-            133,
-            350,
-            192
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              448.523356,
-              290.296421
-            ],
-            [
-              288.895864,
-              310.728585
-            ],
-            [
-              348.365443,
-              215.575311
-            ],
-            [
-              188.737951,
-              236.007475
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 43043,
-          "bytes": 15944,
-          "sha256": "fbe333af6b387e08e89f16a4a0e2afb700a45f413148d606ab7f063c51e986e7"
-        },
-        {
-          "frame": 8,
-          "contentBounds": [
-            207,
-            142,
-            226,
-            185
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              406.389776,
-              303.506552
-            ],
-            [
-              233.610224,
-              303.506552
-            ],
-            [
-              406.389776,
-              222.629005
-            ],
-            [
-              233.610224,
-              222.629005
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 35921,
-          "bytes": 8156,
-          "sha256": "c58ef8a7a63c708610b05c654abfa528ff0c1aa7cb55173c125c9abfda914126"
-        },
-        {
-          "frame": 9,
-          "contentBounds": [
-            145,
-            133,
-            350,
-            192
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              351.104136,
-              310.728585
-            ],
-            [
-              191.476644,
-              290.296421
-            ],
-            [
-              451.262049,
-              236.007475
-            ],
-            [
-              291.634557,
-              215.575311
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 43048,
-          "bytes": 15140,
-          "sha256": "3f36fc31522e5d69d7f2d83bf3805fb623b0ca669aba9588da8fd4b33f8a54e0"
-        },
-        {
-          "frame": 10,
-          "contentBounds": [
-            95,
-            132,
-            456,
-            187
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              291.083173,
-              310.863033
-            ],
-            [
-              168.90958,
-              273.109317
-            ],
-            [
-              476.150865,
-              253.673972
-            ],
-            [
-              353.977272,
-              215.920255
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 52557,
-          "bytes": 19068,
-          "sha256": "f7594cce85bd10dcea0793bde4a144b3cefca988bc4dd719241460c688d1ffa4"
-        },
-        {
-          "frame": 11,
-          "contentBounds": [
-            75,
-            131,
-            498,
-            181
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              235.464535,
-              303.889427
-            ],
-            [
-              169.344663,
-              254.561819
-            ],
-            [
-              477.267127,
-              272.93893
-            ],
-            [
-              411.147255,
-              223.611322
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 56970,
-          "bytes": 19418,
-          "sha256": "a42c81853469bcae1f78eff2bc88e4e642e0ecd94f3a2146c48c020f84a6979e"
-        },
-        {
-          "frame": 12,
-          "contentBounds": [
-            85,
-            111,
-            474,
-            188
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              192.715655,
-              290.869435
-            ],
-            [
-              192.715655,
-              237.477617
-            ],
-            [
-              454.440895,
-              290.869435
-            ],
-            [
-              454.440895,
-              237.477617
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 58149,
-          "bytes": 17470,
-          "sha256": "511f250f3e836e95664f61ced558506fcd2101cd0a5999d1ea7aed6c939c9466"
-        },
-        {
-          "frame": 13,
-          "contentBounds": [
-            75,
-            88,
-            498,
-            225
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              169.344663,
-              273.785233
-            ],
-            [
-              235.464535,
-              224.457625
-            ],
-            [
-              411.147255,
-              304.73573
-            ],
-            [
-              477.267127,
-              255.408122
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 61399,
-          "bytes": 21264,
-          "sha256": "22d5d0f6e2fb84d44f3ea5c879d5a50d8196c5d7105f400bfd6169bc07c923bf"
-        },
-        {
-          "frame": 14,
-          "contentBounds": [
-            96,
-            73,
-            455,
-            254
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              168.90958,
-              255.237735
-            ],
-            [
-              291.083173,
-              217.484018
-            ],
-            [
-              353.977272,
-              312.426797
-            ],
-            [
-              476.150865,
-              274.67308
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 59220,
-          "bytes": 20606,
-          "sha256": "6f2df6586cbbc77c0dc0081456656ab2cec1e8cc078de53cbef97f438bd3129c"
-        },
-        {
-          "frame": 15,
-          "contentBounds": [
-            145,
-            68,
-            350,
-            266
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              191.476644,
-              238.050631
-            ],
-            [
-              351.104136,
-              217.618466
-            ],
-            [
-              291.634557,
-              312.771741
-            ],
-            [
-              451.262049,
-              292.339577
-            ]
-          ],
-          "triangles": 15114,
-          "visiblePixels": 51663,
-          "bytes": 17524,
-          "sha256": "3856b390af47270c6cc80a9b4987ca925e201c131247059df5265b29ea612d0f"
-        }
-      ]
+     "frame": 2,
+     "contentBounds": [
+      196,
+      267,
+      802,
+      330
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 151430,
+     "bytes": 36428,
+     "sha256": "674e0bb168414be3200956e460ba2f7350ff0e038863c1c010c0597d8e503922"
     },
     {
-      "id": "m2",
-      "name": "BMW M2 Competition",
-      "dimensions": [
-        2.009999990463257,
-        1.5089999506473541,
-        4.628818035125732
-      ],
-      "framing": {
-        "bounds": [
-          72,
-          91,
-          496,
-          237
-        ],
-        "groundAnchor": [
-          320,
-          264.173526
-        ]
-      },
-      "files": [
-        {
-          "frame": 0,
-          "contentBounds": [
-            214,
-            95,
-            212,
-            232
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              238.722045,
-              221.523257
-            ],
-            [
-              401.277955,
-              221.523257
-            ],
-            [
-              238.722045,
-              306.602645
-            ],
-            [
-              401.277955,
-              306.602645
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 41540,
-          "bytes": 7776,
-          "sha256": "68f6cf23abdb430e4b818c755baff236314dbee25274d6b8c855c114cc05dc9d"
-        },
-        {
-          "frame": 1,
-          "contentBounds": [
-            148,
-            92,
-            342,
-            234
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              297.72661,
-              215.158235
-            ],
-            [
-              447.908689,
-              234.381396
-            ],
-            [
-              192.365181,
-              293.761341
-            ],
-            [
-              342.547259,
-              312.984501
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 51906,
-          "bytes": 13522,
-          "sha256": "23f16055c9beef71c025f6a749ff4de31c9e74fe80afdf331a005dc4edcb0140"
-        },
-        {
-          "frame": 2,
-          "contentBounds": [
-            94,
-            91,
-            449,
-            229
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              360.122097,
-              216.255347
-            ],
-            [
-              475.066484,
-              251.775116
-            ],
-            [
-              165.439561,
-              276.41556
-            ],
-            [
-              280.383947,
-              311.935328
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 62333,
-          "bytes": 16596,
-          "sha256": "a0b60cbd8517d35844b26f8932b3deaef3e048c46947eedba62bd29a0a909ce1"
-        },
-        {
-          "frame": 3,
-          "contentBounds": [
-            73,
-            95,
-            495,
-            217
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              416.409359,
-              224.647567
-            ],
-            [
-              478.616813,
-              271.056382
-            ],
-            [
-              162.044366,
-              257.20604
-            ],
-            [
-              224.25182,
-              303.614854
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 67677,
-          "bytes": 16170,
-          "sha256": "eede58be8b3989c029e7ef936b8336a3c434697c0785ac422f8715b4e81dd7f4"
-        },
-        {
-          "frame": 4,
-          "contentBounds": [
-            83,
-            99,
-            480,
-            198
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              458.019169,
-              239.057257
-            ],
-            [
-              458.019169,
-              289.289795
-            ],
-            [
-              182.696486,
-              239.057257
-            ],
-            [
-              182.696486,
-              289.289795
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 67850,
-          "bytes": 14354,
-          "sha256": "e665643927c0ae7b5bb2c0210aebf6ba4cf485ce75fbd159c57b57081174071b"
-        },
-        {
-          "frame": 5,
-          "contentBounds": [
-            73,
-            101,
-            495,
-            211
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              478.616813,
-              257.29067
-            ],
-            [
-              416.409359,
-              303.699485
-            ],
-            [
-              224.25182,
-              224.732198
-            ],
-            [
-              162.044366,
-              271.141012
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 67820,
-          "bytes": 16966,
-          "sha256": "954c3ebc28b223f316d01b6f33b35a3f5a0e36b2e98e5235aa244eeb5fa0f719"
-        },
-        {
-          "frame": 6,
-          "contentBounds": [
-            94,
-            102,
-            449,
-            218
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              475.066484,
-              276.571936
-            ],
-            [
-              360.122097,
-              312.091705
-            ],
-            [
-              280.383947,
-              216.411724
-            ],
-            [
-              165.439561,
-              251.931492
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 62530,
-          "bytes": 15812,
-          "sha256": "4e8ad7209198a2a1ea476198a048d57d490b2890691f5039144c8487c485098a"
-        },
-        {
-          "frame": 7,
-          "contentBounds": [
-            148,
-            105,
-            342,
-            221
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              447.908689,
-              293.965656
-            ],
-            [
-              297.72661,
-              313.188817
-            ],
-            [
-              342.547259,
-              215.362551
-            ],
-            [
-              192.365181,
-              234.585711
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 50741,
-          "bytes": 13090,
-          "sha256": "e0cca80152160be3401e9ce39f34a3b48d72205edd6692b59b736cb873cf114f"
-        },
-        {
-          "frame": 8,
-          "contentBounds": [
-            214,
-            109,
-            212,
-            219
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              401.277955,
-              306.823795
-            ],
-            [
-              238.722045,
-              306.823795
-            ],
-            [
-              401.277955,
-              221.744407
-            ],
-            [
-              238.722045,
-              221.744407
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 39275,
-          "bytes": 7428,
-          "sha256": "e082b3e6868d259db9504777c18defd3131f745fd47ca3acf23ad7aeacc5530b"
-        },
-        {
-          "frame": 9,
-          "contentBounds": [
-            150,
-            105,
-            342,
-            220
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              342.27339,
-              313.188817
-            ],
-            [
-              192.091311,
-              293.965656
-            ],
-            [
-              447.634819,
-              234.585711
-            ],
-            [
-              297.452741,
-              215.362551
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 50742,
-          "bytes": 12318,
-          "sha256": "0f40960225174e0f491ebc84d0d32ab9fc25b7d622649a2fe45299e2b9d65a36"
-        },
-        {
-          "frame": 10,
-          "contentBounds": [
-            97,
-            102,
-            449,
-            218
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              279.877903,
-              312.091705
-            ],
-            [
-              164.933516,
-              276.571936
-            ],
-            [
-              474.560439,
-              251.931492
-            ],
-            [
-              359.616053,
-              216.411724
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 62530,
-          "bytes": 15132,
-          "sha256": "e851290c48fe38bf70d8ebca645f418e72d08feae8e0303adf5fa94c74140fe9"
-        },
-        {
-          "frame": 11,
-          "contentBounds": [
-            72,
-            101,
-            495,
-            211
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              223.590641,
-              303.699485
-            ],
-            [
-              161.383187,
-              257.29067
-            ],
-            [
-              477.955634,
-              271.141012
-            ],
-            [
-              415.74818,
-              224.732198
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 67819,
-          "bytes": 16074,
-          "sha256": "13364f4ed964bb3864180237568a5119a96ad23bd55be15e0b1d653dad637eb2"
-        },
-        {
-          "frame": 12,
-          "contentBounds": [
-            77,
-            99,
-            480,
-            198
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              181.980831,
-              289.289795
-            ],
-            [
-              181.980831,
-              239.057257
-            ],
-            [
-              457.303514,
-              289.289795
-            ],
-            [
-              457.303514,
-              239.057257
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 67853,
-          "bytes": 13882,
-          "sha256": "ed2465a907140d188c3084e60bb59cd2f7859fbfbfdd5d1dc289ce79f3b05296"
-        },
-        {
-          "frame": 13,
-          "contentBounds": [
-            72,
-            95,
-            495,
-            217
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              161.383187,
-              271.056382
-            ],
-            [
-              223.590641,
-              224.647567
-            ],
-            [
-              415.74818,
-              303.614854
-            ],
-            [
-              477.955634,
-              257.20604
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 67677,
-          "bytes": 16454,
-          "sha256": "a37bb09a0824d3cdaffe89abaf8a5a437d251b39fb61ab3cf526c48b2dd55a17"
-        },
-        {
-          "frame": 14,
-          "contentBounds": [
-            97,
-            91,
-            449,
-            229
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              164.933516,
-              251.775116
-            ],
-            [
-              279.877903,
-              216.255347
-            ],
-            [
-              359.616053,
-              311.935328
-            ],
-            [
-              474.560439,
-              276.41556
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 62332,
-          "bytes": 16000,
-          "sha256": "06cc4f3a2f5648c8348c25e87ba68eda9605f4f0d452f12769b9715b80d1c267"
-        },
-        {
-          "frame": 15,
-          "contentBounds": [
-            150,
-            92,
-            342,
-            234
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              192.091311,
-              234.381396
-            ],
-            [
-              342.27339,
-              215.158235
-            ],
-            [
-              297.452741,
-              312.984501
-            ],
-            [
-              447.634819,
-              293.761341
-            ]
-          ],
-          "triangles": 15591,
-          "visiblePixels": 51906,
-          "bytes": 12922,
-          "sha256": "6ec7fa6048d8af449a1dff7dff05bafd33da07cf637059578ede79f14595bbb1"
-        }
-      ]
+     "frame": 3,
+     "contentBounds": [
+      196,
+      265,
+      878,
+      296
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 147067,
+     "bytes": 33576,
+     "sha256": "8a828d0a477de202c656c2fbac0c9f87b874a630426c0298997923aacef1c9af"
     },
     {
-      "id": "gt3rs",
-      "name": "Porsche 911 GT3 RS",
-      "dimensions": [
-        2.0081632137298584,
-        1.44548739361763,
-        4.708657264709473
-      ],
-      "framing": {
-        "bounds": [
-          72,
-          50,
-          496,
-          279
-        ],
-        "groundAnchor": [
-          320,
-          264.173526
-        ]
-      },
-      "files": [
-        {
-          "frame": 0,
-          "contentBounds": [
-            214,
-            59,
-            212,
-            269
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              237.853035,
-              223.766345
-            ],
-            [
-              402.146965,
-              223.766345
-            ],
-            [
-              237.853035,
-              301.389835
-            ],
-            [
-              402.146965,
-              301.389835
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 43974,
-          "bytes": 9378,
-          "sha256": "e2baf7b37787407e11281d496cbd06b29b2e0a269451104285e03844ae734876"
-        },
-        {
-          "frame": 1,
-          "contentBounds": [
-            155,
-            50,
-            337,
-            277
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              294.145933,
-              217.127813
-            ],
-            [
-              445.933732,
-              236.556504
-            ],
-            [
-              198.017811,
-              288.842566
-            ],
-            [
-              349.80561,
-              308.271257
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 51801,
-          "bytes": 17376,
-          "sha256": "59ba2db6f5fd47161518e68cee67bcf221278ffc17aec13cde9d0f80999170fb"
-        },
-        {
-          "frame": 2,
-          "contentBounds": [
-            103,
-            54,
-            442,
-            265
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              354.374878,
-              217.651565
-            ],
-            [
-              470.54823,
-              253.551105
-            ],
-            [
-              176.753269,
-              272.53966
-            ],
-            [
-              292.926621,
-              308.4392
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 60822,
-          "bytes": 19640,
-          "sha256": "3c557160a3a6823a4dc6516838854c7d3bbb63eb6b2f6bc3796e4dbe9a005e98"
-        },
-        {
-          "frame": 3,
-          "contentBounds": [
-            76,
-            69,
-            491,
-            241
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              409.370559,
-              225.257863
-            ],
-            [
-              472.243124,
-              272.162872
-            ],
-            [
-              177.296744,
-              254.963086
-            ],
-            [
-              240.169308,
-              301.868095
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 65903,
-          "bytes": 20238,
-          "sha256": "a506a08ee47b3fc43a5d055546b22755106e1c5baaa89b8319d6b46379c65f3a"
-        },
-        {
-          "frame": 4,
-          "contentBounds": [
-            79,
-            91,
-            489,
-            207
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              450.760383,
-              238.788718
-            ],
-            [
-              450.760383,
-              289.558334
-            ],
-            [
-              199.565495,
-              238.788718
-            ],
-            [
-              199.565495,
-              289.558334
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 65656,
-          "bytes": 18302,
-          "sha256": "a4218b038a93af5a1fa3d6bbcffe56814df63a95ad92cb4921d73f1d3941dca7"
-        },
-        {
-          "frame": 5,
-          "contentBounds": [
-            76,
-            114,
-            491,
-            197
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              472.243124,
-              256.18418
-            ],
-            [
-              409.370559,
-              303.089189
-            ],
-            [
-              240.169308,
-              226.478956
-            ],
-            [
-              177.296744,
-              273.383966
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 63589,
-          "bytes": 20566,
-          "sha256": "1cddccfee5d59869a8eda6487e901e6f162305e9b7095a1779034523b57d7b98"
-        },
-        {
-          "frame": 6,
-          "contentBounds": [
-            103,
-            117,
-            442,
-            203
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              470.54823,
-              274.795947
-            ],
-            [
-              354.374878,
-              310.695487
-            ],
-            [
-              292.926621,
-              219.907852
-            ],
-            [
-              176.753269,
-              255.807392
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 57392,
-          "bytes": 19366,
-          "sha256": "0f443d8852317c0e2216758104a514a481ae66361420454f96c4615f4010c6d1"
-        },
-        {
-          "frame": 7,
-          "contentBounds": [
-            155,
-            118,
-            337,
-            209
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              445.933732,
-              291.790548
-            ],
-            [
-              294.145933,
-              311.219239
-            ],
-            [
-              349.80561,
-              220.075795
-            ],
-            [
-              198.017811,
-              239.504486
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 46327,
-          "bytes": 14928,
-          "sha256": "21505fa83625dedac4b890d3ba7e4366f1e4fdc003185ed8c635ac37f4cbea7b"
-        },
-        {
-          "frame": 8,
-          "contentBounds": [
-            214,
-            124,
-            212,
-            205
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              402.146965,
-              304.580707
-            ],
-            [
-              237.853035,
-              304.580707
-            ],
-            [
-              402.146965,
-              226.957217
-            ],
-            [
-              237.853035,
-              226.957217
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 37536,
-          "bytes": 8606,
-          "sha256": "35ac90e3b36f8cfdcd80ab42d8adddfc3ee9007960d0d0b2e51a2914a800ae58"
-        },
-        {
-          "frame": 9,
-          "contentBounds": [
-            148,
-            118,
-            337,
-            208
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              345.854067,
-              311.219239
-            ],
-            [
-              194.066268,
-              291.790548
-            ],
-            [
-              441.982189,
-              239.504486
-            ],
-            [
-              290.19439,
-              220.075795
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 46328,
-          "bytes": 14302,
-          "sha256": "6494e34564bd68bef77aef04ef83543aa3db6c691e4f3ebaba632620e7d7d401"
-        },
-        {
-          "frame": 10,
-          "contentBounds": [
-            95,
-            117,
-            442,
-            202
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              285.625122,
-              310.695487
-            ],
-            [
-              169.45177,
-              274.795947
-            ],
-            [
-              463.246731,
-              255.807392
-            ],
-            [
-              347.073379,
-              219.907852
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 57396,
-          "bytes": 18570,
-          "sha256": "fbccfecd0853a308e3aed6a2b1ece58129bbd91a96edeec5bdb87a9827f4a429"
-        },
-        {
-          "frame": 11,
-          "contentBounds": [
-            73,
-            114,
-            491,
-            197
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              230.629441,
-              303.089189
-            ],
-            [
-              167.756876,
-              256.18418
-            ],
-            [
-              462.703256,
-              273.383966
-            ],
-            [
-              399.830692,
-              226.478956
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 63589,
-          "bytes": 19206,
-          "sha256": "e0637a85d4870baef9df9ba4d5588ec97f237c57df657a50c9f2c519db0dd8d5"
-        },
-        {
-          "frame": 12,
-          "contentBounds": [
-            72,
-            91,
-            489,
-            207
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              189.239617,
-              289.558334
-            ],
-            [
-              189.239617,
-              238.788718
-            ],
-            [
-              440.434505,
-              289.558334
-            ],
-            [
-              440.434505,
-              238.788718
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 65652,
-          "bytes": 17604,
-          "sha256": "a0ea131f35612f5c996473d9ca08c2516b395521f244784196ef409205800a6e"
-        },
-        {
-          "frame": 13,
-          "contentBounds": [
-            73,
-            69,
-            491,
-            241
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              167.756876,
-              272.162872
-            ],
-            [
-              230.629441,
-              225.257863
-            ],
-            [
-              399.830692,
-              301.868095
-            ],
-            [
-              462.703256,
-              254.963086
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 65903,
-          "bytes": 19190,
-          "sha256": "5ef0afa0c99a74e09b6d3945861147433b927203ff91ba15256a3a0653b3ed83"
-        },
-        {
-          "frame": 14,
-          "contentBounds": [
-            95,
-            54,
-            442,
-            264
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              169.45177,
-              253.551105
-            ],
-            [
-              285.625122,
-              217.651565
-            ],
-            [
-              347.073379,
-              308.4392
-            ],
-            [
-              463.246731,
-              272.53966
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 60819,
-          "bytes": 19582,
-          "sha256": "73159d97f4a6844bf81ea31d2f6a33da79ee778dca1e249ce5b0939526539b36"
-        },
-        {
-          "frame": 15,
-          "contentBounds": [
-            148,
-            50,
-            337,
-            277
-          ],
-          "groundAnchor": [
-            320,
-            264.173526
-          ],
-          "wheelContacts": [
-            [
-              194.066268,
-              236.556504
-            ],
-            [
-              345.854067,
-              217.127813
-            ],
-            [
-              290.19439,
-              308.271257
-            ],
-            [
-              441.982189,
-              288.842566
-            ]
-          ],
-          "triangles": 15113,
-          "visiblePixels": 51802,
-          "bytes": 15786,
-          "sha256": "b1b3e42eb3a9df347fa91cf77b5960f2aa92ad066fde90fe96292f9087bc6047"
-        }
-      ]
+     "frame": 4,
+     "contentBounds": [
+      199,
+      263,
+      930,
+      283
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 159415,
+     "bytes": 35036,
+     "sha256": "9baa307b87f44a35f00a704bd35215449c637ca0a91122ca1385ca0568d9baef"
+    },
+    {
+     "frame": 5,
+     "contentBounds": [
+      253,
+      260,
+      896,
+      343
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 172252,
+     "bytes": 39660,
+     "sha256": "eeb0f374b5fcbd54a3686235a208e73f5bcbe569dc2347725af3df53dfc447fe"
+    },
+    {
+     "frame": 6,
+     "contentBounds": [
+      316,
+      258,
+      833,
+      368
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 184940,
+     "bytes": 44530,
+     "sha256": "2513302af55c83551f6cbdb5b9a1507d5a1bfd692e2f0a8710c9b041ab47dd2a"
+    },
+    {
+     "frame": 7,
+     "contentBounds": [
+      387,
+      257,
+      762,
+      370
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 186776,
+     "bytes": 43136,
+     "sha256": "b409b7e4fd8de55398a58588177d6586de2738e82c35aed12f114cacc683f873"
+    },
+    {
+     "frame": 8,
+     "contentBounds": [
+      229,
+      258,
+      876,
+      368
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 176239,
+     "bytes": 35812,
+     "sha256": "9e64b48e481d95d8e3c2e412743615a50ac3e57da1ccd1727a05baa02de13c3f"
+    },
+    {
+     "frame": 9,
+     "contentBounds": [
+      197,
+      257,
+      742,
+      367
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 171996,
+     "bytes": 39182,
+     "sha256": "5c10896fa2d07f4ec962bbf341f88bdabbdf9bebe4361ff31a658483237ad949"
+    },
+    {
+     "frame": 10,
+     "contentBounds": [
+      196,
+      258,
+      795,
+      339
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 156095,
+     "bytes": 36042,
+     "sha256": "9f79791d87e3e0354633a0ef3550080708b1dbb3700aafb26fa0c1f5491642b6"
+    },
+    {
+     "frame": 11,
+     "contentBounds": [
+      196,
+      261,
+      868,
+      303
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 147353,
+     "bytes": 32980,
+     "sha256": "c0a59f6ed6c2b8d8ff77619f5901b1dade0bc7ba73572bd0604da8d0a672e4b3"
+    },
+    {
+     "frame": 12,
+     "contentBounds": [
+      199,
+      264,
+      930,
+      275
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 155838,
+     "bytes": 34180,
+     "sha256": "2d39b62783c9f6a9ec7de6c089a57f0e6d6edf989dd176a5978786c61cc1e3ac"
+    },
+    {
+     "frame": 13,
+     "contentBounds": [
+      249,
+      266,
+      900,
+      322
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 164101,
+     "bytes": 38946,
+     "sha256": "191efbbbeade924d7745ac03a086482dbc3e77422b016edeed97225204565ccf"
+    },
+    {
+     "frame": 14,
+     "contentBounds": [
+      308,
+      268,
+      841,
+      357
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 172954,
+     "bytes": 42754,
+     "sha256": "75c36a2a7dfcc1ea7fd4c605cd4efb3869f9640d58a1b9de092ce7f5ffd62bd1"
+    },
+    {
+     "frame": 15,
+     "contentBounds": [
+      381,
+      270,
+      768,
+      357
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 172960,
+     "bytes": 40776,
+     "sha256": "0fcb6d4f7037ad27da906062b20e9cb700b7d9ae7030a2a3f68d529950f53f78"
     }
-  ]
+   ]
+  },
+  {
+   "id": "e30",
+   "name": "BMW E30 M3 Gruppe A",
+   "source": "01eef3ff3f71e953",
+   "framing": {
+    "bounds": [
+     196,
+     227,
+     953,
+     400
+    ],
+    "groundAnchor": [
+     672,
+     477.942
+    ]
+   },
+   "files": [
+    {
+     "frame": 0,
+     "contentBounds": [
+      294,
+      272,
+      746,
+      354
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 151937,
+     "bytes": 31794,
+     "sha256": "319339f7f6443ea7c1f6844c0c508e2cfcd6edc83e3d50591c5d5c0dace50e7c"
+    },
+    {
+     "frame": 1,
+     "contentBounds": [
+      198,
+      271,
+      731,
+      351
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 151392,
+     "bytes": 35274,
+     "sha256": "c5180aad470f146d295893524f5c8e29236ba142993a3de0f806e7cbbb78d908"
+    },
+    {
+     "frame": 2,
+     "contentBounds": [
+      196,
+      269,
+      796,
+      328
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 148575,
+     "bytes": 35536,
+     "sha256": "218fc42c4c0c6ccdfe4ab66e49334863c0555cdedbbf144d6e9b633669543393"
+    },
+    {
+     "frame": 3,
+     "contentBounds": [
+      196,
+      267,
+      868,
+      287
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 146922,
+     "bytes": 34668,
+     "sha256": "f19de98276ad719692161fe6a9e36bdecdf0ec3dedbd206396f5d0a267a21f53"
+    },
+    {
+     "frame": 4,
+     "contentBounds": [
+      199,
+      263,
+      930,
+      284
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 161885,
+     "bytes": 37988,
+     "sha256": "45585e566d2c2fb92422927182620b1c7a09d0b2d63285b9e1e8dde303641837"
+    },
+    {
+     "frame": 5,
+     "contentBounds": [
+      268,
+      254,
+      881,
+      351
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 177626,
+     "bytes": 42802,
+     "sha256": "fa89424d387e62d288f73b921e50ced0513bd8f600731213635349427d8c5466"
+    },
+    {
+     "frame": 6,
+     "contentBounds": [
+      338,
+      241,
+      811,
+      385
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 195897,
+     "bytes": 45462,
+     "sha256": "b334270be140df1ee79150cb644a3eb4ec7dbb664cac024644b21c31e6927af6"
+    },
+    {
+     "frame": 7,
+     "contentBounds": [
+      399,
+      227,
+      750,
+      399
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 200647,
+     "bytes": 39248,
+     "sha256": "53112be851dc95b9c7785fa7a81c9aec8f22e1ce85e458c11bdf1f770860e4a5"
+    },
+    {
+     "frame": 8,
+     "contentBounds": [
+      233,
+      233,
+      881,
+      394
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 189761,
+     "bytes": 29924,
+     "sha256": "5c326ef34139ee87fab8df46be7d78a46ca439a749d071f29215e02387f72314"
+    },
+    {
+     "frame": 9,
+     "contentBounds": [
+      198,
+      228,
+      737,
+      399
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 193759,
+     "bytes": 37828,
+     "sha256": "c04eb9c341608d45b1c749c5cc2f64d67c7efe7dc1f59c8b05787c8236e5926e"
+    },
+    {
+     "frame": 10,
+     "contentBounds": [
+      196,
+      241,
+      784,
+      376
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 176823,
+     "bytes": 39356,
+     "sha256": "dd6d940dc5cd45d8eab374dcc43448b660c0694502c53b6f93456d15ab191de2"
+    },
+    {
+     "frame": 11,
+     "contentBounds": [
+      196,
+      254,
+      866,
+      308
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 153796,
+     "bytes": 35820,
+     "sha256": "9650433bd489b6fd049a5fd5ff2d12135119d36002e9362d12e8b230c36e53bc"
+    },
+    {
+     "frame": 12,
+     "contentBounds": [
+      198,
+      263,
+      929,
+      271
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 156323,
+     "bytes": 36862,
+     "sha256": "b468f0f8aac25285636b17a22ffe3d05a51f59420375271f3cc8f0f91adf4641"
+    },
+    {
+     "frame": 13,
+     "contentBounds": [
+      258,
+      267,
+      891,
+      305
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 159475,
+     "bytes": 40570,
+     "sha256": "cba3ae03211d404c0f250532d81f941716bb40a8a1f1284212abbad3896a50b3"
+    },
+    {
+     "frame": 14,
+     "contentBounds": [
+      287,
+      269,
+      862,
+      352
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 167105,
+     "bytes": 43574,
+     "sha256": "30ab9fbfc00cd3b5d55ecb36f137522db435c0527e48f27e3bed222a6c0ae503"
+    },
+    {
+     "frame": 15,
+     "contentBounds": [
+      384,
+      271,
+      764,
+      355
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 164812,
+     "bytes": 39206,
+     "sha256": "fb2428349420b342801dda83dda4469c7ff7f23295df0879a8f0c56d850e4efd"
+    }
+   ]
+  },
+  {
+   "id": "m1",
+   "name": "BMW M1 Procar",
+   "source": "8bdf82542a2babf7",
+   "framing": {
+    "bounds": [
+     196,
+     240,
+     953,
+     387
+    ],
+    "groundAnchor": [
+     672,
+     477.942
+    ]
+   },
+   "files": [
+    {
+     "frame": 0,
+     "contentBounds": [
+      324,
+      313,
+      678,
+      311
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 125794,
+     "bytes": 26800,
+     "sha256": "26b1a6ae71f0463eb4ec399cb3d514982fe33fa1a2aafdd854c4091454d305f6"
+    },
+    {
+     "frame": 1,
+     "contentBounds": [
+      210,
+      313,
+      706,
+      304
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 133692,
+     "bytes": 32344,
+     "sha256": "ba3adde4a22611095400c45ea12a490ef720db50c6c1b6e97388e24deb6c3a9e"
+    },
+    {
+     "frame": 2,
+     "contentBounds": [
+      196,
+      312,
+      794,
+      278
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 129560,
+     "bytes": 32836,
+     "sha256": "cbd310192c28890f9ada2c29e3c1eeea4ec5e2b6284202c4d7ae8c86b723a1f0"
+    },
+    {
+     "frame": 3,
+     "contentBounds": [
+      196,
+      307,
+      868,
+      237
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 126289,
+     "bytes": 31362,
+     "sha256": "920ff0c7526fa40e0bf47e35ffd2335f8cf0ed21f53d5781e64b11e5dad37aaf"
+    },
+    {
+     "frame": 4,
+     "contentBounds": [
+      215,
+      292,
+      915,
+      252
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 135810,
+     "bytes": 33478,
+     "sha256": "bbc77dd12265bed9e23eefb2e45cafb7cf5ee511128f0b14675dd14da5c812df"
+    },
+    {
+     "frame": 5,
+     "contentBounds": [
+      275,
+      272,
+      874,
+      333
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 148698,
+     "bytes": 37812,
+     "sha256": "06ece28c924a46abd28cfa776ae6b642b6814e8869b5d238811a204fa7cedab5"
+    },
+    {
+     "frame": 6,
+     "contentBounds": [
+      360,
+      251,
+      789,
+      374
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 164383,
+     "bytes": 40108,
+     "sha256": "4d4a17b0d4cbb0617a89b3a8077871672134bc1c54c0c5d6825ed47212d02c5b"
+    },
+    {
+     "frame": 7,
+     "contentBounds": [
+      425,
+      240,
+      724,
+      387
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 175630,
+     "bytes": 37368,
+     "sha256": "2931e0c143804debaf72c1c0948a5b3905dd48191483387936de6a474e27dd8a"
+    },
+    {
+     "frame": 8,
+     "contentBounds": [
+      276,
+      247,
+      842,
+      380
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 172463,
+     "bytes": 31598,
+     "sha256": "d1f61ddf111c492a378bab12f677488eba680f76a1ed1d72a0032f353a9e4b08"
+    },
+    {
+     "frame": 9,
+     "contentBounds": [
+      198,
+      240,
+      736,
+      387
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 176281,
+     "bytes": 37142,
+     "sha256": "94ba0c412b864e134f4256120d77f19f9181d41356583daf1ea2df33e40d2f10"
+    },
+    {
+     "frame": 10,
+     "contentBounds": [
+      196,
+      251,
+      774,
+      370
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 158284,
+     "bytes": 36706,
+     "sha256": "dc4ffefa9120173b753a7f6cc071edae43a0407f84ed829a73b2c7bceacf0200"
+    },
+    {
+     "frame": 11,
+     "contentBounds": [
+      196,
+      272,
+      854,
+      297
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 136188,
+     "bytes": 33064,
+     "sha256": "88f1b4cd8c2e67f158077ed5a31dd85b1440298888c189b093ed8a689fe1133e"
+    },
+    {
+     "frame": 12,
+     "contentBounds": [
+      199,
+      292,
+      919,
+      240
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 132858,
+     "bytes": 32558,
+     "sha256": "193197d9408a4fc106287a6d72ec0ee25a53caa36c7190a41e22acde37f04edb"
+    },
+    {
+     "frame": 13,
+     "contentBounds": [
+      260,
+      307,
+      875,
+      254
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 132015,
+     "bytes": 34208,
+     "sha256": "66c1bfd9054f4a40cbb751a74cf09309daa011aef78c6cc353bc9383cd85ecdd"
+    },
+    {
+     "frame": 14,
+     "contentBounds": [
+      321,
+      312,
+      813,
+      290
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 135947,
+     "bytes": 35594,
+     "sha256": "00978d11cd981c9cac452f5371daf0d48257f670e61451eef2a1fde18e7efc2a"
+    },
+    {
+     "frame": 15,
+     "contentBounds": [
+      396,
+      313,
+      728,
+      298
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 133010,
+     "bytes": 32944,
+     "sha256": "17f0adb7f75e371084c984ea10c1f0649aeff9c0f928c4ba7499d3ec8d5b44d5"
+    }
+   ]
+  },
+  {
+   "id": "m2",
+   "name": "BMW M2 Competition",
+   "source": "0e7733bcdac039c5",
+   "framing": {
+    "bounds": [
+     196,
+     236,
+     953,
+     391
+    ],
+    "groundAnchor": [
+     672,
+     477.942
+    ]
+   },
+   "files": [
+    {
+     "frame": 0,
+     "contentBounds": [
+      258,
+      270,
+      801,
+      356
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 169301,
+     "bytes": 33024,
+     "sha256": "7cfbdc0b13ba56400745b8749d0691a4c815c1df6e31cd8f7e245f0f2d03d958"
+    },
+    {
+     "frame": 1,
+     "contentBounds": [
+      202,
+      270,
+      754,
+      352
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 165121,
+     "bytes": 33366,
+     "sha256": "fd59c3c354c16fe79ceacb7a70360b41f3d5856db1a0c75b91d436003f6f3baf"
+    },
+    {
+     "frame": 2,
+     "contentBounds": [
+      196,
+      267,
+      802,
+      332
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 159515,
+     "bytes": 31834,
+     "sha256": "e77fab5af4363ab9f7c2f9eb1e4706656c22b3a001ef8fe7b4a5cd41cb5e8484"
+    },
+    {
+     "frame": 3,
+     "contentBounds": [
+      196,
+      263,
+      877,
+      299
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 156344,
+     "bytes": 30884,
+     "sha256": "26b2355fd0b81d761da8ee7c850de16b71c6bdd22667b08077e91bd50ecd6df9"
+    },
+    {
+     "frame": 4,
+     "contentBounds": [
+      198,
+      259,
+      932,
+      289
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 167722,
+     "bytes": 32918,
+     "sha256": "83cbb032d26f0fa60ef259e395bd05d0a60d93bb18b828f999d23506b9e42473"
+    },
+    {
+     "frame": 5,
+     "contentBounds": [
+      252,
+      254,
+      897,
+      348
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 187806,
+     "bytes": 38952,
+     "sha256": "0bc6ffb99e28178f5114e41179147cc6711f483e7c0db2e3011946605e00b865"
+    },
+    {
+     "frame": 6,
+     "contentBounds": [
+      317,
+      246,
+      832,
+      380
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 199253,
+     "bytes": 40284,
+     "sha256": "90cfbe3a243029abdf0d0c3666cc340b1aa9e5f49fdd90183439a04542548786"
+    },
+    {
+     "frame": 7,
+     "contentBounds": [
+      391,
+      239,
+      758,
+      388
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 195706,
+     "bytes": 36280,
+     "sha256": "d76e6cac787899cd24d7d65040a9485473a1ecd6f1a6f6e483d3ae73e1f861f2"
+    },
+    {
+     "frame": 8,
+     "contentBounds": [
+      243,
+      236,
+      870,
+      391
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 182492,
+     "bytes": 31576,
+     "sha256": "9dc785ceb699851f5c07186755cb523bce615c747e377b7bdf18342f9b1aeeed"
+    },
+    {
+     "frame": 9,
+     "contentBounds": [
+      198,
+      239,
+      755,
+      387
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 187874,
+     "bytes": 34028,
+     "sha256": "0a8c7e97b319afb648d777cb79e525d54a4b91993a15728ea9bf82a5465b9708"
+    },
+    {
+     "frame": 10,
+     "contentBounds": [
+      196,
+      246,
+      801,
+      353
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 174860,
+     "bytes": 32494,
+     "sha256": "0a48d80f56067058bff70c10e9b8a009afd9070f300417107f672330b2190410"
+    },
+    {
+     "frame": 11,
+     "contentBounds": [
+      196,
+      254,
+      877,
+      307
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 163315,
+     "bytes": 31630,
+     "sha256": "840e4162397e70a43b11496cf536f55c5fb0dd60733bd2f8906abee058ea012f"
+    },
+    {
+     "frame": 12,
+     "contentBounds": [
+      198,
+      259,
+      932,
+      282
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 164136,
+     "bytes": 31912,
+     "sha256": "8a8310cedee580e535df38edf13bc3ab5de7589021a76a5ad4cbd1416b2cc23d"
+    },
+    {
+     "frame": 13,
+     "contentBounds": [
+      251,
+      263,
+      898,
+      320
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 170826,
+     "bytes": 35760,
+     "sha256": "e8aebf2f79c9adc6556a924ea5eeedeba7cc13b8ed2227ef4d89363604199ef9"
+    },
+    {
+     "frame": 14,
+     "contentBounds": [
+      308,
+      267,
+      841,
+      358
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 180135,
+     "bytes": 38280,
+     "sha256": "f49a9ce58d232d55088be99cbe471b4257af529452c76014c43d448a76460a82"
+    },
+    {
+     "frame": 15,
+     "contentBounds": [
+      384,
+      270,
+      765,
+      357
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 178142,
+     "bytes": 36360,
+     "sha256": "4c072a5d9c5b1a7fd524f82abbeac57d29d9e441bbbd2edb5f8d73fb562cf82b"
+    }
+   ]
+  },
+  {
+   "id": "gt3rs",
+   "name": "Porsche 911 GT3 RS",
+   "source": "0e50cb08af1447f5",
+   "framing": {
+    "bounds": [
+     195,
+     194,
+     954,
+     433
+    ],
+    "groundAnchor": [
+     672,
+     477.942
+    ]
+   },
+   "files": [
+    {
+     "frame": 0,
+     "contentBounds": [
+      233,
+      282,
+      819,
+      344
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 164041,
+     "bytes": 31762,
+     "sha256": "53ed2da89212f5dd169660ef26205f302d01b4ddb43555d5c3aa4a5a4baa2e19"
+    },
+    {
+     "frame": 1,
+     "contentBounds": [
+      199,
+      281,
+      756,
+      341
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 159065,
+     "bytes": 34182,
+     "sha256": "e691df486f609e10f8adb3e8e9c161f658f1695ce4fd9d69928b3b49f205ea48"
+    },
+    {
+     "frame": 2,
+     "contentBounds": [
+      196,
+      280,
+      804,
+      320
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 150775,
+     "bytes": 34038,
+     "sha256": "d0c3f830522e87f9daccf1a99b9c663c15c28468556ada1f80d1659dcc758e52"
+    },
+    {
+     "frame": 3,
+     "contentBounds": [
+      196,
+      279,
+      878,
+      285
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 147336,
+     "bytes": 34642,
+     "sha256": "110cfea13dc6c4dc57396da74366fbf1bdb74839c4cc05cf952b357f54829ffc"
+    },
+    {
+     "frame": 4,
+     "contentBounds": [
+      197,
+      268,
+      952,
+      294
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 158686,
+     "bytes": 36398,
+     "sha256": "568298a54a5e20f50836f6f097dd82b3c6e44779344ec280e4ec6a12ca7bde2d"
+    },
+    {
+     "frame": 5,
+     "contentBounds": [
+      249,
+      241,
+      900,
+      359
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 172909,
+     "bytes": 40446,
+     "sha256": "33aeaae47845d7eda8dbf39c4f765e7d84c689d5a64f6d95508cf50afa0af71a"
+    },
+    {
+     "frame": 6,
+     "contentBounds": [
+      322,
+      211,
+      827,
+      413
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 189253,
+     "bytes": 44288,
+     "sha256": "801fb74507d221c62ede2a5c1bb34f1d9f66dc11805b640ecf02b911293b50f6"
+    },
+    {
+     "frame": 7,
+     "contentBounds": [
+      396,
+      194,
+      752,
+      433
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 193822,
+     "bytes": 41456,
+     "sha256": "bdcab287e620c989b702c44f27d4cb43a6a70f523b547d2c4ae9b1b112f19183"
+    },
+    {
+     "frame": 8,
+     "contentBounds": [
+      233,
+      201,
+      817,
+      426
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 185294,
+     "bytes": 36704,
+     "sha256": "7f624f9790d1f7df7e5537093f96a1a0e0c2c3658e575f0b79cd4e9e873708e1"
+    },
+    {
+     "frame": 9,
+     "contentBounds": [
+      198,
+      194,
+      755,
+      433
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 186513,
+     "bytes": 40068,
+     "sha256": "746ffd6a6ddb37d3d559e09897fb14cfa9ff227f63d9c384c2bc8cb60c022be2"
+    },
+    {
+     "frame": 10,
+     "contentBounds": [
+      195,
+      212,
+      806,
+      411
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 175369,
+     "bytes": 38328,
+     "sha256": "7fb8902c2d03095e883d18da9536868f68e286e27b7c4dad16a8748888a495b9"
+    },
+    {
+     "frame": 11,
+     "contentBounds": [
+      195,
+      241,
+      878,
+      333
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 155743,
+     "bytes": 34364,
+     "sha256": "a98945c2d915b92ed06b9fdd68ccc59310a6cc39b92028043fd966e7d4f2ce9b"
+    },
+    {
+     "frame": 12,
+     "contentBounds": [
+      197,
+      269,
+      930,
+      274
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 153585,
+     "bytes": 35212,
+     "sha256": "a2663f4093ce9d8c87504a69a86a57654df26f64a54c5cf7f7b8d94b5dba3436"
+    },
+    {
+     "frame": 13,
+     "contentBounds": [
+      249,
+      279,
+      898,
+      305
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 157655,
+     "bytes": 38518,
+     "sha256": "a3e78de7469cd56c11ba7f9d0e68ad780d2543717a85a33828bf32e0d109f822"
+    },
+    {
+     "frame": 14,
+     "contentBounds": [
+      325,
+      280,
+      823,
+      333
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 165259,
+     "bytes": 39686,
+     "sha256": "f0b1a14d0aab4a59c5336b27fba20f7798c84cf9ce37054b747c5340a9b9d0c4"
+    },
+    {
+     "frame": 15,
+     "contentBounds": [
+      397,
+      281,
+      724,
+      345
+     ],
+     "groundAnchor": [
+      672,
+      477.942
+     ],
+     "visiblePixels": 167760,
+     "bytes": 36650,
+     "sha256": "23597e30a4d0ac46a89f52e453d456da6a6ffae6e3de7d4994814718ecf1992a"
+    }
+   ]
+  }
+ ]
 }

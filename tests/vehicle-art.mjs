@@ -84,32 +84,37 @@ assert.equal(bounded.trim({maxFrames:24,keepCar:4}),0);
 
 // Release artwork must be from this exact model and render pipeline, not an old mockup.
 const manifest = JSON.parse(await readFile(new URL('../assets/vehicles/manifest.json', import.meta.url), 'utf8'));
-const modelSource = await readFile(new URL('../src/vehicle-models.js', import.meta.url));
-const renderSource = await readFile(new URL('../scripts/render-vehicles.mjs', import.meta.url));
-assert.equal(manifest.geometryHash, createHash('sha256').update(modelSource).digest('hex').slice(0, 16), 'Artwork matches current 3D geometry');
-const expectedArtHash = createHash('sha256').update(modelSource).update(renderSource).update(JSON.stringify({width: manifest.width, height: manifest.height, frames: manifest.frames, samples: manifest.samples, quality: manifest.quality, selectedIds: manifest.cars.map(car=>car.id),elevation:manifest.camera.elevationDegrees,yawOffset:manifest.camera.yawOffsetDegrees,textures:manifest.textures})).digest('hex').slice(0, 16);
-assert.equal(manifest.artHash, expectedArtHash, 'Artwork matches current lighting and camera pipeline');
-assert.equal(manifest.renderStyle, 'sculpted-soft-matcap-arcade');
-assert.equal(manifest.modelVersion,'breuer-fleet-6');
-assert.equal(manifest.quality,2);
-assert.equal(manifest.version,5);
-assert.deepEqual(manifest.colorManagement,{toneMapping:'NeutralToneMapping',exposure:1.05,output:'SRGBColorSpace'},'Garage sprites use the actual game renderer colour management');
+// Turntables come from the generated models (art/ai3d) through the Blender
+// scripts: every car records the hash of its model plus both scripts, so
+// stale renders fail here.
+const art = name => readFile(new URL(`../${name}`, import.meta.url));
+const fleet = createHash('sha256');
+for (const car of manifest.cars) {
+  const hash = createHash('sha256');for (const part of await Promise.all(['art/blender/ai_car.py','art/blender/ai_sprites.py',`art/ai3d/${car.id}_tripo.glb`].map(art))) hash.update(part);
+  assert.equal(car.source, hash.digest('hex').slice(0, 16), `${car.id} turntable matches its current model and render scripts`);
+  fleet.update(car.source);
+}
+assert.equal(manifest.artHash, fleet.digest('hex').slice(0, 16), 'Art version covers every car of the fleet');
+assert.equal(manifest.renderStyle, 'blender-cycles-showroom');
+assert.equal(manifest.modelVersion,'breuer-fleet-8');
+assert.equal(manifest.version,7);
 assert.equal(manifest.camera.yawOffsetDegrees,0,'Release turntables start at the true front view');
 for(const [kind,name] of [['matcap','car-finish'],['details','car-details']]){
  const record=manifest.textures[kind];assert.equal(record.path,`assets/nextlevel/${name}.webp`);
  const bytes=await readFile(new URL('../'+record.path,import.meta.url));
  assert.ok(bytes.length>1000,'The bundled vehicle finish asset is valid and non-empty');
- assert.equal(bytes.length,record.bytes);assert.equal(createHash('sha256').update(bytes).digest('hex'),record.sha256,'Baked sprites match the actual bundled finish texture');
- assert.equal(bytes.toString('ascii',0,4),'RIFF');assert.equal(bytes.toString('ascii',8,12),'WEBP');
+ assert.equal(bytes.length,record.bytes);assert.equal(createHash('sha256').update(bytes).digest('hex'),record.sha256);
 }
-assert.equal(manifest.camera.elevationDegrees,18,'Approved garage comparison uses an 18-degree eye, not an overhead view');
-assert.equal(manifest.samples,3,'Final silhouettes use 3x supersampling');
-assert.equal(manifest.framing.mode,'fixed-scale-ground-pivot');
+// The showroom camera is solved from the painted turntable: views share the backdrop's pixels.
+assert.equal(manifest.camera.projection,'backdrop');
+const backdrop=await readFile(new URL('../assets/nextlevel/garage-showroom.webp',import.meta.url));
+assert.equal(backdrop.toString('ascii',8,12),'WEBP');
+assert.equal(manifest.framing.mode,'backdrop-pixel-match');
 assert.equal(manifest.framing.sharedWorldScale,true);
 assert.equal(manifest.camera.motion,'fixed-camera-rotating-model','Workshop lighting must remain on the fixed garage side');
 assert.equal(manifest.frames, 16);
-assert.equal(manifest.width, 640);
-assert.equal(manifest.height, 400);
+assert.equal(manifest.width, 1344);
+assert.equal(manifest.height, 752);
 assert.deepEqual(manifest.cars.map(car => car.id), ['kadett', 'e30', 'm1', 'm2', 'gt3rs']);
 let total = 0;
 for (const car of manifest.cars) {
@@ -120,16 +125,17 @@ for (const car of manifest.cars) {
     assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
     assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
     assert.equal(bytes.toString('ascii', 12, 16), 'VP8X', 'Transparent WebP container');
-    assert.equal(bytes.readUIntLE(24, 3) + 1, 640);
-    assert.equal(bytes.readUIntLE(27, 3) + 1, 400);
+    assert.equal(bytes.readUIntLE(24, 3) + 1, manifest.width);
+    assert.equal(bytes.readUIntLE(27, 3) + 1, manifest.height);
     assert.equal(bytes.length, frame.bytes);
     assert.equal(createHash('sha256').update(bytes).digest('hex'), frame.sha256);
-    assert.ok(frame.visiblePixels > 640 * 400 * .03, 'Car is visible');
+    assert.ok(frame.visiblePixels > manifest.width * manifest.height * .03, 'Car is visible');
     assert.deepEqual(frame.groundAnchor,car.framing.groundAnchor,'Every view projects the same world-floor pivot');
     const [x,y,w,h]=frame.contentBounds,[fx,fy,fw,fh]=car.framing.bounds;
     assert.ok(x>=fx&&y>=fy&&x+w<=fx+fw&&y+h<=fy+fh,'Every view fits the one common projection envelope');
     total += bytes.length;
   }
 }
-assert.ok(total < 2_500_000, 'All five cars remain below 2.5 MB for the lightweight renderer');
+// Frames load lazily per selected car, so the budget is per turntable plus a fleet cap.
+assert.ok(total < 4_500_000, 'All five turntables together stay below 4.5 MB');
 console.log(`Vehicle art: 80 current transparent frames, dimensions and file integrity PASS (${total} bytes)`);

@@ -1,0 +1,9 @@
+09:36:20 | INFO: Starting glTF 2.0 export
+09:36:20 | WARNING: Mesh gt3rs.body.003 is not valid, and may be exported wrongly
+09:36:20 | INFO: Extracting primitive: gt3rs.body.003
+09:36:20 | INFO: Primitives created: 1
+09:36:20 | WARNING: Mesh gt3rs.wheel.band.002 is not valid, and may be exported wrongly
+09:36:20 | INFO: Extracting primitive: gt3rs.wheel.band.002
+09:36:20 | INFO: Primitives created: 1
+09:36:20 | INFO: Finished glTF 2.0 export in 0.04824376106262207 s
+

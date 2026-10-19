@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import {Batch, material, footprint, pitchedRoof, sign, logoBoard,villageDetailTexture,upgradePaintedTiles,windowReveal,atlasPane} from './scenery.js';
 import {drapedPolygonGeometry} from './road-surface.js';
+import {POSTERS,posterPlane,sharedPosterMaterial} from './village-posters.js';
+const cell=id=>POSTERS.indexOf(id);
 
 /** These IDs replace village shells; OSM areas around the buildings stay intact. */
 const buildingIds={breuer:93722395,bakery:93699138,school:93722360,museum:93729467,chapelTower:466484934};
@@ -206,6 +208,8 @@ function breuer(data,helpers,quality){
   for(const x of [-8.1,-2.6,2.9,10.4])B.box(.27,2.65,.3,M.cream,x,1.32,frontageZ);
   B.box(6.9,2.7,.12,M.dark,6.68,1.35,frontageZ-.02);
   for(let j=0;j<5;j++)B.box(1.28,2.22,.07,M.glass,3.91+j*1.35,1.44,frontageZ+.07);
+  // Own flyers in the shop window (Higgsfield originals, art/flyers).
+  for(const [j,id] of [[0,'breuer-grand-prix'],[2,'breuer-reifenwechsel']])B.add(posterPlane(cell(id),.74,1.10),sharedPosterMaterial(),3.91+j*1.35,.62,frontageZ+.125);
   B.box(.06,.72,.06,M.metal,8.91,1.48,frontageZ+.16);
   // Two shop bays and lifts are event dressing; building shape/roof follows evidence.
   const hall=new THREE.Group();hall.name='breuer:open-workshop';hall.userData.detailDistance=125;g.add(hall);const HB=batch(helpers);
@@ -239,8 +243,12 @@ function breuer(data,helpers,quality){
   const mechanic=new THREE.Group();mechanic.name='breuer:mechanic-detail';mechanic.userData.detailDistance=75;mechanic.position.set(1.85,0,-7.1);const MB=batch(helpers),skin=material(0xe2b18c);
   MB.box(.41,.59,.27,M.red,0,1.03,0);for(const side of [-1,1]){MB.box(.13,.63,.17,M.dark,side*.12,.40,0);const arm=new THREE.CylinderGeometry(.062,.065,.49,5);arm.rotateZ(side*.65);MB.add(arm,M.red,side*.26,1.07,.02);MB.add(new THREE.SphereGeometry(.075,6,4),skin,side*.39,.91,.02);}
   MB.add(new THREE.SphereGeometry(.18,8,5),skin,0,1.50,0);MB.add(new THREE.SphereGeometry(.185,8,4,0,Math.PI*2,0,Math.PI/2),M.dark,0,1.54,0);MB.box(.04,.28,.05,M.metal,.39,1.06,.02);MB.flush(mechanic);hall.add(mechanic);
-  // Bounded paved court, reddish roadside kerb and long drainage slot.
-  court(B,M,helpers,1.1,.88,17.9,10.0);B.box(18.0,.07,.15,M.dark,1.1,.06,5.51);B.box(18.2,.1,.35,material(0x965e50),1.1,.075,6.0);
+  // Bounded paved court. The former 18 m kerb and drainage slot were placed by
+  // their centre on the slope and stuck out diagonally across the sidewalk;
+  // the course sidewalk already provides the kerb here.
+  // The paving runs on to the street as a driveway; the draped court stops at
+  // the road surface itself, so the yard meets the asphalt without a lawn gap.
+  court(B,M,helpers,1.1,4.9,17.9,18.1);
   // Upper terrace/parapet and glass conservatory visible in the operator's photograph.
   B.box(18.4,.62,.2,M.cream,1.1,3.87,-5.1);
   for(let i=0;i<13;i++)B.box(.04,.46,.04,M.metal,-7.45+i*1.42,4.44,-5.1);B.box(18.7,.05,.05,M.metal,1.1,4.69,-5.1);
@@ -291,7 +299,8 @@ function bakery(data,helpers,quality){
     }const canopy=new THREE.BufferGeometry();canopy.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));canopy.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));canopy.setAttribute('uv',new THREE.Float32BufferAttribute(new Float32Array(positions.length/3*2),2));canopy.computeVertexNormals();F.add(canopy,canopyMaterial,x,2.4,14.0);F.box(.045,2.17,.045,M.metal,x,1.13,14.0);
   }
   for(const x of [-6.3,6.3]){F.add(new THREE.IcosahedronGeometry(.63,1),M.hedge,x,.63,13.35);F.box(.75,.35,.75,M.stone,x,.175,13.35);for(let i=0;i<6;i++)F.add(new THREE.IcosahedronGeometry(.15,0),i%2?M.white:M.flower,x+seeded(i)*.4-.2,.60,15.05+i*.2);}
-  F.box(.80,1.12,.12,M.dark,-5.65,1.15,16.0);for(const side of [-1,1])F.box(.10,1.26,.12,M.wood,-5.65+side*.40,.80,16.02);F.add(atlasPane(8,.68,.98),M.roadside,-5.65,1.15,16.075);
+  F.box(.80,1.12,.12,M.dark,-5.65,1.15,16.0);for(const side of [-1,1])F.box(.10,1.26,.12,M.wood,-5.65+side*.40,.80,16.02);F.add(posterPlane(cell('leo-baeckerei'),.68,.98),sharedPosterMaterial(),-5.65,.66,16.075);
+  F.box(.80,1.12,.12,M.dark,5.5,1.15,16.0);for(const side of [-1,1])F.box(.10,1.26,.12,M.wood,5.5+side*.40,.80,16.02);F.add(posterPlane(cell('leo-fruehstueck'),.68,.98),sharedPosterMaterial(),5.5,.66,16.075);
   for(const x of [-6.3,6.3])for(const angle of [0,Math.PI/2])F.add(atlasPane(x<0?6:7,.80,.75),M.foliage,x,.88,13.35,angle);
   const furniture=new THREE.Group();furniture.position.y=.55;furniture.name='bakery:raised-terrace';details.add(furniture);
   B.flush(g);D.flush(details);F.flush(furniture);board(g,helpers,'LEO',3.5,0,3.55,10.63,0,'#f5f0e2','#324335',.27);board(g,helpers,'Café zur Pol-Ecke',6.4,0,2.66,12.02,0,'#f4ecdb','#252a25',.10);g.userData.illustrationDetails={breadDisplays:3,stripedParasols:3};return g;
@@ -361,6 +370,9 @@ function school(data,helpers,quality){
   for(const x of [33.5,39.0,44.5]){D.box(2.40,.075,.12,purple,x,.95,2.77);D.box(2.40,.075,.12,purple,x,2.60,2.77);}
   for(const x of [22.0,25.9,29.8,33.7])D.box(.09,2.72,.14,purple,x,1.37,-10.80);
   D.box(11.8,.10,.15,purple,27.9,1.04,-10.80);
+  // Glazed notice case beside the entrance with the school's own flyers.
+  D.box(1.78,1.30,.09,M.dark,48.0,1.62,2.66);
+  for(const [k,id] of [[-1,'kalltalschule-schulfest'],[1,'kalltalschule-sponsorenlauf']])D.add(posterPlane(cell(id),.74,1.10),sharedPosterMaterial(),48.0+k*.41,1.07,2.715);
   B.flush(g);D.flush(details);board(g,helpers,'KALLTALSCHULE',8.0,40.1,2.28,2.81,0,'#285c69','#ecebe5',.20);g.userData.visualEvidence='Municipality entrance photograph; surveyed roof and mapped low extension';g.userData.illustrationDetails={timberPanels,hopscotchTiles:8};return g;
 }
 

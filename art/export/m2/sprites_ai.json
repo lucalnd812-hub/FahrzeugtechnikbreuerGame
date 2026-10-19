@@ -1,0 +1,216 @@
+{
+ "groundAnchor": [
+  672.0,
+  477.942
+ ],
+ "files": [
+  {
+   "frame": 0,
+   "file": "assets/vehicles/m2/00.webp",
+   "contentBounds": [
+    258,
+    270,
+    801,
+    356
+   ],
+   "visiblePixels": 169301,
+   "bytes": 33024,
+   "sha256": "7cfbdc0b13ba56400745b8749d0691a4c815c1df6e31cd8f7e245f0f2d03d958"
+  },
+  {
+   "frame": 1,
+   "file": "assets/vehicles/m2/01.webp",
+   "contentBounds": [
+    202,
+    270,
+    754,
+    352
+   ],
+   "visiblePixels": 165121,
+   "bytes": 33366,
+   "sha256": "fd59c3c354c16fe79ceacb7a70360b41f3d5856db1a0c75b91d436003f6f3baf"
+  },
+  {
+   "frame": 2,
+   "file": "assets/vehicles/m2/02.webp",
+   "contentBounds": [
+    196,
+    267,
+    802,
+    332
+   ],
+   "visiblePixels": 159515,
+   "bytes": 31834,
+   "sha256": "e77fab5af4363ab9f7c2f9eb1e4706656c22b3a001ef8fe7b4a5cd41cb5e8484"
+  },
+  {
+   "frame": 3,
+   "file": "assets/vehicles/m2/03.webp",
+   "contentBounds": [
+    196,
+    263,
+    877,
+    299
+   ],
+   "visiblePixels": 156344,
+   "bytes": 30884,
+   "sha256": "26b2355fd0b81d761da8ee7c850de16b71c6bdd22667b08077e91bd50ecd6df9"
+  },
+  {
+   "frame": 4,
+   "file": "assets/vehicles/m2/04.webp",
+   "contentBounds": [
+    198,
+    259,
+    932,
+    289
+   ],
+   "visiblePixels": 167722,
+   "bytes": 32918,
+   "sha256": "83cbb032d26f0fa60ef259e395bd05d0a60d93bb18b828f999d23506b9e42473"
+  },
+  {
+   "frame": 5,
+   "file": "assets/vehicles/m2/05.webp",
+   "contentBounds": [
+    252,
+    254,
+    897,
+    348
+   ],
+   "visiblePixels": 187806,
+   "bytes": 38952,
+   "sha256": "0bc6ffb99e28178f5114e41179147cc6711f483e7c0db2e3011946605e00b865"
+  },
+  {
+   "frame": 6,
+   "file": "assets/vehicles/m2/06.webp",
+   "contentBounds": [
+    317,
+    246,
+    832,
+    380
+   ],
+   "visiblePixels": 199253,
+   "bytes": 40284,
+   "sha256": "90cfbe3a243029abdf0d0c3666cc340b1aa9e5f49fdd90183439a04542548786"
+  },
+  {
+   "frame": 7,
+   "file": "assets/vehicles/m2/07.webp",
+   "contentBounds": [
+    391,
+    239,
+    758,
+    388
+   ],
+   "visiblePixels": 195706,
+   "bytes": 36280,
+   "sha256": "d76e6cac787899cd24d7d65040a9485473a1ecd6f1a6f6e483d3ae73e1f861f2"
+  },
+  {
+   "frame": 8,
+   "file": "assets/vehicles/m2/08.webp",
+   "contentBounds": [
+    243,
+    236,
+    870,
+    391
+   ],
+   "visiblePixels": 182492,
+   "bytes": 31576,
+   "sha256": "9dc785ceb699851f5c07186755cb523bce615c747e377b7bdf18342f9b1aeeed"
+  },
+  {
+   "frame": 9,
+   "file": "assets/vehicles/m2/09.webp",
+   "contentBounds": [
+    198,
+    239,
+    755,
+    387
+   ],
+   "visiblePixels": 187874,
+   "bytes": 34028,
+   "sha256": "0a8c7e97b319afb648d777cb79e525d54a4b91993a15728ea9bf82a5465b9708"
+  },
+  {
+   "frame": 10,
+   "file": "assets/vehicles/m2/10.webp",
+   "contentBounds": [
+    196,
+    246,
+    801,
+    353
+   ],
+   "visiblePixels": 174860,
+   "bytes": 32494,
+   "sha256": "0a48d80f56067058bff70c10e9b8a009afd9070f300417107f672330b2190410"
+  },
+  {
+   "frame": 11,
+   "file": "assets/vehicles/m2/11.webp",
+   "contentBounds": [
+    196,
+    254,
+    877,
+    307
+   ],
+   "visiblePixels": 163315,
+   "bytes": 31630,
+   "sha256": "840e4162397e70a43b11496cf536f55c5fb0dd60733bd2f8906abee058ea012f"
+  },
+  {
+   "frame": 12,
+   "file": "assets/vehicles/m2/12.webp",
+   "contentBounds": [
+    198,
+    259,
+    932,
+    282
+   ],
+   "visiblePixels": 164136,
+   "bytes": 31912,
+   "sha256": "8a8310cedee580e535df38edf13bc3ab5de7589021a76a5ad4cbd1416b2cc23d"
+  },
+  {
+   "frame": 13,
+   "file": "assets/vehicles/m2/13.webp",
+   "contentBounds": [
+    251,
+    263,
+    898,
+    320
+   ],
+   "visiblePixels": 170826,
+   "bytes": 35760,
+   "sha256": "e8aebf2f79c9adc6556a924ea5eeedeba7cc13b8ed2227ef4d89363604199ef9"
+  },
+  {
+   "frame": 14,
+   "file": "assets/vehicles/m2/14.webp",
+   "contentBounds": [
+    308,
+    267,
+    841,
+    358
+   ],
+   "visiblePixels": 180135,
+   "bytes": 38280,
+   "sha256": "f49a9ce58d232d55088be99cbe471b4257af529452c76014c43d448a76460a82"
+  },
+  {
+   "frame": 15,
+   "file": "assets/vehicles/m2/15.webp",
+   "contentBounds": [
+    384,
+    270,
+    765,
+    357
+   ],
+   "visiblePixels": 178142,
+   "bytes": 36360,
+   "sha256": "4c072a5d9c5b1a7fd524f82abbeac57d29d9e441bbbd2edb5f8d73fb562cf82b"
+  }
+ ]
+}

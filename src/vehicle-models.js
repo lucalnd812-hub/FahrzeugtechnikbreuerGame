@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
+import {instantiateVehicle} from './vehicle-assets.js';
 
 // Local vehicle coordinates: X across the axle, Y up, +Z forward. Dimensions
 // are metres; the contact patch is at Y=0. No DOM, textures or network required.
@@ -1261,8 +1262,29 @@ export function createVehicleModel(index=0,{quality=2,parked=false,style='arcade
   }
   // The template groups only own shared geometries/materials, not transforms.
   wheelHigh.clear();wheelLow.clear();
-  car.userData.renderStyle=renderStyle;car.userData.carModel=true;car.userData.modelId=spec.id;car.userData.parked=parked;car.userData.dimensions={length:spec.length,width:spec.width,height:spec.height,wheelbase:spec.wheelbase};car.userData.wheelRadius=spec.radius;
-  car.userData.highModel=high;car.userData.lowModel=low;car.userData.qualityMaterials=Object.values(materials);car.userData.finishMaterials=materials;car.userData.lightMaterial=materials.lights;car.userData.lightsOn=false;car.userData.contactShadow=shadow(car,spec);
+  // Blender fleet: when the GLB levels are loaded they replace the procedural
+  // body and wheels. Pivot, wheel groups, effects and userData stay identical.
+  let highModel=high,lowModel=low,wheelRadius=spec.radius;
+  const art={high:instantiateVehicle(spec.id,'high',spec),low:instantiateVehicle(spec.id,'low',spec)};
+  if(art.high||art.low){
+   const levels={};
+   for(const lod of ['high','low']){
+    const a=art[lod]||art[lod==='high'?'low':'high'],g=new THREE.Group();g.name='blender-'+lod;g.position.y=-.65;g.add(a.body);bodyPivot.add(g);levels[lod]={g,a};
+   }
+   for(const proc of [high,low]){bodyPivot.remove(proc);proc.traverse(o=>{if(o.geometry)o.geometry.dispose();});}
+   highModel=levels.high.g;lowModel=levels.low.g;
+   const layout=levels.high.a,frontZ=Math.max(...layout.axles),rearZ=Math.min(...layout.axles);
+   car.userData.wheels.forEach((w,i)=>{
+    const side=w.group.position.x<0?-1:1;
+    w.group.position.set(side*layout.track/2,layout.radius,w.front?frontZ:rearZ);w.radius=layout.radius;
+    w.spinning.remove(w.high,w.low);
+    w.high=levels.high.a.wheels[i].mesh;w.low=levels.low.a.wheels[i].mesh;
+    w.high.scale.x=w.low.scale.x=side;w.spinning.add(w.high,w.low);
+   });
+   car.userData.blenderArt=true;wheelRadius=layout.radius;
+  }
+  car.userData.renderStyle=renderStyle;car.userData.carModel=true;car.userData.modelId=spec.id;car.userData.parked=parked;car.userData.dimensions={length:spec.length,width:spec.width,height:spec.height,wheelbase:spec.wheelbase};car.userData.wheelRadius=wheelRadius;
+  car.userData.highModel=highModel;car.userData.lowModel=lowModel;car.userData.qualityMaterials=Object.values(materials);car.userData.finishMaterials=materials;car.userData.lightMaterial=materials.lights;car.userData.lightsOn=false;car.userData.contactShadow=shadow(car,spec);
   installEffects(car,spec);car.userData.modelVersion='breuer-fleet-6';setVehicleQuality(car,quality);
   car.updateMatrixWorld(true);return car;
 }
@@ -1297,7 +1319,7 @@ export function setVehicleQuality(car,level=2) {
 export function disposeVehicleModel(car) {
   if(!car?.userData?.carModel||car.userData.disposed)return;
   const geometries=new Set(),materials=new Set(car.userData.qualityMaterials||[]),textures=new Set();
-  car.traverse(o=>{if(o.geometry)geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:o.material?[o.material]:[])materials.add(m);});
+  car.traverse(o=>{if(o.userData?.sharedVehicleAsset)return;if(o.geometry)geometries.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:o.material?[o.material]:[])materials.add(m);});
   for(const m of materials)for(const value of Object.values(m))if(value?.isTexture)textures.add(value);
   liveVehicleMaterials.delete(car.userData.finishMaterials);
   for(const g of geometries)g.dispose();for(const m of materials)m.dispose();for(const t of textures)t.dispose();car.userData.disposed=true;car.removeFromParent();

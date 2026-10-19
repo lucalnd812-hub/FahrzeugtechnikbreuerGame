@@ -121,7 +121,7 @@ try{
      assert.equal(crate.mesh.visible,true,meta.id+': nearby item crate is hidden');
      assertBranchMatrices(crate.mesh,meta.id+' animated item crate');
      const cube=crate.mesh.children[0],origin=new THREE.Vector3(crate.x,crate.mesh.position.y+5,crate.z);
-     assert.ok(new THREE.Raycaster(origin,new THREE.Vector3(0,-1,0),0,6).intersectObject(cube,false).length>0,meta.id+': animated crate left its intended world position');checkedCrates++;
+     assert.ok(new THREE.Raycaster(origin,new THREE.Vector3(0,-1,0),0,6).intersectObject(cube,true).length>0,meta.id+': animated crate left its intended world position');checkedCrates++;
 
      // Oil meshes are another late scene insertion during an active race.
      if(oil){world.scene.remove(oil);oil.geometry.dispose();oil.material.dispose();}

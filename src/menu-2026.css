@@ -1,0 +1,118 @@
+/* Main menu, comic Grand Prix edition. Loaded last: bold ink outlines, hard
+   offset shadows, sunflower yellow and racing red over the painted art.
+   Layout stays with the earlier layers; this file restyles surfaces only. */
+:root{--ink:#14161c;--sun:#ffd23f;--sun-deep:#f2a900;--hot:#ff3b4f;--hot-deep:#c4142c;--sky:#36b7ff;--paper:#fffaf0;--panel:#18202c;
+ --halftone:radial-gradient(circle at 1px 1px,#ffffff14 1.1px,transparent 1.4px) 0 0/7px 7px}
+
+/* ---------- Entry screen ---------- */
+.entry-screen:before{background:linear-gradient(100deg,#0d1420e6 0%,#0d1420b0 24%,#0d142033 46%,#0d142000 62%),linear-gradient(0deg,#0d1420a8 0%,#0d142000 30%)}
+.entry-poster,.entry-video{object-position:58% 50%}
+.entry-brand img{filter:drop-shadow(0 2px 0 var(--ink))}
+.entry-brand>span{border-left:4px solid var(--sun);color:#fff;text-shadow:0 2px 0 var(--ink)}
+.entry-brand b{color:var(--sun)}
+.entry-copy{margin-top:20px}
+.entry-copy h1{font:900 italic clamp(70px,9vw,150px)/.9 Barlow,Impact,'Arial Narrow',sans-serif;letter-spacing:-1px;color:var(--sun);
+ transform:rotate(-4deg) skewX(-6deg);transform-origin:left bottom;padding:0 0 10px;
+ -webkit-text-stroke:3px var(--ink);paint-order:stroke fill;
+ text-shadow:5px 6px 0 var(--ink),9px 11px 0 #0006}
+.entry-copy h1>span{color:#fff;-webkit-text-stroke:3px var(--ink);text-shadow:5px 6px 0 var(--hot),9px 11px 0 var(--ink);font-size:.82em;margin-top:6px}
+.entry-copy>p{display:inline-block;margin-top:26px;padding:10px 16px 11px;border:3px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink);
+ font:800 italic clamp(15px,1.4vw,20px)/1.25 Barlow,Arial,sans-serif;letter-spacing:.2px;text-shadow:none;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--ink)}
+.entry-actions{margin-top:30px}
+.entry-enter{min-height:72px;min-width:280px;padding:12px 26px;border:4px solid var(--ink);border-radius:14px;
+ background:linear-gradient(180deg,#ffe36b 0%,var(--sun) 52%,var(--sun-deep) 100%);color:var(--ink);
+ font:900 italic 34px/1 Barlow,Impact,sans-serif;letter-spacing:.5px;text-transform:uppercase;box-shadow:0 7px 0 var(--ink),0 12px 22px #0007;transform:rotate(-1.5deg)}
+.entry-enter>span{font-size:36px}
+.entry-enter:hover:not(:disabled){background:linear-gradient(180deg,#fff08f,#ffd84e 52%,#ffb300);border-color:var(--ink);box-shadow:0 9px 0 var(--ink),0 14px 26px #0008;transform:rotate(-1.5deg) translateY(-2px)}
+.entry-enter:active:not(:disabled){transform:rotate(-1.5deg) translateY(5px);box-shadow:0 2px 0 var(--ink)}
+.entry-enter:disabled{opacity:.75;box-shadow:0 7px 0 var(--ink)}
+.entry-screen[data-ready=true]:not([data-loading=true]) .entry-enter{animation:menu-pulse 1.6s ease-in-out infinite}
+@keyframes menu-pulse{0%,100%{box-shadow:0 7px 0 var(--ink),0 0 0 0 #ffd23f88}50%{box-shadow:0 7px 0 var(--ink),0 0 0 14px #ffd23f00}}
+.entry-status{font-weight:700;color:#fff;text-shadow:0 1px 0 var(--ink),0 0 6px #000}
+.entry-loader i{background:var(--sun);outline:1px solid var(--ink)}
+
+/* ---------- Garage frame ---------- */
+.garage-art{background:#d3d4db url('/nextlevel/garage-showroom.webp') center/cover no-repeat}
+#garage .topbar{background:var(--panel);border-bottom:0;box-shadow:0 4px 0 var(--ink);position:relative}
+#garage .topbar:after{content:'';position:absolute;left:0;right:0;bottom:-4px;height:4px;background:repeating-linear-gradient(90deg,#fff 0 12px,var(--ink) 12px 24px);opacity:.9}
+#garage .compact-brand h1{font-style:italic;color:#fff;-webkit-text-stroke:1px var(--ink);text-shadow:2px 2px 0 var(--ink)}
+#garage .compact-brand h1 span{color:var(--sun)}
+#garage .top-actions .plain{border:2px solid var(--ink);background:#2a3546;color:#fff;box-shadow:0 3px 0 var(--ink);border-radius:9px;font-weight:800}
+#garage .top-actions .plain:hover{background:var(--hot);border-color:var(--ink)}
+.profile-emblem{border:2px solid var(--ink);background:var(--sun);color:var(--ink)}
+
+#garage .garage-controls{background:var(--halftone),linear-gradient(160deg,#1d2736 0%,#141b26 100%);border-right:4px solid var(--ink);box-shadow:6px 0 0 #00000030}
+#garage .garage-steps button{color:#c6d2df;border:2px solid transparent;font-style:italic}
+#garage .garage-steps button[aria-current=step]{background:var(--sun);border-color:var(--ink);color:var(--ink);box-shadow:0 3px 0 var(--ink)}
+#garage .garage-steps button[aria-current=step] .step-number{background:var(--ink);color:var(--sun);border-color:var(--ink)}
+#garage .step-number{border:2px solid #ffffff55;font-style:normal}
+#garage .garage-step-progress{background:#ffffff1c;height:5px;border-radius:5px}
+#garage .garage-step-progress i{background:linear-gradient(90deg,var(--hot),var(--sun));border-radius:5px}
+#garage .selection-label{color:var(--sun);font-weight:800;letter-spacing:2px}
+#garage .setup-heading{font-style:italic;font-weight:900;color:#fff;-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill;text-shadow:3px 3px 0 var(--hot),5px 5px 0 var(--ink);transform:rotate(-1.5deg);transform-origin:left}
+#garage .step-intro{color:#dbe5ef}
+
+/* Car cards: white comic panels, the chosen one goes yellow and tilts. */
+#garage .car-selector .car-tab,#garage .car-selector .car-tab:last-child{background:linear-gradient(170deg,#ffffff 0%,#eef2f7 100%);border:3px solid var(--ink);border-radius:12px;box-shadow:0 5px 0 var(--ink);color:var(--ink);transition:transform .15s,box-shadow .15s,background .15s}
+#garage .car-tab:after{height:6px;left:0;right:0;bottom:0;opacity:1;border-radius:0 0 8px 8px}
+#garage .car-tab strong{color:var(--ink);font-style:italic;font-weight:900}
+#garage .car-tab small{color:#5b6573;font-weight:800}
+#garage .car-tab:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--ink)}
+#garage .car-selector .car-tab[aria-pressed=true]{background:var(--halftone),linear-gradient(170deg,#ffe36b,var(--sun) 60%,var(--sun-deep));transform:rotate(-1.2deg) translateY(-2px);box-shadow:0 7px 0 var(--ink),0 0 0 3px #fff}
+#garage .car-tab[aria-pressed=true] small{color:#5a3d00}
+#garage .car-thumb{object-fit:cover;object-position:50% 58%;transform:scale(1.85);filter:drop-shadow(0 3px 0 #14161c40)}
+#garage .car-tab:hover .car-thumb,#garage .car-tab[aria-pressed=true] .car-thumb{transform:scale(1.95)}
+#garage .car-note{color:#e6edf5}
+
+#garage .track-tab{border:3px solid var(--ink);border-radius:12px;box-shadow:0 5px 0 var(--ink);background:#fff;color:var(--ink)}
+#garage .track-tab[aria-pressed=true]{background:var(--sun);transform:rotate(-1deg)}
+#garage .track-tab strong{color:var(--ink);font-style:italic;font-weight:900}
+#garage .track-tab small{color:#4c5563}
+
+/* Buttons: chunky comic buttons with an ink offset. */
+#garage .primary,#garage .flow-next,.sheet .primary{border:3px solid var(--ink);background:linear-gradient(180deg,#ff6474 0%,var(--hot) 50%,var(--hot-deep) 100%);color:#fff;
+ font-style:italic;font-weight:900;text-shadow:2px 2px 0 var(--ink);box-shadow:0 6px 0 var(--ink);border-radius:12px}
+#garage .primary:hover:not(:disabled),.sheet .primary:hover:not(:disabled){background:linear-gradient(180deg,#ff7a88,#ff4a5d 50%,#d81c35);border-color:var(--ink);box-shadow:0 8px 0 var(--ink);transform:translateY(-2px)}
+#garage .primary:active:not(:disabled),.sheet .primary:active:not(:disabled){transform:translateY(4px);box-shadow:0 2px 0 var(--ink)}
+#garage #start-solo:not(:disabled){background:linear-gradient(180deg,#ffe36b,var(--sun) 55%,var(--sun-deep));color:var(--ink);text-shadow:none;animation:menu-pulse 1.6s ease-in-out infinite}
+#garage .secondary,#garage .flow-back,#garage .advanced-button,.sheet .secondary{border:3px solid var(--ink);background:#fff;color:var(--ink);box-shadow:0 5px 0 var(--ink);border-radius:12px;font-weight:900;font-style:italic}
+#garage .secondary:hover,#garage .flow-back:hover,#garage .advanced-button:hover{background:var(--sun)}
+
+/* Showroom: name plate as a tilted comic banner, stats as chunky bars. */
+#garage .showroom-head h2{display:inline-block;padding:6px 14px 8px;background:var(--ink);color:#fff;font-style:italic;font-weight:900;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--hot);border-radius:4px}
+#garage .showroom-kicker{color:var(--sun);text-shadow:0 2px 0 var(--ink);font-weight:800}
+#garage #preview-tag{display:inline-block;margin-top:10px;padding:4px 10px;background:var(--sun);color:var(--ink);border:2px solid var(--ink);font-weight:800;transform:rotate(-1deg)}
+#garage .showroom-actions button{border:3px solid var(--ink);background:#fff;color:var(--ink);box-shadow:0 4px 0 var(--ink);border-radius:10px;font-weight:900}
+#garage .showroom-actions button:hover,#garage .showroom-actions button[aria-pressed=true]{background:var(--sun)}
+#garage .car-stats{background:#fffffff0;border:3px solid var(--ink);border-radius:12px;box-shadow:0 5px 0 var(--ink);color:var(--ink)}
+#garage .car-stats strong{color:var(--ink);font-style:italic;font-weight:900}
+#garage .stat-label{color:#4b5563;font-weight:800}
+#garage .stat-bar{height:9px;background:#dfe5ec;border:2px solid var(--ink);border-radius:6px;overflow:hidden}
+#garage .stat-bar i{background:linear-gradient(90deg,var(--hot),var(--sun));border-radius:0}
+#garage .showroom-slot{overflow:visible}
+
+/* Setup recap and medals become stickers too. */
+#garage .setup-recap>div{border:3px solid var(--ink);background:#fff;color:var(--ink);box-shadow:0 4px 0 var(--ink);border-radius:10px}
+#garage .setup-recap span{color:#5b6573}
+#garage .setup-recap strong{color:var(--ink);font-style:italic}
+#garage .recap-edit{border:2px solid var(--ink);background:var(--sun);color:var(--ink);font-weight:800}
+
+/* Dialog sheets share the language. */
+.sheet{border:4px solid var(--ink);box-shadow:0 8px 0 var(--ink),0 20px 50px #0008;border-radius:16px}
+.sheet h2{font-style:italic;font-weight:900}
+
+@media(prefers-reduced-motion:reduce){.entry-screen[data-ready=true]:not([data-loading=true]) .entry-enter,#garage #start-solo:not(:disabled){animation:none}}
+@media(max-height:500px){.entry-copy h1{font-size:clamp(46px,8vw,86px)}.entry-copy>p{margin-top:14px;font-size:13px}.entry-enter{min-height:54px;font-size:25px;min-width:220px}.entry-actions{margin-top:18px}}
+
+/* Compact layout (phones, short screens): the setup panel floats transparently
+   over the showroom, so it must not get the desktop sidebar background. */
+@media(max-height:620px) and (min-width:500px),(any-pointer:coarse) and (orientation:landscape){
+ #garage .garage-controls{background:none;border-right:0;box-shadow:none}
+ #garage .car-selector .car-tab[aria-pressed=true],#garage .track-tab[aria-pressed=true]{transform:none}
+ #garage .showroom-head h2{font-size:21px;padding:4px 10px 6px}
+}
+@media(max-height:500px){
+ .entry-copy{margin-top:52px}
+ .entry-copy h1{font-size:clamp(40px,7.2vw,64px)}
+ .entry-copy h1>span{font-size:.8em}
+}

@@ -1,9 +1,10 @@
 import {CARS} from './car-catalog.js';
-import {getVehicleArtLibrary,frameIndexForAngle,closestLoadedFrame,vehicleArtPlacement,VEHICLE_ART_FRAMES} from './vehicle-art.js';
+import {createGarageIdle} from './garage-idle.js';
+import {getVehicleArtLibrary,frameIndexForAngle,closestLoadedFrame,vehicleArtPlacement,naturalGroundY,VEHICLE_ART_FRAMES,VEHICLE_BACKDROP,backdropTransform,vehicleArtBounds} from './vehicle-art.js';
 
 // Keep the fleet's entire rotation envelope large in short landscape stages.
 // This is one fixed floor pivot for every model/angle, not per-frame fitting.
-const FIT=.94,GROUND_Y=.735,MAX_PENDING=2,LOAD_TIMEOUT=7000;
+const FIT=.94,GROUND_Y=naturalGroundY(FIT),MAX_PENDING=2,LOAD_TIMEOUT=7000;
 const clamp=(value,min,max)=>Math.min(max,Math.max(min,value));
 const indexFor=value=>typeof value==='string'&&CARS.some(car=>car.id===value)
  ?CARS.findIndex(car=>car.id===value):clamp(Number.isFinite(Number(value))?Math.trunc(Number(value)):0,0,CARS.length-1);
@@ -11,8 +12,9 @@ const imageSize=image=>[image?.naturalWidth||image?.width||0,image?.naturalHeigh
 
 /** The garage is a real DOM layer, independent of the race canvas/WebGL state.
  * Uses only the selected model's requested views; never starts a 16-view sweep.
- * The shared art library owns the image cache. This view owns no animation loop. */
-export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary(),reduced=false}={}){
+ * The shared art library owns the image cache. Only the staged showroom runs
+ * a small loop (garage-idle.js: start-up, idle shake, exhaust smoke). */
+export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary(),reduced=false,stage=null,backdrop=VEHICLE_BACKDROP}={}){
  if(!host?.ownerDocument?.createElement)throw new TypeError('A garage preview host is required');
  const document=host.ownerDocument,view=document.defaultView||globalThis;
  const canvas=document.createElement('canvas'),fallback=document.createElement('img'),status=document.createElement('span');
@@ -27,8 +29,11 @@ export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary
   color:'#fff7e8',background:'#15202dd9',pointerEvents:'none',zIndex:'2'});
  host.appendChild(canvas);host.appendChild(fallback);host.appendChild(status);
  let context=null;try{context=canvas.getContext('2d',{alpha:true,desynchronized:true});}catch{}
- let disposed=false,size={width:0,height:0,dpr:1},lastGood=null,lastPaint='',thumbnailWatch=null;
- let state={car:0,heading:-.65,rev:0,lights:false,visible:true};
+ let disposed=false,size={width:0,height:0,dpr:1},lastGood=null,lastPaint='',thumbnailWatch=null,stageBox=null;
+ // Backdrop mode: the canvas spans the painted stage (not just the slot) and
+ // shares its transform with the stage background, so tyres meet the turntable.
+ const staged=()=>!!(backdrop&&stage&&stageBox);
+ let state={car:0,heading:-.65,rev:0,lights:false,visible:true},idle=null,idleCar=-1;
  const pending=new Map(),failed=new Set();
  const now=()=>view.performance?.now?.()??globalThis.performance?.now?.()??0;
  const keyFor=(car,frame)=>car+':'+frame;
@@ -65,6 +70,12 @@ export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary
  }
  function placement(record){
   const [width,height]=imageSize(record.image);
+  if(staged()){
+   const t=stageBox.transform,b=vehicleArtBounds(record.car,record.frame)||[0,0,backdrop.width,backdrop.height];
+   const k=width&&width!==backdrop.width?width/backdrop.width:1;
+   return {source:b.map(v=>v*k),bounds:b.map(v=>v*k),scale:t.scale/k,left:t.x+b[0]*t.scale,top:t.y+b[1]*t.scale,width,height,
+    groundX:t.x+backdrop.anchor[0]*t.scale,groundY:t.y+backdrop.anchor[1]*t.scale};
+  }
   const p=vehicleArtPlacement(record.car,record.frame,{width:size.width,height:size.height,fit:FIT,anchorY:GROUND_Y});
   return p?{...p,bounds:p.source,width,height}:null;
  }
@@ -81,7 +92,9 @@ export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary
  }
  function paint(force=false){
   if(disposed)return;
-  if(!state.visible){canvas.hidden=fallback.hidden=status.hidden=true;if(host.dataset.vehiclePreviewState!=='hidden')host.dataset.vehiclePreviewState='hidden';return;}
+  // Hiding drops the paint fingerprint: the same car must be drawn again when
+  // the showroom returns (e.g. course step -> race step), not stay hidden.
+  if(!state.visible){canvas.hidden=fallback.hidden=status.hidden=true;lastPaint='';if(host.dataset.vehiclePreviewState!=='hidden')host.dataset.vehiclePreviewState='hidden';return;}
   const target=frameIndexForAngle(state.heading),record=cachedRecord()||thumbnailRecord()||lastGood;
   const waiting=pending.has(keyFor(state.car,target));
   if(!record){
@@ -99,7 +112,7 @@ export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary
     try{
      context.setTransform(size.dpr,0,0,size.dpr,0,0);context.clearRect(0,0,size.width,size.height);
      const {bounds,scale,left,top}=placement(record);
-     if(record.library&&artLibrary.entry(record.car).frames.get(record.frame)===record.image){drawn=artLibrary.draw(context,record.car,record.frame*Math.PI*2/VEHICLE_ART_FRAMES,
+     if(!staged()&&record.library&&artLibrary.entry(record.car).frames.get(record.frame)===record.image){drawn=artLibrary.draw(context,record.car,record.frame*Math.PI*2/VEHICLE_ART_FRAMES,
       {x:0,y:0,width:size.width,height:size.height,fit:FIT,anchorY:GROUND_Y,contentFit:true});}
      else {context.drawImage(record.image,...bounds,left,top,bounds[2]*scale,bounds[3]*scale);drawn=true;}
     }catch{}
@@ -114,6 +127,7 @@ export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary
    lastPaint=fingerprint;lastGood=record;
   }
   if(host.dataset.vehiclePreviewFrame!==String(record.frame))host.dataset.vehiclePreviewFrame=String(record.frame);
+  if(idle&&selected){if(idleCar!==record.car){idleCar=record.car;idle.setCar(record.car,record.frame);}else idle.setFrame(record.frame);}
   const projected=placement(record);
   if(projected){for(const [key,value] of Object.entries({vehiclePreviewScale:projected.scale,vehiclePreviewGroundX:projected.groundX,vehiclePreviewGroundY:projected.groundY})){
    const text=value.toFixed(6);if(host.dataset[key]!==text)host.dataset[key]=text;
@@ -152,7 +166,24 @@ export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary
  }
  function resize(){
   if(disposed)return;
-  const rect=host.getBoundingClientRect(),width=Math.max(0,host.clientWidth||rect.width||0),height=Math.max(0,host.clientHeight||rect.height||0);
+  const rect=host.getBoundingClientRect();let width=Math.max(0,host.clientWidth||rect.width||0),height=Math.max(0,host.clientHeight||rect.height||0);
+  if(backdrop&&stage?.getBoundingClientRect){
+   const box=stage.getBoundingClientRect();
+   if(box.width>0&&box.height>0){
+    const transform=backdropTransform(box.width,box.height,backdrop);
+    stageBox={transform};width=box.width;height=box.height;
+    // 'inset' is the shorthand for left/top/right/bottom: clear it first, or
+    // it resets the offsets and the car drops below the turntable.
+    canvas.style.inset='auto';
+    Object.assign(canvas.style,{left:(box.left-rect.left)+'px',top:(box.top-rect.top)+'px',width:box.width+'px',height:box.height+'px'});
+    if(!reduced&&!idle&&typeof view.requestAnimationFrame==='function')idle=createGarageIdle({document,view,carCanvas:canvas,host});
+    if(idle){const t=transform,g=[backdrop.anchor[0]*t.scale+t.x,backdrop.anchor[1]*t.scale+t.y];canvas.style.transformOrigin=g[0].toFixed(1)+'px '+g[1].toFixed(1)+'px';
+     idle.place({left:box.left-rect.left,top:box.top-rect.top,width:box.width,height:box.height},transform,clamp(Number(view.devicePixelRatio)||1,1,2));}
+    stage.style.backgroundImage=`url("${backdrop.image}")`;
+    stage.style.backgroundSize=(backdrop.width*transform.scale).toFixed(1)+'px '+(backdrop.height*transform.scale).toFixed(1)+'px';
+    stage.style.backgroundPosition=transform.x.toFixed(1)+'px '+transform.y.toFixed(1)+'px';
+   }else stageBox=null;
+  }
   const dpr=clamp(Number(view.devicePixelRatio)||1,1,2);
   if(width===size.width&&height===size.height&&dpr===size.dpr)return;
   size={width,height,dpr};canvas.width=Math.max(1,Math.round(width*dpr));canvas.height=Math.max(1,Math.round(height*dpr));
@@ -170,22 +201,28 @@ export function createGarageVehiclePreview({host,artLibrary=getVehicleArtLibrary
    lastPaint='';watchThumbnail();
    artLibrary.trim?.({maxFrames:24,keepCar:state.car});
   }
+  idle?.setRev(state.rev);if(state.visible!==previous.visible)idle?.setVisible(state.visible);
   if(state.visible&&!previous.visible){failed.clear();resize();}
-  if(!size.width||!size.height)resize();
+  // The slot moves between setup steps; in backdrop mode re-anchor every update.
+  if(!size.width||!size.height||(backdrop&&stage))resize();
   paint();pump();
  }
  const Observer=view.ResizeObserver||globalThis.ResizeObserver;
  const observer=typeof Observer==='function'?new Observer(()=>resize()):null;
- observer?.observe(host);view.addEventListener?.('resize',resize,{passive:true});
+ // Phones resize the stage on rotation and when the address bar slides: watch
+ // the stage too, and settle once more on the next frame after a window resize.
+ let settleFrame=null;
+ const onWindowResize=()=>{resize();if(settleFrame===null&&typeof view.requestAnimationFrame==='function')settleFrame=view.requestAnimationFrame(()=>{settleFrame=null;resize();lastPaint='';paint(true);});};
+ observer?.observe(host);if(stage&&stage!==host)observer?.observe(stage);view.addEventListener?.('resize',onWindowResize,{passive:true});
  // Let the controller immediately apply a persisted selected car before any
  // default Kadett request starts. This also coalesces same-tick initial setup.
  watchThumbnail();resize();paint();Promise.resolve().then(pump);
  return {update,resize,dispose(){
   if(disposed)return;disposed=true;
-  observer?.disconnect();view.removeEventListener?.('resize',resize);
+  observer?.disconnect();view.removeEventListener?.('resize',onWindowResize);if(settleFrame!==null)view.cancelAnimationFrame?.(settleFrame);
   thumbnailWatch?.image.removeEventListener?.('load',thumbnailWatch.listener);thumbnailWatch=null;
   for(const request of pending.values())clearTimer(request.timer);pending.clear();
-  canvas.remove();fallback.remove();status.remove();lastGood=null;
+  idle?.dispose();idle=null;canvas.remove();fallback.remove();status.remove();lastGood=null;
   delete host.dataset.vehiclePreviewState;delete host.dataset.vehiclePreviewCar;delete host.dataset.vehiclePreviewFrame;
   delete host.dataset.vehiclePreviewScale;delete host.dataset.vehiclePreviewGroundX;delete host.dataset.vehiclePreviewGroundY;
  }};

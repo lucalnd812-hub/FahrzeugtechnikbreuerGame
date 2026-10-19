@@ -6,7 +6,9 @@ export function identityHash(value){
 }
 // Material tiles already carry their painted light and colour. These gentle
 // tints distinguish neighbours without multiplying every facade into grey.
-const plaster=[0xfff1d9,0xe5eddf,0xf2d8bc,0xddebef,0xe9dfd5,0xf8e7de];
+// Comic village: saturated pastel plaster so neighbouring houses pop apart.
+const plaster=[0xffe08a,0xffb59a,0xbfe8c8,0xb8dcf2,0xffd2a6,0xfff4e2,0xe6d2f5,0xf9a98a,0xd8f0a0];
+const SHUTTERS=[0x2f8a4e,0x2d6db5,0xc8352e,0x1f5e45,0x3c4f86,0xe08a1e];
 const families=[
  {id:'eifel-stone',wall:'stone',upper:'stone',window:0,windowW:1.04,windowH:1.55,spacing:2.85,shutter:0x344b41,plinth:'stone',fence:'stone'},
  {id:'slate-gable',wall:'plaster',upper:'slate',window:1,windowW:1.32,windowH:1.42,spacing:3.15,shutter:null,plinth:'stone',fence:'hedge'},
@@ -30,8 +32,8 @@ export function buildingIdentity(building,bounds={}){
  if(building.id===93722371)family={...families[0],id:'historic-village-school',window:0,windowW:1.18,windowH:1.94,spacing:3.05,shutter:null};
  const roofPalette=[0xdce4e6,0xd1dce1,0xb9cbd7,0xe6ddd2,0xc1ccda];
  const roofMaterial=String(tags['roof:material']||'').toLowerCase(),roofColour=String(tags['roof:colour']||'').toLowerCase();
- const roofTile=roofMaterial.includes('metal')||industrial?2:roofMaterial.includes('wood')?3:roofMaterial.includes('tile')||roofColour.includes('red')?1:(seed>>>18)%11===0?1:0;
- return {...family,industrial,seed,roofTile,tint:family.wall==='plaster'?plaster[seed%plaster.length]:[0xffffff,0xf0e6d4,0xd8d2c5,0xe6e3de][seed%4],roofTint:roofPalette[(seed>>>4)%roofPalette.length],door:8+(seed>>>8)%4,split:family.upper!==family.wall,flowers:(seed>>>10)%3===0,pv:!industrial&&(seed>>>12)%4===0,garden:(seed>>>15)%3,shutterColor:family.shutter,signature:family.id+':'+(seed%plaster.length)+':'+((seed>>>4)%roofPalette.length)+':'+((seed>>>8)%4)};
+ const roofTile=roofMaterial.includes('metal')||industrial?2:roofMaterial.includes('wood')?3:roofMaterial.includes('tile')||roofColour.includes('red')?1:(seed>>>18)%4===0?1:0;
+ return {...family,industrial,seed,roofTile,tint:family.wall==='plaster'?plaster[seed%plaster.length]:[0xffffff,0xf0e6d4,0xd8d2c5,0xe6e3de][seed%4],roofTint:roofPalette[(seed>>>4)%roofPalette.length],door:8+(seed>>>8)%4,split:family.upper!==family.wall,flowers:(seed>>>10)%3!==0,pv:!industrial&&(seed>>>12)%4===0,garden:(seed>>>15)%3,shutterColor:industrial?null:family.shutter||(seed>>>20)%3!==0?SHUTTERS[(seed>>>6)%SHUTTERS.length]:null,signature:family.id+':'+(seed%plaster.length)+':'+((seed>>>4)%roofPalette.length)+':'+((seed>>>8)%4)};
 }
 
 export const FACADE_ATLAS_SIZE=512;

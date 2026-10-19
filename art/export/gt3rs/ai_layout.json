@@ -1,0 +1,25 @@
+{
+ "layout": {
+  "track": 1.593,
+  "radius": 0.367,
+  "axles": [
+   -1.111,
+   1.24
+  ]
+ },
+ "lods": [
+  {
+   "lod": "high",
+   "bodyTris": 45000,
+   "wheelTris": 1400,
+   "bytes": 1135456
+  },
+  {
+   "lod": "low",
+   "bodyTris": 14000,
+   "wheelTris": 319,
+   "bytes": 519252
+  }
+ ],
+ "source": "gt3rs_tripo.glb"
+}

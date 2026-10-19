@@ -4,6 +4,11 @@ import {clearOfCourse} from './course.js';
 import {drapedPolygonGeometry,drapedRingGeometry,landUseSurfaceGeometries,SURFACE_LAYERS} from './road-surface.js';
 import {buildingIdentity,facadeAtlasPixels} from './village-identity.js';
 import {upgradeVillageTextures} from './village-textures.js';
+import {addVillagePosters} from './village-posters.js';
+import {addRoundaboutSigns} from './road-signs.js';
+import {roofTrim,chimneySpot,chimneyGeometry} from './roof-trim.js';
+import {tintGround} from './ground-tint.js';
+import {barrierMaterial,barrierGeometry,addStrawBales,buntingGeometry} from './event-dressing.js';
 
 export const rand=n=>{const v=Math.sin(n*78.233+2.41)*43758.5453;return v-Math.floor(v);};
 export const material=(color,extra={})=>new THREE.MeshStandardMaterial({color,roughness:.8,...extra});
@@ -188,7 +193,7 @@ export class Batch{
    else{g.computeBoundingBox();const b=g.boundingBox;g.translate(0,this.heightAt((b.min.x+b.max.x)/2,(b.min.z+b.max.z)/2),0);}
   }
   if(m.map&&!m.userData.keepUV)worldUV(g,m.userData.uvScale||1);
-  if(this.vertexColors&&m.isMeshStandardMaterial&&!m.map&&!m.transparent&&!m.emissive.getHex()&&!m.isMeshPhysicalMaterial){
+  if(this.vertexColors&&m.isMeshStandardMaterial&&!m.map&&!m.userData.keepUV&&!m.transparent&&!m.emissive.getHex()&&!m.isMeshPhysicalMaterial){
    if(!m.vertexColors||!g.attributes.color){const colors=new Float32Array(g.attributes.position.count*3);for(let i=0;i<colors.length;i+=3){colors[i]=m.color.r;colors[i+1]=m.color.g;colors[i+2]=m.color.b;}g.setAttribute('color',new THREE.BufferAttribute(colors,3));}
    const key=m.roughness+'|'+m.metalness+'|'+m.side;if(!this.colored.has(key))this.colored.set(key,material(0xffffff,{vertexColors:true,roughness:m.roughness,metalness:m.metalness,side:m.side}));m=this.colored.get(key);
   }
@@ -286,6 +291,9 @@ export function villageMaterials(){
  M.gravel=material(0xffffff,{map:surfaceTexture('gravel'),roughness:1,vertexColors:true});M.gravel.userData.uvScale=.25;
  M.houseRoof=paintedAtlasMaterial(material(0xffffff,{map:surfaceTexture('slate'),vertexColors:true,side:THREE.DoubleSide,roughness:.9}),2);M.houseRoof.map.name='artisan:roof-atlas';M.houseRoof.userData.uvScale=.48;M.houseRoof.userData.lowMap=M.roof.map;
  M.metalRoof=material(0xffffff,{map:surfaceTexture('slate'),roughness:.86,metalness:.02,side:THREE.DoubleSide});M.metalRoof.userData.uvScale=.35;
+ M.fasciaLight=material(0xf6f1e6,{roughness:.8,side:THREE.DoubleSide});M.fasciaDark=material(0x40342d,{roughness:.8,side:THREE.DoubleSide});M.soffit=material(0x2f3236,{roughness:.95,side:THREE.DoubleSide});
+ M.quoinLight=material(0xf3eee2,{roughness:.85});M.quoinStone=material(0xb7aa95,{roughness:.95});
+ M.chimney=material(0x8d7a6c,{roughness:.95});M.brickChimney=material(0x9b4f3a,{roughness:.95});
  M.decor=material(0xffffff,{map:villageDetailTexture(4),roughness:.92});M.decor.name='village:detail-atlas';M.decor.userData.keepUV=true;
  M.roadside=material(0xffffff,{map:villageFacadeTexture(),roughness:.95});M.roadside.name='artisan:roadside';M.roadside.userData.keepUV=true;
  M.foliage=material(0xffffff,{map:foliageTexture(),roughness:1,alphaTest:.48,side:THREE.DoubleSide,vertexColors:true});M.foliage.name='artisan:foliage';M.foliage.userData.keepUV=true;
@@ -304,6 +312,19 @@ export function villageMaterials(){
 
 function colorGeometry(g,hex){const color=new THREE.Color(hex),colors=new Float32Array(g.attributes.position.count*3);for(let i=0;i<colors.length;i+=3){colors[i]=color.r;colors[i+1]=color.g;colors[i+2]=color.b;}g.setAttribute('color',new THREE.BufferAttribute(colors,3));return g;}
 function roofGeometry(g,hex,sourceBuilding=-1,slot=0){paintTile(g,slot);colorGeometry(g,hex);g.setAttribute('sourceBuilding',new THREE.Float32BufferAttribute(new Float32Array(g.attributes.position.count).fill(sourceBuilding),1));return g;}
+// Overhang, painted fascia, soffit and an occasional chimney: the comic roof
+// finish that turns extruded footprints into houses. Same transform as the
+// roof; the overhang is added art (sourceBuilding -1), never a surveyed face.
+function addRoofTrim(batch,positions,profile,M,building,{x=0,y=0,z=0,a=0,sourceBuilding=-1,overhang=.46,chimney=true}={}){
+ const t=roofTrim(positions,{overhang,fascia:.24});
+ if(t.overhang){worldUV(t.overhang);batch.add(roofGeometry(t.overhang,profile.roofTint,sourceBuilding,profile.roofTile),M.houseRoof,x,y,z,a);}
+ const light=profile.wall==='plaster'&&profile.upper!=='slate';
+ if(t.fascia)batch.add(t.fascia,light?M.fasciaLight:M.fasciaDark,x,y,z,a);
+ if(t.soffit)batch.add(t.soffit,M.soffit,x,y,z,a);
+ const spot=chimney&&rand(building.id+11)>.35?chimneySpot(positions,building.id):null;
+ if(spot){const {stack,cap}=chimneyGeometry(1.1+rand(building.id+5)*.5);for(const [g,m] of [[stack,profile.wall==='redBrick'?M.brickChimney:M.chimney],[cap,M.fasciaDark]])batch.add(g.translate(spot.x,spot.y,spot.z),m,x,y,z,a);}
+ return t;
+}
 export function atlasPane(tile,width,height){const g=new THREE.PlaneGeometry(width,height),uv=g.attributes.uv,c=tile%4,r=Math.floor(tile/4);for(let i=0;i<uv.count;i++)uv.setXY(i,(c+.045+uv.getX(i)*.91)/4,1-(r+.045+(1-uv.getY(i))*.91)/4);return g;}
 export function windowReveal(width,height){
  const ring=(w,h,r,z)=>[[-w/2+r,-h/2,z],[w/2-r,-h/2,z],[w/2,-h/2+r,z],[w/2,h/2-r,z],[w/2-r,h/2,z],[-w/2+r,h/2,z],[-w/2,h/2-r,z],[-w/2,-h/2+r,z]],outer=ring(width+.14,height+.14,.075,0),inner=ring(width,height,.052,.065),positions=[],uv=[];
@@ -316,16 +337,21 @@ function footprintWalls(batch,b,h,ground,profile,M,useAtlas=true,roundLow=false)
  const add=(start,end,kind,tint,band)=>{if(end-start<.01)return;batch.add(softWallBand(b.points,start,end,tint,h,useAtlas?facadeMaterialSlot(profile,kind,band):null,roundLow),useAtlas?M.houseSurface:M.lowHouse[kind]||M.lowHouse.plaster,0,ground,0);};
  add(0,base,'stone',0xe8e2d5,'plinth');add(base,split,profile.wall,profile.tint,'body');add(split,h,profile.upper,profile.upper==='slate'?0xf2f4f2:profile.tint,'upper');
 }
-function safeVillageDetail(data,track,x,z,w,d,a,clearance=6.8){
+export function safeVillageDetail(data,track,x,z,w,d,a,clearance=6.8){
  if(!clearOfCourse(track,x,z,w,d,a,clearance))return false;
  const c=Math.cos(a),s=Math.sin(a),points=[[-w/2,-d/2],[w/2,-d/2],[w/2,d/2],[-w/2,d/2],[0,0]].map(([lx,lz])=>[x+c*lx+s*lz,z-s*lx+c*lz]);
  // New gardens also avoid non-racing streets, not just the selected course.
  for(const road of data.roads||[]){const limit=(road.width||6)/2+.45;for(let i=1;i<road.points.length;i++){const p=road.points[i-1],q=road.points[i],dx=q[0]-p[0],dz=q[1]-p[1],length=dx*dx+dz*dz;if(!length)continue;for(const [px,pz] of points){const t=Math.max(0,Math.min(1,((px-p[0])*dx+(pz-p[1])*dz)/length));if((px-p[0]-dx*t)**2+(pz-p[1]-dz*t)**2<limit*limit)return false;}}}
  return true;
 }
+const WINDOW_BLOOMS=[0xe8344a,0xff5f87,0xe8344a,0xfff6ec,0xff7b2e].map(c=>new THREE.MeshStandardMaterial({color:c,roughness:.8}));
 export function makeVillage(scene,data,track,M,excludedBuildingIds=[],heightAt=()=>0){
  // Both the mapped building bodies and their facades are spatially culled.
- const batch=new Batch({chunkSize:192,maxDistance:430,name:'buildings',rangeKind:'base'}),lowWalls=new Batch({chunkSize:192,maxDistance:430,name:'buildings-low-walls',rangeKind:'base'}),details=new Batch({chunkSize:96,maxDistance:215,castShadow:false,vertexColors:true,name:'facades'}),gardens=new Batch({chunkSize:96,maxDistance:145,castShadow:false,name:'village-gardens',bevelBoxes:true}),landmarkIds=new Set([...data.pois.filter(p=>['breuer','church','bakery','atm'].includes(p.id)).map(p=>p.buildingId),...excludedBuildingIds]);let detailed=0,windows=0,mappedRoofs=0,doors=0,shutters=0,solarRoofs=0;
+ const batch=new Batch({chunkSize:192,maxDistance:430,name:'buildings',rangeKind:'base'}),lowWalls=new Batch({chunkSize:192,maxDistance:430,name:'buildings-low-walls',rangeKind:'base'}),details=new Batch({chunkSize:96,maxDistance:215,castShadow:false,vertexColors:true,name:'facades'}),gardens=new Batch({chunkSize:96,maxDistance:145,castShadow:false,name:'village-gardens',bevelBoxes:true}),hedges=new Batch({chunkSize:96,maxDistance:240,castShadow:false,name:'village-hedges'}),landmarkIds=new Set([...data.pois.filter(p=>['breuer','church','bakery','atm'].includes(p.id)).map(p=>p.buildingId),...excludedBuildingIds]);let detailed=0,windows=0,mappedRoofs=0,doors=0,shutters=0,solarRoofs=0;let hedgeCount=0;
+ // Monschauer Heckenland: tall clipped beech hedges shelter the plots. They run
+ // along the back and side edges, never across roads, plots or the course.
+ const beech=material(0xffffff,{map:M.leafPaint.map,roughness:1});beech.color.setHex(0x74a058);beech.userData.uvScale=.55;
+ const beechTop=material(0xffffff,{map:M.leafPaint.map,roughness:1});beechTop.color.setHex(0xa8c87c);beechTop.userData.uvScale=.55;
  const identities=[],gardenDetails=[],familyCounts={},gardenIndex=buildingIndex(data.buildings),bedMaterial=material(0x80654f),gardenBud=new THREE.SphereGeometry(1,6,4);
  const centers=data.buildings.map((b,index)=>({b,sourceBuilding:index,...orientedBounds(b.points)}));
  for(const ob of centers){
@@ -340,11 +366,11 @@ export function makeVillage(scene,data,track,M,excludedBuildingIds=[],heightAt=(
   // shared repeating painted materials. It never submits the tiled high mesh.
   footprintWalls(lowWalls,b,h,ground,profile,M,false,near.distance<32);
   if(b.geodata?.roofSurfaces?.length){
-   const measured=surveyedRoof(b.geodata.roofSurfaces,h);batch.add(roofGeometry(measured.roof,profile.roofTint,ob.sourceBuilding,profile.roofTile),roof,0,ground,0);if(measured.gables){lowWalls.add(colorGeometry(measured.gables.clone(),profile.upper==='slate'?0xf2f4f2:profile.tint),M.lowHouse[profile.upper],0,ground,0);batch.add(colorGeometry(gableAtlasUV(measured.gables,facadeMaterialSlot(profile,profile.upper,'upper')),profile.upper==='slate'?0xf2f4f2:profile.tint),wall,0,ground,0);}mappedRoofs++;
+   const measured=surveyedRoof(b.geodata.roofSurfaces,h);addRoofTrim(batch,measured.roof.attributes.position.array,profile,M,b,{y:ground,chimney:!industrial});batch.add(roofGeometry(measured.roof,profile.roofTint,ob.sourceBuilding,profile.roofTile),roof,0,ground,0);if(measured.gables){lowWalls.add(colorGeometry(measured.gables.clone(),profile.upper==='slate'?0xf2f4f2:profile.tint),M.lowHouse[profile.upper],0,ground,0);batch.add(colorGeometry(gableAtlasUV(measured.gables,facadeMaterialSlot(profile,profile.upper,'upper')),profile.upper==='slate'?0xf2f4f2:profile.tint),wall,0,ground,0);}mappedRoofs++;
   }else if(!industrial&&ob.w>3&&ob.w<25&&ob.d<40){
-   const rise=Math.min(4.5,ob.w*.37),w=ob.w+.5,d=ob.d+.5;batch.add(roofGeometry(pitchedRoof(w,d,h,rise,rand(b.id+2)>.6),profile.roofTint,-1,profile.roofTile),roof,ob.x,ground,ob.z,ob.a);
+   const rise=Math.min(4.5,ob.w*.37),w=ob.w+.5,d=ob.d+.5;const pitched=pitchedRoof(w,d,h,rise,rand(b.id+2)>.6);addRoofTrim(batch,pitched.attributes.position.array,profile,M,b,{x:ob.x,y:ground,z:ob.z,a:ob.a,overhang:.2});batch.add(roofGeometry(pitched,profile.roofTint,-1,profile.roofTile),roof,ob.x,ground,ob.z,ob.a);
    if(rand(b.id+2)<=.6)for(const side of [-1,1]){const x=ob.x+Math.sin(ob.a)*ob.d/2*side,z=ob.z+Math.cos(ob.a)*ob.d/2*side,a=ob.a+(side<0?Math.PI:0),tint=profile.upper==='slate'?0xf2f4f2:profile.tint;lowWalls.add(colorGeometry(triangle(ob.w,rise),tint),M.lowHouse[profile.upper],x,ground+h,z,a);batch.add(colorGeometry(gableAtlasUV(triangle(ob.w,rise),facadeMaterialSlot(profile,profile.upper,'upper')),tint),wall,x,ground+h,z,a);}
-   if(detail){batch.box(.65,1.8,.65,M.stone,ob.x+.9,ground+h+rise*.6,ob.z-.8);}
+
   }else batch.add(roofGeometry(new THREE.BoxGeometry(ob.w+.25,.16,ob.d+.25),profile.roofTint,-1,profile.roofTile),roof,ob.x,ground+h+.08,ob.z,ob.a);
   if(!detail)continue;detailed++;
   // Windows follow the actual polygon faces, including annexes and recesses.
@@ -365,8 +391,10 @@ export function makeVillage(scene,data,track,M,excludedBuildingIds=[],heightAt=(
     // Shallow reveals and a warm sill catch daylight around painted blue glass.
     // These are collected into the existing trim batch, never a mesh per window.
     details.add(windowReveal(windowW,windowH),M.trim,x+nx*.015,y,z+nz*.015,angle);
-    if(profile.shutterColor&&!industrial&&j%2===0){const m=material(profile.shutterColor);for(const side of [-1,1])details.box(windowW*.34,windowH,.065,m,x+dx/len*(windowW*.69)*side,y,z+dz/len*(windowW*.69)*side,angle);shutters+=2;}
-    if(profile.flowers&&floor===0&&j%3===0){details.box(windowW+.1,.18,.27,M.wood,x+nx*.18,y-windowH*.49-.12,z+nz*.18,angle);for(let f=0;f<3;f++){const along=(f-1)*windowW*.28;details.add(new THREE.IcosahedronGeometry(.11,0),f%2?M.flower:M.yellow,x+dx/len*along+nx*.2,y-windowH*.49,z+dz/len*along+nz*.2);}}
+    if(profile.shutterColor&&!industrial){const m=material(profile.shutterColor);// Flat painted shutter leaves (2 triangles each); the comic pass inks their outline.
+     for(const side of [-1,1])details.add(new THREE.PlaneGeometry(windowW*.34,windowH),m,x+dx/len*(windowW*.69)*side+nx*.05,y,z+dz/len*(windowW*.69)*side+nz*.05,angle);shutters+=2;}
+    // Geranium boxes under the street-facing windows: the comic village's colour.
+    if(!industrial&&floor<2&&(profile.flowers||near.distance<45&&streetFacing>0)){const bloom=WINDOW_BLOOMS[(b.id+j+floor)%WINDOW_BLOOMS.length];details.box(windowW+.12,.2,.3,M.wood,x+nx*.18,y-windowH*.49-.12,z+nz*.18,angle);details.add(new THREE.BoxGeometry(windowW+.02,.16,.24),M.hedge,x+nx*.19,y-windowH*.49+.02,z+nz*.19,angle);for(let f=0;f<3;f++){const along=(f-1)*windowW*.3;details.add(new THREE.OctahedronGeometry(.1,0),f%3===2?M.flower:bloom,x+dx/len*along+nx*.25,y-windowH*.49+.13,z+dz/len*along+nz*.25);}}
    }
    // Gutters and stone/painted sill bands are cheap vertex-colour boxes, merged
    // with all other trim in the tile. Their lengths follow the actual edges.
@@ -375,10 +403,29 @@ export function makeVillage(scene,data,track,M,excludedBuildingIds=[],heightAt=(
    details.box(.13,.11,len+.04,M.metal,(p[0]+q[0])/2+nx*.10,ground+h+.065,(p[1]+q[1])/2+nz*.10,a);
    if(i%3===0)details.box(.075,Math.max(.3,h-.15),.075,M.metal,p[0]+nx*.17,ground+h/2,p[1]+nz*.17);
   }
-  if(entrance&&h>2.3){const {x,z,nx,nz,a}=entrance,w=industrial?Math.min(3.2,entrance.len*.38):1.04,doorH=Math.min(h-.18,industrial?2.3:2.12);details.add(atlasPane(profile.door,w,doorH),M.facade,x+nx*.09,ground+doorH/2+.06,z+nz*.09,a);doors++;}
+  if(entrance&&h>2.3){const {x,z,nx,nz,a}=entrance,w=industrial?Math.min(3.2,entrance.len*.38):1.04,doorH=Math.min(h-.18,industrial?2.3:2.12);details.add(atlasPane(profile.door,w,doorH),M.facade,x+nx*.09,ground+doorH/2+.06,z+nz*.09,a);doors++;
+   // A small slate canopy on two brackets over the front door.
+   if(!industrial){details.box(1.55,.09,.72,M.fasciaDark,x+nx*.4,ground+doorH+.32,z+nz*.4,a);for(const side of [-1,1])details.box(.07,.34,.5,M.fasciaDark,x+nx*.3+Math.cos(a)*.66*side,ground+doorH+.12,z+nz*.3-Math.sin(a)*.66*side,a);}}
+  // Painted corner quoins outline every house edge, the comic-book cue that
+  // separates walls from each other at a glance.
+  if(profile.wall!=='redBrick'&&profile.wall!=='brick'&&!industrial)for(const p of points)details.box(.24,h-.05,.24,profile.wall==='stone'?M.quoinStone:M.quoinLight,p[0],ground+h/2,p[1],ob.a);
   if(detail&&profile.pv&&b.geodata?.roofSurfaces?.length){
    const surfaces=b.geodata.roofSurfaces.filter(r=>r.length>=3&&Math.max(...r.map(p=>p[1]))-Math.min(...r.map(p=>p[1]))>.7),ring=surfaces.sort((a,b)=>b.length-a.length)[0];
    if(ring){const cx=ring.reduce((s,p)=>s+p[0],0)/ring.length,cy=ring.reduce((s,p)=>s+p[1],0)/ring.length,cz=ring.reduce((s,p)=>s+p[2],0)/ring.length,scaled=ring.map(p=>[cx+(p[0]-cx)*.60,cy+(p[1]-cy)*.60+.065,cz+(p[2]-cz)*.60]),panel=surveyedRoof([scaled],Infinity).roof,pos=panel.attributes.position,minX=Math.min(...scaled.map(p=>p[0])),minZ=Math.min(...scaled.map(p=>p[2])),maxX=Math.max(...scaled.map(p=>p[0])),maxZ=Math.max(...scaled.map(p=>p[2])),uv=[];for(let i=0;i<pos.count;i++)uv.push((.045+(pos.getX(i)-minX)/Math.max(.01,maxX-minX)*.91)/4,1-(3+.045+(pos.getZ(i)-minZ)/Math.max(.01,maxZ-minZ)*.91)/4);panel.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));details.add(panel,M.facade,0,ground,0);solarRoofs++;}
+  }
+  if(near.distance>10&&near.distance<130&&!industrial){
+   for(let i=0;i<points.length;i++){
+    const p=points[i],q=points[(i+1)%points.length],dx=q[0]-p[0],dz=q[1]-p[1],len=Math.hypot(dx,dz);if(len<4.5||rand(b.id*7+i)>.55)continue;
+    const nx=(area>0?1:-1)*dz/len,nz=-(area>0?1:-1)*dx/len,mx=(p[0]+q[0])/2,mz=(p[1]+q[1])/2,faceNear=track.nearest(mx,mz);
+    if((faceNear.x-mx)*nx+(faceNear.z-mz)*nz>0)continue;
+    const off=2.6+rand(b.id+i)*1.8,x=mx+nx*off,z=mz+nz*off,length=len+1.6,a=Math.atan2(dx,dz),c=Math.cos(a),s=Math.sin(a);
+    if(!safeVillageDetail(data,track,x,z,1.1,length,a,8.2))continue;
+    if([[-.6,-length/2],[.6,-length/2],[.6,length/2],[-.6,length/2],[0,0]].some(([lx,lz])=>gardenIndex.contains(x+c*lx+s*lz,z-s*lx+c*lz)))continue;
+    const hh=2.4+rand(b.id*3+i)*1.4,y=heightAt(x,z);
+    hedges.add(beveledBoxGeometry(1.1,hh,length,.22),beech,x,y+hh/2,z,a);
+    hedges.add(beveledBoxGeometry(1.16,.18,length+.06,.08),beechTop,x,y+hh-.04,z,a);hedgeCount++;
+    gardenDetails.push({x,z,w:1.1,d:length,a,buildingId:b.id,kind:'beech-hedge'});
+   }
   }
   if(near.distance>14&&near.distance<60&&ob.w<28&&entrance){
    const {nx,nz}=entrance,a=Math.atan2(nx,nz),px=entrance.x+nx*2.7,pz=entrance.z+nz*2.7;
@@ -404,10 +451,10 @@ export function makeVillage(scene,data,track,M,excludedBuildingIds=[],heightAt=(
    }
   }
  }
- gardenBud.dispose();const buildingMeshes=batch.flush(scene),lowWallMeshes=lowWalls.flush(scene),facadeMeshes=details.flush(scene),gardenMeshes=gardens.flush(scene);
+ gardenBud.dispose();const buildingMeshes=batch.flush(scene),hedgeMeshes=hedges.flush(scene),lowWallMeshes=lowWalls.flush(scene),facadeMeshes=details.flush(scene),gardenMeshes=gardens.flush(scene);
  for(const mesh of buildingMeshes)if(mesh.material===M.houseSurface){mesh.userData.minimumQuality=1;mesh.visible=false;}
  for(const mesh of lowWallMeshes)mesh.userData.maximumQuality=0;
- return {detailedHouses:detailed,windowCount:windows,buildingCount:data.buildings.length,mappedRoofs,doorCount:doors,shutterCount:shutters,solarRoofCount:solarRoofs,villageStyleCounts:familyCounts,villageIdentities:identities,gardenDetails,buildingMeshCount:buildingMeshes.length,lowWallMeshCount:lowWallMeshes.length,facadeMeshCount:facadeMeshes.length,gardenMeshCount:gardenMeshes.length,centers};
+ return {hedgeCount,hedgeMeshCount:hedgeMeshes.length,detailedHouses:detailed,windowCount:windows,buildingCount:data.buildings.length,mappedRoofs,doorCount:doors,shutterCount:shutters,solarRoofCount:solarRoofs,villageStyleCounts:familyCounts,villageIdentities:identities,gardenDetails,buildingMeshCount:buildingMeshes.length,lowWallMeshCount:lowWallMeshes.length,facadeMeshCount:facadeMeshes.length,gardenMeshCount:gardenMeshes.length,centers};
 }
 
 export function makeChurch(scene,b,M){
@@ -545,7 +592,8 @@ export function dressCourse(scene,data,track,M,heightAt=()=>0){
  ring(soil,outer,.13,apron);ring(outer-.12,outer+.09,.145,M.white);ring(soil-.08,soil+.12,.31,M.paving);
  // The central soil follows the same DGM planes as the drivable apron. A flat
  // cylinder previously floated/embedded on the roundabout's measured gradient.
- ring(0,soil,.29,material(0xd4b994,{map:M.gravel.map,roughness:1}));
+ // The operator's 2023 photo shows a mown lawn island with low shrubs.
+ { const lawn=material(0x8fb466,{map:M.grass.map,roughness:1});lawn.userData.uvScale=.22;ring(0,soil,.29,lawn); }
  for(let i=0;i<24;i++){const a=i*Math.PI/12,length=outer-soil-.12,r=(outer+soil)/2,x=rc[0]+Math.cos(a)*r,z=rc[1]+Math.sin(a)*r,rotation=Math.PI/2-a,point=(lx,lz)=>[x+Math.cos(rotation)*lx+Math.sin(rotation)*lz,z-Math.sin(rotation)*lx+Math.cos(rotation)*lz];surfaces.add(drapedPolygonGeometry(data,[point(-.014,-length/2),point(.014,-length/2),point(.014,length/2),point(-.014,length/2)],.151,{drivingSurface:true}),joint);}
  for(const [i,x,z] of [[0,-2.4,-1.8],[1,2.5,-1.2],[2,.3,2.7]]){batch.add(new THREE.CylinderGeometry(.065,.09,2.8,6),M.wood,rc[0]+x,1.7,rc[1]+z);batch.add(new THREE.SphereGeometry(.77,8,6),M.hedge,rc[0]+x,3.15+i*.15,rc[1]+z);for(const side of [-1,1])batch.box(.07,1.5,.07,M.wood,rc[0]+x+side*.24,.98,rc[1]+z);}
  const islandBud=new THREE.SphereGeometry(1,6,4);
@@ -568,30 +616,53 @@ export function dressCourse(scene,data,track,M,heightAt=()=>0){
   }
   if(safe(px,pz,1.1,.2,a,'crossing-sign')){batch.box(.12,2.2,.12,M.metal,px,1.1,pz);const board=sign('ZEBRA',1.1,'#ffffff','#2678b6',.8);board.position.set(px,heightAt(px,pz)+2.25,pz);board.rotation.y=a;scene.add(board);}
  }
+ addRoundaboutSigns({batch,center:rc,radius:data.roundabout.radius,arms:[1.32,3.45,5.53],safe,metal:M.metal});
  // Safety rails and spectators on sidewalks, away from road junctions and footprints.
- const cloth=[0xe62c41,0xffc538,0xf0eee4,0x3291d7,0x657abb,0xec9567].map(c=>material(c)),skin=[0xf3c99e,0xd7a274,0xa66945].map(c=>material(c));
+ const fence=barrierMaterial();
+ const cloth=[0xe62c41,0xffc538,0xf0eee4,0x3291d7,0x657abb,0xec9567,0x2fa36b,0xf27ea9].map(c=>material(c)),skin=[0xf3c99e,0xd7a274,0xa66945].map(c=>material(c)),hair=[0x3a2a1f,0x6b4226,0xd9b26b,0x1f1f24,0xe23b3b,0x2f5fae].map(c=>material(c)),jeans=material(0x34507a);
  for(let s=14;s<track.length;s+=4){
   const p=track.at(s),turn=Math.abs(Math.atan2(Math.sin(track.at(s+9).angle-track.at(s-9).angle),Math.cos(track.at(s+9).angle-track.at(s-9).angle)));
   for(const side of [-1,1]){
    const offset=7.9,x=p.x+p.dz*offset*side,z=p.z-p.dx*offset*side;if(inside(x,z))continue;
    if((turn>.15||s%58<22||s%86<=29)&&safe(x,z,.85,3.8,p.angle)){
-    batch.box(.12,1.15,3.6,M.metal,x,.65,z,p.angle);for(const end of [-1,1])batch.box(.75,.06,.2,M.metal,x+p.dx*1.55*end,.13,z+p.dz*1.55*end,p.angle);
+    batch.add(barrierGeometry(3.6),fence,x,0,z,p.angle);for(const end of [-1,1])batch.box(.75,.06,.2,M.metal,x+p.dx*1.55*end,.04,z+p.dz*1.55*end,p.angle);
     if(Math.floor(s/4)%3===0){const template=railSigns[Math.floor(s/4)%6?0:1];batch.add(template.geometry.clone(),template.material,x,.75,z,p.angle+Math.PI/2);}
    }
-   if(s%86>29||turn>1||rand(s*2+side)>.72)continue;
-   for(let j=0;j<3;j++){
-    const px=x+p.dz*1.35*side+p.dx*(j-1)*.8,pz=z-p.dx*1.35*side+p.dz*(j-1)*.8;if(inside(px,pz)||!clearOfCourse(track,px,pz,1,1,0,6.6))continue;
+   if(s%43>22||turn>1||rand(s*2+side)>.78)continue;
+   for(let j=0;j<4;j++){
+    const px=x+p.dz*1.35*side+p.dx*(j-1.5)*.72,pz=z-p.dx*1.35*side+p.dz*(j-1.5)*.72;if(inside(px,pz)||!clearOfCourse(track,px,pz,1,1,0,6.6))continue;
     const height=.84+rand(s+j+30)*.3,y=.86*height,shirt=cloth[Math.floor(rand(s+j)*cloth.length)],sk=skin[Math.floor(rand(s+j+3)*skin.length)],facing=p.angle-side*Math.PI/2;
-    batch.box(.42*height,.63*height,.28*height,shirt,px,y,pz,facing);batch.add(new THREE.SphereGeometry(.19*height,8,6),sk,px,y+.49*height,pz);
-    for(const leg of [-1,1])batch.box(.14*height,.63*height,.17*height,M.dark,px+Math.cos(facing)*.12*leg,.35*height,pz-Math.sin(facing)*.12*leg,facing);
-    batch.add(new THREE.SphereGeometry(.195*height,8,5,0,Math.PI*2,0,Math.PI/2),rand(s+j)>.5?M.dark:shirt,px,y+.53*height,pz);
+    // Rounded comic fans: tapered torso, round head, hair or cap, some with a flag.
+    const torso=new THREE.CylinderGeometry(.19*height,.23*height,.64*height,6,1,true);torso.scale(1,1,.72);batch.add(torso,shirt,px,y,pz,facing);batch.add(new THREE.SphereGeometry(.2*height,6,4),sk,px,y+.5*height,pz);
+    for(const leg of [-1,1])batch.add(new THREE.CylinderGeometry(.075*height,.085*height,.63*height,4,1,true),jeans,px+Math.cos(facing)*.1*leg,.35*height,pz-Math.sin(facing)*.1*leg);
+    batch.add(new THREE.SphereGeometry(.21*height,6,2,0,Math.PI*2,0,Math.PI/2.2),hair[Math.floor(rand(s+j+7)*hair.length)],px,y+.53*height,pz);
+    if(rand(s*3+j)>.7){const fx=px+Math.cos(facing)*.32,fz=pz-Math.sin(facing)*.32;batch.add(new THREE.CylinderGeometry(.018,.018,1.2,4),M.wood,fx,y+.55*height,fz);batch.box(.03,.32,.48,rand(s+j*5)>.5?M.red:M.yellow,fx+Math.sin(facing)*.24,y+.98*height,fz+Math.cos(facing)*.24,facing+Math.PI/2);}
     for(const arm of [-1,1])arms.push({x:px+Math.cos(facing)*.29*arm,y:heightAt(px,pz)+y+.15*height,z:pz-Math.sin(facing)*.29*arm,a:facing,phase:s+j*2+arm,height,side:arm});
     crowd.push({x:px,z:pz});
    }
   }
  }
+ // Straw bales soften the outside of tight corners; pennant lines cross the
+ // course high above the cars between two verge posts.
+ { const straw=material(0xe9c25c,{roughness:1}),band=material(0xc8402f,{roughness:.9}),flags=material(0xffffff,{vertexColors:true,side:THREE.DoubleSide,roughness:.9});
+  for(let s=20;s<track.length;s+=22){const p=track.at(s),turn=Math.atan2(Math.sin(track.at(s+12).angle-track.at(s-12).angle),Math.cos(track.at(s+12).angle-track.at(s-12).angle));if(Math.abs(turn)<.55)continue;
+   for(const side of [-1,1]){const x=p.x+p.dz*7.6*side,z=p.z-p.dx*7.6*side;if(inside(x,z)||!safe(x,z,1.0,4.0,p.angle,'straw-bales'))continue;addStrawBales(batch,straw,band,x,z,p.angle);}}
+  for(let s=45;s<track.length-30;s+=62){const p=track.at(s),l=[p.x+p.dz*8.4,p.z-p.dx*8.4],r=[p.x-p.dz*8.4,p.z+p.dx*8.4];
+   if(inside(...l)||inside(...r)||!safe(...l,.3,.3,p.angle,'bunting-post')||!safe(...r,.3,.3,p.angle,'bunting-post'))continue;
+   const yl=heightAt(...l),yr=heightAt(...r);for(const [q,y] of [[l,yl],[r,yr]])batch.add(new THREE.CylinderGeometry(.07,.09,6.4,6),M.metal,q[0],3.2,q[1]);
+   // The batch drops each part onto the ground at its centre, so heights stay relative.
+   const line=buntingGeometry([l[0],6.2+(yl-yr)/2,l[1]],[r[0],6.2+(yr-yl)/2,r[1]],{sag:.8});batch.add(line,flags,0,0,0);}
+ }
  // Lamp posts, street signs, warm gardens, bins and benches add scale to the village.
- for(let s=25;s<track.length;s+=38){const p=track.at(s),side=Math.floor(s/38)%2?1:-1,x=p.x+p.dz*8*side,z=p.z-p.dx*8*side;if(!safe(x,z,2.1,.4,p.angle,'lamp'))continue;batch.add(new THREE.CylinderGeometry(.07,.09,6.2,7),M.metal,x,3.1,z);batch.box(1.15,.1,.35,M.dark,x-p.dz*.45*side,6.18,z+p.dx*.45*side,p.angle);batch.box(.85,.055,.23,M.white,x-p.dz*.45*side,6.12,z+p.dx*.45*side,p.angle);}
+ { let seed=7001; addVillagePosters({batch,track,safe,material,rand:()=>rand(seed++)}); }
+ const lampPost=material(0x26392f,{roughness:.55,metalness:.2}),lampGlass=material(0xfff1b8,{emissive:0xffd98a,emissiveIntensity:.55,roughness:.3});
+ for(let s=25;s<track.length;s+=38){const p=track.at(s),side=Math.floor(s/38)%2?1:-1,x=p.x+p.dz*8*side,z=p.z-p.dx*8*side;if(!safe(x,z,2.1,.4,p.angle,'lamp'))continue;
+  // Old-town lantern on a dark green post with a hanging geranium basket.
+  const hx=x-p.dz*.62*side,hz=z+p.dx*.62*side;
+  batch.add(new THREE.CylinderGeometry(.07,.12,4.6,8),lampPost,x,2.3,z);batch.add(new THREE.CylinderGeometry(.16,.2,.35,8),lampPost,x,.18,z);
+  batch.box(.07,.07,1.1,lampPost,x-p.dz*.33*side,4.45,z+p.dx*.33*side,p.angle+Math.PI/2);
+  batch.add(new THREE.CylinderGeometry(.3,.18,.42,6),lampGlass,hx,4.05,hz);batch.add(new THREE.ConeGeometry(.36,.3,6),lampPost,hx,4.42,hz);batch.add(new THREE.CylinderGeometry(.2,.16,.08,6),lampPost,hx,3.82,hz);
+  const bx=x+p.dz*.36*side,bz=z-p.dx*.36*side;batch.add(new THREE.SphereGeometry(.34,8,5,0,Math.PI*2,Math.PI/2,Math.PI/2),M.wood,bx,2.9,bz);batch.add(new THREE.SphereGeometry(.36,8,5),M.hedge,bx,3.02,bz);for(let f=0;f<6;f++){const ang=f*1.05;batch.add(new THREE.OctahedronGeometry(.11,0),f%2?M.flower:M.red,bx+Math.cos(ang)*.3,3.1+(f%3)*.08,bz+Math.sin(ang)*.3);}}
  for(const name of data.routeNames){const road=data.roads.find(r=>r.name===name);if(!road)continue;const p=track.nearest(...road.points[0]),x=p.x+p.dz*8.8,z=p.z-p.dx*8.8;if(!safe(x,z,3.4,.2,p.angle,'street-sign'))continue;batch.box(.07,2.6,.07,M.metal,x,1.3,z);const plate=sign(name,3.4,'#f7f8ef','#325781',.22);plate.position.set(x,heightAt(x,z)+2.6,z);plate.rotation.y=p.angle;scene.add(plate);}
  for(const poi of data.pois.filter(p=>['school','kindergarten','mandala','mobile-bank'].includes(p.id))){const p=track.nearest(...poi.point),dx=poi.point[0]-p.x,dz=poi.point[1]-p.z,d=Math.hypot(dx,dz)||1,x=p.x+dx/d*10,z=p.z+dz/d*10,a=Math.atan2(-dx,-dz);if(!safe(x,z,4.8,.2,a,'poi-sign'))continue;batch.box(.09,2.25,.09,M.metal,x,1.12,z);const plate=sign(poi.id==='mobile-bank'?'Sparkasse · mobile Filiale':poi.name,4.8,'#ffffff',poi.id==='mobile-bank'?'#d62c3c':'#397888',.19);plate.position.set(x,heightAt(x,z)+2.25,z);plate.rotation.y=a;scene.add(plate);}
  for(let s=60;s<track.length;s+=45){const p=track.at(s),next=track.at(s+28),turn=Math.atan2(Math.sin(next.angle-p.angle),Math.cos(next.angle-p.angle));if(Math.abs(turn)<.24)continue;const x=p.x+p.dz*9.2,z=p.z-p.dx*9.2;if(!safe(x,z,3.5,.2,p.angle,'chevron'))continue;const arrow=sign(turn>0?'› › ›':'‹ ‹ ‹',3.5,'#dc293a','#fff7df',.3);arrow.position.set(x,heightAt(x,z)+1.85,z);arrow.rotation.y=p.angle;scene.add(arrow);batch.box(.1,1.5,.1,M.metal,x,.75,z);}
@@ -660,10 +731,49 @@ export function plantTrees(scene,data,track,M,heightAt=()=>0){
 export function landscape(scene,data,M,heightAt=()=>0){
  const batch=new Batch({chunkSize:160,castShadow:false,name:'land-use',rangeKind:'base'}),walls=new Batch({chunkSize:160,castShadow:false,heightAt}),palette={meadow:0xf0efdc,grass:0xe3ead7,forest:0xbacdc0,farmland:0xe9e2c2,cemetery:0xd8dfcf,park:0xe2ead8,playground:0xf0e3d3,pitch:0xc9dfcf};
  for(const {area,geometry} of landUseSurfaceGeometries(data)){
-  const m=area.kind==='playground'||area.kind==='farmland'?M.gravel:M.grass;batch.add(colorGeometry(geometry,palette[area.kind]||0xe3e8d4),m);
+  const m=area.kind==='playground'||area.kind==='farmland'?M.gravel:M.grass;batch.add(tintGround(colorGeometry(geometry,palette[area.kind]||0xe3e8d4)),m);
   if(area.kind==='cemetery')for(let i=0;i<area.points.length;i++){const p=area.points[i],q=area.points[(i+1)%area.points.length],d=Math.hypot(q[0]-p[0],q[1]-p[1]);walls.box(.4,.75,d,M.stone,(p[0]+q[0])/2,.37,(p[1]+q[1])/2,Math.atan2(q[0]-p[0],q[1]-p[1]));}
  }
  batch.flush(scene);walls.flush(scene);
+}
+
+// Heckenland field pattern: clipped hedgerows follow the mapped meadow and
+// pasture borders in short pieces; each piece must clear roads, the course
+// and every building on its own, so lanes and gateways stay open.
+export function plantHedgerows(scene,data,track,M,heightAt=()=>0){
+ const batch=new Batch({chunkSize:160,maxDistance:320,castShadow:false,name:'hedgerows',heightAt}),index=buildingIndex(data.buildings);
+ const side=material(0xffffff,{map:M.leafPaint.map,roughness:1}),top=material(0xffffff,{map:M.leafPaint.map,roughness:1});side.color.setHex(0x6c9a52);top.color.setHex(0x9fc274);side.userData.uvScale=top.userData.uvScale=.5;
+ let pieces=0;
+ for(const area of data.landAreas||[]){
+  if(!['meadow','grass','farmland'].includes(area.kind))continue;
+  const pts=area.points;
+  for(let i=0;i<pts.length&&pieces<420;i++){
+   const p=pts[i],q=pts[(i+1)%pts.length],dx=q[0]-p[0],dz=q[1]-p[1],len=Math.hypot(dx,dz);if(len<10||rand(i*13+pts.length)>.7)continue;
+   const a=Math.atan2(dx,dz),n=Math.max(1,Math.round(len/7)),piece=len/n;
+   for(let k=0;k<n;k++){
+    if(rand(i*31+k*7+pts.length)>.86)continue;
+    const t=(k+.5)/n,x=p[0]+dx*t,z=p[1]+dz*t,l=piece*.94,h=2.3+rand(x*.37+z)*1.2;
+    if(index.contains(x,z)||!safeVillageDetail(data,track,x,z,1.3,l,a,9))continue;
+    batch.add(beveledBoxGeometry(1.2,h,l,.24),side,x,h/2,z,a);batch.add(beveledBoxGeometry(1.26,.16,l+.05,.07),top,x,h-.04,z,a);pieces++;
+   }
+  }
+ }
+ // Wildflower dabs in the meadows near the course: tiny eight-triangle blooms
+ // in daisy, dandelion, clover and poppy colours, merged into one batch.
+ const blooms=new Batch({chunkSize:160,maxDistance:170,castShadow:false,name:'meadow-flowers',heightAt}),bloomColours=[0xffffff,0xffffff,0xf7d23c,0xc98bd9,0xe0453a].map(c=>material(c,{roughness:.9}));
+ let flowers=0;const bud=new THREE.OctahedronGeometry(.13,0);
+ for(const area of data.landAreas||[]){
+  if(!['meadow','grass','park'].includes(area.kind))continue;
+  const xs=area.points.map(p=>p[0]),zs=area.points.map(p=>p[1]),x0=Math.min(...xs),z0=Math.min(...zs),w=Math.max(...xs)-x0,d=Math.max(...zs)-z0,tries=Math.min(260,Math.floor(w*d/90));
+  for(let i=0;i<tries&&flowers<2600;i++){
+   const x=x0+rand(i*3.1+x0)*w,z=z0+rand(i*7.7+z0)*d;if(!pointInside(x,z,area.points)||index.contains(x,z))continue;
+   const near=track.nearest(x,z);if(near.distance<9||near.distance>150)continue;
+   const colour=bloomColours[Math.floor(rand(x*1.3+z)*bloomColours.length)];
+   for(let k=0;k<3;k++){const bx=x+(rand(i+k*11)-.5)*.9,bz=z+(rand(i+k*17)-.5)*.9;blooms.add(bud.clone().scale(1,.7,1),colour,bx,.16,bz);}flowers++;
+  }
+ }
+ bud.dispose();blooms.flush(scene);
+ batch.flush(scene);return {pieces,flowers};
 }
 
 export function makeGroundTransitions(scene,data,track,M){

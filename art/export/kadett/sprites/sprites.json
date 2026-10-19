@@ -1,0 +1,204 @@
+{
+ "id": "kadett",
+ "width": 1280,
+ "height": 800,
+ "groundAnchor": [
+  640.0,
+  528.3470519115249
+ ],
+ "pixelsPerMetre": 204.47284345047925,
+ "files": [
+  {
+   "frame": 0,
+   "contentBounds": [
+    0,
+    123,
+    1280,
+    677
+   ],
+   "visiblePixels": 481255,
+   "bytes": 79258,
+   "sha256": "db25e00a7342fe26488eebc062219bfa178160369c9c6aea1102959ab9b3806a"
+  },
+  {
+   "frame": 1,
+   "contentBounds": [
+    0,
+    0,
+    1280,
+    800
+   ],
+   "visiblePixels": 401774,
+   "bytes": 80574,
+   "sha256": "c4cb47dfeb34045143096dc2b1652ec56b1864ac4214701b98cd063bc620fd22"
+  },
+  {
+   "frame": 2,
+   "contentBounds": [
+    0,
+    128,
+    1280,
+    672
+   ],
+   "visiblePixels": 341939,
+   "bytes": 78746,
+   "sha256": "972913e5048d4038967adff4391b31fd2bfbf720384fe73a9463e72fb3ff9595"
+  },
+  {
+   "frame": 3,
+   "contentBounds": [
+    0,
+    0,
+    1280,
+    800
+   ],
+   "visiblePixels": 403907,
+   "bytes": 82756,
+   "sha256": "6fc3dba2e208bcf344068c6936c8518f5450a1e5cc0f6915706e857f68015b3e"
+  },
+  {
+   "frame": 4,
+   "contentBounds": [
+    0,
+    197,
+    1280,
+    603
+   ],
+   "visiblePixels": 447226,
+   "bytes": 81858,
+   "sha256": "2cde37ff726b3a29e78c15356ec31d13aab64dc62d94200289a7072353004c4a"
+  },
+  {
+   "frame": 5,
+   "contentBounds": [
+    0,
+    239,
+    1280,
+    561
+   ],
+   "visiblePixels": 452492,
+   "bytes": 91630,
+   "sha256": "e9d6257a5121fdaa05bdd110f55e0ff2edf1f458313aff088659b7058d119459"
+  },
+  {
+   "frame": 6,
+   "contentBounds": [
+    0,
+    243,
+    1280,
+    557
+   ],
+   "visiblePixels": 492928,
+   "bytes": 95764,
+   "sha256": "852cba31eb8065a8189db2405518c1afed8452cf70d6037219d0888249efaae8"
+  },
+  {
+   "frame": 7,
+   "contentBounds": [
+    0,
+    247,
+    1280,
+    553
+   ],
+   "visiblePixels": 511966,
+   "bytes": 91616,
+   "sha256": "e9cb326ea002a3d8bfe256a049988f2dc38a5e3fb424b3b06cc6eee9344a64c5"
+  },
+  {
+   "frame": 8,
+   "contentBounds": [
+    0,
+    0,
+    1280,
+    800
+   ],
+   "visiblePixels": 476228,
+   "bytes": 76230,
+   "sha256": "d3a6a527ce7fc861c57a4467c217275a580755c0697e785f0847256dda821ee2"
+  },
+  {
+   "frame": 9,
+   "contentBounds": [
+    0,
+    0,
+    1280,
+    800
+   ],
+   "visiblePixels": 389069,
+   "bytes": 79292,
+   "sha256": "67ed6174b36feeab8e9cd09e0cfa8d19e8fa25f0f7fdaae5e647b882330a1ab3"
+  },
+  {
+   "frame": 10,
+   "contentBounds": [
+    0,
+    243,
+    1280,
+    557
+   ],
+   "visiblePixels": 335971,
+   "bytes": 76912,
+   "sha256": "a407dac1aa170d89bf0acbbc5f50c15759f5bc9bfaa96c090b6fe49326647fe5"
+  },
+  {
+   "frame": 11,
+   "contentBounds": [
+    0,
+    239,
+    1280,
+    561
+   ],
+   "visiblePixels": 389493,
+   "bytes": 81756,
+   "sha256": "1670198512cd02a84ca7cdb3d0344a19231e1bca9d5848fdff6eaac038578d35"
+  },
+  {
+   "frame": 12,
+   "contentBounds": [
+    0,
+    237,
+    1280,
+    563
+   ],
+   "visiblePixels": 431576,
+   "bytes": 79508,
+   "sha256": "6468ba232f1c38f43e075d177bf6acfb5f9e20fd28cbb866c6fd6bc1823987ae"
+  },
+  {
+   "frame": 13,
+   "contentBounds": [
+    0,
+    231,
+    1280,
+    569
+   ],
+   "visiblePixels": 444160,
+   "bytes": 96366,
+   "sha256": "802a0d50b702acb1e4199caf95b75a9d925065b0ce61a02daf9383238d88eb18"
+  },
+  {
+   "frame": 14,
+   "contentBounds": [
+    0,
+    187,
+    1280,
+    613
+   ],
+   "visiblePixels": 497517,
+   "bytes": 95360,
+   "sha256": "a59c054c9258195f365b238fde288af488a4f50735330f4b399374c2f9547bcc"
+  },
+  {
+   "frame": 15,
+   "contentBounds": [
+    0,
+    148,
+    1280,
+    652
+   ],
+   "visiblePixels": 518227,
+   "bytes": 94896,
+   "sha256": "d45f11fb498d48a3986c1ddcf1d6a9ff239c145180960d27214c814ca066ed3d"
+  }
+ ]
+}

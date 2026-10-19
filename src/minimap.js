@@ -28,19 +28,74 @@ function paintBase(base,map,track,fit,dpr){
  c.font='bold 10px Arial';c.fillStyle='#35483f';c.textAlign='right';c.textBaseline='top';c.fillText('N ↑',w-5,5);c.textAlign='left';c.textBaseline='alphabetic';
 }
 
+/** Road polylines with their bounds, built once per map for the local GPS. */
+const roadIndex=new WeakMap();
+function roadsOf(map){
+ let list=roadIndex.get(map);if(list)return list;
+ list=(map.roads||[]).filter(r=>r.points?.length>1).map(r=>{let x0=Infinity,x1=-Infinity,z0=Infinity,z1=-Infinity;for(const [x,z] of r.points){x0=Math.min(x0,x);x1=Math.max(x1,x);z0=Math.min(z0,z);z1=Math.max(z1,z);}return {points:r.points,x0,x1,z0,z1};});
+ roadIndex.set(map,list);return list;
+}
+export const LOCAL_GPS_AHEAD=100;
+/** Heading-up GPS around the player: only the next ~100 m of the course, side
+ * streets as faint context, everything dissolving into a soft round fade. No
+ * panel, no cached bitmap: a few dozen line segments per frame. */
+function drawLocalMinimap(ctx,{w,h,dpr,map,track,drivers,own,player}){
+ ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,w*dpr,h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+ const me=drivers.find(own)||player;if(!me||!finite(me.x)||!finite(me.z))return;
+ const cx=w/2,cy=h*.66,radius=Math.min(w,h)*.5,ppm=(cy-h*.06)/LOCAL_GPS_AHEAD,a=me.angle||0,sa=Math.sin(a),ca=Math.cos(a);
+ const U=(x,z)=>cx+((z-me.z)*sa-(x-me.x)*ca)*ppm,V=(x,z)=>cy-((x-me.x)*sa+(z-me.z)*ca)*ppm;
+ const reach=(Math.hypot(w,h)/ppm)*.75;
+ // A dark glassy disc keeps the lines readable over sunny grass and pale road.
+ // Gradients are optional: minimal canvas implementations still get the lines.
+ const radial=(r0,stops)=>{const g=ctx.createRadialGradient?.(cx,h*.5,r0,cx,h*.5,radius);if(!g?.addColorStop)return null;for(const [o,c] of stops)g.addColorStop(o,c);return g;};
+ const glass=radial(0,[[0,'rgba(12,20,30,.5)'],[.7,'rgba(12,20,30,.32)'],[1,'rgba(12,20,30,0)']]);if(glass){ctx.fillStyle=glass;ctx.fillRect(0,0,w,h);}
+ ctx.lineCap=ctx.lineJoin='round';
+ // Side streets: barely there, just enough to read a junction coming up.
+ ctx.strokeStyle='rgba(255,255,255,.28)';ctx.lineWidth=Math.max(2.5,5*ppm);
+ for(const r of roadsOf(map)){
+  if(r.x1<me.x-reach||r.x0>me.x+reach||r.z1<me.z-reach||r.z0>me.z+reach)continue;
+  ctx.beginPath();r.points.forEach(([x,z],i)=>i?ctx.lineTo(U(x,z),V(x,z)):ctx.moveTo(U(x,z),V(x,z)));ctx.stroke();
+ }
+ // The course itself: from a short tail behind the car to the next 100 m.
+ if(track?.at){
+  const s=finite(me.s)?me.s:track.nearest(me.x,me.z).s,pts=[];
+  for(let d=-24;d<=LOCAL_GPS_AHEAD+12;d+=3){const p=track.at(s+d);pts.push([U(p.x,p.z),V(p.x,p.z)]);}
+  const line=()=>{ctx.beginPath();pts.forEach(([u,v],i)=>i?ctx.lineTo(u,v):ctx.moveTo(u,v));};
+  line();ctx.strokeStyle='rgba(10,16,24,.55)';ctx.lineWidth=Math.max(9,12*ppm);ctx.stroke();
+  line();ctx.strokeStyle='#ffffff';ctx.lineWidth=Math.max(5,7*ppm);ctx.stroke();
+  // Start/finish: a small chequered bar across the road when it is close.
+  const start=map.start||map.route[0],ahead=track.delta(0,s);
+  if(Math.abs(ahead)<LOCAL_GPS_AHEAD+15){const p=track.at(0),u=U(start[0],start[1]),v=V(start[0],start[1]);
+   ctx.save();ctx.translate(u,v);ctx.rotate(a-p.angle);for(let i=-3;i<3;i++)for(let j=0;j<2;j++){ctx.fillStyle=(i+j)%2?'#fffdf4':'#1d2630';ctx.fillRect(i*2.4,-2.4+j*2.4,2.4,2.4);}ctx.restore();}
+ }
+ // Rivals in range as small coloured dots, the player's arrow on top.
+ for(const d of drivers){if(own(d))continue;const u=U(d.x,d.z),v=V(d.x,d.z);if(Math.hypot(u-cx,v-cy)>radius*1.05)continue;
+  ctx.beginPath();ctx.arc(u,v,3.6,0,Math.PI*2);ctx.fillStyle=d.finish!=null?'rgba(255,255,255,.6)':'#ff4d5e';ctx.fill();ctx.lineWidth=1.4;ctx.strokeStyle='rgba(16,24,32,.7)';ctx.stroke();}
+ ctx.save();ctx.translate(cx,cy);ctx.beginPath();ctx.moveTo(0,-8.5);ctx.lineTo(6,6);ctx.lineTo(0,3);ctx.lineTo(-6,6);ctx.closePath();
+ ctx.fillStyle='#ffd23f';ctx.fill();ctx.lineWidth=1.8;ctx.strokeStyle='#1b2430';ctx.stroke();ctx.restore();
+ // Soft round fade: full strength around the car, gone at the rim.
+ const fade=radial(radius*.32,[[0,'rgba(0,0,0,1)'],[.62,'rgba(0,0,0,.75)'],[1,'rgba(0,0,0,0)']]);
+ if(fade){ctx.globalCompositeOperation='destination-in';ctx.fillStyle=fade;ctx.fillRect(0,0,w,h);ctx.globalCompositeOperation='source-over';}
+}
+
 /** The static route is rebuilt only for a new map, CSS size or pixel ratio.
  * Moving markers reuse that bitmap. Identical paused/countdown states do no work.
  * Callers retain the existing 90 ms HUD cadence; this function adds no loop. */
-export function drawRaceMinimap(canvas,{map,track,drivers=[],player,cache=fallbackCache,pixelRatio=globalThis.devicePixelRatio||1}={}){
+export function drawRaceMinimap(canvas,{map,track,drivers=[],player,cache=fallbackCache,pixelRatio=globalThis.devicePixelRatio||1,local=false}={}){
  if(!canvas||!map?.route?.length)return {painted:false,cacheRebuilt:false};
  const w=Math.round(Number(canvas.clientWidth)||0),h=Math.round(Number(canvas.clientHeight)||0);if(w<1||h<1)return {painted:false,cacheRebuilt:false};
  const dpr=clamp(Number(pixelRatio)||1,1,2),width=Math.round(w*dpr),height=Math.round(h*dpr),ctx=canvas.getContext('2d');if(!ctx)return {painted:false,cacheRebuilt:false};
+ const own=driver=>driver===player||(player?.id!=null&&driver.id===player.id);
+ if(local){
+  if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;}
+  cache.delete(canvas);drawLocalMinimap(ctx,{w,h,dpr,map,track,drivers:drivers.filter(d=>finite(d.x)&&finite(d.z)),own,player});
+  return {painted:true,cacheRebuilt:false};
+ }
  let entry=cache.get(canvas),rebuilt=false;
  if(!entry||entry.map!==map||entry.w!==w||entry.h!==h||entry.dpr!==dpr||canvas.width!==width||canvas.height!==height){
   const doc=canvas.ownerDocument||globalThis.document,base=doc.createElement('canvas');base.width=width;base.height=height;canvas.width=width;canvas.height=height;
   const fit=fitMap(map,w,h);paintBase(base,map,track,fit,dpr);entry={base,map,w,h,dpr,fit,last:null};cache.set(canvas,entry);rebuilt=true;
  }
- const own=driver=>driver===player||(player?.id!=null&&driver.id===player.id);
  const visible=drivers.filter(driver=>finite(driver.x)&&finite(driver.z));
  const snapshot=visible.flatMap(driver=>[driver.id,driver.x,driver.z,own(driver)?driver.angle:0,own(driver),driver.finish!=null]);
  if(!rebuilt&&entry.last?.length===snapshot.length&&snapshot.every((value,index)=>value===entry.last[index]))return {painted:false,cacheRebuilt:false};

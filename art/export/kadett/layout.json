@@ -1,0 +1,19 @@
+{
+ "layout": {
+  "track": 1.38,
+  "radius": 0.321,
+  "axles": [
+   -1.105,
+   1.29
+  ]
+ },
+ "lods": [
+  {
+   "lod": "low",
+   "bodyTris": 8999,
+   "wheelTris": 695,
+   "bytes": 229240,
+   "materials": 2
+  }
+ ]
+}
