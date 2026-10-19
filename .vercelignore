@@ -1,0 +1,11 @@
+# Source art, references and checks are not needed to build or run the game.
+art/
+tests/
+qa/
+verification/
+docs/
+public/
+*.blend
+*.blend1
+.env*
+.vercel/

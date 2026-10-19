@@ -58,4 +58,12 @@ nahtlos weitermachen kann. Unten im „Verlauf“ den neuesten Stand ergänzen.
   nach einem Fenster-Resize im nächsten Frame neu (`onWindowResize`/`settleFrame`). Wechsel 1280×720 ↔ 844×390
   im Browser geprüft, Auto steht unverzerrt auf der Scheibe. `npm test` Exit 0.
   Weiterhin nichts committet/gepusht; Git-Identität fehlt noch, Vercel-CLI nicht eingeloggt.
+- 2026-10-19: Veröffentlicht. Git-Autor im Projekt: Luca <lucalnd812@gmail.com>. Commit af35ebe auf Branch
+  `runde-2-menue-autos` gepusht (GitHub). `main` ist NICHT aktualisiert (direkter Push auf main wurde von der
+  Sicherheitsprüfung blockiert) – PR: github.com/lucalnd812-hub/FahrzeugtechnikbreuerGame/pull/new/runde-2-menue-autos.
+  Vercel: Nutzer hat sich per `npx vercel login` (Device-Link im Browserfenster) angemeldet, Konto lucalnd812-hub,
+  Team „Luca's projects“. Ordner mit `vercel link --project breuer-grand-prix-final` verknüpft (`.vercel/`, `.env.local`
+  mit Zugangsdaten – beide git- und vercel-ignoriert). `npx vercel deploy --prod --yes` → live, Bundle
+  `game-81f728a6945c.js` identisch mit lokalem Build, `/api/health` ok, Garage live geprüft.
+  `.vercelignore` lässt art/, tests/, docs/, qa/, verification/, public/ und .env* weg.
 - Offen: echte FPS auf einem Handy messen; Rauch/Wackeln im echten Browser ansehen; Richtung der Kurvenpfeile prüfen.
