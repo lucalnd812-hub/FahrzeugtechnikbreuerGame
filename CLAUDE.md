@@ -66,7 +66,10 @@ nahtlos weitermachen kann. Unten im „Verlauf“ den neuesten Stand ergänzen.
   mit Zugangsdaten – beide git- und vercel-ignoriert). `npx vercel deploy --prod --yes` → live, Bundle
   `game-81f728a6945c.js` identisch mit lokalem Build, `/api/health` ok, Garage live geprüft.
   `.vercelignore` lässt art/, tests/, docs/, qa/, verification/, public/ und .env* weg.
-- 2026-10-19 V4 (Kundenfeedback), lokal, NICHT committet:
+- 2026-10-19 V4 veröffentlicht: Commit 6261314 auf `runde-2-menue-autos` gepusht, `npx vercel deploy --prod` READY,
+  Live-Bundle `game-d52ca803a465.js` = lokaler Build, Live-Garage im Handyformat geprüft. `main` weiter unverändert
+  (Nutzer: vorerst auf dem Branch lassen).
+- 2026-10-19 V4 (Kundenfeedback), Details:
   - Bots: `botProfile()` in `race-core.js` (Leicht .76 / Normal .91 / Schwer 1.06 → Tempo .96–1.12, weniger Bremsen
     in Kurven, Auto-Drift, `input.pace` skaliert nur Bot-Topspeed), leichter Aufhol-Effekt über `lead`
     (Abstand zum Spieler, in `game.js` übergeben). Solo-Runde Lammersdorf: ≈42/38/35 s (Gold 35). Slalom-Tempo ×.68.
